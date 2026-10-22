@@ -1,0 +1,5 @@
+-- BTL2 Quản lý quán Net – L09, Nhóm 10
+-- Chủ phần: MD
+-- TRẠNG THÁI: CHƯA HIỆN THỰC; đây là khung phân công.
+-- TODO: Tạo các bảng PHIEU_KHO, CHI_TIET_PHIEU_KHO theo model.json của baseline.
+-- Bổ sung DBMS/phiên bản, phụ thuộc, cách chạy và bằng chứng khi hoàn thành.

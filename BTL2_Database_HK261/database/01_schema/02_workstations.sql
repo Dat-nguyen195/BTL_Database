@@ -1,0 +1,5 @@
+-- BTL2 Quản lý quán Net – L09, Nhóm 10
+-- Chủ phần: MD
+-- TRẠNG THÁI: CHƯA HIỆN THỰC; đây là khung phân công.
+-- TODO: Tạo các bảng KHU_VUC, NHOM_MAY, BANG_GIA, MAY_TRAM, PHIEN_SU_DUNG, BIEN_LAI_TIEN_MAY theo model.json của baseline.
+-- Bổ sung DBMS/phiên bản, phụ thuộc, cách chạy và bằng chứng khi hoàn thành.

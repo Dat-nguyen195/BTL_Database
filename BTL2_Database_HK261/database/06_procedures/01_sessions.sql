@@ -1,0 +1,5 @@
+-- BTL2 Quản lý quán Net – L09, Nhóm 10
+-- Chủ phần: HT
+-- TRẠNG THÁI: CHƯA HIỆN THỰC; đây là khung phân công.
+-- TODO: sp_mo_phien và sp_ket_thuc_phien theo UC-02/03.
+-- Bổ sung DBMS/phiên bản, phụ thuộc, cách chạy và bằng chứng khi hoàn thành.

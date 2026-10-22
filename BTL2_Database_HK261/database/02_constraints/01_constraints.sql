@@ -1,0 +1,5 @@
+-- BTL2 Quản lý quán Net – L09, Nhóm 10
+-- Chủ phần: MD
+-- TRẠNG THÁI: CHƯA HIỆN THỰC; đây là khung phân công.
+-- TODO: PK/FK/UQ/NOT NULL/CHECK và chính sách xóa; đối chiếu đủ 23 bảng.
+-- Bổ sung DBMS/phiên bản, phụ thuộc, cách chạy và bằng chứng khi hoàn thành.

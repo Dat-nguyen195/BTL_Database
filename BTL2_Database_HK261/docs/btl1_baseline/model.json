@@ -1,0 +1,1774 @@
+{
+  "tables": {
+    "NHOM_NGUOI_DUNG": {
+      "name": "NHOM_NGUOI_DUNG",
+      "title": "Nhóm tính giá",
+      "fields": [
+        {
+          "name": "MaNhomND",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Mã nhóm tính giá"
+        },
+        {
+          "name": "TenNhomND",
+          "type": "VARCHAR(60)",
+          "nullable": false,
+          "meaning": "Tên nhóm; có nhóm VangLai"
+        }
+      ],
+      "pk": [
+        "MaNhomND"
+      ],
+      "kind": "entity",
+      "uq": [
+        [
+          "TenNhomND"
+        ]
+      ],
+      "fk": [],
+      "rules": []
+    },
+    "TAI_KHOAN": {
+      "name": "TAI_KHOAN",
+      "title": "Tài khoản chung",
+      "fields": [
+        {
+          "name": "MaTaiKhoan",
+          "type": "VARCHAR(15)",
+          "nullable": false,
+          "meaning": "Định danh tài khoản"
+        },
+        {
+          "name": "TenDangNhap",
+          "type": "VARCHAR(50)",
+          "nullable": false,
+          "meaning": "Tên đăng nhập duy nhất"
+        },
+        {
+          "name": "MatKhauBam",
+          "type": "VARCHAR(255)",
+          "nullable": false,
+          "meaning": "Giá trị băm mật khẩu bằng thuật toán chuyên dụng"
+        },
+        {
+          "name": "Ho",
+          "type": "VARCHAR(30)",
+          "nullable": true,
+          "meaning": "Thành phần họ"
+        },
+        {
+          "name": "TenDem",
+          "type": "VARCHAR(40)",
+          "nullable": true,
+          "meaning": "Thành phần tên đệm"
+        },
+        {
+          "name": "Ten",
+          "type": "VARCHAR(30)",
+          "nullable": false,
+          "meaning": "Thành phần tên"
+        },
+        {
+          "name": "TrangThai",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "HoatDong, Khoa hoặc TamDung"
+        },
+        {
+          "name": "MaNhomND",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Nhóm giá, độc lập với chức vụ nhân viên"
+        }
+      ],
+      "pk": [
+        "MaTaiKhoan"
+      ],
+      "kind": "entity",
+      "uq": [
+        [
+          "TenDangNhap"
+        ]
+      ],
+      "fk": [
+        {
+          "field": "MaNhomND",
+          "target": "NHOM_NGUOI_DUNG",
+          "target_field": "MaNhomND",
+          "delete": "RESTRICT"
+        }
+      ],
+      "rules": [
+        "Mọi tài khoản thuộc ít nhất một kiểu con NGUOI_CHOI hoặc NHAN_VIEN; được thuộc cả hai."
+      ]
+    },
+    "SO_DIEN_THOAI": {
+      "name": "SO_DIEN_THOAI",
+      "title": "Điện thoại liên hệ",
+      "fields": [
+        {
+          "name": "MaTaiKhoan",
+          "type": "VARCHAR(15)",
+          "nullable": false,
+          "meaning": "Tài khoản sở hữu"
+        },
+        {
+          "name": "SoDienThoai",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "Một số điện thoại của tài khoản"
+        }
+      ],
+      "pk": [
+        "MaTaiKhoan",
+        "SoDienThoai"
+      ],
+      "kind": "multi",
+      "uq": [],
+      "fk": [
+        {
+          "field": "MaTaiKhoan",
+          "target": "TAI_KHOAN",
+          "target_field": "MaTaiKhoan",
+          "delete": "CASCADE"
+        }
+      ],
+      "rules": []
+    },
+    "NGUOI_CHOI": {
+      "name": "NGUOI_CHOI",
+      "title": "Hội viên",
+      "fields": [
+        {
+          "name": "MaTaiKhoan",
+          "type": "VARCHAR(15)",
+          "nullable": false,
+          "meaning": "Khóa kế thừa lớp cha"
+        },
+        {
+          "name": "SoCCCD",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "Định danh hội viên theo phạm vi khảo sát"
+        },
+        {
+          "name": "SoDuVi",
+          "type": "DECIMAL(12,0)",
+          "nullable": false,
+          "meaning": "Số dư sổ ví, đơn vị VND; mặc định 0"
+        },
+        {
+          "name": "NgayDangKy",
+          "type": "DATE",
+          "nullable": false,
+          "meaning": "Ngày đăng ký"
+        }
+      ],
+      "pk": [
+        "MaTaiKhoan"
+      ],
+      "kind": "subclass",
+      "uq": [
+        [
+          "SoCCCD"
+        ]
+      ],
+      "fk": [
+        {
+          "field": "MaTaiKhoan",
+          "target": "TAI_KHOAN",
+          "target_field": "MaTaiKhoan",
+          "delete": "CASCADE"
+        }
+      ],
+      "rules": [
+        "SoDuVi >= 0; số dư khả dụng bằng số dư ví trừ tiền giờ giữ chỗ của phiên đang hoạt động."
+      ]
+    },
+    "NHAN_VIEN": {
+      "name": "NHAN_VIEN",
+      "title": "Nhân viên",
+      "fields": [
+        {
+          "name": "MaTaiKhoan",
+          "type": "VARCHAR(15)",
+          "nullable": false,
+          "meaning": "Khóa kế thừa lớp cha"
+        },
+        {
+          "name": "ChucVu",
+          "type": "VARCHAR(30)",
+          "nullable": false,
+          "meaning": "ThuNgan, PhaChe, KyThuat hoặc QuanLy"
+        },
+        {
+          "name": "LuongCoBan",
+          "type": "DECIMAL(12,0)",
+          "nullable": false,
+          "meaning": "Lương cơ bản không âm"
+        },
+        {
+          "name": "NgayVaoLam",
+          "type": "DATE",
+          "nullable": false,
+          "meaning": "Ngày vào làm"
+        },
+        {
+          "name": "MaNguoiQuanLy",
+          "type": "VARCHAR(15)",
+          "nullable": true,
+          "meaning": "Quản lý trực tiếp; NULL ở cấp cao nhất"
+        }
+      ],
+      "pk": [
+        "MaTaiKhoan"
+      ],
+      "kind": "subclass",
+      "uq": [],
+      "fk": [
+        {
+          "field": "MaTaiKhoan",
+          "target": "TAI_KHOAN",
+          "target_field": "MaTaiKhoan",
+          "delete": "CASCADE"
+        },
+        {
+          "field": "MaNguoiQuanLy",
+          "target": "NHAN_VIEN",
+          "target_field": "MaTaiKhoan",
+          "delete": "SET NULL"
+        }
+      ],
+      "rules": [
+        "Cấm tự quản lý và chu trình nhiều cấp."
+      ]
+    },
+    "DIA_CHI_NV": {
+      "name": "DIA_CHI_NV",
+      "title": "Địa chỉ nhân viên",
+      "fields": [
+        {
+          "name": "MaTaiKhoan",
+          "type": "VARCHAR(15)",
+          "nullable": false,
+          "meaning": "Nhân viên sở hữu"
+        },
+        {
+          "name": "STTDiaChi",
+          "type": "INT",
+          "nullable": false,
+          "meaning": "Thứ tự địa chỉ dương trong một nhân viên"
+        },
+        {
+          "name": "SoNha",
+          "type": "VARCHAR(50)",
+          "nullable": true,
+          "meaning": "Số nhà"
+        },
+        {
+          "name": "Duong",
+          "type": "VARCHAR(100)",
+          "nullable": true,
+          "meaning": "Tên đường"
+        },
+        {
+          "name": "PhuongXa",
+          "type": "VARCHAR(100)",
+          "nullable": true,
+          "meaning": "Phường hoặc xã"
+        },
+        {
+          "name": "TinhThanh",
+          "type": "VARCHAR(100)",
+          "nullable": false,
+          "meaning": "Tỉnh hoặc thành phố"
+        }
+      ],
+      "pk": [
+        "MaTaiKhoan",
+        "STTDiaChi"
+      ],
+      "kind": "multi",
+      "uq": [],
+      "fk": [
+        {
+          "field": "MaTaiKhoan",
+          "target": "NHAN_VIEN",
+          "target_field": "MaTaiKhoan",
+          "delete": "CASCADE"
+        }
+      ],
+      "rules": []
+    },
+    "KHU_VUC": {
+      "name": "KHU_VUC",
+      "title": "Khu vực phòng máy",
+      "fields": [
+        {
+          "name": "MaKhuVuc",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Mã khu vực"
+        },
+        {
+          "name": "TenKhuVuc",
+          "type": "VARCHAR(60)",
+          "nullable": false,
+          "meaning": "Tên khu vực"
+        },
+        {
+          "name": "MoTaViTri",
+          "type": "VARCHAR(255)",
+          "nullable": true,
+          "meaning": "Vị trí tầng hoặc dãy"
+        }
+      ],
+      "pk": [
+        "MaKhuVuc"
+      ],
+      "kind": "entity",
+      "uq": [
+        [
+          "TenKhuVuc"
+        ]
+      ],
+      "fk": [],
+      "rules": []
+    },
+    "NHOM_MAY": {
+      "name": "NHOM_MAY",
+      "title": "Nhóm cấu hình máy",
+      "fields": [
+        {
+          "name": "MaNhomMay",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Mã nhóm máy"
+        },
+        {
+          "name": "TenNhomMay",
+          "type": "VARCHAR(60)",
+          "nullable": false,
+          "meaning": "Tên nhóm"
+        },
+        {
+          "name": "DonGiaGioMacDinh",
+          "type": "DECIMAL(10,0)",
+          "nullable": false,
+          "meaning": "Giá VND mỗi giờ, không âm"
+        },
+        {
+          "name": "MoTa",
+          "type": "VARCHAR(255)",
+          "nullable": true,
+          "meaning": "Thông số cấu hình"
+        }
+      ],
+      "pk": [
+        "MaNhomMay"
+      ],
+      "kind": "entity",
+      "uq": [
+        [
+          "TenNhomMay"
+        ]
+      ],
+      "fk": [],
+      "rules": []
+    },
+    "BANG_GIA": {
+      "name": "BANG_GIA",
+      "title": "Giá theo hai nhóm",
+      "fields": [
+        {
+          "name": "MaNhomND",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Nhóm tính giá"
+        },
+        {
+          "name": "MaNhomMay",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Nhóm máy"
+        },
+        {
+          "name": "DonGiaGio",
+          "type": "DECIMAL(10,0)",
+          "nullable": false,
+          "meaning": "Giá VND mỗi giờ, không âm"
+        }
+      ],
+      "pk": [
+        "MaNhomND",
+        "MaNhomMay"
+      ],
+      "kind": "association",
+      "uq": [],
+      "fk": [
+        {
+          "field": "MaNhomND",
+          "target": "NHOM_NGUOI_DUNG",
+          "target_field": "MaNhomND",
+          "delete": "CASCADE"
+        },
+        {
+          "field": "MaNhomMay",
+          "target": "NHOM_MAY",
+          "target_field": "MaNhomMay",
+          "delete": "CASCADE"
+        }
+      ],
+      "rules": []
+    },
+    "MAY_TRAM": {
+      "name": "MAY_TRAM",
+      "title": "Máy trạm",
+      "fields": [
+        {
+          "name": "MaMay",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Định danh máy vật lý"
+        },
+        {
+          "name": "TenMay",
+          "type": "VARCHAR(50)",
+          "nullable": false,
+          "meaning": "Tên hiển thị duy nhất"
+        },
+        {
+          "name": "TrangThaiMay",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "AVAILABLE, ONLINE, MAINTENANCE hoặc DISCONNECTED"
+        },
+        {
+          "name": "ViTriHang",
+          "type": "INT",
+          "nullable": true,
+          "meaning": "Tọa độ hàng dương nếu khai báo"
+        },
+        {
+          "name": "ViTriCot",
+          "type": "INT",
+          "nullable": true,
+          "meaning": "Tọa độ cột dương nếu khai báo"
+        },
+        {
+          "name": "MaNhomMay",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Nhóm cấu hình"
+        },
+        {
+          "name": "MaKhuVuc",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Khu vực bố trí"
+        }
+      ],
+      "pk": [
+        "MaMay"
+      ],
+      "kind": "entity",
+      "uq": [
+        [
+          "TenMay"
+        ]
+      ],
+      "fk": [
+        {
+          "field": "MaNhomMay",
+          "target": "NHOM_MAY",
+          "target_field": "MaNhomMay",
+          "delete": "RESTRICT"
+        },
+        {
+          "field": "MaKhuVuc",
+          "target": "KHU_VUC",
+          "target_field": "MaKhuVuc",
+          "delete": "RESTRICT"
+        }
+      ],
+      "rules": []
+    },
+    "PHIEN_SU_DUNG": {
+      "name": "PHIEN_SU_DUNG",
+      "title": "Phiên chơi",
+      "fields": [
+        {
+          "name": "MaPhien",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "Định danh phiên"
+        },
+        {
+          "name": "HinhThucDangNhap",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "TraTruoc, TraSau hoặc MienPhi"
+        },
+        {
+          "name": "ThoiDiemBatDau",
+          "type": "DATETIME",
+          "nullable": false,
+          "meaning": "Mốc ngày giờ mở máy"
+        },
+        {
+          "name": "ThoiDiemKetThuc",
+          "type": "DATETIME",
+          "nullable": true,
+          "meaning": "NULL khi đang hoạt động"
+        },
+        {
+          "name": "DonGiaGioApDung",
+          "type": "DECIMAL(10,0)",
+          "nullable": false,
+          "meaning": "Giá chụp khi mở, VND mỗi giờ"
+        },
+        {
+          "name": "TienNapTruoc",
+          "type": "DECIMAL(12,0)",
+          "nullable": false,
+          "meaning": "Tiền mặt vãng lai trả trước; 0 ở các loại khác"
+        },
+        {
+          "name": "TienGiuCho",
+          "type": "DECIMAL(12,0)",
+          "nullable": false,
+          "meaning": "Tiền giờ đã phát sinh giữ chỗ trong ví; 0 khi đã quyết toán hoặc không dùng ví"
+        },
+        {
+          "name": "TongTienTamTinh",
+          "type": "DECIMAL(12,0)",
+          "nullable": false,
+          "meaning": "Chi phí giờ tích lũy; chốt khi kết thúc"
+        },
+        {
+          "name": "TrangThaiPhien",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "DangHoatDong, DaKetThuc hoặc DaHuy"
+        },
+        {
+          "name": "MaMay",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Máy được sử dụng"
+        },
+        {
+          "name": "MaNguoiChoi",
+          "type": "VARCHAR(15)",
+          "nullable": true,
+          "meaning": "Hội viên; NULL nếu vãng lai"
+        }
+      ],
+      "pk": [
+        "MaPhien"
+      ],
+      "kind": "entity",
+      "uq": [],
+      "fk": [
+        {
+          "field": "MaMay",
+          "target": "MAY_TRAM",
+          "target_field": "MaMay",
+          "delete": "RESTRICT"
+        },
+        {
+          "field": "MaNguoiChoi",
+          "target": "NGUOI_CHOI",
+          "target_field": "MaTaiKhoan",
+          "delete": "RESTRICT"
+        }
+      ],
+      "rules": [
+        "Tối đa một phiên hoạt động cho mỗi máy và mỗi hội viên.",
+        "Giữ chỗ tiền giờ được cập nhật trước mọi thao tác chi ví; tổng giữ chỗ không vượt số dư.",
+        "Phiên vãng lai trả trước có giá dương phải có TienNapTruoc > 0."
+      ]
+    },
+    "BIEN_LAI_TIEN_MAY": {
+      "name": "BIEN_LAI_TIEN_MAY",
+      "title": "Quyết toán tiền máy",
+      "fields": [
+        {
+          "name": "MaBienLai",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "Định danh biên lai"
+        },
+        {
+          "name": "MaPhien",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "Mỗi phiên kết thúc có đúng một biên lai"
+        },
+        {
+          "name": "ThoiDiemLap",
+          "type": "DATETIME",
+          "nullable": false,
+          "meaning": "Mốc lập biên lai"
+        },
+        {
+          "name": "ThoiDiemThanhToan",
+          "type": "DATETIME",
+          "nullable": true,
+          "meaning": "NULL nếu chưa thu đủ"
+        },
+        {
+          "name": "TongTienGio",
+          "type": "DECIMAL(12,0)",
+          "nullable": false,
+          "meaning": "Tiền tiêu dùng giờ máy"
+        },
+        {
+          "name": "HinhThucThanhToan",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "TienMat, ChuyenKhoan, TruVi hoặc MienPhi"
+        },
+        {
+          "name": "TienNhan",
+          "type": "DECIMAL(12,0)",
+          "nullable": false,
+          "meaning": "Tiền nhận bằng tiền mặt/chuyển khoản; 0 khi trừ ví/miễn phí"
+        },
+        {
+          "name": "TienHoan",
+          "type": "DECIMAL(12,0)",
+          "nullable": false,
+          "meaning": "Tiền trả lại khách vãng lai; không âm"
+        },
+        {
+          "name": "TrangThaiBienLai",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "ChuaThanhToan hoặc DaThanhToan"
+        },
+        {
+          "name": "MaNhanVienThu",
+          "type": "VARCHAR(15)",
+          "nullable": true,
+          "meaning": "Nhân viên thu/hoàn tiền; NULL nếu tự động"
+        }
+      ],
+      "pk": [
+        "MaBienLai"
+      ],
+      "kind": "entity",
+      "uq": [
+        [
+          "MaPhien"
+        ]
+      ],
+      "fk": [
+        {
+          "field": "MaPhien",
+          "target": "PHIEN_SU_DUNG",
+          "target_field": "MaPhien",
+          "delete": "RESTRICT"
+        },
+        {
+          "field": "MaNhanVienThu",
+          "target": "NHAN_VIEN",
+          "target_field": "MaTaiKhoan",
+          "delete": "RESTRICT"
+        }
+      ],
+      "rules": [
+        "Biên lai đã thanh toán bất biến; không xóa.",
+        "Thanh toán tiền mặt/chuyển khoản: TienNhan - TienHoan = TongTienGio; miễn phí có các khoản bằng 0."
+      ]
+    },
+    "CA_TRUC": {
+      "name": "CA_TRUC",
+      "title": "Ca trực cụ thể",
+      "fields": [
+        {
+          "name": "MaCa",
+          "type": "VARCHAR(15)",
+          "nullable": false,
+          "meaning": "Định danh một lần trực, không phải mẫu ca lặp"
+        },
+        {
+          "name": "TenCa",
+          "type": "VARCHAR(50)",
+          "nullable": false,
+          "meaning": "Tên ca, được lặp ở ngày khác"
+        },
+        {
+          "name": "ThoiDiemBatDau",
+          "type": "DATETIME",
+          "nullable": false,
+          "meaning": "Ngày giờ bắt đầu"
+        },
+        {
+          "name": "ThoiDiemKetThuc",
+          "type": "DATETIME",
+          "nullable": false,
+          "meaning": "Ngày giờ kết thúc, lớn hơn bắt đầu"
+        }
+      ],
+      "pk": [
+        "MaCa"
+      ],
+      "kind": "entity",
+      "uq": [
+        [
+          "TenCa",
+          "ThoiDiemBatDau"
+        ]
+      ],
+      "fk": [],
+      "rules": [
+        "Khoảng ca là [bắt đầu, kết thúc); hai ca tiếp giáp được phép.",
+        "Ca đã có phân công lịch sử không sửa mốc thời gian hoặc xóa."
+      ]
+    },
+    "PHAN_CONG_TRUC": {
+      "name": "PHAN_CONG_TRUC",
+      "title": "Phân công theo ca và khu",
+      "fields": [
+        {
+          "name": "MaNhanVien",
+          "type": "VARCHAR(15)",
+          "nullable": false,
+          "meaning": "Nhân viên thực hiện"
+        },
+        {
+          "name": "MaCa",
+          "type": "VARCHAR(15)",
+          "nullable": false,
+          "meaning": "Ca cụ thể đã bao gồm ngày"
+        },
+        {
+          "name": "MaKhuVuc",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Khu vực phụ trách"
+        },
+        {
+          "name": "GhiChuNhiemVu",
+          "type": "VARCHAR(255)",
+          "nullable": true,
+          "meaning": "Nhiệm vụ cụ thể"
+        }
+      ],
+      "pk": [
+        "MaNhanVien",
+        "MaCa",
+        "MaKhuVuc"
+      ],
+      "kind": "association",
+      "uq": [],
+      "fk": [
+        {
+          "field": "MaNhanVien",
+          "target": "NHAN_VIEN",
+          "target_field": "MaTaiKhoan",
+          "delete": "RESTRICT"
+        },
+        {
+          "field": "MaCa",
+          "target": "CA_TRUC",
+          "target_field": "MaCa",
+          "delete": "RESTRICT"
+        },
+        {
+          "field": "MaKhuVuc",
+          "target": "KHU_VUC",
+          "target_field": "MaKhuVuc",
+          "delete": "RESTRICT"
+        }
+      ],
+      "rules": [
+        "Cùng nhân viên được trực nhiều khu trong cùng một ca; cấm hai ca khác nhau chồng giờ."
+      ]
+    },
+    "NHOM_DICH_VU": {
+      "name": "NHOM_DICH_VU",
+      "title": "Nhóm mặt hàng",
+      "fields": [
+        {
+          "name": "MaNhomDV",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Mã nhóm mặt hàng"
+        },
+        {
+          "name": "TenNhomDV",
+          "type": "VARCHAR(50)",
+          "nullable": false,
+          "meaning": "Tên nhóm"
+        }
+      ],
+      "pk": [
+        "MaNhomDV"
+      ],
+      "kind": "entity",
+      "uq": [
+        [
+          "TenNhomDV"
+        ]
+      ],
+      "fk": [],
+      "rules": []
+    },
+    "DON_VI_TINH": {
+      "name": "DON_VI_TINH",
+      "title": "Đơn vị tính",
+      "fields": [
+        {
+          "name": "MaDonVi",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Mã đơn vị"
+        },
+        {
+          "name": "TenDonVi",
+          "type": "VARCHAR(30)",
+          "nullable": false,
+          "meaning": "Tên đơn vị"
+        }
+      ],
+      "pk": [
+        "MaDonVi"
+      ],
+      "kind": "entity",
+      "uq": [
+        [
+          "TenDonVi"
+        ]
+      ],
+      "fk": [],
+      "rules": []
+    },
+    "MAY_IN": {
+      "name": "MAY_IN",
+      "title": "Máy in phiếu",
+      "fields": [
+        {
+          "name": "MaMayIn",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Mã máy in"
+        },
+        {
+          "name": "TenMayIn",
+          "type": "VARCHAR(50)",
+          "nullable": false,
+          "meaning": "Tên máy in"
+        },
+        {
+          "name": "ViTriDat",
+          "type": "VARCHAR(100)",
+          "nullable": true,
+          "meaning": "Vị trí thiết bị"
+        }
+      ],
+      "pk": [
+        "MaMayIn"
+      ],
+      "kind": "entity",
+      "uq": [
+        [
+          "TenMayIn"
+        ]
+      ],
+      "fk": [],
+      "rules": []
+    },
+    "DICH_VU": {
+      "name": "DICH_VU",
+      "title": "Mặt hàng thành phẩm",
+      "fields": [
+        {
+          "name": "MaDichVu",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Mã mặt hàng"
+        },
+        {
+          "name": "TenDichVu",
+          "type": "VARCHAR(100)",
+          "nullable": false,
+          "meaning": "Tên mặt hàng"
+        },
+        {
+          "name": "GiaBanHienHanh",
+          "type": "DECIMAL(10,0)",
+          "nullable": false,
+          "meaning": "Giá VND, không âm"
+        },
+        {
+          "name": "SoLuongTon",
+          "type": "INT",
+          "nullable": false,
+          "meaning": "Số đơn vị thành phẩm/quy đổi còn bán được; không âm"
+        },
+        {
+          "name": "TrangThaiKinhDoanh",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "DangBan hoặc NgungBan; hết hàng suy từ tồn 0"
+        },
+        {
+          "name": "MaNhomDV",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Nhóm mặt hàng"
+        },
+        {
+          "name": "MaDonVi",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Đơn vị tính"
+        },
+        {
+          "name": "MaMayIn",
+          "type": "VARCHAR(10)",
+          "nullable": true,
+          "meaning": "Máy in được gán nếu có"
+        }
+      ],
+      "pk": [
+        "MaDichVu"
+      ],
+      "kind": "entity",
+      "uq": [],
+      "fk": [
+        {
+          "field": "MaNhomDV",
+          "target": "NHOM_DICH_VU",
+          "target_field": "MaNhomDV",
+          "delete": "RESTRICT"
+        },
+        {
+          "field": "MaDonVi",
+          "target": "DON_VI_TINH",
+          "target_field": "MaDonVi",
+          "delete": "RESTRICT"
+        },
+        {
+          "field": "MaMayIn",
+          "target": "MAY_IN",
+          "target_field": "MaMayIn",
+          "delete": "SET NULL"
+        }
+      ],
+      "rules": []
+    },
+    "DON_GOI_DICH_VU": {
+      "name": "DON_GOI_DICH_VU",
+      "title": "Đơn dịch vụ",
+      "fields": [
+        {
+          "name": "MaDonHang",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "Định danh đơn"
+        },
+        {
+          "name": "ThoiDiemDat",
+          "type": "DATETIME",
+          "nullable": false,
+          "meaning": "Mốc tạo đơn"
+        },
+        {
+          "name": "KenhDat",
+          "type": "VARCHAR(15)",
+          "nullable": false,
+          "meaning": "TaiMay hoặc TaiQuay"
+        },
+        {
+          "name": "MaPhien",
+          "type": "VARCHAR(20)",
+          "nullable": true,
+          "meaning": "Bắt buộc tại máy; NULL tại quầy; máy và hội viên suy từ phiên"
+        },
+        {
+          "name": "MaNhanVienXuLy",
+          "type": "VARCHAR(15)",
+          "nullable": true,
+          "meaning": "NULL trước tiếp nhận"
+        },
+        {
+          "name": "TongTien",
+          "type": "DECIMAL(12,0)",
+          "nullable": false,
+          "meaning": "Tổng giá chụp của chi tiết"
+        },
+        {
+          "name": "TrangThaiPhucVu",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "MoiDat, DaTiepNhan, DangCheBien, DaGiao hoặc DaHuy"
+        },
+        {
+          "name": "TrangThaiTruocHuy",
+          "type": "VARCHAR(20)",
+          "nullable": true,
+          "meaning": "Trạng thái trước chuyển DaHuy; lưu để đối soát hoàn tồn hoặc tái phân loại"
+        },
+        {
+          "name": "ThoiDiemHuy",
+          "type": "DATETIME",
+          "nullable": true,
+          "meaning": "Mốc hủy; chỉ có khi DaHuy"
+        },
+        {
+          "name": "TrangThaiThanhToan",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "ChuaThanhToan, DaThanhToan hoặc DaHoanTien"
+        },
+        {
+          "name": "HinhThucThanhToan",
+          "type": "VARCHAR(20)",
+          "nullable": true,
+          "meaning": "TienMat, ChuyenKhoan hoặc TruVi"
+        },
+        {
+          "name": "ThoiDiemThanhToan",
+          "type": "DATETIME",
+          "nullable": true,
+          "meaning": "Bắt buộc khi đã thanh toán"
+        },
+        {
+          "name": "SoTienDaHoan",
+          "type": "DECIMAL(12,0)",
+          "nullable": false,
+          "meaning": "0 hoặc toàn bộ TongTien, theo phạm vi hoàn một lần"
+        },
+        {
+          "name": "ThoiDiemHoanTien",
+          "type": "DATETIME",
+          "nullable": true,
+          "meaning": "Bắt buộc khi đã hoàn tiền"
+        }
+      ],
+      "pk": [
+        "MaDonHang"
+      ],
+      "kind": "entity",
+      "uq": [],
+      "fk": [
+        {
+          "field": "MaPhien",
+          "target": "PHIEN_SU_DUNG",
+          "target_field": "MaPhien",
+          "delete": "RESTRICT"
+        },
+        {
+          "field": "MaNhanVienXuLy",
+          "target": "NHAN_VIEN",
+          "target_field": "MaTaiKhoan",
+          "delete": "RESTRICT"
+        }
+      ],
+      "rules": [
+        "TaiMay có MaPhien; TaiQuay có MaPhien NULL và không được trừ ví.",
+        "MoiDat hoặc DaHuy trước tiếp nhận có thể chưa gán nhân viên; các bước thực hiện còn lại phải có nhân viên.",
+        "Trừ tồn đúng một lần ở chuyển MoiDat sang DaTiepNhan.",
+        "Hủy sau chế biến không hoàn tồn và không xuất kho lần nữa; dùng phiếu TaiPhanLoai chênh lệch 0."
+      ]
+    },
+    "CHI_TIET_GOI_DICH_VU": {
+      "name": "CHI_TIET_GOI_DICH_VU",
+      "title": "Dòng món trong đơn",
+      "fields": [
+        {
+          "name": "MaDonHang",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "Đơn chứa món"
+        },
+        {
+          "name": "MaDichVu",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Mặt hàng"
+        },
+        {
+          "name": "SoLuong",
+          "type": "INT",
+          "nullable": false,
+          "meaning": "Số lượng dương"
+        },
+        {
+          "name": "DonGiaBan",
+          "type": "DECIMAL(10,0)",
+          "nullable": false,
+          "meaning": "Giá VND chụp lúc đặt, không âm"
+        },
+        {
+          "name": "ThanhTien",
+          "type": "DECIMAL(12,0)",
+          "nullable": false,
+          "meaning": "Dẫn xuất SoLuong nhân DonGiaBan"
+        }
+      ],
+      "pk": [
+        "MaDonHang",
+        "MaDichVu"
+      ],
+      "kind": "association",
+      "uq": [],
+      "fk": [
+        {
+          "field": "MaDonHang",
+          "target": "DON_GOI_DICH_VU",
+          "target_field": "MaDonHang",
+          "delete": "CASCADE"
+        },
+        {
+          "field": "MaDichVu",
+          "target": "DICH_VU",
+          "target_field": "MaDichVu",
+          "delete": "RESTRICT"
+        }
+      ],
+      "rules": [
+        "Cấm sửa/xóa dòng sau tiếp nhận; chỉ cho sửa đơn nháp."
+      ]
+    },
+    "PHIEU_KHO": {
+      "name": "PHIEU_KHO",
+      "title": "Chứng từ kho",
+      "fields": [
+        {
+          "name": "MaPhieuKho",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "Định danh phiếu"
+        },
+        {
+          "name": "LoaiPhieu",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "NhapKho, XuatHuy, KiemKe hoặc TaiPhanLoai"
+        },
+        {
+          "name": "TrangThaiPhieu",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "Nhap, DaGhiSo hoặc DaHuy"
+        },
+        {
+          "name": "ThoiDiemLap",
+          "type": "DATETIME",
+          "nullable": false,
+          "meaning": "Mốc tạo"
+        },
+        {
+          "name": "ThoiDiemGhiSo",
+          "type": "DATETIME",
+          "nullable": true,
+          "meaning": "Mốc duyệt, bắt buộc khi đã ghi sổ"
+        },
+        {
+          "name": "GhiChuLyDo",
+          "type": "VARCHAR(255)",
+          "nullable": true,
+          "meaning": "Lý do và diễn giải"
+        },
+        {
+          "name": "MaNhanVienLap",
+          "type": "VARCHAR(15)",
+          "nullable": false,
+          "meaning": "Người lập"
+        },
+        {
+          "name": "MaDonHang",
+          "type": "VARCHAR(20)",
+          "nullable": true,
+          "meaning": "Đơn đã xuất hàng, bắt buộc khi tái phân loại"
+        }
+      ],
+      "pk": [
+        "MaPhieuKho"
+      ],
+      "kind": "entity",
+      "uq": [
+        [
+          "MaDonHang"
+        ]
+      ],
+      "fk": [
+        {
+          "field": "MaNhanVienLap",
+          "target": "NHAN_VIEN",
+          "target_field": "MaTaiKhoan",
+          "delete": "RESTRICT"
+        },
+        {
+          "field": "MaDonHang",
+          "target": "DON_GOI_DICH_VU",
+          "target_field": "MaDonHang",
+          "delete": "RESTRICT"
+        }
+      ],
+      "rules": [
+        "Phiếu đã ghi sổ bất biến; chỉ chuyển Nhap sang DaGhiSo một lần.",
+        "TaiPhanLoai ghi nhận hàng đã xuất ở đơn hủy: chênh lệch 0, không giảm tồn lần hai."
+      ]
+    },
+    "CHI_TIET_PHIEU_KHO": {
+      "name": "CHI_TIET_PHIEU_KHO",
+      "title": "Dòng chứng từ kho",
+      "fields": [
+        {
+          "name": "MaPhieuKho",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "Phiếu chủ sở hữu"
+        },
+        {
+          "name": "STTDong",
+          "type": "INT",
+          "nullable": false,
+          "meaning": "Khóa bộ phận dương trong một phiếu"
+        },
+        {
+          "name": "MaDichVu",
+          "type": "VARCHAR(10)",
+          "nullable": false,
+          "meaning": "Mặt hàng"
+        },
+        {
+          "name": "SoLuong",
+          "type": "INT",
+          "nullable": false,
+          "meaning": "Lượng nhập/xuất/tái phân loại; 0 nếu là kiểm kê"
+        },
+        {
+          "name": "SoLuongSoSach",
+          "type": "INT",
+          "nullable": true,
+          "meaning": "Ảnh chụp tồn khi kiểm kê"
+        },
+        {
+          "name": "SoLuongThucTe",
+          "type": "INT",
+          "nullable": true,
+          "meaning": "Kết quả đếm cùng mốc kiểm kê"
+        },
+        {
+          "name": "SoLuongChenhLech",
+          "type": "INT",
+          "nullable": false,
+          "meaning": "Biến động có dấu; 0 khi tái phân loại"
+        },
+        {
+          "name": "DonGiaVon",
+          "type": "DECIMAL(10,0)",
+          "nullable": false,
+          "meaning": "Đơn giá vốn VND không âm"
+        }
+      ],
+      "pk": [
+        "MaPhieuKho",
+        "STTDong"
+      ],
+      "kind": "weak",
+      "uq": [
+        [
+          "MaPhieuKho",
+          "MaDichVu"
+        ]
+      ],
+      "fk": [
+        {
+          "field": "MaPhieuKho",
+          "target": "PHIEU_KHO",
+          "target_field": "MaPhieuKho",
+          "delete": "CASCADE"
+        },
+        {
+          "field": "MaDichVu",
+          "target": "DICH_VU",
+          "target_field": "MaDichVu",
+          "delete": "RESTRICT"
+        }
+      ],
+      "rules": [
+        "Nhập: delta = +SoLuong; xuất hủy hàng còn trong kho: delta = -SoLuong.",
+        "Kiểm kê: delta = SoLuongThucTe - SoLuongSoSach; chỉ duyệt khi tồn hiện tại vẫn khớp ảnh chụp, nếu lệch phải kiểm kê lại.",
+        "Tái phân loại: delta = 0; lượng tham chiếu không vượt lượng đã xuất ở đơn; không duyệt lặp."
+      ]
+    },
+    "GIAO_DICH_VI": {
+      "name": "GIAO_DICH_VI",
+      "title": "Nhật ký biến động ví",
+      "fields": [
+        {
+          "name": "MaGiaoDich",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "Định danh bản ghi"
+        },
+        {
+          "name": "MaYeuCau",
+          "type": "VARCHAR(100)",
+          "nullable": false,
+          "meaning": "Khóa chống lặp ổn định do nghiệp vụ cấp"
+        },
+        {
+          "name": "LoaiGiaoDich",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "NapTien, TruTienMay, TruTienDichVu hoặc HoanTien"
+        },
+        {
+          "name": "SoTien",
+          "type": "DECIMAL(12,0)",
+          "nullable": false,
+          "meaning": "Số tiền VND dương"
+        },
+        {
+          "name": "ThoiDiemGD",
+          "type": "DATETIME",
+          "nullable": false,
+          "meaning": "Mốc yêu cầu"
+        },
+        {
+          "name": "TrangThaiGD",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "ChoXuLy, ThanhCong hoặc ThatBai"
+        },
+        {
+          "name": "PhuongThucGD",
+          "type": "VARCHAR(20)",
+          "nullable": false,
+          "meaning": "TienMat, ChuyenKhoan hoặc NoiBo"
+        },
+        {
+          "name": "MaNguoiChoi",
+          "type": "VARCHAR(15)",
+          "nullable": false,
+          "meaning": "Ví được tác động"
+        },
+        {
+          "name": "MaNhanVienXuLy",
+          "type": "VARCHAR(15)",
+          "nullable": true,
+          "meaning": "Người thu/xác nhận, NULL nếu tự động"
+        },
+        {
+          "name": "MaDonHang",
+          "type": "VARCHAR(20)",
+          "nullable": true,
+          "meaning": "Đơn khi trừ dịch vụ hoặc hoàn"
+        },
+        {
+          "name": "MaPhien",
+          "type": "VARCHAR(20)",
+          "nullable": true,
+          "meaning": "Phiên khi thu tiền máy"
+        },
+        {
+          "name": "MaGDGoc",
+          "type": "VARCHAR(20)",
+          "nullable": true,
+          "meaning": "Giao dịch trừ dịch vụ gốc khi hoàn"
+        }
+      ],
+      "pk": [
+        "MaGiaoDich"
+      ],
+      "kind": "entity",
+      "uq": [
+        [
+          "MaYeuCau"
+        ]
+      ],
+      "fk": [
+        {
+          "field": "MaNguoiChoi",
+          "target": "NGUOI_CHOI",
+          "target_field": "MaTaiKhoan",
+          "delete": "RESTRICT"
+        },
+        {
+          "field": "MaNhanVienXuLy",
+          "target": "NHAN_VIEN",
+          "target_field": "MaTaiKhoan",
+          "delete": "RESTRICT"
+        },
+        {
+          "field": "MaDonHang",
+          "target": "DON_GOI_DICH_VU",
+          "target_field": "MaDonHang",
+          "delete": "RESTRICT"
+        },
+        {
+          "field": "MaPhien",
+          "target": "PHIEN_SU_DUNG",
+          "target_field": "MaPhien",
+          "delete": "RESTRICT"
+        },
+        {
+          "field": "MaGDGoc",
+          "target": "GIAO_DICH_VI",
+          "target_field": "MaGiaoDich",
+          "delete": "RESTRICT"
+        }
+      ],
+      "rules": [
+        "Chỉ tác động ví một lần khi ChoXuLy chuyển ThanhCong; trạng thái kết thúc bất biến.",
+        "Thu tiền giờ một lần mỗi phiên; thu dịch vụ một lần mỗi đơn; hoàn toàn bộ một lần mỗi giao dịch trừ dịch vụ.",
+        "Ví phải cùng người chơi của phiên/đơn và giao dịch gốc; hoàn đúng số tiền gốc, không hoàn từ giao dịch hoàn."
+      ]
+    }
+  },
+  "relations": [
+    [
+      "Thuộc nhóm",
+      "TAI_KHOAN",
+      "NHOM_NGUOI_DUNG",
+      "1,1",
+      "0,N",
+      "MaNhomND"
+    ],
+    [
+      "Quản lý",
+      "NHAN_VIEN",
+      "NHAN_VIEN",
+      "0,1",
+      "0,N",
+      "MaNguoiQuanLy"
+    ],
+    [
+      "Thuộc nhóm máy",
+      "MAY_TRAM",
+      "NHOM_MAY",
+      "1,1",
+      "0,N",
+      "MaNhomMay"
+    ],
+    [
+      "Bố trí",
+      "MAY_TRAM",
+      "KHU_VUC",
+      "1,1",
+      "0,N",
+      "MaKhuVuc"
+    ],
+    [
+      "Diễn ra trên",
+      "PHIEN_SU_DUNG",
+      "MAY_TRAM",
+      "1,1",
+      "0,N",
+      "MaMay"
+    ],
+    [
+      "Chơi",
+      "PHIEN_SU_DUNG",
+      "NGUOI_CHOI",
+      "0,1",
+      "0,N",
+      "MaNguoiChoi"
+    ],
+    [
+      "Quyết toán",
+      "BIEN_LAI_TIEN_MAY",
+      "PHIEN_SU_DUNG",
+      "1,1",
+      "0,1",
+      "MaPhien"
+    ],
+    [
+      "Thu tiền",
+      "BIEN_LAI_TIEN_MAY",
+      "NHAN_VIEN",
+      "0,1",
+      "0,N",
+      "MaNhanVienThu"
+    ],
+    [
+      "Phân nhóm",
+      "DICH_VU",
+      "NHOM_DICH_VU",
+      "1,1",
+      "0,N",
+      "MaNhomDV"
+    ],
+    [
+      "Đơn vị",
+      "DICH_VU",
+      "DON_VI_TINH",
+      "1,1",
+      "0,N",
+      "MaDonVi"
+    ],
+    [
+      "In tại",
+      "DICH_VU",
+      "MAY_IN",
+      "0,1",
+      "0,N",
+      "MaMayIn"
+    ],
+    [
+      "Đặt trong",
+      "DON_GOI_DICH_VU",
+      "PHIEN_SU_DUNG",
+      "0,1",
+      "0,N",
+      "MaPhien"
+    ],
+    [
+      "Tiếp nhận",
+      "DON_GOI_DICH_VU",
+      "NHAN_VIEN",
+      "0,1",
+      "0,N",
+      "MaNhanVienXuLy"
+    ],
+    [
+      "Lập phiếu",
+      "PHIEU_KHO",
+      "NHAN_VIEN",
+      "1,1",
+      "0,N",
+      "MaNhanVienLap"
+    ],
+    [
+      "Tái phân loại",
+      "PHIEU_KHO",
+      "DON_GOI_DICH_VU",
+      "0,1",
+      "0,1",
+      "MaDonHang"
+    ],
+    [
+      "Gồm dòng",
+      "CHI_TIET_PHIEU_KHO",
+      "PHIEU_KHO",
+      "1,1",
+      "0,N",
+      "MaPhieuKho"
+    ],
+    [
+      "Ghi hàng",
+      "CHI_TIET_PHIEU_KHO",
+      "DICH_VU",
+      "1,1",
+      "0,N",
+      "MaDichVu"
+    ],
+    [
+      "Thuộc ví",
+      "GIAO_DICH_VI",
+      "NGUOI_CHOI",
+      "1,1",
+      "0,N",
+      "MaNguoiChoi"
+    ],
+    [
+      "Xác nhận",
+      "GIAO_DICH_VI",
+      "NHAN_VIEN",
+      "0,1",
+      "0,N",
+      "MaNhanVienXuLy"
+    ],
+    [
+      "Trả đơn",
+      "GIAO_DICH_VI",
+      "DON_GOI_DICH_VU",
+      "0,1",
+      "0,N",
+      "MaDonHang"
+    ],
+    [
+      "Trả giờ",
+      "GIAO_DICH_VI",
+      "PHIEN_SU_DUNG",
+      "0,1",
+      "0,N",
+      "MaPhien"
+    ],
+    [
+      "Hoàn từ",
+      "GIAO_DICH_VI",
+      "GIAO_DICH_VI",
+      "0,1",
+      "0,N",
+      "MaGDGoc"
+    ]
+  ],
+  "associations": [
+    {
+      "table": "BANG_GIA",
+      "label": "Bảng giá",
+      "ends": [
+        [
+          "NHOM_NGUOI_DUNG",
+          "0,N"
+        ],
+        [
+          "NHOM_MAY",
+          "0,N"
+        ]
+      ],
+      "attrs": [
+        "DonGiaGio"
+      ]
+    },
+    {
+      "table": "CHI_TIET_GOI_DICH_VU",
+      "label": "Gồm món",
+      "ends": [
+        [
+          "DON_GOI_DICH_VU",
+          "0,N"
+        ],
+        [
+          "DICH_VU",
+          "0,N"
+        ]
+      ],
+      "attrs": [
+        "SoLuong",
+        "DonGiaBan",
+        "ThanhTien"
+      ]
+    },
+    {
+      "table": "PHAN_CONG_TRUC",
+      "label": "Phân công",
+      "ends": [
+        [
+          "NHAN_VIEN",
+          "0,N"
+        ],
+        [
+          "CA_TRUC",
+          "0,N"
+        ],
+        [
+          "KHU_VUC",
+          "0,N"
+        ]
+      ],
+      "attrs": [
+        "GhiChuNhiemVu"
+      ]
+    }
+  ],
+  "groups": {
+    "user": {
+      "title": "Tài khoản và nhân viên",
+      "entities": [
+        "TAI_KHOAN",
+        "NHOM_NGUOI_DUNG",
+        "NGUOI_CHOI",
+        "NHAN_VIEN"
+      ],
+      "relations": [
+        "Thuộc nhóm",
+        "Quản lý"
+      ],
+      "assoc": []
+    },
+    "workstation": {
+      "title": "Máy trạm, phiên và biên lai",
+      "entities": [
+        "MAY_TRAM",
+        "NHOM_MAY",
+        "KHU_VUC",
+        "PHIEN_SU_DUNG",
+        "NGUOI_CHOI",
+        "BIEN_LAI_TIEN_MAY",
+        "NHAN_VIEN",
+        "NHOM_NGUOI_DUNG"
+      ],
+      "relations": [
+        "Thuộc nhóm máy",
+        "Bố trí",
+        "Diễn ra trên",
+        "Chơi",
+        "Quyết toán",
+        "Thu tiền"
+      ],
+      "assoc": [
+        "BANG_GIA"
+      ]
+    },
+    "service_inventory": {
+      "title": "Đơn dịch vụ và danh mục",
+      "entities": [
+        "DON_GOI_DICH_VU",
+        "DICH_VU",
+        "NHOM_DICH_VU",
+        "DON_VI_TINH",
+        "MAY_IN",
+        "NHAN_VIEN",
+        "PHIEN_SU_DUNG"
+      ],
+      "relations": [
+        "Phân nhóm",
+        "Đơn vị",
+        "In tại",
+        "Đặt trong",
+        "Tiếp nhận"
+      ],
+      "assoc": [
+        "CHI_TIET_GOI_DICH_VU"
+      ]
+    },
+    "inventory": {
+      "title": "Chứng từ và chi tiết kho",
+      "entities": [
+        "PHIEU_KHO",
+        "CHI_TIET_PHIEU_KHO",
+        "DICH_VU",
+        "NHAN_VIEN",
+        "DON_GOI_DICH_VU"
+      ],
+      "relations": [
+        "Lập phiếu",
+        "Tái phân loại",
+        "Gồm dòng",
+        "Ghi hàng"
+      ],
+      "assoc": []
+    },
+    "wallet": {
+      "title": "Giao dịch ví và nghiệp vụ gốc",
+      "entities": [
+        "GIAO_DICH_VI",
+        "NGUOI_CHOI",
+        "NHAN_VIEN",
+        "DON_GOI_DICH_VU",
+        "PHIEN_SU_DUNG"
+      ],
+      "relations": [
+        "Thuộc ví",
+        "Xác nhận",
+        "Trả đơn",
+        "Trả giờ",
+        "Hoàn từ"
+      ],
+      "assoc": []
+    },
+    "shift": {
+      "title": "Ca cụ thể và phân công bậc ba",
+      "entities": [
+        "NHAN_VIEN",
+        "CA_TRUC",
+        "KHU_VUC"
+      ],
+      "relations": [],
+      "assoc": [
+        "PHAN_CONG_TRUC"
+      ]
+    }
+  }
+}

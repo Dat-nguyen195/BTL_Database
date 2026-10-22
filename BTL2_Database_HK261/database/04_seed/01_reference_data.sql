@@ -1,0 +1,5 @@
+-- BTL2 Quản lý quán Net – L09, Nhóm 10
+-- Chủ phần: BD
+-- TRẠNG THÁI: CHƯA HIỆN THỰC; đây là khung phân công.
+-- TODO: Nạp danh mục và dữ liệu nền theo FK.
+-- Bổ sung DBMS/phiên bản, phụ thuộc, cách chạy và bằng chứng khi hoàn thành.

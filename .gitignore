@@ -1,0 +1,33 @@
+# Cấu hình riêng và thông tin xác thực
+.env
+.env.*
+!.env.example
+.aws/
+.codex/
+.agents/
+*.pem
+*.key
+# Môi trường, thư viện và tệp sinh tạm
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+node_modules/
+dist/
+build/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+# Bản đóng gói và tệp phụ TeX không cần cho quá trình triển khai
+*.zip
+*.aux
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Tài liệu PDF gốc chỉ tham khảo qua nguồn, không đưa vào bản công khai
+/BTL2_Database_HK261/docs/btl1_baseline/BTL1_report.pdf
+/BTL2_Database_HK261/docs/requirements/de_bai_goc.pdf
