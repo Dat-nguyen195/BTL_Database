@@ -1,6 +1,6 @@
 # Ma trận thực thi ràng buộc – HT/MD
 
-Chưa có quy tắc nào được xác nhận đã thực thi trên DBMS BTL2. Lấy đủ D-ID và BR-ID từ [business_rules.md](../btl1_baseline/business_rules.md), điền bảng trước khi bật luồng ghi liên quan.
+Chưa có quy tắc nào được xác nhận đã thực thi trên DBMS BTL2. Lấy đủ D-ID và BR-ID từ báo cáo BTL1, điền bảng trước khi bật luồng ghi liên quan.
 
 | Mã BTL1 | Nội dung | PK/FK/UQ/CHECK | Thủ tục/trigger | API | Ca kiểm tra | Bằng chứng | Trạng thái |
 |---|---|---|---|---|---|---|---|

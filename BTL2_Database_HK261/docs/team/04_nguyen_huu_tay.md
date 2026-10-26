@@ -1,4 +1,4 @@
-# Checklist – Nguyễn Hữu Tây
+# Checklist – Nguyễn Hữu Tây (2413095)
 
 - [ ] **HT-01 – Ánh xạ quy tắc BTL1 vào hợp đồng SQL đã chốt**
   - Làm tại: `docs/design/routines_catalog.md`, `docs/design/rules_matrix.md`, `docs/design/error_codes.md`, `docs/design/transactions.md`.

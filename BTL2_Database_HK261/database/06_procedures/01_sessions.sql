@@ -1,5 +1,97 @@
--- BTL2 Quản lý quán Net – L09, Nhóm 10
--- Chủ phần: HT
--- TRẠNG THÁI: CHƯA HIỆN THỰC; đây là khung phân công.
--- TODO: sp_mo_phien và sp_ket_thuc_phien theo UC-02/03.
--- Bổ sung DBMS/phiên bản, phụ thuộc, cách chạy và bằng chứng khi hoàn thành.
+-- Six main procedure contracts; helper locks below produce no result sets.
+DELIMITER $$
+CREATE PROCEDURE sp_khoa_dong(IN pBang VARCHAR(30) CHARACTER SET ascii COLLATE ascii_bin,IN pMa VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin)
+SQL SECURITY DEFINER
+BEGIN
+  CASE pBang
+    WHEN 'NGUOI_CHOI' THEN SELECT * FROM NGUOI_CHOI WHERE MaTaiKhoan=pMa FOR UPDATE;
+    WHEN 'MAY_TRAM' THEN SELECT * FROM MAY_TRAM WHERE MaMay=pMa FOR UPDATE;
+    WHEN 'PHIEN_SU_DUNG' THEN SELECT * FROM PHIEN_SU_DUNG WHERE MaPhien=pMa FOR UPDATE;
+    WHEN 'DON_GOI_DICH_VU' THEN SELECT * FROM DON_GOI_DICH_VU WHERE MaDonHang=pMa FOR UPDATE;
+    WHEN 'PHIEU_KHO' THEN SELECT * FROM PHIEU_KHO WHERE MaPhieuKho=pMa FOR UPDATE;
+    WHEN 'DICH_VU' THEN SELECT * FROM DICH_VU WHERE MaDichVu=pMa FOR UPDATE;
+    ELSE SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60001,MESSAGE_TEXT='INVALID_INPUT';
+  END CASE;
+END$$
+CREATE PROCEDURE sp_khoa_phien(IN pId VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin)
+SQL SECURITY DEFINER
+BEGIN
+  DECLARE ownerId VARCHAR(15) CHARACTER SET ascii COLLATE ascii_bin; DECLARE machineId VARCHAR(10) CHARACTER SET ascii COLLATE ascii_bin; DECLARE dummy VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin;
+  IF NOT EXISTS(SELECT 1 FROM PHIEN_SU_DUNG WHERE MaPhien=pId) THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60002,MESSAGE_TEXT='NOT_FOUND'; END IF;
+  SELECT MaNguoiChoi,MaMay INTO ownerId,machineId FROM PHIEN_SU_DUNG WHERE MaPhien=pId;
+  IF ownerId IS NOT NULL THEN SELECT MaTaiKhoan INTO dummy FROM NGUOI_CHOI WHERE MaTaiKhoan=ownerId FOR UPDATE; END IF;
+  SELECT MaMay INTO dummy FROM MAY_TRAM WHERE MaMay=machineId FOR UPDATE;
+  SELECT MaPhien INTO dummy FROM PHIEN_SU_DUNG WHERE MaPhien=pId FOR UPDATE;
+END$$
+CREATE PROCEDURE sp_mo_phien(IN pMaPhien VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin,IN pMaMay VARCHAR(10) CHARACTER SET ascii COLLATE ascii_bin,IN pMaNguoiChoi VARCHAR(15) CHARACTER SET ascii COLLATE ascii_bin,IN pHinhThucDangNhap VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin,IN pTienNapTruoc DECIMAL(12,0),IN pMaTacNhan VARCHAR(15) CHARACTER SET ascii COLLATE ascii_bin,IN pThoiDiem DATETIME)
+SQL SECURITY DEFINER
+proc: BEGIN
+  DECLARE balance DECIMAL(12,0) DEFAULT 0; DECLARE price DECIMAL(10,0); DECLARE groupId VARCHAR(10) CHARACTER SET ascii COLLATE ascii_bin; DECLARE machineGroup VARCHAR(10) CHARACTER SET ascii COLLATE ascii_bin; DECLARE state VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin; DECLARE existingId VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin;
+  IF NOT EXISTS(SELECT 1 FROM TAI_KHOAN WHERE MaTaiKhoan=pMaTacNhan AND TrangThai='HoatDong') THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60013,MESSAGE_TEXT='ACCOUNT_INACTIVE'; END IF;
+  IF NOT fn_co_quyen(pMaTacNhan,'ThuNgan,QuanLy') AND NOT (pMaTacNhan=pMaNguoiChoi AND pHinhThucDangNhap='TraTruoc' AND EXISTS(SELECT 1 FROM NGUOI_CHOI WHERE MaTaiKhoan=pMaTacNhan)) THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60003,MESSAGE_TEXT='FORBIDDEN'; END IF;
+  IF pHinhThucDangNhap='MienPhi' AND NOT fn_co_quyen(pMaTacNhan,'QuanLy') THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60003,MESSAGE_TEXT='FORBIDDEN'; END IF;
+  IF pHinhThucDangNhap NOT IN ('TraTruoc','TraSau','MienPhi') OR pTienNapTruoc<0 OR ((pMaNguoiChoi IS NOT NULL OR pHinhThucDangNhap<>'TraTruoc') AND pTienNapTruoc<>0) THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60001,MESSAGE_TEXT='INVALID_INPUT'; END IF;
+  IF pMaNguoiChoi IS NOT NULL THEN
+    IF NOT EXISTS(SELECT 1 FROM NGUOI_CHOI WHERE MaTaiKhoan=pMaNguoiChoi) THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60002,MESSAGE_TEXT='NOT_FOUND'; END IF;
+    SELECT SoDuVi INTO balance FROM NGUOI_CHOI WHERE MaTaiKhoan=pMaNguoiChoi FOR UPDATE;
+    SELECT MaNhomND INTO groupId FROM TAI_KHOAN WHERE MaTaiKhoan=pMaNguoiChoi AND TrangThai='HoatDong';
+    IF groupId IS NULL THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60013,MESSAGE_TEXT='ACCOUNT_INACTIVE'; END IF;
+  ELSE SET groupId='VangLai'; END IF;
+  IF NOT EXISTS(SELECT 1 FROM MAY_TRAM WHERE MaMay=pMaMay) THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60002,MESSAGE_TEXT='NOT_FOUND'; END IF;
+  SELECT TrangThaiMay,MaNhomMay INTO state,machineGroup FROM MAY_TRAM WHERE MaMay=pMaMay FOR UPDATE;
+  IF EXISTS(SELECT 1 FROM PHIEN_SU_DUNG WHERE MaPhien=pMaPhien) THEN
+    IF NOT EXISTS(SELECT 1 FROM PHIEN_SU_DUNG WHERE MaPhien=pMaPhien AND MaMay=pMaMay AND MaNguoiChoi<=>pMaNguoiChoi AND HinhThucDangNhap=pHinhThucDangNhap AND TienNapTruoc=pTienNapTruoc) THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60009,MESSAGE_TEXT='IDEMPOTENCY_CONFLICT'; END IF;
+    SELECT pMaPhien AS MaDoiTuong,1 AS DaThucHienTruoc; LEAVE proc;
+  END IF;
+  IF EXISTS(SELECT 1 FROM PHIEN_SU_DUNG WHERE TrangThaiPhien='DangHoatDong' AND (MaMay=pMaMay OR MaNguoiChoi=pMaNguoiChoi)) THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60005,MESSAGE_TEXT='ACTIVE_SESSION_EXISTS'; END IF;
+  IF state<>'AVAILABLE' THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60004,MESSAGE_TEXT='MACHINE_UNAVAILABLE'; END IF;
+  SELECT COALESCE((SELECT DonGiaGio FROM BANG_GIA WHERE MaNhomND=groupId AND MaNhomMay=machineGroup),DonGiaGioMacDinh) INTO price FROM NHOM_MAY WHERE MaNhomMay=machineGroup;
+  IF pHinhThucDangNhap='MienPhi' THEN SET price=0; END IF;
+  IF pHinhThucDangNhap='TraTruoc' AND price>0 AND IF(pMaNguoiChoi IS NULL,pTienNapTruoc,balance)<=0 THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60006,MESSAGE_TEXT='INSUFFICIENT_FUNDS'; END IF;
+  INSERT INTO PHIEN_SU_DUNG(MaPhien,HinhThucDangNhap,ThoiDiemBatDau,DonGiaGioApDung,TienNapTruoc,TienGiuCho,TongTienTamTinh,TrangThaiPhien,MaMay,MaNguoiChoi) VALUES(pMaPhien,pHinhThucDangNhap,pThoiDiem,price,pTienNapTruoc,0,0,'DangHoatDong',pMaMay,pMaNguoiChoi);
+  UPDATE MAY_TRAM SET TrangThaiMay='ONLINE' WHERE MaMay=pMaMay;
+  SELECT pMaPhien AS MaDoiTuong,0 AS DaThucHienTruoc;
+END$$
+CREATE PROCEDURE sp_ket_thuc_phien(IN pMaPhien VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin,IN pMaBienLai VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin,IN pMaGiaoDich VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin,IN pHinhThucThanhToan VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin,IN pTienNhan DECIMAL(12,0),IN pMaTacNhan VARCHAR(15) CHARACTER SET ascii COLLATE ascii_bin,IN pThoiDiem DATETIME)
+SQL SECURITY DEFINER
+proc: BEGIN
+  DECLARE ownerId VARCHAR(15) CHARACTER SET ascii COLLATE ascii_bin; DECLARE machineId VARCHAR(10) CHARACTER SET ascii COLLATE ascii_bin; DECLARE state VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin; DECLARE kind VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin; DECLARE started DATETIME; DECLARE expiry DATETIME; DECLARE price DECIMAL(10,0); DECLARE budget DECIMAL(12,0); DECLARE fee DECIMAL(12,0); DECLARE balance DECIMAL(12,0) DEFAULT 0; DECLARE received DECIMAL(12,0); DECLARE returned DECIMAL(12,0) DEFAULT 0; DECLARE collector VARCHAR(15) CHARACTER SET ascii COLLATE ascii_bin; DECLARE method VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin; DECLARE paid VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin DEFAULT 'DaThanhToan';
+  CALL sp_khoa_phien(pMaPhien);
+  SELECT MaNguoiChoi,MaMay,TrangThaiPhien,HinhThucDangNhap,ThoiDiemBatDau,DonGiaGioApDung,TienNapTruoc INTO ownerId,machineId,state,kind,started,price,budget FROM PHIEN_SU_DUNG WHERE MaPhien=pMaPhien;
+  IF ownerId IS NOT NULL THEN SELECT SoDuVi INTO balance FROM NGUOI_CHOI WHERE MaTaiKhoan=ownerId; END IF;
+  IF pMaTacNhan IS NOT NULL AND NOT fn_co_quyen(pMaTacNhan,'ThuNgan,QuanLy') AND NOT (pMaTacNhan=ownerId AND pHinhThucThanhToan='TruVi' AND EXISTS(SELECT 1 FROM TAI_KHOAN WHERE MaTaiKhoan=pMaTacNhan AND TrangThai='HoatDong')) THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60003,MESSAGE_TEXT='FORBIDDEN'; END IF;
+  SET method=IF(pHinhThucThanhToan='ChuaThu','TienMat',pHinhThucThanhToan);
+  SET received=pTienNhan;
+  IF state='DaKetThuc' THEN
+    IF NOT EXISTS(SELECT 1 FROM BIEN_LAI_TIEN_MAY WHERE MaPhien=pMaPhien AND HinhThucThanhToan=method AND TienNhan=pTienNhan AND (TrangThaiBienLai='ChuaThanhToan')=(pHinhThucThanhToan='ChuaThu')) THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60009,MESSAGE_TEXT='IDEMPOTENCY_CONFLICT'; END IF;
+    SELECT pMaPhien AS MaDoiTuong,1 AS DaThucHienTruoc; LEAVE proc;
+  END IF;
+  IF state<>'DangHoatDong' OR pThoiDiem<started THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60008,MESSAGE_TEXT='INVALID_STATE'; END IF;
+  SET expiry=IF(kind='TraTruoc',fn_han_phien(started,IF(ownerId IS NULL,budget,balance),price),NULL);
+  IF pMaTacNhan IS NULL AND (expiry IS NULL OR pThoiDiem<>expiry OR NOW()<expiry) THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60003,MESSAGE_TEXT='FORBIDDEN'; END IF;
+  IF expiry IS NOT NULL AND pThoiDiem>expiry THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60014,MESSAGE_TEXT='PREPAID_EXPIRED'; END IF;
+  SET fee=fn_tien_gio(started,pThoiDiem,price);
+  IF kind='MienPhi' THEN
+    IF method<>'MienPhi' OR received<>0 THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60008,MESSAGE_TEXT='INVALID_STATE'; END IF;
+  ELSEIF ownerId IS NULL AND kind='TraTruoc' THEN
+    IF method<>'TienMat' OR received<>budget OR fee>budget THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60008,MESSAGE_TEXT='INVALID_STATE'; END IF;
+    SET returned=budget-fee;
+  ELSEIF pHinhThucThanhToan='ChuaThu' THEN
+    IF kind<>'TraSau' OR received<>0 THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60008,MESSAGE_TEXT='INVALID_STATE'; END IF;
+    SET paid='ChuaThanhToan';
+  ELSEIF method='TruVi' THEN
+    IF ownerId IS NULL OR received<>0 THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60012,MESSAGE_TEXT='INVALID_WALLET_OWNER'; END IF;
+    IF balance<fee THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60006,MESSAGE_TEXT='INSUFFICIENT_FUNDS'; END IF;
+    UPDATE NGUOI_CHOI SET SoDuVi=SoDuVi-fee WHERE MaTaiKhoan=ownerId;
+    IF fee>0 THEN INSERT INTO GIAO_DICH_VI(MaGiaoDich,MaYeuCau,LoaiGiaoDich,SoTien,ThoiDiemGD,TrangThaiGD,PhuongThucGD,MaNguoiChoi,MaPhien) VALUES(pMaGiaoDich,CONCAT('gio:',pMaPhien),'TruTienMay',fee,pThoiDiem,'ThanhCong','NoiBo',ownerId,pMaPhien); END IF;
+  ELSEIF method IN ('TienMat','ChuyenKhoan') THEN
+    IF NOT fn_co_quyen(pMaTacNhan,'ThuNgan,QuanLy') OR received<fee THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60008,MESSAGE_TEXT='INVALID_STATE'; END IF;
+    SET returned=received-fee;
+  ELSE SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60008,MESSAGE_TEXT='INVALID_STATE'; END IF;
+  SET collector=IF(fn_co_quyen(pMaTacNhan,'ThuNgan,QuanLy'),pMaTacNhan,NULL);
+  INSERT INTO BIEN_LAI_TIEN_MAY(MaBienLai,MaPhien,ThoiDiemLap,ThoiDiemThanhToan,TongTienGio,HinhThucThanhToan,TienNhan,TienHoan,TrangThaiBienLai,MaNhanVienThu) VALUES(pMaBienLai,pMaPhien,pThoiDiem,IF(paid='DaThanhToan',pThoiDiem,NULL),fee,method,received,returned,paid,collector);
+  UPDATE PHIEN_SU_DUNG SET TrangThaiPhien='DaKetThuc',ThoiDiemKetThuc=pThoiDiem,TongTienTamTinh=fee,TienGiuCho=0 WHERE MaPhien=pMaPhien;
+  UPDATE MAY_TRAM SET TrangThaiMay='AVAILABLE' WHERE MaMay=machineId;
+  SELECT pMaPhien AS MaDoiTuong,0 AS DaThucHienTruoc;
+END$$
+DELIMITER ;

@@ -9,3 +9,7 @@ Mốc gốc: docs/btl1_baseline/model.json (23 bảng), giữ nguyên checksum. 
 | KT-04–10 | Ứng dụng/API/giao dịch | Flask + JS cùng origin, API v1, auth/CSRF, backend service sở hữu transaction, khóa và mã lỗi thống nhất. | Cho các thành viên triển khai trực tiếp, tránh hợp đồng khác nhau. | apps, docs/design, tests | Đã chốt, chờ hiện thực/kiểm tra |
 
 MD đưa các lựa chọn vật lý vào DDL mới. Nếu nâng DB đã cài bản trước, tạo migration có điều kiện tương ứng trong database/migrations; không chạy ALTER thêm trùng cột trên DB tạo bằng DDL mới. Mỗi thay đổi phát sinh phải cập nhật hợp đồng, seed, SQL nghiệp vụ, API, kiểm tra và báo cáo bị ảnh hưởng; ghi lý do cụ thể thay vì mở lại quyết định công nghệ chung.
+
+## CH-03 — Sửa lỗi backend và bổ sung phụ thuộc để tích hợp ngày 26/10/2026
+
+Đã đưa CH-01/CH-02 vào bộ cài mới và chạy trên MySQL 8.4.13 cho phần backend. Không đổi baseline/23 bảng/cột nghiệp vụ. Thêm helper routine khóa/hạn/quyền (tổng 8 procedure, 4 function), không thêm bảng. Sửa quyền/session, integer/whitelist, replay, transaction, charset khóa, ngân sách hội viên/worker và Q07/Q08. Bổ sung giao diện demo và kiểm tra Chrome/MySQL thật. Dùng DB cài mới, không tự migration database ngoài dự án. Bằng chứng: evidence/app/TD_repair_verification.md.

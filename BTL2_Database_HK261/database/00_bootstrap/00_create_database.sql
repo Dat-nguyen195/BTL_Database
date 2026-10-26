@@ -1,5 +1,1 @@
--- BTL2 Quản lý quán Net – L09, Nhóm 10
--- Chủ phần: MD
--- TRẠNG THÁI: CHƯA HIỆN THỰC; đây là khung phân công.
--- TODO: Chốt DBMS/charset/timezone và tạo database theo decisions.md.
--- Bổ sung DBMS/phiên bản, phụ thuộc, cách chạy và bằng chứng khi hoàn thành.
+CREATE DATABASE IF NOT EXISTS quan_net_btl2 CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_as_cs;

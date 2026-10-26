@@ -21,7 +21,7 @@ Dự án **Hệ thống quản lý quán Net**. BTL2 hiện thực tiếp nối 
 
 ## Trạng thái hiện tại
 
-Đã có kế hoạch, 60 tác vụ, checklist, cấu trúc thư mục và hợp đồng kỹ thuật. **SQL, backend và frontend hiện là khung công việc, chưa phải ứng dụng đã chạy.** Các tác vụ hiện thực đang TODO; chỉ đánh dấu hoàn thành sau khi làm và kiểm tra kết quả. Xem [trạng thái chi tiết](BTL2_Database_HK261/SCAFFOLD_STATUS.md).
+Đã bổ sung backend/API, SQL hỗ trợ cài mới, giao diện demo, kiểm thử và minh chứng phần Nguyễn Thành Đạt. Lần kiểm tra ngày 26/10/2026: **78 test hiện có đạt; 3 ca review bổ sung còn lỗi** (chi ví khi thanh toán đơn của phiên cũ, đổi loại phiếu khi replay, số trang vượt miền). Xem [kết quả kiểm thử](BTL2_Database_HK261/evidence/app/TD_repair_verification.md) và [các ca review còn lỗi](BTL2_Database_HK261/evidence/app/review_round2/README.md). TD-08 còn bước review/bàn giao trực tiếp với HT; trạng thái thành viên khác xem checklist và TASKS.json.
 
 ## Công nghệ đã chốt
 
@@ -64,6 +64,6 @@ git clone https://github.com/Dat-nguyen195/BTL_Database.git
 cd BTL_Database/BTL2_Database_HK261
 ```
 
-Hiện chưa có lệnh chạy ứng dụng hoàn chỉnh. TD/MD/TT bổ sung lệnh đã kiểm tra vào README phần mình và [runbook](BTL2_Database_HK261/docs/demo/runbook.md) khi hiện thực. Cấu hình mẫu ở [.env.example](BTL2_Database_HK261/.env.example); mật khẩu và SECRET_KEY tạo trên từng máy, không đưa vào Git.
+Chạy demo từ thư mục dự án theo [README backend](BTL2_Database_HK261/apps/backend/README.md): cài dependency, sau đó chạy `apps/backend/.venv/bin/python scripts/start_backend_demo.py` (cần Docker). Mở http://127.0.0.1:5000; tài khoản demo `admin` / `MatKhau123!`. Cấu hình mẫu ở [.env.example](BTL2_Database_HK261/.env.example); mật khẩu và SECRET_KEY tạo trên từng máy, không đưa vào Git.
 
 Kho công khai giữ các tệp phục vụ triển khai; PDF báo cáo và PDF đề gốc được thay bằng nội dung quy tắc cần thiết và liên kết nguồn. Không có bộ ảnh xuất trùng hoặc bản ZIP cũ.

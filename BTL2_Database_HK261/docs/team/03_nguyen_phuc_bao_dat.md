@@ -1,4 +1,4 @@
-# Checklist – Nguyễn Phúc Bảo Đạt
+# Checklist – Nguyễn Phúc Bảo Đạt (2410696)
 
 - [ ] **BD-01 – Thiết kế bộ dữ liệu và danh mục tám truy vấn**
   - Làm tại: `docs/design/seed_scenarios.md`, `docs/design/query_catalog.md`.

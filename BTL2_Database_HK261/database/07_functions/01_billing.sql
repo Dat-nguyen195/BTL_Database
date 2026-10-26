@@ -1,5 +1,26 @@
--- BTL2 Quản lý quán Net – L09, Nhóm 10
--- Chủ phần: HT
--- TRẠNG THÁI: CHƯA HIỆN THỰC; đây là khung phân công.
--- TODO: fn_tien_gio và fn_so_du_kha_dung.
--- Bổ sung DBMS/phiên bản, phụ thuộc, cách chạy và bằng chứng khi hoàn thành.
+-- MySQL 8.4.13. No routine commits; caller owns the transaction.
+DELIMITER $$
+CREATE FUNCTION fn_tien_gio(pBatDau DATETIME,pKetThuc DATETIME,pDonGiaGio DECIMAL(10,0)) RETURNS DECIMAL(12,0)
+DETERMINISTIC NO SQL
+BEGIN
+  DECLARE result DECIMAL(30,0);
+  IF pBatDau IS NULL OR pKetThuc IS NULL OR pKetThuc<pBatDau OR pDonGiaGio<0 THEN
+    SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60001,MESSAGE_TEXT='INVALID_INPUT';
+  END IF;
+  SET result=(TIMESTAMPDIFF(SECOND,pBatDau,pKetThuc)*pDonGiaGio) DIV 3600;
+  IF result>999999999999 THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60001,MESSAGE_TEXT='INVALID_INPUT'; END IF;
+  RETURN result;
+END$$
+CREATE FUNCTION fn_so_du_kha_dung(pMaNguoiChoi VARCHAR(15) CHARACTER SET ascii COLLATE ascii_bin) RETURNS DECIMAL(12,0)
+READS SQL DATA
+BEGIN
+  RETURN (SELECT SoDuVi-COALESCE((SELECT SUM(TienGiuCho) FROM PHIEN_SU_DUNG WHERE MaNguoiChoi=pMaNguoiChoi AND TrangThaiPhien='DangHoatDong' AND HinhThucDangNhap='TraTruoc'),0) FROM NGUOI_CHOI WHERE MaTaiKhoan=pMaNguoiChoi);
+END$$
+-- Internal helpers; not additional application business actions.
+CREATE FUNCTION fn_co_quyen(pActor VARCHAR(15) CHARACTER SET ascii COLLATE ascii_bin,pRoles VARCHAR(100) CHARACTER SET ascii COLLATE ascii_bin) RETURNS BOOLEAN
+READS SQL DATA
+RETURN EXISTS(SELECT 1 FROM TAI_KHOAN tk JOIN NHAN_VIEN nv ON nv.MaTaiKhoan=tk.MaTaiKhoan WHERE tk.MaTaiKhoan=pActor AND tk.TrangThai='HoatDong' AND FIND_IN_SET(nv.ChucVu,pRoles)>0)$$
+CREATE FUNCTION fn_han_phien(pStart DATETIME,pBudget DECIMAL(12,0),pRate DECIMAL(10,0)) RETURNS DATETIME
+DETERMINISTIC NO SQL
+RETURN IF(pRate>0,TIMESTAMPADD(SECOND,LEAST(((3600*(pBudget+1)-1) DIV pRate),TIMESTAMPDIFF(SECOND,pStart,'9999-12-31 23:59:59')),pStart),NULL)$$
+DELIMITER ;

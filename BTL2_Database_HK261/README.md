@@ -1,3 +1,11 @@
+# Chạy phần backend đã hoàn thiện sau review
+
+Từ thư mục này: `apps/backend/.venv/bin/python scripts/start_backend_demo.py`, sau khi cài thư viện theo [README backend](apps/backend/README.md). Mở http://127.0.0.1:5000; tài khoản demo `admin`, mật khẩu `MatKhau123!`. MySQL Docker và cấu hình local được chuẩn bị tự động nếu chưa có.
+
+Phần TD có [78 ca kiểm chứng riêng biệt](evidence/app/TD_repair_verification.md), gồm MySQL và Chrome thật. SQL/UI bổ sung phục vụ tích hợp không tự xác nhận các phần việc thành viên khác hoàn tất. Checklist TD-08 giữ mở cho review chéo/bàn giao trực tiếp với HT.
+
+---
+
 # BTL2 – Hệ thống quản lý quán Net
 
 L09 – Nhóm 10. **BTL2 là phần hiện thực tiếp nối trực tiếp BTL1**, sử dụng mô hình 23 bảng, các UC và ràng buộc đã thiết kế.
@@ -13,7 +21,7 @@ L09 – Nhóm 10. **BTL2 là phần hiện thực tiếp nối trực tiếp BTL
 
 ## Trạng thái hiện tại
 
-Đã tạo cấu trúc thư mục, khung tệp, kế hoạch, checklist và bản chụp thiết kế BTL1. **SQL, backend và frontend hiện là khung công việc, chưa phải hệ thống đã chạy.** Các tác vụ hiện thực trong `TASKS.json` đều ở trạng thái TODO. Không dùng việc tệp đã tồn tại làm bằng chứng hoàn thành chức năng.
+Backend/API, SQL hỗ trợ và giao diện demo phần TD đã được hiện thực và kiểm thử. Lần review ngày 26/10/2026 chạy lại 78 test hiện có đều đạt; 3 ca bổ sung còn lỗi, xem [review lần 2](evidence/app/review_round2/README.md). TD-08 còn review/bàn giao trực tiếp với HT; trạng thái các thành viên xem checklist và TASKS.json.
 
 ## Cấu trúc
 

@@ -1,5 +1,29 @@
--- BTL2 Quản lý quán Net – L09, Nhóm 10
--- Chủ phần: HT
--- TRẠNG THÁI: CHƯA HIỆN THỰC; đây là khung phân công.
--- TODO: sp_ghi_so_phieu_kho; kiểm kê và tồn nguyên tử.
--- Bổ sung DBMS/phiên bản, phụ thuộc, cách chạy và bằng chứng khi hoàn thành.
+DELIMITER $$
+CREATE PROCEDURE sp_ghi_so_phieu_kho(IN pMaPhieuKho VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin,IN pMaTacNhan VARCHAR(15) CHARACTER SET ascii COLLATE ascii_bin,IN pThoiDiem DATETIME)
+SQL SECURITY DEFINER
+proc: BEGIN
+  DECLARE state VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin; DECLARE kind VARCHAR(20) CHARACTER SET ascii COLLATE ascii_bin; DECLARE done BOOLEAN DEFAULT FALSE; DECLARE serviceId VARCHAR(10) CHARACTER SET ascii COLLATE ascii_bin; DECLARE qty INT; DECLARE book INT; DECLARE actual INT; DECLARE delta INT; DECLARE stock INT; DECLARE countLines INT DEFAULT 0;
+  DECLARE items CURSOR FOR SELECT dv.MaDichVu,ct.SoLuong,ct.SoLuongSoSach,ct.SoLuongThucTe,ct.SoLuongChenhLech,dv.SoLuongTon FROM CHI_TIET_PHIEU_KHO ct JOIN DICH_VU dv ON dv.MaDichVu=ct.MaDichVu WHERE ct.MaPhieuKho=pMaPhieuKho ORDER BY dv.MaDichVu FOR UPDATE;
+  DECLARE CONTINUE HANDLER FOR NOT FOUND SET done=TRUE;
+  IF NOT fn_co_quyen(pMaTacNhan,'QuanLy') THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60003,MESSAGE_TEXT='FORBIDDEN'; END IF;
+  IF NOT EXISTS(SELECT 1 FROM PHIEU_KHO WHERE MaPhieuKho=pMaPhieuKho) THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60002,MESSAGE_TEXT='NOT_FOUND'; END IF;
+  SELECT TrangThaiPhieu,LoaiPhieu INTO state,kind FROM PHIEU_KHO WHERE MaPhieuKho=pMaPhieuKho FOR UPDATE;
+  IF state='DaGhiSo' THEN SELECT pMaPhieuKho AS MaDoiTuong,1 AS DaThucHienTruoc; LEAVE proc; END IF;
+  IF state<>'Nhap' OR kind NOT IN ('NhapKho','XuatHuy','KiemKe') THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60008,MESSAGE_TEXT='INVALID_STATE'; END IF;
+  OPEN items;
+  item_loop: LOOP
+    FETCH items INTO serviceId,qty,book,actual,delta,stock;
+    IF done THEN LEAVE item_loop; END IF;
+    IF kind='KiemKe' AND (book IS NULL OR actual IS NULL OR stock<>book) THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60010,MESSAGE_TEXT='INVENTORY_SNAPSHOT_STALE'; END IF;
+    IF (kind='NhapKho' AND (qty<=0 OR delta<>qty)) OR (kind='XuatHuy' AND (qty<=0 OR delta<>-qty)) OR (kind='KiemKe' AND (qty<>0 OR delta<>actual-book)) THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60001,MESSAGE_TEXT='INVALID_INPUT'; END IF;
+    IF stock+delta<0 THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60007,MESSAGE_TEXT='INSUFFICIENT_STOCK'; END IF;
+    IF stock+delta>2147483647 THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60001,MESSAGE_TEXT='INVALID_INPUT'; END IF;
+    UPDATE DICH_VU SET SoLuongTon=SoLuongTon+delta WHERE MaDichVu=serviceId;
+    SET countLines=countLines+1;
+  END LOOP;
+  CLOSE items;
+  IF countLines=0 THEN SIGNAL SQLSTATE '45000' SET MYSQL_ERRNO=60008,MESSAGE_TEXT='INVALID_STATE'; END IF;
+  UPDATE PHIEU_KHO SET TrangThaiPhieu='DaGhiSo',ThoiDiemGhiSo=pThoiDiem WHERE MaPhieuKho=pMaPhieuKho;
+  SELECT pMaPhieuKho AS MaDoiTuong,0 AS DaThucHienTruoc;
+END$$
+DELIMITER ;

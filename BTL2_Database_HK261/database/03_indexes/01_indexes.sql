@@ -1,5 +1,9 @@
--- BTL2 Quản lý quán Net – L09, Nhóm 10
--- Chủ phần: MD
--- TRẠNG THÁI: CHƯA HIỆN THỰC; đây là khung phân công.
--- TODO: Chỉ mục gắn query_catalog và quy tắc chống trùng.
--- Bổ sung DBMS/phiên bản, phụ thuộc, cách chạy và bằng chứng khi hoàn thành.
+CREATE UNIQUE INDEX uq_phien_may_active ON PHIEN_SU_DUNG(MaMayDangHoatDong);
+CREATE UNIQUE INDEX uq_phien_nguoi_active ON PHIEN_SU_DUNG(MaNguoiChoiDangHoatDong);
+CREATE UNIQUE INDEX uq_vi_thu_phien ON GIAO_DICH_VI(MaPhienThuThanhCong);
+CREATE UNIQUE INDEX uq_vi_thu_don ON GIAO_DICH_VI(MaDonHangThuThanhCong);
+CREATE UNIQUE INDEX uq_vi_hoan_goc ON GIAO_DICH_VI(MaGDGocHoanThanhCong);
+CREATE INDEX ix_don_thoi_diem ON DON_GOI_DICH_VU(ThoiDiemDat);
+CREATE INDEX ix_bien_lai_thanh_toan ON BIEN_LAI_TIEN_MAY(ThoiDiemThanhToan);
+CREATE INDEX ix_vi_nguoi_thoi_diem ON GIAO_DICH_VI(MaNguoiChoi,ThoiDiemGD);
+CREATE INDEX ix_ca_khoang ON CA_TRUC(ThoiDiemBatDau,ThoiDiemKetThuc);

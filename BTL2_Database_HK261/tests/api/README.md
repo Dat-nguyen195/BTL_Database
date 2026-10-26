@@ -1,7 +1,3 @@
-# Kiểm tra API
+# API – TD
 
-Chủ phần: **TD**.
-
-Request/response thực, quyền sai, dữ liệu sai, yêu cầu lặp và trạng thái DB sau rollback.
-
-Trạng thái ban đầu: chưa hiện thực/chưa có bằng chứng chạy. Xem PLAN.md và checklist cá nhân để biết hạn.
+Auth/CSRF, quyền hiện tại và chủ tài nguyên, JSON/whitelist/integer, API đọc/ghi, replay và hạn dùng. Fixture dùng MySQL thật. Các test transaction fault injection chỉ kiểm tra rollback/retry/commit và không được coi là bằng chứng khóa DB; tests/integration kiểm chứng phần đó bằng hai kết nối thật. Hướng dẫn tại tests/README.md.

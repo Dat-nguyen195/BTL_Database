@@ -49,6 +49,12 @@ Giữ BR-04/05 của BTL1: trước chi ví và quyết toán, khóa ví/phiên,
 
 Với giá dương và ngân sách B VND, số giây tối đa là số nguyên lớn nhất t sao cho floor(t*g/3600) <= B. Backend cấp hạn dùng theo công thức này; chi ví làm giảm ngân sách thì cập nhật hạn dùng ngay trong luồng đã khóa. Mọi lệnh dùng phiên/đặt món kiểm tra hạn trên server. Worker demo kiểm tra phiên trả trước và gọi cùng service kết thúc ở mốc hạn được cấp; không tính phí tới thời điểm worker chạy muộn. Không dùng timer trên trình duyệt làm bảo đảm ngân sách, không tùy tiện cắt phí vượt ngân sách để che lỗi dừng phiên.
 
+Cơ chế tái dựng CanUseUntil: ngân sách B của vãng lai là TienNapTruoc; ngân sách của hội viên là SoDuVi hiện tại, vì baseline chỉ cho tối đa một phiên active/hội viên. TienGiuCho là tiền giờ đã phát sinh, không phải ngân sách cấp ban đầu. Tính lại hạn từ ThoiDiemBatDau và B dưới khóa ví/phiên sau mỗi biến động số dư. Trước chi ví làm mới giữ chỗ bằng phí phát sinh tại giờ server; chỉ chi phần còn lại. Nạp trước hạn mở rộng hạn; nạp sau hạn phải quyết toán phiên cũ ở hạn cũ trong cùng transaction trước khi cộng nạp, tránh hồi sinh quyền dùng đã hết hạn. Worker không giữ mốc trong RAM, quét từ DB rồi khóa và kiểm tra lại để xử lý đúng tranh chấp với nạp/chi/đóng.
+
+Tác nhân worker là capability nội bộ của Python, truyền pMaTacNhan=NULL; SQL chỉ chấp nhận đóng tự động phiên trả trước thực sự hết hạn với pThoiDiem=CanUseUntil. MaNhanVienThu=NULL. HTTP không nhận actor hệ thống hoặc thời điểm chốt từ client. Phiên vãng lai trả trước dùng lại tiền đã nạp: HTTP TienNhan=0, service truyền tiền nạp đã lưu xuống routine và so replay theo giá trị đã chuẩn hóa. Hàm hạn SQL dùng DIV để tránh làm tròn DECIMAL ở biên, giới hạn mốc tối đa bởi miền DATETIME năm 9999.
+
+Khóa SELECT FOR UPDATE của backend đi qua helper sp_khoa_dong với whitelist bảng cố định và SQL SECURITY DEFINER. Runtime không cần UPDATE/DELETE/LOCK TABLES. Tham số/biến mã trong routine dùng ASCII/ascii_bin như cột khóa để không chuyển mã cột và làm rộng phạm vi khóa. Không có SQL động do client chọn bảng.
+
 Đây là quyền sử dụng phiên mô phỏng ở ứng dụng, không phải phần mềm khóa máy vật lý. Trả sau không giữ chỗ; miễn phí giá 0 chỉ được QuanLy cấp. Nếu chưa thực hiện/kiểm tra hạn dùng thì ghi BR-04 chưa hỗ trợ và không tuyên bố luồng trả trước hoàn chỉnh.
 
 ## 5. Kiểm tra bắt buộc

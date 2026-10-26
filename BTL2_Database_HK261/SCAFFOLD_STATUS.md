@@ -11,3 +11,7 @@
 Thư mục đề bài nguồn: https://drive.google.com/drive/u/9/folders/1v_9W2CMeLXQi4SlCZRHUT_k7J5sAouoQ
 
 - Đã chốt quyết định kỹ thuật, hợp đồng lược đồ/API/routine/mã lỗi/giao dịch và mở rộng mỗi checklist lên 12 tác vụ. Các tác vụ hiện thực vẫn TODO.
+
+## Cập nhật phần TD ngày 26/10/2026 sau review
+
+Backend đã có 26 endpoint, SQL hỗ trợ cài mới 23 bảng/routine, runtime hạn quyền và UI demo. Có kiểm tra MySQL 8.4.13, hai kết nối và Chrome thật; xem evidence/app/TD_repair_verification.md. Trạng thái "chưa hiện thực" ở các mục ban đầu là lịch sử scaffold, không còn mô tả đúng backend. Các phần báo cáo/seed/truy vấn/tổng hợp của thành viên khác không tự được xác nhận hoàn tất bởi việc bổ sung để tích hợp này.

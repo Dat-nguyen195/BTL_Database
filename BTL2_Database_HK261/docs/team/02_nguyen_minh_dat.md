@@ -1,4 +1,4 @@
-# Checklist – Nguyễn Minh Đạt
+# Checklist – Nguyễn Minh Đạt (2410694)
 
 - [ ] **MD-01 – Áp dụng MySQL và hợp đồng lược đồ kế thừa BTL1**
   - Làm tại: `docs/design/schema_contract.md`, `docs/design/btl1_to_btl2.md`, `docs/design/decisions.md`.

@@ -5,6 +5,7 @@
     {
       "id": "TD",
       "name": "Nguyễn Thành Đạt",
+      "mssv": "2410709",
       "role": "Backend/API và tích hợp nghiệp vụ",
       "reviewer": "Nguyễn Hữu Tây",
       "file": "01_nguyen_thanh_dat.md",
@@ -50,6 +51,7 @@
     {
       "id": "MD",
       "name": "Nguyễn Minh Đạt",
+      "mssv": "2410694",
       "role": "Lược đồ vật lý, ràng buộc và chỉ mục",
       "reviewer": "Nguyễn Phúc Bảo Đạt",
       "file": "02_nguyen_minh_dat.md",
@@ -107,6 +109,7 @@
     {
       "id": "BD",
       "name": "Nguyễn Phúc Bảo Đạt",
+      "mssv": "2410696",
       "role": "Dữ liệu mẫu, truy vấn và kết quả đối chiếu",
       "reviewer": "Nguyễn Minh Đạt",
       "file": "03_nguyen_phuc_bao_dat.md",
@@ -151,6 +154,7 @@
     {
       "id": "HT",
       "name": "Nguyễn Hữu Tây",
+      "mssv": "2413095",
       "role": "Thủ tục, hàm, trigger và giao dịch",
       "reviewer": "Nguyễn Thành Đạt",
       "file": "04_nguyen_huu_tay.md",
@@ -202,6 +206,7 @@
     {
       "id": "TT",
       "name": "Trần Tiến Thành",
+      "mssv": "2413181",
       "role": "Giao diện, báo cáo tổng hợp và điều phối demo",
       "reviewer": "Nguyễn Thành Đạt",
       "file": "05_tran_tien_thanh.md",
@@ -254,6 +259,7 @@
     {
       "id": "TD-01",
       "owner": "Nguyễn Thành Đạt",
+      "mssv": "2410709",
       "title": "Áp dụng hợp đồng API/DTO và kiến trúc đã chốt",
       "paths": [
         "docs/design/api_contract.md",
@@ -264,11 +270,13 @@
       ],
       "acceptance": "Đọc quyết định kỹ thuật rồi lập route/DTO đúng /api/v1, trường nghiệp vụ và envelope đã ghi; đối chiếu tên/tham số CALL với routines_catalog.md. Triển khai theo hợp đồng, không chờ họp chọn lại API hoặc tầng commit.",
       "depends_on": [],
-      "status": "TODO"
+      "status": "DONE",
+      "verification_note": "78 distinct verified cases across main and follow-up runs; see evidence/app/TD_repair_verification.md. No human cross-review is implied."
     },
     {
       "id": "TD-02",
       "owner": "Nguyễn Thành Đạt",
+      "mssv": "2410709",
       "title": "Dựng backend và kết nối CSDL theo cấu hình môi trường",
       "paths": [
         "apps/backend/"
@@ -277,11 +285,13 @@
       "depends_on": [
         "MD-02"
       ],
-      "status": "TODO"
+      "status": "DONE",
+      "verification_note": "78 distinct verified cases across main and follow-up runs; see evidence/app/TD_repair_verification.md. No human cross-review is implied."
     },
     {
       "id": "TD-03",
       "owner": "Nguyễn Thành Đạt",
+      "mssv": "2410709",
       "title": "Hiện thực API đọc máy, phiên, đơn, tồn và lịch sử ví",
       "paths": [
         "apps/backend/src/routes/",
@@ -292,11 +302,13 @@
         "MD-03",
         "BD-02"
       ],
-      "status": "TODO"
+      "status": "DONE",
+      "verification_note": "78 distinct verified cases across main and follow-up runs; see evidence/app/TD_repair_verification.md. No human cross-review is implied."
     },
     {
       "id": "TD-04",
       "owner": "Nguyễn Thành Đạt",
+      "mssv": "2410709",
       "title": "Hiện thực API mở/đóng phiên, nạp ví, nhận/thu đơn và ghi sổ kho",
       "paths": [
         "apps/backend/src/services/"
@@ -306,11 +318,13 @@
         "HT-03",
         "HT-04"
       ],
-      "status": "TODO"
+      "status": "DONE",
+      "verification_note": "78 distinct verified cases across main and follow-up runs; see evidence/app/TD_repair_verification.md. No human cross-review is implied."
     },
     {
       "id": "TD-05",
       "owner": "Nguyễn Thành Đạt",
+      "mssv": "2410709",
       "title": "Kiểm tra đầu vào, quyền thao tác và lỗi trả về",
       "paths": [
         "tests/api/"
@@ -322,11 +336,13 @@
         "TD-10",
         "TD-11"
       ],
-      "status": "TODO"
+      "status": "DONE",
+      "verification_note": "78 distinct verified cases across main and follow-up runs; see evidence/app/TD_repair_verification.md. No human cross-review is implied."
     },
     {
       "id": "TD-06",
       "owner": "Nguyễn Thành Đạt",
+      "mssv": "2410709",
       "title": "Tích hợp backend với UI và kiểm tra yêu cầu lặp",
       "paths": [
         "tests/e2e/",
@@ -338,11 +354,13 @@
         "HT-06",
         "TD-05"
       ],
-      "status": "TODO"
+      "status": "DONE",
+      "verification_note": "78 distinct verified cases across main and follow-up runs; see evidence/app/TD_repair_verification.md. No human cross-review is implied."
     },
     {
       "id": "TD-07",
       "owner": "Nguyễn Thành Đạt",
+      "mssv": "2410709",
       "title": "Viết phần backend và lưu bằng chứng chạy thật",
       "paths": [
         "docs/report/sections/03_backend.md",
@@ -354,11 +372,13 @@
         "TD-06",
         "TD-12"
       ],
-      "status": "TODO"
+      "status": "DONE",
+      "verification_note": "78 distinct verified cases across main and follow-up runs; see evidence/app/TD_repair_verification.md. No human cross-review is implied."
     },
     {
       "id": "TD-08",
       "owner": "Nguyễn Thành Đạt",
+      "mssv": "2410709",
       "title": "Kiểm tra thủ tục cùng HT, sửa lỗi và bàn giao backend",
       "paths": [
         "apps/backend/",
@@ -370,11 +390,13 @@
         "TD-07",
         "HT-07"
       ],
-      "status": "TODO"
+      "status": "IN_PROGRESS",
+      "verification_note": "Backend technical checks complete; direct cross-review/handoff with HT pending. See evidence/app/TD_repair_verification.md."
     },
     {
       "id": "TD-09",
       "owner": "Nguyễn Thành Đạt",
+      "mssv": "2410709",
       "title": "Hiện thực đăng nhập, session, CSRF và phân quyền tài nguyên",
       "paths": [
         "apps/backend/src/routes/",
@@ -387,11 +409,13 @@
         "TD-02",
         "BD-09"
       ],
-      "status": "TODO"
+      "status": "DONE",
+      "verification_note": "78 distinct verified cases across main and follow-up runs; see evidence/app/TD_repair_verification.md. No human cross-review is implied."
     },
     {
       "id": "TD-10",
       "owner": "Nguyễn Thành Đạt",
+      "mssv": "2410709",
       "title": "Tạo service transaction và cơ chế retry thống nhất",
       "paths": [
         "apps/backend/src/services/",
@@ -404,11 +428,13 @@
         "TD-04",
         "HT-10"
       ],
-      "status": "TODO"
+      "status": "DONE",
+      "verification_note": "78 distinct verified cases across main and follow-up runs; see evidence/app/TD_repair_verification.md. No human cross-review is implied."
     },
     {
       "id": "TD-11",
       "owner": "Nguyễn Thành Đạt",
+      "mssv": "2410709",
       "title": "Ánh xạ mã lỗi và chống lặp ở toàn bộ API ghi",
       "paths": [
         "apps/backend/src/services/",
@@ -422,11 +448,13 @@
         "TD-09",
         "HT-11"
       ],
-      "status": "TODO"
+      "status": "DONE",
+      "verification_note": "78 distinct verified cases across main and follow-up runs; see evidence/app/TD_repair_verification.md. No human cross-review is implied."
     },
     {
       "id": "TD-12",
       "owner": "Nguyễn Thành Đạt",
+      "mssv": "2410709",
       "title": "Kiểm soát hạn dùng trả trước và dừng phiên ở server",
       "paths": [
         "apps/backend/src/services/",
@@ -439,11 +467,13 @@
         "TD-11",
         "HT-12"
       ],
-      "status": "TODO"
+      "status": "DONE",
+      "verification_note": "78 distinct verified cases across main and follow-up runs; see evidence/app/TD_repair_verification.md. No human cross-review is implied."
     },
     {
       "id": "MD-01",
       "owner": "Nguyễn Minh Đạt",
+      "mssv": "2410694",
       "title": "Áp dụng MySQL và hợp đồng lược đồ kế thừa BTL1",
       "paths": [
         "docs/design/schema_contract.md",
@@ -457,6 +487,7 @@
     {
       "id": "MD-02",
       "owner": "Nguyễn Minh Đạt",
+      "mssv": "2410694",
       "title": "Viết DDL cho đủ 23 bảng",
       "paths": [
         "database/00_bootstrap/00_create_database.sql",
@@ -476,6 +507,7 @@
     {
       "id": "MD-03",
       "owner": "Nguyễn Minh Đạt",
+      "mssv": "2410694",
       "title": "Bổ sung FK, UNIQUE, NOT NULL, CHECK và chính sách xóa",
       "paths": [
         "database/02_constraints/01_constraints.sql",
@@ -490,6 +522,7 @@
     {
       "id": "MD-04",
       "owner": "Nguyễn Minh Đạt",
+      "mssv": "2410694",
       "title": "Thiết kế chỉ mục phục vụ truy vấn và chống trùng phiên",
       "paths": [
         "database/03_indexes/01_indexes.sql",
@@ -506,6 +539,7 @@
     {
       "id": "MD-05",
       "owner": "Nguyễn Minh Đạt",
+      "mssv": "2410694",
       "title": "Hoàn tất bảng đối chiếu BTL1 sang cấu trúc cài đặt",
       "paths": [
         "docs/design/btl1_to_btl2.md",
@@ -521,6 +555,7 @@
     {
       "id": "MD-06",
       "owner": "Nguyễn Minh Đạt",
+      "mssv": "2410694",
       "title": "Cài mới và kiểm tra khôi phục dữ liệu",
       "paths": [
         "scripts/",
@@ -539,6 +574,7 @@
     {
       "id": "MD-07",
       "owner": "Nguyễn Minh Đạt",
+      "mssv": "2410694",
       "title": "Viết phần DDL/ràng buộc/chỉ mục của báo cáo",
       "paths": [
         "docs/report/sections/01_schema.md",
@@ -554,6 +590,7 @@
     {
       "id": "MD-08",
       "owner": "Nguyễn Minh Đạt",
+      "mssv": "2410694",
       "title": "Kiểm tra seed/truy vấn cùng BD, sửa lỗi và bàn giao CSDL",
       "paths": [
         "database/01_schema/",
@@ -571,6 +608,7 @@
     {
       "id": "MD-09",
       "owner": "Nguyễn Minh Đạt",
+      "mssv": "2410694",
       "title": "Cố định charset, mã định danh, kiểu tiền và múi giờ",
       "paths": [
         "database/00_bootstrap/00_create_database.sql",
@@ -587,6 +625,7 @@
     {
       "id": "MD-10",
       "owner": "Nguyễn Minh Đạt",
+      "mssv": "2410694",
       "title": "Tạo cột sinh và UNIQUE bảo vệ phiên, ví",
       "paths": [
         "database/01_schema/02_workstations.sql",
@@ -604,6 +643,7 @@
     {
       "id": "MD-11",
       "owner": "Nguyễn Minh Đạt",
+      "mssv": "2410694",
       "title": "Tách tài khoản cài đặt và tài khoản chạy ứng dụng",
       "paths": [
         "database/00_bootstrap/",
@@ -621,6 +661,7 @@
     {
       "id": "MD-12",
       "owner": "Nguyễn Minh Đạt",
+      "mssv": "2410694",
       "title": "Kiểm tra bộ cài theo hợp đồng và ghi chênh lệch vật lý",
       "paths": [
         "docs/design/schema_contract.md",
@@ -640,6 +681,7 @@
     {
       "id": "BD-01",
       "owner": "Nguyễn Phúc Bảo Đạt",
+      "mssv": "2410696",
       "title": "Thiết kế bộ dữ liệu và danh mục tám truy vấn",
       "paths": [
         "docs/design/seed_scenarios.md",
@@ -652,6 +694,7 @@
     {
       "id": "BD-02",
       "owner": "Nguyễn Phúc Bảo Đạt",
+      "mssv": "2410696",
       "title": "Viết dữ liệu mẫu nhất quán và có thể nạp lại",
       "paths": [
         "database/04_seed/01_reference_data.sql",
@@ -666,6 +709,7 @@
     {
       "id": "BD-03",
       "owner": "Nguyễn Phúc Bảo Đạt",
+      "mssv": "2410696",
       "title": "Hiện thực Q01–Q04 cho máy, phiên, ví và đơn",
       "paths": [
         "database/05_queries/01_operations.sql"
@@ -680,6 +724,7 @@
     {
       "id": "BD-04",
       "owner": "Nguyễn Phúc Bảo Đạt",
+      "mssv": "2410696",
       "title": "Hiện thực Q05–Q08 cho doanh thu, tồn và ca",
       "paths": [
         "database/05_queries/02_reports.sql"
@@ -694,6 +739,7 @@
     {
       "id": "BD-05",
       "owner": "Nguyễn Phúc Bảo Đạt",
+      "mssv": "2410696",
       "title": "Lưu kết quả chuẩn và các trường hợp không có dữ liệu",
       "paths": [
         "tests/sql/queries/",
@@ -709,6 +755,7 @@
     {
       "id": "BD-06",
       "owner": "Nguyễn Phúc Bảo Đạt",
+      "mssv": "2410696",
       "title": "Đối chiếu hiệu năng với MD và hoàn thiện dữ liệu demo",
       "paths": [
         "docs/design/index_catalog.md",
@@ -724,6 +771,7 @@
     {
       "id": "BD-07",
       "owner": "Nguyễn Phúc Bảo Đạt",
+      "mssv": "2410696",
       "title": "Viết phần dữ liệu và đặc tả truy vấn",
       "paths": [
         "docs/report/sections/02_data_queries.md"
@@ -738,6 +786,7 @@
     {
       "id": "BD-08",
       "owner": "Nguyễn Phúc Bảo Đạt",
+      "mssv": "2410696",
       "title": "Kiểm tra DDL cùng MD và bàn giao dữ liệu, truy vấn",
       "paths": [
         "database/04_seed/",
@@ -754,6 +803,7 @@
     {
       "id": "BD-09",
       "owner": "Nguyễn Phúc Bảo Đạt",
+      "mssv": "2410696",
       "title": "Bổ sung seed tài khoản và quyền dùng cho demo",
       "paths": [
         "database/04_seed/01_reference_data.sql",
@@ -770,6 +820,7 @@
     {
       "id": "BD-10",
       "owner": "Nguyễn Phúc Bảo Đạt",
+      "mssv": "2410696",
       "title": "Chuẩn bị dữ liệu chuẩn cho mã lỗi và chống lặp",
       "paths": [
         "docs/design/seed_scenarios.md",
@@ -786,6 +837,7 @@
     {
       "id": "BD-11",
       "owner": "Nguyễn Phúc Bảo Đạt",
+      "mssv": "2410696",
       "title": "Gắn tám truy vấn với bộ lọc API và kết quả JSON",
       "paths": [
         "docs/design/query_catalog.md",
@@ -803,6 +855,7 @@
     {
       "id": "BD-12",
       "owner": "Nguyễn Phúc Bảo Đạt",
+      "mssv": "2410696",
       "title": "Chạy lại seed và truy vấn sau thay đổi cột sinh",
       "paths": [
         "database/04_seed/",
@@ -823,6 +876,7 @@
     {
       "id": "HT-01",
       "owner": "Nguyễn Hữu Tây",
+      "mssv": "2413095",
       "title": "Ánh xạ quy tắc BTL1 vào hợp đồng SQL đã chốt",
       "paths": [
         "docs/design/routines_catalog.md",
@@ -837,6 +891,7 @@
     {
       "id": "HT-02",
       "owner": "Nguyễn Hữu Tây",
+      "mssv": "2413095",
       "title": "Hiện thực hai hàm tiền giờ và số dư khả dụng",
       "paths": [
         "database/07_functions/01_billing.sql"
@@ -851,6 +906,7 @@
     {
       "id": "HT-03",
       "owner": "Nguyễn Hữu Tây",
+      "mssv": "2413095",
       "title": "Hiện thực mở phiên và kết thúc/quyết toán",
       "paths": [
         "database/06_procedures/01_sessions.sql"
@@ -865,6 +921,7 @@
     {
       "id": "HT-04",
       "owner": "Nguyễn Hữu Tây",
+      "mssv": "2413095",
       "title": "Hiện thực nạp ví, nhận đơn, thu đơn và ghi sổ kho",
       "paths": [
         "database/06_procedures/02_wallet_orders.sql",
@@ -879,6 +936,7 @@
     {
       "id": "HT-05",
       "owner": "Nguyễn Hữu Tây",
+      "mssv": "2413095",
       "title": "Hiện thực nhóm trigger và kiểm tra bảo toàn lịch sử",
       "paths": [
         "database/08_triggers/01_history.sql",
@@ -894,6 +952,7 @@
     {
       "id": "HT-06",
       "owner": "Nguyễn Hữu Tây",
+      "mssv": "2413095",
       "title": "Kiểm tra rollback, gửi lặp và hai yêu cầu tranh chấp",
       "paths": [
         "tests/sql/business_rules/",
@@ -913,6 +972,7 @@
     {
       "id": "HT-07",
       "owner": "Nguyễn Hữu Tây",
+      "mssv": "2413095",
       "title": "Viết phần thủ tục/hàm/trigger và ma trận quy tắc",
       "paths": [
         "docs/report/sections/04_routines.md",
@@ -927,6 +987,7 @@
     {
       "id": "HT-08",
       "owner": "Nguyễn Hữu Tây",
+      "mssv": "2413095",
       "title": "Kiểm tra luồng ghi backend cùng TD và bàn giao SQL nghiệp vụ",
       "paths": [
         "apps/backend/src/services/",
@@ -943,6 +1004,7 @@
     {
       "id": "HT-09",
       "owner": "Nguyễn Hữu Tây",
+      "mssv": "2413095",
       "title": "Triển khai chữ ký routine và SIGNAL theo hợp đồng",
       "paths": [
         "database/06_procedures/",
@@ -961,6 +1023,7 @@
     {
       "id": "HT-10",
       "owner": "Nguyễn Hữu Tây",
+      "mssv": "2413095",
       "title": "Loại bỏ commit nội bộ và thống nhất khóa",
       "paths": [
         "database/06_procedures/",
@@ -978,6 +1041,7 @@
     {
       "id": "HT-11",
       "owner": "Nguyễn Hữu Tây",
+      "mssv": "2413095",
       "title": "Bảo vệ chống thu/trừ lặp bằng khóa và trạng thái",
       "paths": [
         "database/06_procedures/",
@@ -994,6 +1058,7 @@
     {
       "id": "HT-12",
       "owner": "Nguyễn Hữu Tây",
+      "mssv": "2413095",
       "title": "Hoàn thiện giữ chỗ và quyết toán tại hạn ngân sách",
       "paths": [
         "database/06_procedures/01_sessions.sql",
@@ -1012,6 +1077,7 @@
     {
       "id": "TT-01",
       "owner": "Trần Tiến Thành",
+      "mssv": "2413181",
       "title": "Ánh xạ màn hình theo phạm vi và API đã chốt",
       "paths": [
         "docs/design/ui_scope.md",
@@ -1024,6 +1090,7 @@
     {
       "id": "TT-02",
       "owner": "Trần Tiến Thành",
+      "mssv": "2413181",
       "title": "Dựng frontend HTML/CSS/JavaScript cùng origin Flask",
       "paths": [
         "apps/frontend/"
@@ -1037,6 +1104,7 @@
     {
       "id": "TT-03",
       "owner": "Trần Tiến Thành",
+      "mssv": "2413181",
       "title": "Làm màn hình đọc máy, phiên, đơn và báo cáo",
       "paths": [
         "apps/frontend/src/pages/",
@@ -1052,6 +1120,7 @@
     {
       "id": "TT-04",
       "owner": "Trần Tiến Thành",
+      "mssv": "2413181",
       "title": "Làm form mở/đóng phiên, nạp ví, đơn và phiếu kho",
       "paths": [
         "apps/frontend/src/components/"
@@ -1067,6 +1136,7 @@
     {
       "id": "TT-05",
       "owner": "Trần Tiến Thành",
+      "mssv": "2413181",
       "title": "Chạy ba luồng demo đầu cuối với TD",
       "paths": [
         "tests/e2e/",
@@ -1082,6 +1152,7 @@
     {
       "id": "TT-06",
       "owner": "Trần Tiến Thành",
+      "mssv": "2413181",
       "title": "Viết phần frontend và tổng hợp báo cáo từ cả năm người",
       "paths": [
         "docs/report/outline.md",
@@ -1100,6 +1171,7 @@
     {
       "id": "TT-07",
       "owner": "Trần Tiến Thành",
+      "mssv": "2413181",
       "title": "Chốt PDF, hướng dẫn chạy và diễn tập hỏi đáp",
       "paths": [
         "docs/report/",
@@ -1117,6 +1189,7 @@
     {
       "id": "TT-08",
       "owner": "Trần Tiến Thành",
+      "mssv": "2413181",
       "title": "Đóng gói và kiểm tra bản bàn giao",
       "paths": [
         "deliverables/",
@@ -1137,6 +1210,7 @@
     {
       "id": "TT-09",
       "owner": "Trần Tiến Thành",
+      "mssv": "2413181",
       "title": "Làm màn hình đăng nhập và hiển thị đúng quyền",
       "paths": [
         "apps/frontend/src/pages/",
@@ -1154,6 +1228,7 @@
     {
       "id": "TT-10",
       "owner": "Trần Tiến Thành",
+      "mssv": "2413181",
       "title": "Tạo lớp fetch dùng chung theo API v1",
       "paths": [
         "apps/frontend/src/services/",
@@ -1170,6 +1245,7 @@
     {
       "id": "TT-11",
       "owner": "Trần Tiến Thành",
+      "mssv": "2413181",
       "title": "Giữ mã thao tác và dữ liệu form khi gửi lại",
       "paths": [
         "apps/frontend/src/pages/",
@@ -1187,6 +1263,7 @@
     {
       "id": "TT-12",
       "owner": "Trần Tiến Thành",
+      "mssv": "2413181",
       "title": "Bổ sung tổng duyệt theo hợp đồng và giới hạn demo",
       "paths": [
         "docs/demo/scenarios.md",

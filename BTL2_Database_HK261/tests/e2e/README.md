@@ -1,7 +1,3 @@
-# Kiểm tra đầu cuối
+# Ba luồng tích hợp – TD
 
-Chủ phần: **TD + TT**.
-
-Ba luồng trong PLAN; chạy từ UI qua API tới DB thật; ghi bước, kết quả mong đợi/thực tế và lỗi còn mở.
-
-Trạng thái ban đầu: chưa hiện thực/chưa có bằng chứng chạy. Xem PLAN.md và checklist cá nhân để biết hạn.
+`test_e2e_scenarios.py` chạy Flask test client → MySQL thật. `test_browser_flows.py` chạy giao diện → HTTP thật → MySQL bằng Chrome, kiểm tra biên lai, ví, tồn, doanh thu và gửi lặp. Phải phân biệt hai loại kiểm tra. Xem tests/README.md và evidence/app/TD_browser_three_flows.json/png.

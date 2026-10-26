@@ -1,7 +1,3 @@
-# Bằng chứng ứng dụng
+# Minh chứng backend TD
 
-Chủ phần: **TD + TT**.
-
-Ảnh/log demo đầu cuối và thay đổi DB; loại bỏ dữ liệu nhạy cảm/chuỗi kết nối thật trước khi đưa vào báo cáo.
-
-Trạng thái ban đầu: chưa hiện thực/chưa có bằng chứng chạy. Xem PLAN.md và checklist cá nhân để biết hạn.
+Bắt đầu từ [TD_repair_verification.md](TD_repair_verification.md). Có JUnit gốc/gộp, request-response đã bỏ bí mật, JSON/ảnh Chrome và các tệp đối chiếu theo tác vụ. Kết quả hiện tại thay thế tuyên bố mock trước review.

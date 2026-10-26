@@ -1,6 +1,6 @@
 # Yêu cầu BTL2 và phạm vi áp dụng
 
-Nguồn: [THCSL_HK261_L09](https://drive.google.com/drive/u/9/folders/1v_9W2CMeLXQi4SlCZRHUT_k7J5sAouoQ), tệp **Bài tập lớn CSDL L09 (1).pdf**, trang 1–2. Nội dung đã được đọc trực tiếp bằng tài khoản trường ngày 22/10/2026. Bản công khai lưu nội dung yêu cầu cần triển khai và dẫn liên kết nguồn trong thư mục lớp. PDF đề bài gốc không tải lên GitHub; thành viên dùng tài khoản trường để đọc tài liệu nguồn.
+Nguồn: [THCSL_HK261_L09](https://drive.google.com/drive/u/9/folders/1v_9W2CMeLXQi4SlCZRHUT_k7J5sAouoQ), tệp **Bài tập lớn CSDL L09 (1).pdf**, trang 1–2. Nội dung đã được đọc trực tiếp bằng tài khoản trường ngày 22/10/2026. Bản PDF có sẵn trong BTL1 được kế thừa tại [de_bai_goc.pdf](de_bai_goc.pdf) và đối chiếu với bản trong thư mục lớp.
 
 ## Nội dung trong đề bài
 

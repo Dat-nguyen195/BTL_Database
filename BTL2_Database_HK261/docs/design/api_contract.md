@@ -1,6 +1,6 @@
 # Hợp đồng API v1 – đã chốt để TD/TT triển khai
 
-Backend Flask, cùng origin với frontend. Base URL `http://127.0.0.1:5000/api/v1`. Hợp đồng đã chốt; các endpoint dưới đây chưa được hiện thực/chạy.
+Backend Flask, cùng origin với frontend. Base URL `http://127.0.0.1:5000/api/v1`. Hợp đồng áp dụng cho backend đã hiện thực; bằng chứng kiểm tra nằm ở evidence/app/TD_repair_verification.md (từ gốc dự án).
 
 ## 1. Quy ước
 
@@ -75,3 +75,11 @@ Giá/tổng/phân quyền đều do server kiểm tra. Response sau commit:
 ```
 
 Chỉ ví dụ đặc tả, không phải bằng chứng API đã chạy. Các trường server bổ sung như thời điểm/giữ chỗ/CanUseUntil phải có trong ca kiểm tra khi endpoint tương ứng được hiện thực. Cùng mã và cùng nội dung gửi lại: 200/replayed=true; cùng mã khác dòng/lượng: 409 IDEMPOTENCY_CONFLICT. Luồng transaction và cách so sánh replay ở [transactions.md](transactions.md).
+
+## Làm rõ khi hiện thực và kiểm thử ngày 26/10/2026
+
+- Phiên miễn phí kết thúc với HinhThucThanhToan=MienPhi và TienNhan=0.
+- Vãng lai trả trước kết thúc với HinhThucThanhToan=TienMat, TienNhan=0 trong HTTP; tiền nhận thực trong biên lai lấy từ TienNapTruoc đã lưu.
+- CanUseUntil hội viên tính từ số dư hiện tại theo transactions.md; API thu đơn/nạp ví trả thêm hạn mới khi có phiên liên quan.
+- MaYeuCau nạp phải là nap:{UUID chuẩn}; không chỉ kiểm tra tiền tố. Kiểu integer không nhận boolean/float/chuỗi số. Từ chối body/Lines có trường ngoài whitelist.
+- Q07 có TongBan/BienDongRong, lượng bán được phân nhóm theo ThoiDiemDat do baseline không có thời điểm tiếp nhận. Q08 lọc ca giao khoảng thời gian và chỉ đánh chồng giữa hai MaCa khác nhau.

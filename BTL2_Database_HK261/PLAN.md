@@ -38,13 +38,13 @@ Mục tiêu do nhóm chọn: **23 bảng, 8 truy vấn, 6 thủ tục, 2 hàm, 3
 
 ## 2. Thành viên và trách nhiệm
 
-| Mã | Thành viên | Phụ trách chính | Kiểm tra chéo | Checklist |
+| Mã | Thành viên – MSSV | Phụ trách chính | Kiểm tra chéo | Checklist |
 |---|---|---|---|---|
-| TD | Nguyễn Thành Đạt | Backend/API và tích hợp nghiệp vụ | Nguyễn Hữu Tây | [12 tác vụ](docs/team/01_nguyen_thanh_dat.md) |
-| MD | Nguyễn Minh Đạt | Lược đồ vật lý, ràng buộc và chỉ mục | Nguyễn Phúc Bảo Đạt | [12 tác vụ](docs/team/02_nguyen_minh_dat.md) |
-| BD | Nguyễn Phúc Bảo Đạt | Dữ liệu mẫu, truy vấn và kết quả đối chiếu | Nguyễn Minh Đạt | [12 tác vụ](docs/team/03_nguyen_phuc_bao_dat.md) |
-| HT | Nguyễn Hữu Tây | Thủ tục, hàm, trigger và giao dịch | Nguyễn Thành Đạt | [12 tác vụ](docs/team/04_nguyen_huu_tay.md) |
-| TT | Trần Tiến Thành | Giao diện, báo cáo tổng hợp và điều phối demo | Nguyễn Thành Đạt | [12 tác vụ](docs/team/05_tran_tien_thanh.md) |
+| TD | Nguyễn Thành Đạt – 2410709 | Backend/API và tích hợp nghiệp vụ | Nguyễn Hữu Tây | [12 tác vụ](docs/team/01_nguyen_thanh_dat.md) |
+| MD | Nguyễn Minh Đạt – 2410694 | Lược đồ vật lý, ràng buộc và chỉ mục | Nguyễn Phúc Bảo Đạt | [12 tác vụ](docs/team/02_nguyen_minh_dat.md) |
+| BD | Nguyễn Phúc Bảo Đạt – 2410696 | Dữ liệu mẫu, truy vấn và kết quả đối chiếu | Nguyễn Minh Đạt | [12 tác vụ](docs/team/03_nguyen_phuc_bao_dat.md) |
+| HT | Nguyễn Hữu Tây – 2413095 | Thủ tục, hàm, trigger và giao dịch | Nguyễn Thành Đạt | [12 tác vụ](docs/team/04_nguyen_huu_tay.md) |
+| TT | Trần Tiến Thành – 2413181 | Giao diện, báo cáo tổng hợp và điều phối demo | Nguyễn Thành Đạt | [12 tác vụ](docs/team/05_tran_tien_thanh.md) |
 
 Mỗi người tự làm phần kỹ thuật, viết phần báo cáo và lưu minh chứng của mình. TT hợp nhất báo cáo và điều phối demo. Mã TD/MD/BD/HT/TT trong cây thư mục dưới đây chỉ người chủ trì; tệp dùng chung cần trao đổi trước khi sửa.
 
@@ -59,9 +59,9 @@ BTL2_Database_HK261/
 ├── .env.example, .gitignore                        # MD + TD + TT: cấu hình mẫu
 ├── docs/
 │   ├── requirements/                              # TT: đối chiếu yêu cầu, giữ đề gốc
-│   │   └── requirements.md, sources.md
+│   │   └── requirements.md, sources.md, de_bai_goc.pdf
 │   ├── btl1_baseline/                             # Cả nhóm đọc; MD giữ nguyên bản chụp
-│   │   └── README.md, model.json, business_rules.md, BTL1_EER.drawio, SHA256SUMS
+│   │   └── README.md, model.json, BTL1_report.pdf, BTL1_EER.drawio, SHA256SUMS
 │   ├── design/
 │   │   ├── btl1_to_btl2.md, change_log.md, decisions.md  # MD: thực hiện theo hợp đồng đã chốt
 │   │   ├── index_catalog.md                       # MD chủ trì, BD bổ sung EXPLAIN

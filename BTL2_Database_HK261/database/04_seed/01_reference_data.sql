@@ -1,5 +1,31 @@
--- BTL2 Quản lý quán Net – L09, Nhóm 10
--- Chủ phần: BD
--- TRẠNG THÁI: CHƯA HIỆN THỰC; đây là khung phân công.
--- TODO: Nạp danh mục và dữ liệu nền theo FK.
--- Bổ sung DBMS/phiên bản, phụ thuộc, cách chạy và bằng chứng khi hoàn thành.
+-- Synthetic local demo accounts only. Password: MatKhau123! (change outside demo).
+INSERT INTO NHOM_NGUOI_DUNG VALUES ('HoiVien','Hội viên'),('NhanVien','Nhân viên'),('VangLai','Vãng lai');
+INSERT INTO KHU_VUC VALUES ('KV01','Khu thường',NULL),('KV02','Khu khác',NULL);
+INSERT INTO NHOM_MAY VALUES ('VIP','Máy VIP',15000,NULL);
+INSERT INTO BANG_GIA VALUES ('HoiVien','VIP',15000),('VangLai','VIP',15000),('NhanVien','VIP',15000);
+INSERT INTO MAY_TRAM VALUES ('M01','Máy 01','AVAILABLE',1,1,'VIP','KV01'),('M02','Máy 02','AVAILABLE',1,2,'VIP','KV01'),('M03','Máy 03','MAINTENANCE',1,3,'VIP','KV01');
+INSERT INTO NHOM_DICH_VU VALUES ('NDV01','Đồ ăn'),('NDV02','Đồ uống');
+INSERT INTO DON_VI_TINH VALUES ('DVT01','Phần'),('DVT02','Chai');
+INSERT INTO MAY_IN VALUES ('MI01','In quầy',NULL);
+INSERT INTO DICH_VU VALUES ('DV01','Mì trứng',15000,50,'DangKinhDoanh','NDV01','DVT01','MI01'),('DV02','Nước ngọt',12000,100,'DangKinhDoanh','NDV02','DVT02','MI01');
+INSERT INTO TAI_KHOAN(MaTaiKhoan,TenDangNhap,MatKhauBam,Ten,TrangThai,MaNhomND) VALUES ('TK01','admin','scrypt:32768:8:1$4Vo8NDFXxVQZeijE$b8550ee326f01ffe822f66bc82b81bc615a58956617aa52e027b230d2b0f2c90c7ea8fefabdf9542fc54ad66e276c4a7dfbda00712fa0c24147d680a9293faff','Demo admin','HoatDong','NhanVien');
+INSERT INTO NHAN_VIEN VALUES ('TK01','QuanLy',0,'2026-01-01',NULL);
+INSERT INTO TAI_KHOAN(MaTaiKhoan,TenDangNhap,MatKhauBam,Ten,TrangThai,MaNhomND) VALUES ('TK02','player1','scrypt:32768:8:1$4Vo8NDFXxVQZeijE$b8550ee326f01ffe822f66bc82b81bc615a58956617aa52e027b230d2b0f2c90c7ea8fefabdf9542fc54ad66e276c4a7dfbda00712fa0c24147d680a9293faff','Demo player1','HoatDong','HoiVien');
+INSERT INTO NGUOI_CHOI VALUES ('TK02','DEMO-TK02',100000,'2026-01-01');
+INSERT INTO TAI_KHOAN(MaTaiKhoan,TenDangNhap,MatKhauBam,Ten,TrangThai,MaNhomND) VALUES ('TK03','cashier1','scrypt:32768:8:1$4Vo8NDFXxVQZeijE$b8550ee326f01ffe822f66bc82b81bc615a58956617aa52e027b230d2b0f2c90c7ea8fefabdf9542fc54ad66e276c4a7dfbda00712fa0c24147d680a9293faff','Demo cashier1','HoatDong','NhanVien');
+INSERT INTO NHAN_VIEN VALUES ('TK03','ThuNgan',0,'2026-01-01',NULL);
+INSERT INTO TAI_KHOAN(MaTaiKhoan,TenDangNhap,MatKhauBam,Ten,TrangThai,MaNhomND) VALUES ('TK04','locked_user','scrypt:32768:8:1$4Vo8NDFXxVQZeijE$b8550ee326f01ffe822f66bc82b81bc615a58956617aa52e027b230d2b0f2c90c7ea8fefabdf9542fc54ad66e276c4a7dfbda00712fa0c24147d680a9293faff','Demo locked_user','Khoa','HoiVien');
+INSERT INTO NGUOI_CHOI VALUES ('TK04','DEMO-TK04',100000,'2026-01-01');
+INSERT INTO TAI_KHOAN(MaTaiKhoan,TenDangNhap,MatKhauBam,Ten,TrangThai,MaNhomND) VALUES ('TK05','player2','scrypt:32768:8:1$4Vo8NDFXxVQZeijE$b8550ee326f01ffe822f66bc82b81bc615a58956617aa52e027b230d2b0f2c90c7ea8fefabdf9542fc54ad66e276c4a7dfbda00712fa0c24147d680a9293faff','Demo player2','HoatDong','HoiVien');
+INSERT INTO NGUOI_CHOI VALUES ('TK05','DEMO-TK05',100000,'2026-01-01');
+INSERT INTO TAI_KHOAN(MaTaiKhoan,TenDangNhap,MatKhauBam,Ten,TrangThai,MaNhomND) VALUES ('TK06','dual_user','scrypt:32768:8:1$4Vo8NDFXxVQZeijE$b8550ee326f01ffe822f66bc82b81bc615a58956617aa52e027b230d2b0f2c90c7ea8fefabdf9542fc54ad66e276c4a7dfbda00712fa0c24147d680a9293faff','Demo dual_user','HoatDong','NhanVien');
+INSERT INTO NHAN_VIEN VALUES ('TK06','ThuNgan',0,'2026-01-01',NULL);
+INSERT INTO NGUOI_CHOI VALUES ('TK06','DEMO-TK06',100000,'2026-01-01');
+INSERT INTO TAI_KHOAN(MaTaiKhoan,TenDangNhap,MatKhauBam,Ten,TrangThai,MaNhomND) VALUES ('TK07','barista','scrypt:32768:8:1$4Vo8NDFXxVQZeijE$b8550ee326f01ffe822f66bc82b81bc615a58956617aa52e027b230d2b0f2c90c7ea8fefabdf9542fc54ad66e276c4a7dfbda00712fa0c24147d680a9293faff','Demo barista','HoatDong','NhanVien');
+INSERT INTO NHAN_VIEN VALUES ('TK07','PhaChe',0,'2026-01-01',NULL);
+INSERT INTO TAI_KHOAN(MaTaiKhoan,TenDangNhap,MatKhauBam,Ten,TrangThai,MaNhomND) VALUES ('TK08','paused_user','scrypt:32768:8:1$4Vo8NDFXxVQZeijE$b8550ee326f01ffe822f66bc82b81bc615a58956617aa52e027b230d2b0f2c90c7ea8fefabdf9542fc54ad66e276c4a7dfbda00712fa0c24147d680a9293faff','Demo paused_user','TamDung','HoiVien');
+INSERT INTO NGUOI_CHOI VALUES ('TK08','DEMO-TK08',100000,'2026-01-01');
+INSERT INTO SO_DIEN_THOAI VALUES ('TK01','DEMO-PHONE');
+INSERT INTO DIA_CHI_NV VALUES ('TK01',1,NULL,NULL,NULL,'Địa chỉ giả lập');
+INSERT INTO CA_TRUC VALUES ('CA01','Ca sáng','2026-10-26 07:00:00','2026-10-26 12:00:00');
+INSERT INTO PHAN_CONG_TRUC VALUES ('TK03','CA01','KV01',NULL);

@@ -1,4 +1,4 @@
-# Checklist – Trần Tiến Thành
+# Checklist – Trần Tiến Thành (2413181)
 
 - [ ] **TT-01 – Ánh xạ màn hình theo phạm vi và API đã chốt**
   - Làm tại: `docs/design/ui_scope.md`, `docs/demo/scenarios.md`.

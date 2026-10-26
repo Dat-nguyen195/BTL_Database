@@ -35,3 +35,11 @@ fn_tien_gio khai báo DETERMINISTIC/NO SQL; fn_so_du_kha_dung không khai báo D
 | Danh tính/chuyên biệt hóa / 02_state_identity.sql | Chặn xóa lớp con cuối khi cha còn tồn tại; kiểm tra tham chiếu/quản lý theo phạm vi seed/luồng hỗ trợ. | MySQL không có CHECK hoãn đến COMMIT để bảo đảm tạo cha đã có con. Tạo tài khoản chỉ qua seed giao dịch cha+ít nhất một con và hậu kiểm trước commit; ứng dụng không có API tạo/xóa hồ sơ. Không tuyên bố FK/trigger đã tự bảo đảm toàn phần ở mọi thao tác SQL tùy ý. |
 
 Một nhóm có thể cần nhiều CREATE TRIGGER. HT ghi đủ BR/D-ID, nơi thực thi, ca kiểm tra và giới hạn trong rules_matrix.md. Các thao tác quản lý chu trình nhân viên, ca/hủy/hoàn ngoài API vẫn cần dữ liệu hợp lệ và đánh giá rõ, không tự đánh dấu đã hỗ trợ.
+
+## Helper nội bộ khi hiện thực backend
+
+Không đổi sáu API ghi nghiệp vụ qua procedure ở trên. Có thêm `sp_khoa_dong(pBang,pMa)` (whitelist sáu bảng, trả một result set hàng đã khóa) và `sp_khoa_phien(pId)` (khóa ví → máy → phiên, không trả result set) để thực thi transaction và quyền runtime tối thiểu. Hai hàm helper `fn_co_quyen(actor,roles)` và `fn_han_phien(start,budget,rate)` hỗ trợ role/hạn; chúng không thay thế hai hàm nghiệp vụ chính. Tổng cài đặt: 8 procedure, 4 function. Mọi routine không START TRANSACTION/COMMIT/ROLLBACK.
+
+Worker truyền actor NULL qua service nội bộ; chỉ được chốt phiên trả trước thực sự quá hạn tại đúng mốc hạn. HTTP không được chọn actor/giờ. TienGiuCho là phí đã phát sinh theo baseline; ngân sách hội viên lấy SoDuVi, có cơ chế xử lý nạp sau hạn trong transactions.md.
+
+Bản hiện thực giới hạn chuyển trạng thái ghi ở luồng demo; chưa cung cấp routine hủy/hoàn hoặc chu trình nhân viên/ca. Không coi seed hay trigger hiện tại là bằng chứng bao phủ mọi thao tác quản trị SQL ngoài API.

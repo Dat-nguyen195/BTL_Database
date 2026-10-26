@@ -7,7 +7,7 @@
 - Giữ 23 bảng và toàn bộ cột nghiệp vụ bên dưới, đúng chữ hoa/thường. Không dùng AUTO_INCREMENT thay mã VARCHAR hoặc đổi khóa tổ hợp. SQL luôn viết đúng tên IN HOA trên mọi hệ điều hành.
 - Giữ kiểu/độ dài/NULL/PK/FK/UQ và chính sách DELETE của model.json. Mã PK/FK chuỗi và MaYeuCau dùng `CHARACTER SET ascii COLLATE ascii_bin` ở cả hai đầu FK; dữ liệu tiếng Việt dùng utf8mb4. Riêng TenDangNhap dùng `utf8mb4_0900_as_ci`, chuẩn hóa trim/NFC trước khi lưu/tra cứu.
 - Mặc định DB `utf8mb4_0900_as_cs`. Bật chế độ SQL nghiêm ngặt, giữ CHECK đang được thực thi; không tắt FK/CHECK để nhập dữ liệu sai. Mỗi kết nối đặt múi giờ `+07:00`; DATETIME là giờ Việt Nam.
-- Tiền DECIMAL(...,0), không âm trừ cột chênh lệch có dấu; lượng nguyên theo BTL1. API từ chối phần lẻ thay vì để DB tự làm tròn. Khóa/miền/thời gian dùng D-01 đến D-09 trong [business_rules.md](../btl1_baseline/business_rules.md).
+- Tiền DECIMAL(...,0), không âm trừ cột chênh lệch có dấu; lượng nguyên theo BTL1. API từ chối phần lẻ thay vì để DB tự làm tròn. Khóa/miền/thời gian dùng D-01 đến D-09 trong báo cáo BTL1.
 - Mã đối tượng do ứng dụng sinh bằng số ngẫu nhiên mật mã, tối đa 20 ký tự, giữ nguyên khi gửi lại; mã đối tượng gốc của seed không đổi. Không dùng MAX(id)+1.
 
 ## 2. Từ điển bảng/cột kế thừa

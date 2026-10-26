@@ -1,7 +1,7 @@
-# Công cụ dự án
+# Công cụ backend
 
-Chủ phần: **MD + TT**.
+- start_backend_demo.py: sinh cấu hình local nếu chưa có, dựng MySQL Docker, cài DB mới với quyền runtime tối thiểu và chạy Flask/worker. Chạy bằng Python trong apps/backend/.venv.
+- bootstrap_backend.py: cài schema/routine/seed vào database mới, từ chối ghi đè database cũ; có API initialize/create_runtime_user dùng trong test. Không chứa mật khẩu thật.
+- check_backend.py: kiểm tra phiên bản, 23 bảng, 8 procedure, múi giờ/isolation và danh tính runtime bằng truy vấn đọc.
 
-Bổ sung công cụ cài mới, kiểm tra, backup/restore và đóng gói theo công nghệ đã chốt trong docs/design/decisions.md; ghi rõ đầu vào và cách chạy.
-
-Trạng thái ban đầu: chưa hiện thực/chưa có bằng chứng chạy. Xem PLAN.md và checklist cá nhân để biết hạn.
+Hướng dẫn lệnh đầy đủ ở apps/backend/README.md. Backup/restore và đóng gói tổng nhóm vẫn cần được thành viên phụ trách bổ sung.

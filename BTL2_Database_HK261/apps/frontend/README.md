@@ -1,7 +1,5 @@
-# Frontend – TT
+# Giao diện demo tích hợp backend
 
-Đã chốt HTML5/CSS3/JavaScript ES modules, không framework/build/Node. Tạo index.html và các module trong src/pages, src/components, src/services. Flask phục vụ các tệp UI cùng origin http://127.0.0.1:5000; fetch /api/v1 bằng đường dẫn tương đối. Không mở index.html bằng file:// để demo.
+HTML/CSS/JavaScript modules được Flask phục vụ cùng origin, không có Node/build. Mở http://127.0.0.1:5000 sau khi chạy script demo backend. Có login/CSRF, máy/phiên, nạp ví, đơn/tiếp nhận/thu, phiếu/ghi sổ và báo cáo. Các mã thao tác dùng crypto, giữ nguyên khi gửi lại; nút yêu cầu mới sinh ngữ cảnh mới. Thông tin người dùng được chèn bằng textContent.
 
-Theo ui_scope.md/api_contract.md: login/session/CSRF, quyền trên menu và form, envelope/mã lỗi dùng chung, trạng thái tải/rỗng/lỗi. Nút chặn bấm lặp kết hợp giữ mã P/O/K/G và nap:{UUID} để retry; không tự tính số dư/giá cho nghiệp vụ thu. Không cần package.json/lockfile frontend; README phải có cách truy cập qua Flask sau khi tích hợp.
-
-Checklist TT có 12 tác vụ. Trạng thái: mới có khung phân công/tài liệu, chưa có UI tích hợp chạy được hoặc kết quả kiểm tra được xác nhận.
+Đây là giao diện tối thiểu bổ sung để kiểm chứng phần TD với trình duyệt thật. Không tự đánh dấu nhiệm vụ frontend/báo cáo tổng hợp của TT hoàn tất. Xem apps/backend/README.md và test_browser_flows.py.

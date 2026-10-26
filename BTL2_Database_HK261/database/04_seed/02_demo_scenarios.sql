@@ -1,5 +1,2 @@
--- BTL2 Quản lý quán Net – L09, Nhóm 10
--- Chủ phần: BD
--- TRẠNG THÁI: CHƯA HIỆN THỰC; đây là khung phân công.
--- TODO: Nạp các kịch bản demo hợp lệ, có thể tái tạo.
--- Bổ sung DBMS/phiên bản, phụ thuộc, cách chạy và bằng chứng khi hoàn thành.
+-- Backend demo starts without active sessions/orders/documents.
+-- Reproducible business scenarios are created through API by tests/integration and tests/e2e.
