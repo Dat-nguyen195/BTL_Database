@@ -118,12 +118,12 @@ Các câu SQL trong báo cáo lấy từ bộ mã bàn giao. Ảnh minh chứng 
 \begin{table}[H]\small\centering\caption{Đối chiếu cấu trúc báo cáo với mẫu Phần 1–2}
 \begin{tabularx}{\linewidth}{@{}p{32mm}Yp{28mm}@{}}\toprule
 \textbf{Mục theo Mẫu BTL2} & \textbf{Sản phẩm trình bày} & \textbf{Vị trí}\\\midrule
-1.1 Các câu lệnh tạo bảng và ràng buộc (3.5đ) & 23 bảng; khóa, miền giá trị và các ca vi phạm & Mục \ref{sec:schema}\\
-1.2 Câu lệnh tạo chỉ mục (1.5đ) & Lý do lựa chọn; kế hoạch và số đo trước/sau & Mục \ref{sec:index}\\
-1.3 Truy vấn dữ liệu (5đ) & Năm truy vấn, dữ liệu và kết quả đối chiếu & Mục \ref{sec:queries}\\
-2. THỦ TỤC – HÀM - TRIGGER (10đ) & CRUD, hai yêu cầu trigger, hai thủ tục và hai hàm & Phần \ref{chap:routines}\\
+1.1 Các câu lệnh tạo bảng và ràng buộc & 23 bảng; khóa, miền giá trị và các ca vi phạm & Mục \ref{sec:schema}\\
+1.2 Câu lệnh tạo chỉ mục & Lý do lựa chọn; kế hoạch và số đo trước/sau & Mục \ref{sec:index}\\
+1.3 Truy vấn dữ liệu & Năm truy vấn, dữ liệu và kết quả đối chiếu & Mục \ref{sec:queries}\\
+2. THỦ TỤC – HÀM - TRIGGER & CRUD, hai yêu cầu trigger, hai thủ tục và hai hàm & Phần \ref{chap:routines}\\
 3. PHẦN THÊM & Kiểm chứng giao dịch, hồi quy và ba luồng demo & Phần \ref{chap:verification}\\
-Bảng kê nhiệm vụ & Phân công theo nội dung và điểm thành phần & Phụ lục A\\
+Bảng kê nhiệm vụ & Phân công theo nội dung và người phụ trách & Phụ lục A\\
 Đánh giá của giáo viên & Bảng đánh giá theo tỷ lệ đề xuất & Phụ lục A\\
 Phụ lục ERD & Thiết kế ERD cập nhật và ghi chú thay đổi BTL1 & Phụ lục B\\
 Dữ liệu mẫu & Bảng dữ liệu mẫu và nguồn minh chứng DBMS & Phụ lục C\\\bottomrule
@@ -162,8 +162,8 @@ Trần Tiến Thành & 2413181\\\bottomrule
 \vfill
 {Thành phố Hồ Chí Minh, tháng 11 năm 2026}
 \end{center}\end{titlepage}''')
-    schema=r'''\chapter{Tạo bảng, dữ liệu mẫu và truy vấn dữ liệu (10đ)}\label{chap:schema}
-\section{Các câu lệnh tạo bảng và ràng buộc kiểm tra (3.5đ)}\label{sec:schema}
+    schema=r'''\chapter{Tạo bảng, dữ liệu mẫu và truy vấn dữ liệu}\label{chap:schema}
+\section{Các câu lệnh tạo bảng và ràng buộc kiểm tra}\label{sec:schema}
 \subsection{Tổ chức lược đồ}
 Hệ thống quản lý đồng thời thời gian sử dụng máy, ví hội viên, bán dịch vụ và tồn kho. Một sự kiện kinh tế được lưu qua chứng từ: phiên và biên lai cho tiền máy; đơn cùng dòng chi tiết cho dịch vụ; phiếu cùng dòng chi tiết cho nhập, xuất hoặc kiểm kê. Cách tổ chức này giúp truy nguyên thay đổi số dư và tồn thay vì chỉ lưu các giá trị tổng hiện tại.
 
@@ -185,7 +185,7 @@ Các tệp sau là nguồn DDL được dùng khi khởi tạo database mới. K
 Khóa ngoại bảo đảm các dòng chi tiết và chứng từ tham chiếu đối tượng tồn tại. Các tham chiếu lịch sử dùng RESTRICT khi việc xóa đối tượng cha có thể làm mất khả năng đối soát. CASCADE chỉ được sử dụng theo quan hệ đã định nghĩa trong DDL; không được hiểu là quyền tùy ý xóa chứng từ đã chốt.
 '''+sql('constraints.sql','Các khóa ngoại được áp dụng')
     schema+=snap('img_01_dbms_tables','Kết quả DBMS minh họa câu lệnh tạo bảng thực thi thành công (23 bảng)')+snap('img_02_dbms_constraints','Kết quả DBMS minh họa các ràng buộc khóa ngoại và CHECK được áp dụng')
-    schema+=r'''\section{Câu lệnh tạo chỉ mục (1.5đ)}\label{sec:index}
+    schema+=r'''\section{Câu lệnh tạo chỉ mục}\label{sec:index}
 \subsection{Mô tả lý do cần đánh chỉ mục}
 Ở màn hình gọi món tại máy hoặc bán tại quầy, người dùng lọc dịch vụ đang kinh doanh theo nhóm và khoảng giá, sau đó xem giá từ cao xuống thấp. Yêu cầu này xuất phát từ chức năng xem thực đơn phục vụ khách và thu ngân. Truy vấn Q-P12-02 vì vậy là cơ sở lựa chọn chỉ mục nhiều cột, không đánh chỉ mục tách rời khỏi nhu cầu sử dụng thực tế.
 '''+sql('indexes.sql','Câu lệnh tạo chỉ mục: ix_dich_vu_filter')
@@ -197,7 +197,7 @@ Phép đo dùng database riêng với 20.000 dòng dịch vụ, 10 nhóm và hai
     schema+=f"Hiệu quả tăng tốc đạt \\textbf{{{bench['speedup']:.2f} lần}} (từ {bench['before']['mean_ms']:.1f}ms xuống {bench['after']['mean_ms']:.1f}ms). Kế hoạch thực thi dưới đây minh họa chi tiết đường dẫn truy xuất dữ liệu từ Table Scan sang Index Range Scan:\n"
     schema+=sql('plan_before.txt','Kế hoạch thực thi EXPLAIN ANALYZE trước khi tạo chỉ mục')+sql('plan_after.txt','Kế hoạch thực thi EXPLAIN ANALYZE sau khi tạo chỉ mục')
     schema+=snap('index_before','Kết quả DBMS hiển thị EXPLAIN ANALYZE trước khi tạo chỉ mục')+snap('index_after','Kết quả DBMS hiển thị EXPLAIN ANALYZE sau khi tạo chỉ mục')
-    schema+=r'''\section{Truy vấn dữ liệu (5đ)}\label{sec:queries}
+    schema+=r'''\section{Truy vấn dữ liệu}\label{sec:queries}
 Yêu cầu: 5 câu truy vấn độc lập trên các bảng dữ liệu khác nhau, kèm dữ liệu mẫu và kết quả thực thi trên DBMS. Hai câu đầu có SELECT, FROM, WHERE, ORDER BY; hai câu tiếp theo có GROUP BY và AGGREGATE; câu cuối cùng lồng 2 cấp và AGGREGATE. Các bảng dữ liệu mẫu chi tiết được đối chiếu thêm tại Phụ lục \ref{app:data}.
 '''
     query_specs=[
@@ -211,8 +211,8 @@ Yêu cầu: 5 câu truy vấn độc lập trên các bảng dữ liệu khác n
         schema+=sql(f'Q-P12-{i:02d}.sql',f'Câu lệnh SELECT - Truy vấn {i} (Q-P12-{i:02d})')
         schema+=result_table(name,cols,heads,f'Bảng dữ liệu mẫu và kết quả thực thi Truy vấn {i}')+snap(name,f'Kết quả màn hình hiển thị từ DBMS minh họa thực thi Truy vấn {i}')
     write('sections/01_schema.tex',schema)
-    routines_text=r'''\chapter{THỦ TỤC – HÀM - TRIGGER (10đ)}\label{chap:routines}
-\section{Thủ tục INSERT / UPDATE / DELETE dữ liệu vào 1 bảng dữ liệu (2đ)}
+    routines_text=r'''\chapter{THỦ TỤC – HÀM - TRIGGER}\label{chap:routines}
+\section{Thủ tục INSERT / UPDATE / DELETE dữ liệu vào 1 bảng dữ liệu}
 \subsection{Nguyên tắc xử lý và bảng dữ liệu chính}
 Bảng dữ liệu chính liên quan: \code{KHU_VUC}. Bảng dữ liệu phụ liên quan: \code{MAY_TRAM}, \code{PHAN_CONG_TRUC}. Thủ tục kiểm tra đầy đủ điều kiện ràng buộc nghiệp vụ và xử lý ngoại lệ có mã lỗi rõ ràng. Mỗi thủ tục trả về mã khu vực, tên thao tác và số dòng bị tác động.
 '''
@@ -222,21 +222,21 @@ Bảng dữ liệu chính liên quan: \code{KHU_VUC}. Bảng dữ liệu phụ l
       ('delete','DELETE',r'Thủ tục DELETE: Xóa khu vực (sp\_khu\_vuc\_delete)',r'Mô tả: Xóa khu vực không còn hoạt động. Kiểm tra khu vực tồn tại và không còn máy trạm hoặc lịch trực tham chiếu. Input: \code{p_ma_khu_vuc}. Output: \code{ma_khu_vuc}, \code{thao_tac}, \code{so_dong_tac_dong}.','img_11_crud_delete')]:
         routines_text+='\\subsection{'+title+'}\n'+desc+'\n'+flow('crud_'+mode,'Lưu đồ minh họa thao tác xử lý thủ tục '+m_name)+sql(mode+'.sql','Câu lệnh tạo thủ tục '+m_name)+cases(record)+snap(record,'Kết quả từ DBMS minh họa kiểm tra thủ tục '+m_name+' (trường hợp báo lỗi và trường hợp đúng)')
     routines_text+=snap('routines_created','Kết quả màn hình hiển thị từ DBMS minh họa cho việc tạo các thủ tục CRUD')
-    routines_text+=r'''\section{TRIGGER (3đ)}
+    routines_text+=r'''\section{TRIGGER}
 \subsection{Trigger 1: Bảo vệ biên lai đã thanh toán (T-P12-01)}
 Bảng dữ liệu chính liên quan: \code{BIEN_LAI_TIEN_MAY}. Mô tả: Trigger kiểm tra ràng buộc nghiệp vụ kế toán — không cho phép sửa đổi hoặc xóa biên lai đã ở trạng thái thanh toán (\code{DA_THANH_TOAN}). Được kích hoạt BEFORE UPDATE và BEFORE DELETE. Vẽ flowchart minh họa xử lý.
 '''+flow('receipt','Lưu đồ minh họa xử lý Trigger 1 bảo vệ biên lai đã thanh toán')+sql('trigger_receipt.sql','Câu lệnh tạo Trigger 1 trên BIEN_LAI_TIEN_MAY')+cases('img_12_trigger_t1')+snap('img_12_trigger_t1','Kết quả DBMS minh họa trường hợp báo lỗi: Chặn sửa và xóa biên lai đã thanh toán')+cases('trigger_t1_valid')+snap('trigger_t1_valid','Kết quả DBMS minh họa trường hợp đúng: Cho phép sửa và xóa biên lai chưa thanh toán')
     routines_text+=r'''\subsection{Trigger 2: Đồng bộ tổng tiền đơn từ chi tiết (T-P12-02)}
 Bảng dữ liệu chính liên quan: \code{CHI_TIET_GOI_DICH_VU}. Bảng dữ liệu phụ liên quan: \code{DON_GOI_DICH_VU}. Mô tả: Nhóm trigger thao tác ảnh hưởng tới hơn 1 bảng — tự động cập nhật tổng tiền đầu đơn (\code{tong_tien}) khi thêm, sửa số lượng/giá, hoặc xóa dòng chi tiết món. Kích hoạt AFTER INSERT, AFTER UPDATE, AFTER DELETE.
 '''+flow('order_total','Lưu đồ minh họa xử lý Trigger 2 đồng bộ tổng giá trị đơn hàng')+sql('trigger_total.sql','Câu lệnh tạo nhóm Trigger 2 trên CHI_TIET_GOI_DICH_VU')+cases('trigger_t2_before')+snap('trigger_t2_before','Dữ liệu đơn hàng ban đầu có tổng tiền bằng 0')+cases('img_13_trigger_t2')+snap('img_13_trigger_t2','Kết quả DBMS minh họa trường hợp đúng: Tổng tiền tự động đồng bộ khi thêm/sửa/xóa dòng món')+cases('trigger_t2_errors')+snap('trigger_t2_errors','Kết quả DBMS minh họa trường hợp báo lỗi: Chặn thao tác trên đơn đã đóng hoặc đã hủy')+snap('triggers_created','Các trigger trong hai yêu cầu đã được tạo')
-    routines_text+=r'''\section{THỦ TỤC (2.5đ)}
+    routines_text+=r'''\section{THỦ TỤC}
 \subsection{Thủ tục 1: Báo cáo doanh thu theo ngày (sp\_bao\_cao\_doanh\_thu\_ngay)}
 Mô tả thủ tục: Tổng hợp dữ liệu từ nhiều bảng (\code{BIEN_LAI_TIEN_MAY}, \code{DON_GOI_DICH_VU}). Sử dụng câu lệnh điều kiện IF kiểm tra ngày hợp lệ và vòng lặp WHILE duyệt qua từng ngày trong khoảng thời gian để tính tổng thu máy, thu dịch vụ và hoàn tiền. Output: Mảng JSON doanh thu chi tiết từng ngày.
 '''+flow('revenue','Lưu đồ minh họa Thủ tục 1 duyệt vòng lặp WHILE tính doanh thu theo ngày')+sql('report_revenue.sql','Câu lệnh tạo Thủ tục 1: sp_bao_cao_doanh_thu_ngay')+cases('img_14_sp_doanh_thu')+snap('img_14_sp_doanh_thu','Kết quả DBMS minh họa kiểm tra Thủ tục 1 (ca báo lỗi ngày sai và ca đúng trả mảng JSON)')
     routines_text+=r'''\subsection{Thủ tục 2: Báo cáo tồn và phân loại dịch vụ (sp\_bao\_cao\_ton\_dich\_vu)}
 Mô tả thủ tục: Đọc dữ liệu từ bảng \code{DICH_VU}, \code{NHOM_DICH_VU}, \code{DON_VI_TINH}. Sử dụng CURSOR duyệt danh sách món kết hợp IF/ELSE phân loại trạng thái tồn kho (\code{HetHang}, \code{SapHet}, \code{DuHang}) theo ngưỡng chỉ định. Output: Mảng JSON danh sách dịch vụ và trạng thái phân loại.
 '''+flow('stock','Lưu đồ minh họa Thủ tục 2 sử dụng CURSOR và IF phân loại tồn kho')+sql('report_stock.sql','Câu lệnh tạo Thủ tục 2: sp_bao_cao_ton_dich_vu')+cases('img_15_sp_ton_kho')+snap('img_15_sp_ton_kho','Kết quả DBMS minh họa kiểm tra Thủ tục 2 (ca báo lỗi ngưỡng âm và ca đúng trả dữ liệu)')
-    routines_text+=r'''\section{HÀM (2.5đ)}
+    routines_text+=r'''\section{HÀM}
 \subsection{Hàm 1: Tổng chi ví ròng (fn\_tong\_chi\_vi\_rong)}
 Mô tả hàm: Đọc dữ liệu từ bảng \code{GIAO_DICH_VI} và \code{NGUOI_CHOI}. Sử dụng CURSOR duyệt qua lịch sử giao dịch kết hợp câu lệnh IF kiểm tra loại giao dịch (\code{TruTienMay}, \code{TruTienDichVu}, \code{HoanTien}) để tính tổng số tiền chi ròng của hội viên trong một khoảng thời gian. Input: \code{p_ma_nguoi_choi}, \code{p_tu_gio}, \code{p_den_gio}. Output: DECIMAL(18,0).
 '''+flow('wallet','Lưu đồ minh họa Hàm 1 dùng CURSOR và IF tính tổng chi ròng')+sql('fn_wallet.sql','Câu lệnh tạo Hàm 1: fn_tong_chi_vi_rong')+cases('img_16_fn_chi_vi')+snap('img_16_fn_chi_vi','Kết quả DBMS minh họa kiểm tra Hàm 1 (ca đúng trả tổng tiền và ca sai mã trả NULL)')

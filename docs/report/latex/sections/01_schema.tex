@@ -1,6 +1,6 @@
 % !TeX root = ../main.tex
-\chapter{Tạo bảng, dữ liệu mẫu và truy vấn dữ liệu (10đ)}\label{chap:schema}
-\section{Các câu lệnh tạo bảng và ràng buộc kiểm tra (3.5đ)}\label{sec:schema}
+\chapter{Tạo bảng, dữ liệu mẫu và truy vấn dữ liệu}\label{chap:schema}
+\section{Các câu lệnh tạo bảng và ràng buộc kiểm tra}\label{sec:schema}
 \subsection{Tổ chức lược đồ}
 Hệ thống quản lý đồng thời thời gian sử dụng máy, ví hội viên, bán dịch vụ và tồn kho. Một sự kiện kinh tế được lưu qua chứng từ: phiên và biên lai cho tiền máy; đơn cùng dòng chi tiết cho dịch vụ; phiếu cùng dòng chi tiết cho nhập, xuất hoặc kiểm kê. Cách tổ chức này giúp truy nguyên thay đổi số dư và tồn thay vì chỉ lưu các giá trị tổng hiện tại.
 
@@ -26,7 +26,7 @@ Khóa ngoại bảo đảm các dòng chi tiết và chứng từ tham chiếu �
 \sqlinput{sql/constraints.sql}{Các khóa ngoại được áp dụng}
 \snapshot{img_01_dbms_tables}{Kết quả DBMS minh họa câu lệnh tạo bảng thực thi thành công (23 bảng)}{fig:img_01_dbms_tables}
 \snapshot{img_02_dbms_constraints}{Kết quả DBMS minh họa các ràng buộc khóa ngoại và CHECK được áp dụng}{fig:img_02_dbms_constraints}
-\section{Câu lệnh tạo chỉ mục (1.5đ)}\label{sec:index}
+\section{Câu lệnh tạo chỉ mục}\label{sec:index}
 \subsection{Mô tả lý do cần đánh chỉ mục}
 Ở màn hình gọi món tại máy hoặc bán tại quầy, người dùng lọc dịch vụ đang kinh doanh theo nhóm và khoảng giá, sau đó xem giá từ cao xuống thấp. Yêu cầu này xuất phát từ chức năng xem thực đơn phục vụ khách và thu ngân. Truy vấn Q-P12-02 vì vậy là cơ sở lựa chọn chỉ mục nhiều cột, không đánh chỉ mục tách rời khỏi nhu cầu sử dụng thực tế.
 \sqlinput{sql/indexes.sql}{Câu lệnh tạo chỉ mục: ix\_dich\_vu\_filter}
@@ -41,7 +41,7 @@ Hiệu quả tăng tốc đạt \textbf{3.88 lần} (từ 267.3ms xuống 68.8ms
 \sqlinput{sql/plan_after.txt}{Kế hoạch thực thi EXPLAIN ANALYZE sau khi tạo chỉ mục}
 \snapshot{index_before}{Kết quả DBMS hiển thị EXPLAIN ANALYZE trước khi tạo chỉ mục}{fig:index_before}
 \snapshot{index_after}{Kết quả DBMS hiển thị EXPLAIN ANALYZE sau khi tạo chỉ mục}{fig:index_after}
-\section{Truy vấn dữ liệu (5đ)}\label{sec:queries}
+\section{Truy vấn dữ liệu}\label{sec:queries}
 Yêu cầu: 5 câu truy vấn độc lập trên các bảng dữ liệu khác nhau, kèm dữ liệu mẫu và kết quả thực thi trên DBMS. Hai câu đầu có SELECT, FROM, WHERE, ORDER BY; hai câu tiếp theo có GROUP BY và AGGREGATE; câu cuối cùng lồng 2 cấp và AGGREGATE. Các bảng dữ liệu mẫu chi tiết được đối chiếu thêm tại Phụ lục \ref{app:data}.
 \subsection{Câu truy vấn 1: Danh sách máy theo khu vực (Q-P12-01)}
 Mô tả: Dùng cho màn hình sơ đồ máy của thu ngân để kiểm tra các máy có thể sử dụng tại KV01, hiển thị tên máy, nhóm máy và đơn giá giờ; sắp xếp theo vị trí hàng, cột.

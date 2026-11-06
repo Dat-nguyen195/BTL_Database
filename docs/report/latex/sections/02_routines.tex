@@ -1,6 +1,6 @@
 % !TeX root = ../main.tex
-\chapter{THỦ TỤC – HÀM - TRIGGER (10đ)}\label{chap:routines}
-\section{Thủ tục INSERT / UPDATE / DELETE dữ liệu vào 1 bảng dữ liệu (2đ)}
+\chapter{THỦ TỤC – HÀM - TRIGGER}\label{chap:routines}
+\section{Thủ tục INSERT / UPDATE / DELETE dữ liệu vào 1 bảng dữ liệu}
 \subsection{Nguyên tắc xử lý và bảng dữ liệu chính}
 Bảng dữ liệu chính liên quan: \code{KHU_VUC}. Bảng dữ liệu phụ liên quan: \code{MAY_TRAM}, \code{PHAN_CONG_TRUC}. Thủ tục kiểm tra đầy đủ điều kiện ràng buộc nghiệp vụ và xử lý ngoại lệ có mã lỗi rõ ràng. Mỗi thủ tục trả về mã khu vực, tên thao tác và số dòng bị tác động.
 \subsection{Thủ tục INSERT: Thêm khu vực (sp\_khu\_vuc\_insert)}
@@ -22,7 +22,7 @@ Mô tả: Xóa khu vực không còn hoạt động. Kiểm tra khu vực tồn 
 \sqlinput{sql/demo_img_11_crud_delete.sql}{Câu lệnh kiểm chứng trên MySQL}
 \snapshot{img_11_crud_delete}{Kết quả từ DBMS minh họa kiểm tra thủ tục DELETE (trường hợp báo lỗi và trường hợp đúng)}{fig:img_11_crud_delete}
 \snapshot{routines_created}{Kết quả màn hình hiển thị từ DBMS minh họa cho việc tạo các thủ tục CRUD}{fig:routines_created}
-\section{TRIGGER (3đ)}
+\section{TRIGGER}
 \subsection{Trigger 1: Bảo vệ biên lai đã thanh toán (T-P12-01)}
 Bảng dữ liệu chính liên quan: \code{BIEN_LAI_TIEN_MAY}. Mô tả: Trigger kiểm tra ràng buộc nghiệp vụ kế toán — không cho phép sửa đổi hoặc xóa biên lai đã ở trạng thái thanh toán (\code{DA_THANH_TOAN}). Được kích hoạt BEFORE UPDATE và BEFORE DELETE. Vẽ flowchart minh họa xử lý.
 \flowfigure{diagrams/receipt.tex}{Lưu đồ minh họa xử lý Trigger 1 bảo vệ biên lai đã thanh toán}{fig:flow-receipt}
@@ -42,7 +42,7 @@ Bảng dữ liệu chính liên quan: \code{CHI_TIET_GOI_DICH_VU}. Bảng dữ l
 \sqlinput{sql/demo_trigger_t2_errors.sql}{Câu lệnh kiểm chứng trên MySQL}
 \snapshot{trigger_t2_errors}{Kết quả DBMS minh họa trường hợp báo lỗi: Chặn thao tác trên đơn đã đóng hoặc đã hủy}{fig:trigger_t2_errors}
 \snapshot{triggers_created}{Các trigger trong hai yêu cầu đã được tạo}{fig:triggers_created}
-\section{THỦ TỤC (2.5đ)}
+\section{THỦ TỤC}
 \subsection{Thủ tục 1: Báo cáo doanh thu theo ngày (sp\_bao\_cao\_doanh\_thu\_ngay)}
 Mô tả thủ tục: Tổng hợp dữ liệu từ nhiều bảng (\code{BIEN_LAI_TIEN_MAY}, \code{DON_GOI_DICH_VU}). Sử dụng câu lệnh điều kiện IF kiểm tra ngày hợp lệ và vòng lặp WHILE duyệt qua từng ngày trong khoảng thời gian để tính tổng thu máy, thu dịch vụ và hoàn tiền. Output: Mảng JSON doanh thu chi tiết từng ngày.
 \flowfigure{diagrams/revenue.tex}{Lưu đồ minh họa Thủ tục 1 duyệt vòng lặp WHILE tính doanh thu theo ngày}{fig:flow-revenue}
@@ -55,7 +55,7 @@ Mô tả thủ tục: Đọc dữ liệu từ bảng \code{DICH_VU}, \code{NHOM_
 \sqlinput{sql/report_stock.sql}{Câu lệnh tạo Thủ tục 2: sp\_bao\_cao\_ton\_dich\_vu}
 \sqlinput{sql/demo_img_15_sp_ton_kho.sql}{Câu lệnh kiểm chứng trên MySQL}
 \snapshot{img_15_sp_ton_kho}{Kết quả DBMS minh họa kiểm tra Thủ tục 2 (ca báo lỗi ngưỡng âm và ca đúng trả dữ liệu)}{fig:img_15_sp_ton_kho}
-\section{HÀM (2.5đ)}
+\section{HÀM}
 \subsection{Hàm 1: Tổng chi ví ròng (fn\_tong\_chi\_vi\_rong)}
 Mô tả hàm: Đọc dữ liệu từ bảng \code{GIAO_DICH_VI} và \code{NGUOI_CHOI}. Sử dụng CURSOR duyệt qua lịch sử giao dịch kết hợp câu lệnh IF kiểm tra loại giao dịch (\code{TruTienMay}, \code{TruTienDichVu}, \code{HoanTien}) để tính tổng số tiền chi ròng của hội viên trong một khoảng thời gian. Input: \code{p_ma_nguoi_choi}, \code{p_tu_gio}, \code{p_den_gio}. Output: DECIMAL(18,0).
 \flowfigure{diagrams/wallet.tex}{Lưu đồ minh họa Hàm 1 dùng CURSOR và IF tính tổng chi ròng}{fig:flow-wallet}
