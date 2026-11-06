@@ -18,7 +18,7 @@ Tệp cấu hình ẩn `.latexmkrc` đã chọn XeLaTeX, tự chạy đủ các 
 latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-Từ gốc repository có thể chạy `./scripts/build_report_latex.sh` để biên dịch riêng vào `build/` và cập nhật PDF nộp trong deliverables.
+Từ gốc repository có thể chạy `./scripts/build_report_latex.sh` để biên dịch riêng vào `build/` và cập nhật PDF nộp ngay trong thư mục `docs/report/latex/`.
 
 ## VS Code / LaTeX Workshop
 

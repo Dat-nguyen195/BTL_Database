@@ -1,6 +1,6 @@
 # Cài mới và tổng duyệt BTL2 P1–2
 
-Từ thư mục giải nén `BTL2_L09_Nhom10`:
+Từ thư mục giải nén `BTL2_L09_Nhom09`:
 
 ```bash
 python3 -m venv apps/backend/.venv

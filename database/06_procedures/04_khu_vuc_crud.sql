@@ -1,4 +1,4 @@
--- BTL2 Quản lý quán Net – L09, Nhóm 10
+-- BTL2 Quản lý quán Net – L09, Nhóm 09
 -- Ba thủ tục INSERT / UPDATE / DELETE trên bảng KHU_VUC (MD phụ trách)
 -- Đáp ứng yêu cầu mục 2.1 của Mẫu Báo Cáo P1-2
 

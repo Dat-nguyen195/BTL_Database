@@ -1,4 +1,4 @@
--- BTL2 Quản lý quán Net – L09, Nhóm 10
+-- BTL2 Quản lý quán Net – L09, Nhóm 09
 -- Hai thủ tục có điều kiện, vòng lặp và trả dữ liệu (TT & BD phụ trách)
 -- Đáp ứng yêu cầu mục 2.3 của Mẫu Báo Cáo P1-2
 

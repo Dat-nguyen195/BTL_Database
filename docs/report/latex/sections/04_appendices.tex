@@ -1,8 +1,8 @@
 % !TeX root = ../main.tex
-\chapter{Bảng kê nhiệm vụ và đánh giá}
-\section{Phân công theo sản phẩm}
+\chapter{BẢNG KÊ NHIỆM VỤ VÀ ĐÁNH GIÁ}
+\section{Bảng kê nhiệm vụ}
 Bảng dưới kế thừa phân công đang lưu trong hồ sơ nhóm. Mỗi hàng chỉ đánh dấu một người phụ trách chính; nội dung tích hợp có thể được kiểm tra chéo. Các cột dùng bốn số cuối MSSV để tránh thu hẹp cột mô tả. Tỉ lệ đóng góp là mức đề xuất, không phải điểm đã được giảng viên xác nhận.
-\begin{table}[H]\small\centering\caption{Danh sách thành viên và cột phân công}
+\begin{table}[H]\small\centering\caption{Danh sách thành viên và tỷ lệ điểm đề xuất}
 \begin{tabularx}{\linewidth}{@{}lYc@{}}\toprule\textbf{MSSV}&\textbf{Họ và tên}&\textbf{Đề xuất}\\\midrule
 2410709&Nguyễn Thành Đạt&20\%\\2410694&Nguyễn Minh Đạt&20\%\\2410696&Nguyễn Phúc Bảo Đạt&20\%\\2413095&Nguyễn Hữu Tây&20\%\\2413181&Trần Tiến Thành&20\%\\\bottomrule\end{tabularx}\end{table}
 \begingroup\small\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.15}
@@ -43,8 +43,8 @@ Kiến trúc tích hợp Backend Flask và Test suite tự động 79 ca &  &  &
 Thiết kế sơ đồ giải thuật lưu đồ TikZ cho toàn bộ Routine & x &  &  &  & \\
 Kịch bản dữ liệu và benchmark đo lường chỉ mục &  & x &  &  & \\
 \end{longtable}\endgroup
-\clearpage\section{Đánh giá của giảng viên}
-Các cột nhận xét, điều chỉnh và tổng điểm để trống cho giảng viên.
+\clearpage\section{Đánh giá của giáo viên}
+(Điền danh sách thành viên và \% đóng góp bên dưới và để trống các cột còn lại)
 \begin{table}[H]\centering\small\renewcommand{\arraystretch}{2.2}
 \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{36mm}lp{12mm}Y>{\raggedright\arraybackslash}p{13mm}p{13mm}@{}}\toprule
 \textbf{Họ tên}&\textbf{MSSV}&\textbf{Đề xuất}&\textbf{Nhận xét}&\textbf{Điểm trừ/cộng}&\textbf{Tổng}\\\midrule
@@ -54,7 +54,7 @@ Nguyễn Phúc Bảo Đạt&2410696&20\%&&&\\
 Nguyễn Hữu Tây&2413095&20\%&&&\\
 Trần Tiến Thành&2413181&20\%&&&\\\bottomrule
 \end{tabularx}\end{table}
-\chapter{Sơ đồ EER và thay đổi so với BTL1}\label{app:eer}
+\chapter{PHỤ LỤC: Thiết kế ERD cập nhật mới nhất}\label{app:eer}
 \section{Sơ đồ tổng thể dạng vector}
 Sơ đồ giữ ký hiệu EER Chen của BTL1. Bản tổng quan trình bày toàn hệ thống; các trang tiếp theo phóng riêng từng phân hệ. Tệp PDF/SVG nguồn được kèm trong bộ LaTeX, cho phép phóng to mà không vỡ nét hoặc dùng để in khổ lớn.
 \begin{figure}[H]\centering\includegraphics[width=\linewidth,height=.76\textheight,keepaspectratio]{assets/eer/erd_full_vector.pdf}\caption{EER tổng thể kế thừa từ thiết kế BTL1}\end{figure}
@@ -70,15 +70,18 @@ Sơ đồ giữ ký hiệu EER Chen của BTL1. Bản tổng quan trình bày to
 \begin{figure}[H]\centering\includegraphics[width=\linewidth,height=.78\textheight,keepaspectratio]{assets/eer/eerd_sub_service_inventory.pdf}\caption{EER phân hệ dịch vụ và đơn hàng}\end{figure}
 \clearpage\section{Phiếu kho và kiểm kê}
 \begin{figure}[H]\centering\includegraphics[width=\linewidth,height=.78\textheight,keepaspectratio]{assets/eer/eerd_sub_inventory.pdf}\caption{EER phân hệ phiếu kho và kiểm kê}\end{figure}
-\clearpage\section{Các thay đổi khi hiện thực}
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{32mm}>{\raggedright\arraybackslash}p{49mm}>{\raggedright\arraybackslash}p{63mm}@{}}\toprule\textbf{Nội dung}&\textbf{Hiện thực BTL2}&\textbf{Lý do}\\\midrule\endhead
-Duy nhất có điều kiện&Cột sinh và UNIQUE cho phiên đang hoạt động&Ngăn hai phiên đồng thời trên cùng máy/hội viên.\\
-Tổng tiền đơn&Ba AFTER trigger từ chi tiết&Giữ tổng đầu đơn nhất quán khi INSERT/UPDATE/DELETE.\\
-Ngày doanh thu&Tách thời điểm thanh toán và hoàn&Không phân bổ thu/hoàn về ngày đặt đơn.\\
-Miền tiền trong hàm&DECIMAL(18,0) cho biến tổng và kết quả&Không thu hẹp miền tổng tiền hợp lệ ở bảng.\\
-Miền chuỗi cursor&Đọc đúng 100 ký tự tên dịch vụ và 30 ký tự đơn vị&Tránh cắt dữ liệu hợp lệ khi tạo báo cáo.\\
-Chỉ mục thực đơn&Chỉ mục kết hợp theo Q-P12-02&Giảm chi phí đọc; hiệu quả được đo theo kế hoạch thực thi.\\\bottomrule
-\end{longtable}
+\clearpage\section{Bảng ghi chú các thay đổi so với BTL1}
+\begingroup\small\setlength{\tabcolsep}{3.5pt}\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{28mm}>{\raggedright\arraybackslash}p{38mm}>{\raggedright\arraybackslash}p{44mm}>{\raggedright\arraybackslash}p{44mm}@{}}\toprule
+\textbf{Nội dung thay đổi}&\textbf{Phiên bản cũ (BTL1)}&\textbf{Phiên bản mới (BTL2)}&\textbf{Lí do}\\\midrule\endhead
+\bottomrule\endfoot
+Duy nhất có điều kiện&Chỉ có ràng buộc quan hệ thực thể, chưa ràng buộc mức DBMS chống phiên mở đồng thời.&Bổ sung cột sinh và chỉ mục UNIQUE có điều kiện cho phiên đang hoạt động.&Ngăn chặn triệt để 1 tài khoản mở nhiều phiên hoặc 1 máy trạm mở cùng lúc 2 phiên.\\\midrule
+Đồng bộ tổng tiền đơn&Tổng tiền đơn tính độc lập hoặc dựa vào logic tầng ứng dụng.&Bộ 3 AFTER trigger trên chi tiết dịch vụ tự động đồng bộ lại tổng tiền đầu đơn.&Bảo toàn tính nhất quán dữ liệu kế toán, không phụ thuộc ứng dụng ngoài.\\\midrule
+Phân định ngày doanh thu&Thống kê doanh thu theo ngày tạo đơn hoặc ngày tạo phiên.&Tách riêng thời điểm thanh toán biên lai/đơn và thời điểm hoàn tiền.&Phản ánh đúng dòng tiền thực tế theo ngày phát sinh thay vì ngày đặt đơn.\\\midrule
+Miền giá trị tiền tệ trong hàm&Dùng INT hoặc DECIMAL ngắn trong các biến tính toán của hàm.&Chuẩn hóa sang DECIMAL(18,0) cho toàn bộ biến tổng và kết quả trả về của hàm.&Tránh tràn số và sai lệch số học khi tổng tiền hoặc giao dịch ví quy mô lớn.\\\midrule
+Miền chuỗi Cursor trong thủ tục&Khai báo biến tạm VARCHAR(50) ngắn trong thân thủ tục.&Khai báo khớp độ dài lược đồ (VARCHAR(100) cho tên, VARCHAR(30) cho đơn vị).&Tránh lỗi cắt cụt chuỗi dữ liệu (Data truncation) khi duyệt báo cáo tồn kho.\\\midrule
+Tối ưu hóa chỉ mục thực đơn&Chỉ có các khóa chính và khóa ngoại mặc định theo thiết kế ERD.&Tạo chỉ mục phức hợp \texttt{ix\_dich\_vu\_filter} trên \texttt{(trang\_thai, ma\_nhom, ten\_dich\_vu)}.&Giảm chi phí đọc và tăng tốc truy vấn lọc thực đơn 3.88x (đo bằng EXPLAIN ANALYZE).\\\bottomrule
+\end{longtable}\endgroup
 \chapter{Dữ liệu mẫu và nguồn minh chứng}\label{app:data}
 Mỗi hình dưới là bản xuất của SQL client trong cùng phiên kiểm chứng với các truy vấn ở Phần 1. Các dữ liệu là dữ liệu demo; không sử dụng thông tin cá nhân thật. Phần SQL và kết quả thô đầy đủ đi kèm ở thư mục evidence/dbms.
 \snapshot{q01_data}{Các bảng dữ liệu mẫu liên quan Q-P12-01}{fig:q01_data}

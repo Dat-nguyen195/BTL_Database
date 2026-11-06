@@ -1,9 +1,10 @@
 """Đóng gói bản nộp, kiểm tra bí mật và hash từng tệp trước khi bàn giao."""
 from pathlib import Path
-import hashlib,os,zipfile
+import hashlib,os,shutil,zipfile
 from dotenv import dotenv_values
 ROOT=Path(__file__).resolve().parents[1]
-OUTPUT_ZIP=ROOT/'deliverables/BTL2_L09_Nhom10_BanGiao.zip'
+REPORT_DIR=ROOT/'docs/report/latex'
+OUTPUT_ZIP=REPORT_DIR/'BTL2_L09_Nhom09_BanGiao.zip'
 EXCLUDE_DIRS={'.git','.venv','__pycache__','.pytest_cache','.idea','.agents','.aws','.codex','tmp','node_modules'}
 def should_include(p):
     return (
@@ -11,7 +12,7 @@ def should_include(p):
         and not ('.vscode' in p.parts and p.name != 'settings.json')
         and not (p.name.startswith('.env') and p.name != '.env.example')
         and p.name not in {'.DS_Store','Thumbs.db'}
-        and p not in {Path('deliverables/SHA256SUMS'),Path('docs/report/latex/main.pdf')}
+        and p not in {Path('docs/report/latex/SHA256SUMS'),Path('docs/report/latex/main.pdf'),Path('docs/report/latex/BTL2_L09_Nhom09_P1_P2.pdf')}
         and p.suffix not in {'.pyc','.pyo','.pyd','.zip','.tmp','.aux','.log','.out','.toc','.lof','.lot','.fls','.fdb_latexmk','.xdv'}
         and not p.name.endswith(('.synctex', '.synctex.gz', '.synctex(busy)', '.synctex.gz(busy)'))
     )
@@ -43,11 +44,13 @@ def package():
     latex_files=[(p.relative_to(latex_root),d) for p,d in files if p.is_relative_to(latex_root)]
     if not any(p == Path('main.tex') for p,_ in latex_files):
         raise RuntimeError('Missing main.tex')
-    if not (ROOT/'deliverables/BTL2_L09_Nhom10_P1_P2.pdf').is_file():
+    pdf_path = REPORT_DIR/'BTL2_L09_Nhom09_P1_P2.pdf'
+    if not pdf_path.is_file():
         raise RuntimeError('Build the report PDF before packaging')
-    make_archive(ROOT/'deliverables/BTL2_L09_Nhom10_LaTeX.zip',latex_files,'BTL2_L09_Nhom10_LaTeX/')
-    make_archive(OUTPUT_ZIP,files,'BTL2_L09_Nhom10/')
-    final=[ROOT/'deliverables/BTL2_L09_Nhom10_P1_P2.pdf',ROOT/'deliverables/BTL2_L09_Nhom10_LaTeX.zip',OUTPUT_ZIP]
-    (ROOT/'deliverables/SHA256SUMS').write_text('\n'.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.name for p in final)+'\n')
+    latex_zip = REPORT_DIR/'BTL2_L09_Nhom09_LaTeX.zip'
+    make_archive(latex_zip,latex_files,'BTL2_L09_Nhom09_LaTeX/')
+    make_archive(OUTPUT_ZIP,files,'BTL2_L09_Nhom09/')
+    final=[pdf_path,latex_zip,OUTPUT_ZIP]
+    (REPORT_DIR/'SHA256SUMS').write_text('\n'.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.name for p in final)+'\n')
     print('ZIP verified:',len(files),'files; no configured secrets; manifest included.')
 if __name__=='__main__':package()

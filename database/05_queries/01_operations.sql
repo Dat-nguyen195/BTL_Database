@@ -1,4 +1,4 @@
--- BTL2 Quản lý quán Net – L09, Nhóm 10
+-- BTL2 Quản lý quán Net – L09, Nhóm 09
 -- Bộ truy vấn vận hành P1-2 (MD & BD phụ trách)
 -- Đáp ứng yêu cầu mục 1.3 của Mẫu Báo Cáo P1-2
 

@@ -1,5 +1,5 @@
 % !TeX root = ../main.tex
-\chapter{Kiểm chứng và tích hợp ứng dụng}\label{chap:verification}
+\chapter{PHẦN THÊM: Kiểm chứng và tích hợp ứng dụng}\label{chap:verification}
 \section{Kiến trúc và giao dịch}
 Giao diện HTML/CSS/JavaScript gọi REST API Flask trên cùng origin. Backend tách tuyến HTTP, dịch vụ nghiệp vụ và lớp truy cập dữ liệu. Dịch vụ nắm ranh giới BEGIN/COMMIT/ROLLBACK trên một kết nối; routine được gọi trong giao dịch đó, không tự chốt độc lập. Runtime dùng tài khoản hạn quyền, không cấp trực tiếp quyền cập nhật số dư ví hoặc tồn kho.
 

@@ -1,4 +1,4 @@
--- BTL2 Quản lý quán Net – L09, Nhóm 10
+-- BTL2 Quản lý quán Net – L09, Nhóm 09
 -- Trigger liên bảng T-P12-02: Duy trì tổng tiền đầu đơn từ chi tiết gói dịch vụ (TD phụ trách)
 -- Bảng kích hoạt: CHI_TIET_GOI_DICH_VU
 -- Bảng chịu ảnh hưởng: DON_GOI_DICH_VU

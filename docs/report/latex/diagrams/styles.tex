@@ -1,18 +1,19 @@
 % !TeX root = ../main.tex
 % Shared geometry: edge-to-edge spacing, fixed branch lanes and explicit labels.
 \tikzset{
-  flow/.style={font=\sffamily\fontsize{10}{12}\selectfont},
-  start/.style={rectangle,rounded corners=4mm,draw=Ink,fill=Ink,text=white,
-    align=center,text width=5.2cm,minimum height=9mm,inner xsep=2mm,inner ysep=2mm,outer sep=1pt},
-  process/.style={rectangle,rounded corners=1.5mm,draw=Edge,fill=Pale,
-    align=center,text width=5.2cm,minimum height=9mm,inner sep=2mm,outer sep=1pt},
-  decision/.style={diamond,aspect=2.3,draw=Accent,fill=Gold,
-    align=center,text width=3.3cm,inner sep=.7mm,outer sep=1pt},
-  error/.style={rectangle,rounded corners=1.5mm,draw=ErrorInk,fill=ErrorInk!6,
-    align=center,text width=3.1cm,minimum height=10mm,inner sep=2mm,outer sep=1pt},
-  reject/.style={start,draw=ErrorInk,fill=ErrorInk,text width=3.1cm},
-  branch/.style={font=\sffamily\fontsize{8.5}{10}\selectfont,
-    text=Ink,fill=white,inner sep=1.1pt,outer sep=0pt},
-  arrow/.style={-{Latex[length=2mm,width=1.5mm]},draw=Ink,line width=.7pt,rounded corners=1.5mm},
-  connector/.style={draw=Ink,line width=.7pt,rounded corners=1.5mm}
+  flow/.style={font=\fontsize{9.5}{11.5}\selectfont},
+  start/.style={rectangle,rounded corners=4mm,draw=black,fill=black!8,text=black,
+    align=center,text width=5.2cm,minimum height=9mm,inner xsep=2mm,inner ysep=2mm,outer sep=1pt,line width=.8pt},
+  process/.style={rectangle,rounded corners=1.5mm,draw=black,fill=white,text=black,
+    align=center,text width=5.2cm,minimum height=9mm,inner sep=2mm,outer sep=1pt,line width=.7pt},
+  decision/.style={diamond,aspect=2.3,draw=black,fill=black!5,text=black,
+    align=center,text width=3.3cm,inner sep=.7mm,outer sep=1pt,line width=.7pt},
+  error/.style={rectangle,rounded corners=1.5mm,draw=black,fill=black!5,text=black,
+    align=center,text width=3.1cm,minimum height=10mm,inner sep=2mm,outer sep=1pt,line width=.7pt},
+  reject/.style={rectangle,rounded corners=4mm,draw=black,fill=black!8,text=black,text width=3.1cm,
+    align=center,minimum height=9mm,inner xsep=2mm,inner ysep=2mm,outer sep=1pt,line width=.8pt},
+  branch/.style={font=\fontsize{8.5}{10}\selectfont,
+    text=black,fill=white,inner sep=1.1pt,outer sep=0pt},
+  arrow/.style={-{Latex[length=2mm,width=1.5mm]},draw=black,line width=.7pt,rounded corners=1.5mm},
+  connector/.style={draw=black,line width=.7pt,rounded corners=1.5mm}
 }

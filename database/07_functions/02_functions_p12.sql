@@ -1,4 +1,4 @@
--- BTL2 Quản lý quán Net – L09, Nhóm 10
+-- BTL2 Quản lý quán Net – L09, Nhóm 09
 -- Hai hàm có điều kiện, vòng lặp và đọc bảng (HT & TD phụ trách)
 -- Đáp ứng yêu cầu mục 2.4 của Mẫu Báo Cáo P1-2
 

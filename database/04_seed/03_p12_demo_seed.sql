@@ -1,4 +1,4 @@
--- BTL2 Quản lý quán Net – L09, Nhóm 10
+-- BTL2 Quản lý quán Net – L09, Nhóm 09
 -- Dữ liệu mẫu bổ sung phục vụ năm truy vấn, CRUD, trigger, thủ tục và hàm P1-2 (BD phụ trách)
 
 -- 1. Thêm máy trạm ở các khu vực và trạng thái khác nhau

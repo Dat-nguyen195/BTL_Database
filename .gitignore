@@ -38,8 +38,8 @@ Thumbs.db
 *.synctex.gz(busy)
 
 # Gói bàn giao được tạo lại từ nguồn
-deliverables/*.zip
-deliverables/SHA256SUMS
+docs/report/latex/*.zip
+docs/report/latex/SHA256SUMS
 
 # Tệp riêng và tài liệu gốc tham chiếu theo chính sách kho công khai
 .aws/

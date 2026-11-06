@@ -1,11 +1,11 @@
 # BTL2 — Hệ thống quản lý quán Net
 
-Hệ Cơ sở dữ liệu (CO2013), học kỳ 261 · L09 · Nhóm 10
+Hệ Cơ sở dữ liệu (CO2013), học kỳ 261 · L09 · Nhóm 09
 **GVHD: ThS. Trần Thị Quế Nguyệt**
 
 MySQL 8.4.13 / InnoDB · Python 3.12 / Flask 3.1.3 · HTML/CSS/JavaScript.
 
-[Báo cáo PDF](deliverables/BTL2_L09_Nhom10_P1_P2.pdf) · [Nguồn LaTeX](docs/report/latex/main.tex) · [Hướng dẫn demo](docs/demo/runbook.md) · [Yêu cầu bài tập](docs/requirements/requirements.md)
+[Báo cáo PDF](docs/report/latex/BTL2_L09_Nhom09_P1_P2.pdf) · [Nguồn LaTeX](docs/report/latex/main.tex) · [Hướng dẫn demo](docs/demo/runbook.md) · [Yêu cầu bài tập](docs/requirements/requirements.md)
 
 ## Nội dung bài làm
 
@@ -25,12 +25,11 @@ BTL_Database/
 │   ├── btl1_baseline/    # Mô hình, báo cáo và sơ đồ BTL1 kế thừa
 │   ├── design/           # Hợp đồng schema, API, nghiệp vụ và giao dịch
 │   ├── demo/             # Hướng dẫn cài mới và kịch bản trình diễn
-│   └── report/latex/     # Nguồn báo cáo chính, SQL, TikZ và tài sản vector
+│   └── report/latex/     # Nguồn báo cáo chính, PDF nộp, SQL, TikZ và tài sản vector
 ├── tests/                # API, integration, SQL và E2E
 ├── evidence/             # Kết quả SQL, benchmark, JUnit và minh chứng trình duyệt
 ├── infrastructure/       # Docker Compose cho MySQL local
-├── scripts/              # Cài đặt, kiểm tra, tạo báo cáo và đóng gói
-└── deliverables/          # PDF để nộp; ZIP và checksum được tạo khi đóng gói
+└── scripts/              # Cài đặt, kiểm tra, tạo báo cáo và đóng gói
 ```
 
 ## Chạy demo
@@ -65,17 +64,17 @@ Tài khoản test cần quyền tạo/xóa database và user tạm. Test dùng t
 
 ## Báo cáo và gói nộp
 
-PDF chính: [BTL2 Phần 1–2](deliverables/BTL2_L09_Nhom10_P1_P2.pdf). Nguồn chỉnh sửa: [main.tex](docs/report/latex/main.tex).
+PDF chính: [BTL2 Phần 1–2](docs/report/latex/BTL2_L09_Nhom09_P1_P2.pdf). Nguồn chỉnh sửa: [main.tex](docs/report/latex/main.tex).
 
 ```bash
 # Biên dịch nguồn hiện có bằng XeLaTeX; không cần database
 ./scripts/build_report_latex.sh
 
-# Tạo ZIP nguồn LaTeX, ZIP bàn giao và SHA256SUMS
+# Tạo ZIP nguồn LaTeX, ZIP bàn giao và SHA256SUMS trong docs/report/latex/
 apps/backend/.venv/bin/python scripts/package_deliverables.py
 ```
 
-Cần TeX Live/XeLaTeX và latexmk; cấu hình VS Code/latexmk đã kèm trong dự án, phông mã nguồn đã được đóng gói. Chi tiết trong [README LaTeX](docs/report/latex/README.md). ZIP là sản phẩm sinh lại từ nguồn, được giữ local và không commit để tránh lặp toàn bộ repository. Tên tệp đầu ra được liệt kê trong [deliverables](deliverables/README.md).
+Cần TeX Live/XeLaTeX và latexmk; cấu hình VS Code/latexmk đã kèm trong dự án, phông mã nguồn đã được đóng gói. Chi tiết trong [README LaTeX](docs/report/latex/README.md). ZIP là sản phẩm sinh lại từ nguồn, được giữ local và không commit để tránh lặp toàn bộ repository. Tệp đầu ra được lưu trực tiếp trong `docs/report/latex/`.
 
 Muốn cập nhật báo cáo từ SQL hiện hành: chạy `python3 scripts/build_latex_report.py` rồi biên dịch. Muốn chạy lại SQL client hoặc benchmark: xem [danh mục công cụ](scripts/README.md).
 

@@ -1,6 +1,6 @@
 % !TeX root = ../main.tex
-\chapter{Tạo bảng, dữ liệu mẫu và truy vấn}\label{chap:schema}
-\section{Lược đồ vật lý và ràng buộc}\label{sec:schema}
+\chapter{Tạo bảng, dữ liệu mẫu và truy vấn dữ liệu (10đ)}\label{chap:schema}
+\section{Các câu lệnh tạo bảng và ràng buộc kiểm tra (3.5đ)}\label{sec:schema}
 \subsection{Tổ chức lược đồ}
 Hệ thống quản lý đồng thời thời gian sử dụng máy, ví hội viên, bán dịch vụ và tồn kho. Một sự kiện kinh tế được lưu qua chứng từ: phiên và biên lai cho tiền máy; đơn cùng dòng chi tiết cho dịch vụ; phiếu cùng dòng chi tiết cho nhập, xuất hoặc kiểm kê. Cách tổ chức này giúp truy nguyên thay đổi số dư và tồn thay vì chỉ lưu các giá trị tổng hiện tại.
 
@@ -24,83 +24,83 @@ Các tệp sau là nguồn DDL được dùng khi khởi tạo database mới. K
 \subsection{Khóa ngoại và chính sách toàn vẹn}
 Khóa ngoại bảo đảm các dòng chi tiết và chứng từ tham chiếu đối tượng tồn tại. Các tham chiếu lịch sử dùng RESTRICT khi việc xóa đối tượng cha có thể làm mất khả năng đối soát. CASCADE chỉ được sử dụng theo quan hệ đã định nghĩa trong DDL; không được hiểu là quyền tùy ý xóa chứng từ đã chốt.
 \sqlinput{sql/constraints.sql}{Các khóa ngoại được áp dụng}
-\snapshot{img_01_dbms_tables}{Kiểm đếm các bảng sau khi cài mới trên MySQL}{fig:img_01_dbms_tables}
-\snapshot{img_02_dbms_constraints}{Khóa ngoại và CHECK từ chối dữ liệu sai; dòng máy ban đầu được giữ nguyên}{fig:img_02_dbms_constraints}
-\section{Chỉ mục và kiểm chứng hiệu năng}\label{sec:index}
-\subsection{Chức năng cần tối ưu}
-Ở màn hình gọi món tại máy hoặc bán tại quầy, người dùng lọc dịch vụ đang kinh doanh theo nhóm và khoảng giá, sau đó xem giá từ cao xuống thấp. Truy vấn Q-P12-02 vì vậy là cơ sở lựa chọn chỉ mục nhiều cột, không đánh chỉ mục tách rời khỏi nhu cầu sử dụng.
-\sqlinput{sql/indexes.sql}{Bộ chỉ mục của hệ thống}
-\subsection{Thiết kế phép đo và kết quả}
+\snapshot{img_01_dbms_tables}{Kết quả DBMS minh họa câu lệnh tạo bảng thực thi thành công (23 bảng)}{fig:img_01_dbms_tables}
+\snapshot{img_02_dbms_constraints}{Kết quả DBMS minh họa các ràng buộc khóa ngoại và CHECK được áp dụng}{fig:img_02_dbms_constraints}
+\section{Câu lệnh tạo chỉ mục (1.5đ)}\label{sec:index}
+\subsection{Mô tả lý do cần đánh chỉ mục}
+Ở màn hình gọi món tại máy hoặc bán tại quầy, người dùng lọc dịch vụ đang kinh doanh theo nhóm và khoảng giá, sau đó xem giá từ cao xuống thấp. Yêu cầu này xuất phát từ chức năng xem thực đơn phục vụ khách và thu ngân. Truy vấn Q-P12-02 vì vậy là cơ sở lựa chọn chỉ mục nhiều cột, không đánh chỉ mục tách rời khỏi nhu cầu sử dụng thực tế.
+\sqlinput{sql/indexes.sql}{Câu lệnh tạo chỉ mục: ix\_dich\_vu\_filter}
+\subsection{Minh họa hiệu quả truy vấn trước và sau khi đánh chỉ mục}
 Phép đo dùng database riêng với 20.000 dòng dịch vụ, 10 nhóm và hai đơn vị tính. Cùng một câu SELECT được chạy 20 lượt trước và sau khi thêm \code{ix_dich_vu_filter}. Cả hai giai đoạn đều lấy hết tập kết quả. Số đo phụ thuộc máy chạy, cache và tải tại thời điểm đo; đây là bằng chứng cho tập dữ liệu cụ thể, không phải cam kết hiệu năng trong mọi môi trường.
-\begin{table}[H]\centering\caption{Kết quả phép đo Q-P12-02}\begin{tabularx}{\linewidth}{@{}Yrr@{}}\toprule\textbf{Chỉ tiêu}&\textbf{Trước}&\textbf{Sau}\\\midrule
-Trung bình 20 lượt (ms)&267.313&68.820\\
+\begin{table}[H]\centering\caption{So sánh hiệu năng truy vấn trước và sau khi đánh chỉ mục}\begin{tabularx}{\linewidth}{@{}Yrr@{}}\toprule\textbf{Chỉ tiêu}&\textbf{Trước}&\textbf{Sau}\\\midrule
+Thời gian trung bình 20 lượt (ms)&267.313&68.820\\
 Số dòng kết quả&949&949\\
 Có bước Sort&Có&Có\\\bottomrule\end{tabularx}\end{table}
-Tỉ lệ thời gian trước/sau trong lần đo này là \textbf{3.88 lần}. Kế hoạch thực thi dưới đây mới là cơ sở xác định cách MySQL đọc và sắp xếp dữ liệu. Việc tạo chỉ mục không đồng nghĩa MySQL loại bỏ hoàn toàn bước Sort.
-\sqlinput{sql/plan_before.txt}{EXPLAIN ANALYZE trước chỉ mục}
-\sqlinput{sql/plan_after.txt}{EXPLAIN ANALYZE sau chỉ mục}
-\snapshot{index_before}{SQL client thực thi EXPLAIN ANALYZE trước chỉ mục}{fig:index_before}
-\snapshot{index_after}{SQL client thực thi EXPLAIN ANALYZE sau chỉ mục}{fig:index_after}
-\section{Năm truy vấn theo chức năng}\label{sec:queries}
-Các truy vấn sử dụng dữ liệu seed P1–2. Q01 và Q02 có SELECT, FROM, WHERE, ORDER BY; Q03 và Q04 bổ sung GROUP BY và hàm tổng hợp; Q05 có hai cấp truy vấn lồng cùng AVG. Các bảng dữ liệu mẫu liên quan được trình bày ở Phụ lục \ref{app:data}.
-\subsection{Q-P12-01 Danh sách máy theo khu vực}
-Thu ngân kiểm tra các máy có thể sử dụng tại KV01, kèm nhóm và giá giờ. Truy vấn nối MAY\_TRAM với KHU\_VUC và NHOM\_MAY; sắp theo vị trí hàng, cột để phù hợp sơ đồ bố trí máy.
-\sqlinput{sql/Q-P12-01.sql}{Q-P12-01 Câu lệnh truy vấn}
+Hiệu quả tăng tốc đạt \textbf{3.88 lần} (từ 267.3ms xuống 68.8ms). Kế hoạch thực thi dưới đây minh họa chi tiết đường dẫn truy xuất dữ liệu từ Table Scan sang Index Range Scan:
+\sqlinput{sql/plan_before.txt}{Kế hoạch thực thi EXPLAIN ANALYZE trước khi tạo chỉ mục}
+\sqlinput{sql/plan_after.txt}{Kế hoạch thực thi EXPLAIN ANALYZE sau khi tạo chỉ mục}
+\snapshot{index_before}{Kết quả DBMS hiển thị EXPLAIN ANALYZE trước khi tạo chỉ mục}{fig:index_before}
+\snapshot{index_after}{Kết quả DBMS hiển thị EXPLAIN ANALYZE sau khi tạo chỉ mục}{fig:index_after}
+\section{Truy vấn dữ liệu (5đ)}\label{sec:queries}
+Yêu cầu: 5 câu truy vấn độc lập trên các bảng dữ liệu khác nhau, kèm dữ liệu mẫu và kết quả thực thi trên DBMS. Hai câu đầu có SELECT, FROM, WHERE, ORDER BY; hai câu tiếp theo có GROUP BY và AGGREGATE; câu cuối cùng lồng 2 cấp và AGGREGATE. Các bảng dữ liệu mẫu chi tiết được đối chiếu thêm tại Phụ lục \ref{app:data}.
+\subsection{Câu truy vấn 1: Danh sách máy theo khu vực (Q-P12-01)}
+Mô tả: Dùng cho màn hình sơ đồ máy của thu ngân để kiểm tra các máy có thể sử dụng tại KV01, hiển thị tên máy, nhóm máy và đơn giá giờ; sắp xếp theo vị trí hàng, cột.
+\sqlinput{sql/Q-P12-01.sql}{Câu lệnh SELECT - Truy vấn 1 (Q-P12-01)}
 \begin{table}[H]
 \centering\small
-\caption{Tập kết quả Q-P12-01 trên seed P1–2}
+\caption{Bảng dữ liệu mẫu và kết quả thực thi Truy vấn 1}
 \begin{tabularx}{\linewidth}{@{}XXXXX@{}}\toprule
 \textbf{Mã máy} & \textbf{Tên máy} & \textbf{Trạng thái} & \textbf{Nhóm máy} & \textbf{Giá giờ}\\\midrule
 M01 & Máy 01 & AVAILABLE & Máy VIP & 15000\\
 M02 & Máy 02 & AVAILABLE & Máy VIP & 15000\\
 M04 & Máy 04 & AVAILABLE & Máy VIP & 15000\\
 \bottomrule\end{tabularx}\end{table}
-\snapshot{img_04_q01}{Minh chứng thực thi Q-P12-01 trên MySQL}{fig:img_04_q01}
-\subsection{Q-P12-02 Lọc thực đơn theo nhóm và giá}
-Người chơi hoặc thu ngân tìm các dịch vụ đang bán thuộc NDV01, giá từ 10.000 đến 50.000đ. Kết quả có nhóm, đơn vị và tồn; sắp theo giá giảm dần rồi mã dịch vụ để có thứ tự xác định.
-\sqlinput{sql/Q-P12-02.sql}{Q-P12-02 Câu lệnh truy vấn}
+\snapshot{img_04_q01}{Kết quả màn hình hiển thị từ DBMS minh họa thực thi Truy vấn 1}{fig:img_04_q01}
+\subsection{Câu truy vấn 2: Lọc thực đơn theo nhóm và giá (Q-P12-02)}
+Mô tả: Dùng cho màn hình gọi món của khách hoặc bán tại quầy của thu ngân để tìm các món thuộc nhóm NDV01 có giá từ 10.000 đến 50.000đ; sắp theo giá giảm dần rồi theo mã.
+\sqlinput{sql/Q-P12-02.sql}{Câu lệnh SELECT - Truy vấn 2 (Q-P12-02)}
 \begin{table}[H]
 \centering\small
-\caption{Tập kết quả Q-P12-02 trên seed P1–2}
+\caption{Bảng dữ liệu mẫu và kết quả thực thi Truy vấn 2}
 \begin{tabularx}{\linewidth}{@{}XXXXX@{}}\toprule
 \textbf{Mã DV} & \textbf{Tên dịch vụ} & \textbf{Đơn vị} & \textbf{Giá bán} & \textbf{Tồn}\\\midrule
 DV03 & Cơm chiên trứng & Phần & 25000 & 30\\
 DV01 & Mì trứng & Phần & 15000 & 50\\
 \bottomrule\end{tabularx}\end{table}
-\snapshot{img_05_q02}{Minh chứng thực thi Q-P12-02 trên MySQL}{fig:img_05_q02}
-\subsection{Q-P12-03 Tổng hợp đơn đã thanh toán}
-Quản lý thống kê số đơn và tổng tiền theo ngày đặt cùng kênh đặt trong khoảng xét. Đây là phân tích đơn hàng theo ngày đặt; báo cáo thu tiền theo ngày thanh toán được xử lý riêng ở thủ tục doanh thu.
-\sqlinput{sql/Q-P12-03.sql}{Q-P12-03 Câu lệnh truy vấn}
+\snapshot{img_05_q02}{Kết quả màn hình hiển thị từ DBMS minh họa thực thi Truy vấn 2}{fig:img_05_q02}
+\subsection{Câu truy vấn 3: Tổng hợp đơn đã thanh toán (Q-P12-03)}
+Mô tả: Dùng cho màn hình báo cáo ca của quản lý để thống kê số đơn và doanh số theo ngày đặt và kênh đặt; có nhóm theo ngày, kênh và tính tổng tiền, đếm số đơn.
+\sqlinput{sql/Q-P12-03.sql}{Câu lệnh SELECT - Truy vấn 3 (Q-P12-03)}
 \begin{table}[H]
 \centering\small
-\caption{Tập kết quả Q-P12-03 trên seed P1–2}
+\caption{Bảng dữ liệu mẫu và kết quả thực thi Truy vấn 3}
 \begin{tabularx}{\linewidth}{@{}XXXX@{}}\toprule
 \textbf{Ngày đặt} & \textbf{Kênh đặt} & \textbf{Số đơn} & \textbf{Tổng tiền}\\\midrule
 2026-10-21 & TaiQuay & 1 & 50000\\
 2026-10-20 & TaiQuay & 1 & 52000\\
 \bottomrule\end{tabularx}\end{table}
-\snapshot{img_06_q03}{Minh chứng thực thi Q-P12-03 trên MySQL}{fig:img_06_q03}
-\subsection{Q-P12-04 Số ca và thời lượng trực}
-Quản lý tổng hợp thời lượng theo nhân viên. Một nhân viên có thể trực nhiều khu trong cùng ca, nên cặp mã nhân viên–mã ca phải được khử trùng trước khi cộng giờ. Với seed sạch, TK03 chỉ có một ca, năm giờ.
-\sqlinput{sql/Q-P12-04.sql}{Q-P12-04 Câu lệnh truy vấn}
+\snapshot{img_06_q03}{Kết quả màn hình hiển thị từ DBMS minh họa thực thi Truy vấn 3}{fig:img_06_q03}
+\subsection{Câu truy vấn 4: Số ca và thời lượng trực (Q-P12-04)}
+Mô tả: Dùng cho màn hình chấm công và phân ca để thống kê tổng số ca và tổng thời lượng trực của nhân viên; loại bỏ trùng lặp mã ca trước khi cộng tổng.
+\sqlinput{sql/Q-P12-04.sql}{Câu lệnh SELECT - Truy vấn 4 (Q-P12-04)}
 \begin{table}[H]
 \centering\small
-\caption{Tập kết quả Q-P12-04 trên seed P1–2}
+\caption{Bảng dữ liệu mẫu và kết quả thực thi Truy vấn 4}
 \begin{tabularx}{\linewidth}{@{}XXXX@{}}\toprule
 \textbf{Mã NV} & \textbf{Tên nhân viên} & \textbf{Số ca} & \textbf{Số giờ}\\\midrule
 TK07 & Demo barista & 2 & 10.00\\
 TK01 & Demo admin & 1 & 5.00\\
 TK03 & Demo cashier1 & 1 & 5.00\\
 \bottomrule\end{tabularx}\end{table}
-\snapshot{img_07_q04}{Minh chứng thực thi Q-P12-04 trên MySQL}{fig:img_07_q04}
-\subsection{Q-P12-05 Hội viên có số dư vượt mức trung bình}
-Chọn hội viên có số dư cao hơn số dư trung bình của nhóm từng có giao dịch ví thành công trong khoảng xét. Cấp lồng trong lấy tập mã hội viên; cấp ngoài tính AVG. Seed hiện tại trả về TK09, số dư 250.000đ.
-\sqlinput{sql/Q-P12-05.sql}{Q-P12-05 Câu lệnh truy vấn}
+\snapshot{img_07_q04}{Kết quả màn hình hiển thị từ DBMS minh họa thực thi Truy vấn 4}{fig:img_07_q04}
+\subsection{Câu truy vấn 5: Hội viên có số dư vượt mức trung bình (Q-P12-05)}
+Mô tả: Dùng cho màn hình chăm sóc khách hàng VIP để tìm hội viên có số dư ví cao hơn mức số dư trung bình của nhóm hội viên từng phát sinh giao dịch ví thành công.
+\sqlinput{sql/Q-P12-05.sql}{Câu lệnh SELECT - Truy vấn 5 (Q-P12-05)}
 \begin{table}[H]
 \centering\small
-\caption{Tập kết quả Q-P12-05 trên seed P1–2}
+\caption{Bảng dữ liệu mẫu và kết quả thực thi Truy vấn 5}
 \begin{tabularx}{\linewidth}{@{}XXXX@{}}\toprule
 \textbf{Mã hội viên} & \textbf{Tên hội viên} & \textbf{Số dư ví} & \textbf{Ngày đăng ký}\\\midrule
 TK09 & Demo player3 & 250000 & 2026-10-01\\
 \bottomrule\end{tabularx}\end{table}
-\snapshot{img_08_q05}{Minh chứng thực thi Q-P12-05 trên MySQL}{fig:img_08_q05}
+\snapshot{img_08_q05}{Kết quả màn hình hiển thị từ DBMS minh họa thực thi Truy vấn 5}{fig:img_08_q05}

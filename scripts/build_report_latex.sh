@@ -6,4 +6,5 @@ if [[ "${1:-}" == "--refresh-sources" ]]; then
 fi
 cd "$PROJECT_ROOT/docs/report/latex"
 latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
-cp build/main.pdf "$PROJECT_ROOT/deliverables/BTL2_L09_Nhom10_P1_P2.pdf"
+cp build/main.pdf "$PROJECT_ROOT/docs/report/latex/BTL2_L09_Nhom09_P1_P2.pdf"
+cp build/main.pdf "$PROJECT_ROOT/docs/report/latex/main.pdf"

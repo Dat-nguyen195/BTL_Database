@@ -77,7 +77,7 @@ def create_app(test_config=None) -> Flask:
             </style>
         </head>
         <body>
-            <h1>Quản lý quán Net – L09, Nhóm 10</h1>
+            <h1>Quản lý quán Net – L09, Nhóm 09</h1>
             <p><span class="badge">Backend Sẵn Sàng</span> Cổng 5000 đang hoạt động.</p>
             <p>API Base URL: <code>/api/v1</code> (Đủ 26 endpoint theo hợp đồng).</p>
             <ul>
