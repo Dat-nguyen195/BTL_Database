@@ -50,5 +50,3 @@ deliverables/SHA256SUMS
 /docs/btl1_baseline/BTL1_report.pdf
 /docs/requirements/de_bai_goc.pdf
 
-# PDF sinh khi bấm Build trong trình soạn thảo
-/docs/report/latex/main.pdf
