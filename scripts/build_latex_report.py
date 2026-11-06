@@ -49,70 +49,10 @@ def prepare():
     for source,names,target in routines:routine_file(source,names,target)
     bench=json.loads((ROOT/'evidence/queries/index_benchmark.json').read_text())
     for phase in ['before','after']:write('sql/plan_'+phase+'.txt',bench[phase]['plan'])
-    # All mathematical/algorithm diagrams are native vector TikZ, not screenshots.
-    for mode,validation,check,action,output,errors in [
-      ('insert','Mã, tên hợp lệ?','Mã và tên chưa tồn tại?',r'INSERT vào KHU\_VUC','Trả mã khu vực và số dòng thêm',r'60001: đầu vào/tên trùng\\60009: mã trùng'),
-      ('update','Mã, tên mới hợp lệ?','Khu vực tồn tại; tên không trùng khu khác?','UPDATE tên và vị trí','Trả mã khu vực và số dòng sửa',r'60001: đầu vào/tên trùng\\60002: không tồn tại'),
-      ('delete','Mã khu vực hợp lệ?','Khu vực tồn tại và không còn tham chiếu?',r'DELETE khỏi KHU\_VUC','Trả mã khu vực và số dòng xóa',r'60001: đầu vào\\60002: không tồn tại\\60015: còn tham chiếu')]:
-        write('diagrams/crud_'+mode+'.tex',rf'''\begin{{tikzpicture}}[flow]
-\node[start] (s) at (0,0) {{Bắt đầu {mode.upper()}}};
-\node[process] (i) at (0,-1.35) {{Nhận tham số của thủ tục}};
-\node[decision] (v) at (0,-3.0) {{{validation}}};
-\node[decision] (c) at (0,-5.0) {{{check}}};
-\node[process] (a) at (0,-6.9) {{{action}}};
-\node[process] (r) at (0,-8.35) {{{output}}};
-\node[start] (e) at (0,-9.7) {{Kết thúc thành công}};
-\node[error, text width=3.8cm] (err) at (6.5,-4.0) {{SIGNAL theo điều kiện\\{errors}}};
-\node[start,fill=ErrorInk] (stop) at (6.5,-6.25) {{Dừng xử lý}};
-\draw[arrow] (s)--(i);\draw[arrow] (i)--(v);\draw[arrow] (v)--node[left]{{Có}}(c);
-\draw[arrow] (c)--node[left]{{Có}}(a);\draw[arrow] (a)--(r);\draw[arrow] (r)--(e);
-\draw[arrow] (v.east)-|node[pos=.25,above]{{Không}}(err.north);
-\draw[arrow] (c.east)-|node[pos=.25,above]{{Không}}(err.south west);
-\draw[arrow] (err)--(stop);
-\end{{tikzpicture}}''')
-    write('diagrams/receipt.tex',r'''\begin{tikzpicture}[flow]
-\node[start] (s) at (0,0) {BEFORE UPDATE hoặc DELETE};
-\node[decision] (v) at (0,-2.0) {Biên lai cũ đã thanh toán?};
-\node[error] (err) at (-3.8,-4.5) {SIGNAL 60011\\IMMUTABLE\_DOCUMENT};
-\node[process] (ok) at (3.8,-4.5) {Cho phép thao tác tiếp tục\\Các ràng buộc khác vẫn áp dụng};
-\node[start,fill=ErrorInk] (x) at (-3.8,-6.4) {Từ chối thay đổi};
-\node[start] (e) at (3.8,-6.4) {Hoàn tất thao tác hợp lệ};
-\draw[arrow](s)--(v);\draw[arrow](v)-|node[near start,above]{Có}(err);\draw[arrow](v)-|node[near start,above]{Không}(ok);\draw[arrow](err)--(x);\draw[arrow](ok)--(e);
-\end{tikzpicture}''')
-    write('diagrams/order_total.tex',r'''\begin{tikzpicture}[flow]
-\node[start] (s) at (0,0) {DML trên chi tiết đơn};
-\node[process] (guard) at (0,-1.5) {BEFORE trigger kiểm tra đơn nháp\\và không đổi mã đơn};
-\node[decision] (v) at (0,-3.4) {Sự kiện hợp lệ?};
-\node[process,text width=3.9cm] (i) at (-5.0,-5.8) {AFTER INSERT\\Cộng NEW.SoLuong\\$\times$ NEW.DonGiaBan};
-\node[process,text width=3.9cm] (u) at (0,-5.8) {AFTER UPDATE\\Cộng chênh lệch\\giá trị mới trừ giá trị cũ};
-\node[process,text width=3.9cm] (d) at (5.0,-5.8) {AFTER DELETE\\Trừ OLD.SoLuong\\$\times$ OLD.DonGiaBan};
-\node[process] (t) at (0,-8.1) {UPDATE TongTien của đơn tương ứng};
-\node[start] (e) at (0,-9.7) {Tổng đơn đồng bộ với chi tiết};
-\draw[arrow](s)--(guard);\draw[arrow](guard)--(v);
-\draw[arrow](v)-|node[pos=.7,left]{INSERT}(i);\draw[arrow](v)--node[right]{UPDATE}(u);\draw[arrow](v)-|node[pos=.7,right]{DELETE}(d);
-\draw[arrow](i)|-(t);\draw[arrow](u)--(t);\draw[arrow](d)|-(t);\draw[arrow](t)--(e);
-\end{tikzpicture}''')
-    for name,title,validate,init,fetch,condition,calc,ret,error in [
-      ('revenue',r'sp\_bao\_cao\_doanh\_thu\_ngay','Ngày hợp lệ; DATEDIFF không vượt 31?','Khởi tạo JSON và ngày hiện tại','Đọc ngày đang xét','Còn ngày trong khoảng?',r'Tổng thu máy theo ngày thanh toán;\\thu dịch vụ theo ngày thanh toán;\\hoàn theo ngày hoàn thực tế.\\Tính ròng, thêm JSON, tăng ngày.','SELECT mảng JSON theo ngày','SIGNAL 60001'),
-      ('stock',r'sp\_bao\_cao\_ton\_dich\_vu','Ngưỡng không âm và nhóm hợp lệ?','Khởi tạo JSON, mở CURSOR dịch vụ','FETCH dòng tiếp theo','Đã hết dòng?',r'Phân loại tồn: bằng 0 / không quá\\ngưỡng / lớn hơn ngưỡng.\\Thêm đối tượng vào JSON.','Đóng CURSOR; SELECT JSON','SIGNAL 60001 / 60002'),
-      ('wallet',r'fn\_tong\_chi\_vi\_rong','Hội viên tồn tại và khoảng giờ hợp lệ?','Tổng chi = 0; mở CURSOR giao dịch','FETCH loại giao dịch và số tiền','Đã hết dòng?',r'Trừ tiền máy/dịch vụ: cộng vào tổng.\\Hoàn tiền: trừ khỏi tổng.\\Nạp tiền: bỏ qua.','Đóng CURSOR; RETURN tổng chi','RETURN NULL'),
-      ('order',r'fn\_tong\_tien\_don','Đơn hàng tồn tại?','Tổng tiền = 0; mở CURSOR chi tiết','FETCH số lượng và đơn giá','Đã hết dòng?',r'Nếu số lượng $>$ 0 và đơn giá $\geq$ 0:\\cộng số lượng $\times$ đơn giá\\vào tổng tiền.','Đóng CURSOR; RETURN tổng tiền','RETURN NULL')]:
-        yes='Không' if name=='revenue' else 'Có';no='Có' if name=='revenue' else 'Không'
-        write('diagrams/'+name+'.tex',rf'''\begin{{tikzpicture}}[flow]
-\node[start,text width=6.0cm] (s) at (0,0) {{{title}}};
-\node[decision] (v) at (0,-1.9) {{{validate}}};
-\node[process] (i) at (0,-3.8) {{{init}}};
-\node[process] (f) at (0,-5.3) {{{fetch}}};
-\node[decision] (c) at (0,-7.1) {{{condition}}};
-\node[process,text width=6.0cm] (a) at (0,-9.5) {{{calc}}};
-\node[error,text width=3.6cm] (x) at (6.4,-1.9) {{{error}}};
-\node[process,text width=3.6cm] (r) at (6.4,-7.1) {{{ret}}};
-\node[start] (e) at (6.4,-9.5) {{Kết thúc}};
-\draw[arrow](s)--(v);\draw[arrow](v)--node[left]{{Có}}(i);\draw[arrow](v)--node[above]{{Không}}(x);
-\draw[arrow](i)--(f);\draw[arrow](f)--(c);\draw[arrow](c)--node[left]{{{no}}}(a);
-\draw[arrow](c)--node[above]{{{yes}}}(r);\draw[arrow](r)--(e);
-\draw[arrow](a.west)--++(-1.0,0)|-(f.west);
-\end{{tikzpicture}}''')
+    # Preserve hand-maintained vector diagrams; rebuilding SQL must not reset their layout.
+    for name in ['styles','architecture','crud_insert','crud_update','crud_delete','receipt','order_total','revenue','stock','wallet','order']:
+        if not (OUT/'diagrams'/(name+'.tex')).is_file():
+            raise FileNotFoundError('Missing report diagram: '+name)
     write('main.tex',r'''% !TeX program = latexmk
 % !TeX encoding = UTF-8
 \documentclass[11pt,a4paper]{report}
@@ -160,8 +100,13 @@ def prepare():
 \newcommand{\code}[1]{\texttt{\detokenize{#1}}}
 \newcommand{\sqlinput}[2]{\par\needspace{5\baselineskip}\noindent{\small\sffamily\bfseries\color{Ink}#2}\par\vspace{-2pt}\VerbatimInput[fontsize=\fontsize{8.6}{10.7}\selectfont,breaklines=true,breakanywhere=true,numbers=left,numbersep=5pt,frame=lines,framesep=3mm,rulecolor=\color{Edge},numberblanklines=false]{#1}\par}
 \newcommand{\snapshot}[3]{\begin{figure}[H]\centering\includegraphics[width=\linewidth,height=.75\textheight,keepaspectratio]{assets/dbms/#1.pdf}\caption{#2}\label{#3}\end{figure}}
-\tikzset{flow/.style={font=\sffamily\fontsize{9.6}{11.8}\selectfont},start/.style={ellipse,draw=Ink,fill=Ink,text=white,align=center,minimum height=9mm,inner sep=3mm},process/.style={rectangle,rounded corners=2pt,draw=Edge,fill=Pale,align=center,text width=5.6cm,minimum height=10mm,inner sep=3mm},decision/.style={diamond,aspect=2.6,draw=Accent,fill=Gold,align=center,text width=4.1cm,inner sep=1.8mm},error/.style={rectangle,rounded corners=2pt,draw=ErrorInk,fill=ErrorInk!6,align=center,text width=4.4cm,minimum height=10mm,inner sep=3mm},arrow/.style={-{Latex[length=2mm]},draw=Ink,line width=.7pt,rounded corners=3pt}}
-\newcommand{\flowfigure}[3]{\begin{figure}[H]\centering\input{#1}\caption{#2}\label{#3}\end{figure}}
+\input{diagrams/styles.tex}
+\newsavebox{\flowbox}
+\newcommand{\flowfigure}[3]{\begin{figure}[H]\centering
+\sbox{\flowbox}{\input{#1}}%
+\typeout{FLOWFIGURE #1: width=\the\wd\flowbox; height=\the\dimexpr\ht\flowbox+\dp\flowbox\relax}%
+\ifdim\wd\flowbox>\linewidth\resizebox{\linewidth}{!}{\usebox{\flowbox}}\else\usebox{\flowbox}\fi
+\caption{#2}\label{#3}\end{figure}}
 \begin{document}
 \input{sections/cover}
 \pagenumbering{roman}
@@ -359,7 +304,7 @@ Bảng dưới kế thừa phân công đang lưu trong hồ sơ nhóm. Mỗi h�
 \clearpage\section{Đánh giá của giảng viên}
 Các cột nhận xét, điều chỉnh và tổng điểm để trống cho giảng viên.
 \begin{table}[H]\centering\small\renewcommand{\arraystretch}{2.2}
-\begin{tabularx}{\linewidth}{@{}p{36mm}lp{12mm}Yp{13mm}p{13mm}@{}}\toprule
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{36mm}lp{12mm}Y>{\raggedright\arraybackslash}p{13mm}p{13mm}@{}}\toprule
 \textbf{Họ tên}&\textbf{MSSV}&\textbf{Đề xuất}&\textbf{Nhận xét}&\textbf{Điểm trừ/cộng}&\textbf{Tổng}\\\midrule
 Nguyễn Thành Đạt&2410709&20\%&&&\\
 Nguyễn Minh Đạt&2410694&20\%&&&\\
@@ -375,7 +320,7 @@ Sơ đồ giữ ký hiệu EER Chen của BTL1. Bản tổng quan trình bày to
     for name,title in [('eerd_sub_user','Danh tính và người dùng'),('eerd_sub_workstation','Máy trạm và phiên sử dụng'),('eerd_sub_wallet','Ví hội viên và chứng từ'),('eerd_sub_shift','Ca trực và phân công'),('eerd_sub_service_inventory','Dịch vụ và đơn hàng'),('eerd_sub_inventory','Phiếu kho và kiểm kê')]:
         append+='\\clearpage\\section{'+title+'}\n\\begin{figure}[H]\\centering\\includegraphics[width=\\linewidth,height=.78\\textheight,keepaspectratio]{assets/eer/'+name+'.pdf}\\caption{EER phân hệ '+title.lower()+'}\\end{figure}\n'
     append+=r'''\clearpage\section{Các thay đổi khi hiện thực}
-\begin{longtable}{@{}p{32mm}p{49mm}p{63mm}@{}}\toprule\textbf{Nội dung}&\textbf{Hiện thực BTL2}&\textbf{Lý do}\\\midrule\endhead
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{32mm}>{\raggedright\arraybackslash}p{49mm}>{\raggedright\arraybackslash}p{63mm}@{}}\toprule\textbf{Nội dung}&\textbf{Hiện thực BTL2}&\textbf{Lý do}\\\midrule\endhead
 Duy nhất có điều kiện&Cột sinh và UNIQUE cho phiên đang hoạt động&Ngăn hai phiên đồng thời trên cùng máy/hội viên.\\
 Tổng tiền đơn&Ba AFTER trigger từ chi tiết&Giữ tổng đầu đơn nhất quán khi INSERT/UPDATE/DELETE.\\
 Ngày doanh thu&Tách thời điểm thanh toán và hoàn&Không phân bổ thu/hoàn về ngày đặt đơn.\\
@@ -443,6 +388,8 @@ Phông TeX Gyre Termes/Heros thuộc bộ TeX; bốn kiểu Liberation Mono đã
 GVHD: ThS. Trần Thị Quế Nguyệt. Logo kế thừa trang bìa BTL1; lưu đồ TikZ và EER/PDF vector giữ nét khi phóng to. Minh chứng SQL được xuất từ MySQL thật.
 
 Để cập nhật nội dung từ SQL hiện hành, chạy `python3 scripts/build_latex_report.py` tại gốc repository rồi biên dịch lại. Phân công nằm trong `team_assignments.json`; tỉ lệ đóng góp là đề xuất của nhóm.
+
+Các lưu đồ được chỉnh trực tiếp trong `diagrams/*.tex`, dùng chung hình học và kiểu chữ trong `diagrams/styles.tex`. Script cập nhật SQL giữ nguyên các tệp sơ đồ để tránh làm mất phần dàn trang đã kiểm tra.
 ''')
     print('Prepared self-contained LaTeX source:',OUT)
 

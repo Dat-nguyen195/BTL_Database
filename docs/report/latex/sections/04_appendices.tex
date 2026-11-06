@@ -46,7 +46,7 @@ Kịch bản dữ liệu và benchmark đo lường chỉ mục &  & x &  &  & \
 \clearpage\section{Đánh giá của giảng viên}
 Các cột nhận xét, điều chỉnh và tổng điểm để trống cho giảng viên.
 \begin{table}[H]\centering\small\renewcommand{\arraystretch}{2.2}
-\begin{tabularx}{\linewidth}{@{}p{36mm}lp{12mm}Yp{13mm}p{13mm}@{}}\toprule
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{36mm}lp{12mm}Y>{\raggedright\arraybackslash}p{13mm}p{13mm}@{}}\toprule
 \textbf{Họ tên}&\textbf{MSSV}&\textbf{Đề xuất}&\textbf{Nhận xét}&\textbf{Điểm trừ/cộng}&\textbf{Tổng}\\\midrule
 Nguyễn Thành Đạt&2410709&20\%&&&\\
 Nguyễn Minh Đạt&2410694&20\%&&&\\
@@ -71,7 +71,7 @@ Sơ đồ giữ ký hiệu EER Chen của BTL1. Bản tổng quan trình bày to
 \clearpage\section{Phiếu kho và kiểm kê}
 \begin{figure}[H]\centering\includegraphics[width=\linewidth,height=.78\textheight,keepaspectratio]{assets/eer/eerd_sub_inventory.pdf}\caption{EER phân hệ phiếu kho và kiểm kê}\end{figure}
 \clearpage\section{Các thay đổi khi hiện thực}
-\begin{longtable}{@{}p{32mm}p{49mm}p{63mm}@{}}\toprule\textbf{Nội dung}&\textbf{Hiện thực BTL2}&\textbf{Lý do}\\\midrule\endhead
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{32mm}>{\raggedright\arraybackslash}p{49mm}>{\raggedright\arraybackslash}p{63mm}@{}}\toprule\textbf{Nội dung}&\textbf{Hiện thực BTL2}&\textbf{Lý do}\\\midrule\endhead
 Duy nhất có điều kiện&Cột sinh và UNIQUE cho phiên đang hoạt động&Ngăn hai phiên đồng thời trên cùng máy/hội viên.\\
 Tổng tiền đơn&Ba AFTER trigger từ chi tiết&Giữ tổng đầu đơn nhất quán khi INSERT/UPDATE/DELETE.\\
 Ngày doanh thu&Tách thời điểm thanh toán và hoàn&Không phân bổ thu/hoàn về ngày đặt đơn.\\

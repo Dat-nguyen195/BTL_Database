@@ -1,14 +1,28 @@
 % !TeX root = ../main.tex
 \begin{tikzpicture}[flow]
-\node[start] (s) at (0,0) {DML trên chi tiết đơn};
-\node[process] (guard) at (0,-1.5) {BEFORE trigger kiểm tra đơn nháp\\và không đổi mã đơn};
-\node[decision] (v) at (0,-3.4) {Sự kiện hợp lệ?};
-\node[process,text width=3.9cm] (i) at (-5.0,-5.8) {AFTER INSERT\\Cộng NEW.SoLuong\\$\times$ NEW.DonGiaBan};
-\node[process,text width=3.9cm] (u) at (0,-5.8) {AFTER UPDATE\\Cộng chênh lệch\\giá trị mới trừ giá trị cũ};
-\node[process,text width=3.9cm] (d) at (5.0,-5.8) {AFTER DELETE\\Trừ OLD.SoLuong\\$\times$ OLD.DonGiaBan};
-\node[process] (t) at (0,-8.1) {UPDATE TongTien của đơn tương ứng};
-\node[start] (e) at (0,-9.7) {Tổng đơn đồng bộ với chi tiết};
-\draw[arrow](s)--(guard);\draw[arrow](guard)--(v);
-\draw[arrow](v)-|node[pos=.7,left]{INSERT}(i);\draw[arrow](v)--node[right]{UPDATE}(u);\draw[arrow](v)-|node[pos=.7,right]{DELETE}(d);
-\draw[arrow](i)|-(t);\draw[arrow](u)--(t);\draw[arrow](d)|-(t);\draw[arrow](t)--(e);
+\node[start] (s) {DML trên chi tiết đơn};
+\node[process,below=8mm of s] (guard)
+  {BEFORE trigger kiểm tra đơn nháp\\và việc giữ nguyên mã đơn};
+\node[decision,below=10mm of guard] (v) {Loại sự kiện DML\\được phép thực hiện?};
+\coordinate (split) at ($(v.south)+(0,-.7)$);
+\node[process,text width=3.5cm,minimum height=18mm] (i) at ($(v.south)+(-4.5,-2.6)$)
+  {AFTER INSERT\\Cộng \mbox{\texttt{NEW.SoLuong}}\\$\times$ \mbox{\texttt{NEW.DonGiaBan}}};
+\node[process,text width=3.5cm,minimum height=18mm] (u) at ($(v.south)+(0,-2.6)$)
+  {AFTER UPDATE\\Cộng giá trị mới\\trừ giá trị cũ};
+\node[process,text width=3.5cm,minimum height=18mm] (d) at ($(v.south)+(4.5,-2.6)$)
+  {AFTER DELETE\\Trừ \mbox{\texttt{OLD.SoLuong}}\\$\times$ \mbox{\texttt{OLD.DonGiaBan}}};
+\node[process,below=19mm of u] (t) {UPDATE TongTien\\của đơn tương ứng};
+\coordinate (merge) at ($(t.north)+(0,.7)$);
+\node[start,below=8mm of t] (e) {Tổng đơn đồng bộ với chi tiết};
+\draw[arrow] (s.south)--(guard.north);
+\draw[arrow] (guard.south)--(v.north);
+\draw[connector] (v.south)--(split);
+\draw[arrow] (split)-|node[branch,pos=.25,above=1mm]{INSERT}(i.north);
+\draw[arrow] (split)--node[branch,right=1.5mm]{UPDATE}(u.north);
+\draw[arrow] (split)-|node[branch,pos=.25,above=1mm]{DELETE}(d.north);
+\draw[connector] (i.south)|-(merge);
+\draw[connector] (u.south)--(merge);
+\draw[connector] (d.south)|-(merge);
+\draw[arrow] (merge)--(t.north);
+\draw[arrow] (t.south)--(e.north);
 \end{tikzpicture}

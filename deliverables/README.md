@@ -1,6 +1,6 @@
 # Sản phẩm bàn giao
 
-- `BTL2_L09_Nhom10_P1_P2.pdf`: báo cáo LaTeX 64 trang để in/nộp, có logo Bách khoa và GVHD ThS. Trần Thị Quế Nguyệt.
+- `BTL2_L09_Nhom10_P1_P2.pdf`: báo cáo LaTeX 66 trang để in/nộp, có logo Bách khoa và GVHD ThS. Trần Thị Quế Nguyệt.
 - `BTL2_L09_Nhom10_LaTeX.zip`: bộ nguồn LaTeX tự đủ, gồm main.tex, nội dung, SQL, TikZ, dữ liệu phân công và tài sản vector.
 - `BTL2_L09_Nhom10_BanGiao.zip`: mã nguồn, SQL, báo cáo, thiết kế, minh chứng và hướng dẫn.
 - `SHA256SUMS`: mã kiểm tra ba tệp trên.

@@ -12,7 +12,7 @@ MySQL 8.4.13 / InnoDB · Python 3.12 / Flask 3.1.3 · HTML/CSS/JavaScript.
 - Lược đồ 23 bảng kế thừa BTL1, PK/FK/UNIQUE/CHECK, chỉ mục và dữ liệu mẫu Phần 1–2.
 - Ba thủ tục CRUD khu vực; năm truy vấn; hai nhóm trigger; hai thủ tục báo cáo; hai hàm xử lý dữ liệu. Có ca đúng/sai và benchmark chỉ mục chạy trên MySQL thật.
 - Ứng dụng demo: mở/kết thúc phiên chơi; ví và đơn dịch vụ; phiếu kho và báo cáo. Xác thực phiên, CSRF, quyền, giao dịch, khóa và chống gửi lặp được kiểm tra tại server.
-- Báo cáo LaTeX 64 trang, có lưu đồ TikZ và EER/PDF vector. Minh chứng SQL gồm câu lệnh, kết quả JSON và ảnh thực thi.
+- Báo cáo LaTeX 66 trang, có lưu đồ TikZ và EER/PDF vector. Minh chứng SQL gồm câu lệnh, kết quả JSON và ảnh thực thi.
 
 ## Cấu trúc
 

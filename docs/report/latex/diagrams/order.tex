@@ -1,16 +1,23 @@
 % !TeX root = ../main.tex
 \begin{tikzpicture}[flow]
-\node[start,text width=6.0cm] (s) at (0,0) {fn\_tong\_tien\_don};
-\node[decision] (v) at (0,-1.9) {Đơn hàng tồn tại?};
-\node[process] (i) at (0,-3.8) {Tổng tiền = 0; mở CURSOR chi tiết};
-\node[process] (f) at (0,-5.3) {FETCH số lượng và đơn giá};
-\node[decision] (c) at (0,-7.1) {Đã hết dòng?};
-\node[process,text width=6.0cm] (a) at (0,-9.5) {Nếu số lượng $>$ 0 và đơn giá $\geq$ 0:\\cộng số lượng $\times$ đơn giá\\vào tổng tiền.};
-\node[error,text width=3.6cm] (x) at (6.4,-1.9) {RETURN NULL};
-\node[process,text width=3.6cm] (r) at (6.4,-7.1) {Đóng CURSOR; RETURN tổng tiền};
-\node[start] (e) at (6.4,-9.5) {Kết thúc};
-\draw[arrow](s)--(v);\draw[arrow](v)--node[left]{Có}(i);\draw[arrow](v)--node[above]{Không}(x);
-\draw[arrow](i)--(f);\draw[arrow](f)--(c);\draw[arrow](c)--node[left]{Không}(a);
-\draw[arrow](c)--node[above]{Có}(r);\draw[arrow](r)--(e);
-\draw[arrow](a.west)--++(-1.0,0)|-(f.west);
+\node[start] (s) {fn\_tong\_tien\_don};
+\node[decision,below=10mm of s] (v) {Đơn hàng\\tồn tại?};
+\node[process,below=11mm of v] (i) {Tổng tiền = 0;\\mở CURSOR chi tiết};
+\node[process,below=8mm of i] (f) {FETCH số lượng\\và đơn giá};
+\node[decision,below=10mm of f] (c) {Đã hết dòng?};
+\node[process,below=11mm of c] (a) {Với số lượng $>0$\\và đơn giá $\geq0$:\\cộng số lượng $\times$ đơn giá\\vào tổng tiền.};
+\node[reject] (x) at ($(v.center)+(6.4,0)$) {RETURN NULL};
+\node[process,text width=3.1cm] (r) at ($(c.center)+(6.4,0)$) {Đóng CURSOR;\\RETURN tổng tiền};
+\node[start,text width=3.1cm,below=12mm of r] (e) {Kết thúc};
+\coordinate (loop) at ($(f.west)+(-1.3,0)$);
+\draw[arrow] (s.south)--(v.north);
+\draw[arrow] (v.south)--node[branch,right=1.5mm]{Có}(i.north);
+\draw[arrow] (v.east)--node[branch,above=1mm]{Không}(x.west);
+\draw[arrow] (i.south)--(f.north);
+\draw[arrow] (f.south)--(c.north);
+\draw[arrow] (c.south)--node[branch,right=1.5mm]{Không}(a.north);
+\draw[arrow] (c.east)--node[branch,above=1mm]{Có}(r.west);
+\draw[arrow] (r.south)--(e.north);
+\draw[arrow] (a.west)--(a.west -| loop)|-(f.west);
+
 \end{tikzpicture}

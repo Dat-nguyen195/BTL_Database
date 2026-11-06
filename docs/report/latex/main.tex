@@ -45,8 +45,13 @@
 \newcommand{\code}[1]{\texttt{\detokenize{#1}}}
 \newcommand{\sqlinput}[2]{\par\needspace{5\baselineskip}\noindent{\small\sffamily\bfseries\color{Ink}#2}\par\vspace{-2pt}\VerbatimInput[fontsize=\fontsize{8.6}{10.7}\selectfont,breaklines=true,breakanywhere=true,numbers=left,numbersep=5pt,frame=lines,framesep=3mm,rulecolor=\color{Edge},numberblanklines=false]{#1}\par}
 \newcommand{\snapshot}[3]{\begin{figure}[H]\centering\includegraphics[width=\linewidth,height=.75\textheight,keepaspectratio]{assets/dbms/#1.pdf}\caption{#2}\label{#3}\end{figure}}
-\tikzset{flow/.style={font=\sffamily\fontsize{9.6}{11.8}\selectfont},start/.style={ellipse,draw=Ink,fill=Ink,text=white,align=center,minimum height=9mm,inner sep=3mm},process/.style={rectangle,rounded corners=2pt,draw=Edge,fill=Pale,align=center,text width=5.6cm,minimum height=10mm,inner sep=3mm},decision/.style={diamond,aspect=2.6,draw=Accent,fill=Gold,align=center,text width=4.1cm,inner sep=1.8mm},error/.style={rectangle,rounded corners=2pt,draw=ErrorInk,fill=ErrorInk!6,align=center,text width=4.4cm,minimum height=10mm,inner sep=3mm},arrow/.style={-{Latex[length=2mm]},draw=Ink,line width=.7pt,rounded corners=3pt}}
-\newcommand{\flowfigure}[3]{\begin{figure}[H]\centering\input{#1}\caption{#2}\label{#3}\end{figure}}
+\input{diagrams/styles.tex}
+\newsavebox{\flowbox}
+\newcommand{\flowfigure}[3]{\begin{figure}[H]\centering
+\sbox{\flowbox}{\input{#1}}%
+\typeout{FLOWFIGURE #1: width=\the\wd\flowbox; height=\the\dimexpr\ht\flowbox+\dp\flowbox\relax}%
+\ifdim\wd\flowbox>\linewidth\resizebox{\linewidth}{!}{\usebox{\flowbox}}\else\usebox{\flowbox}\fi
+\caption{#2}\label{#3}\end{figure}}
 \begin{document}
 \input{sections/cover}
 \pagenumbering{roman}

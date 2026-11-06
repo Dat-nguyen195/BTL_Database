@@ -32,7 +32,10 @@ Thumbs.db
 *.fls
 *.fdb_latexmk
 *.xdv
+*.synctex
 *.synctex.gz
+*.synctex(busy)
+*.synctex.gz(busy)
 
 # Gói bàn giao được tạo lại từ nguồn
 deliverables/*.zip

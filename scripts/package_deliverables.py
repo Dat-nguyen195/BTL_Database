@@ -13,7 +13,7 @@ def should_include(p):
         and p.name not in {'.DS_Store','Thumbs.db'}
         and p not in {Path('deliverables/SHA256SUMS'),Path('docs/report/latex/main.pdf')}
         and p.suffix not in {'.pyc','.pyo','.pyd','.zip','.tmp','.aux','.log','.out','.toc','.lof','.lot','.fls','.fdb_latexmk','.xdv'}
-        and not p.name.endswith('.synctex.gz')
+        and not p.name.endswith(('.synctex', '.synctex.gz', '.synctex(busy)', '.synctex.gz(busy)'))
     )
 
 def make_archive(output, files, prefix):

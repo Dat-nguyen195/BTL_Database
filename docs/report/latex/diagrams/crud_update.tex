@@ -1,17 +1,20 @@
 % !TeX root = ../main.tex
 \begin{tikzpicture}[flow]
-\node[start] (s) at (0,0) {Bắt đầu UPDATE};
-\node[process] (i) at (0,-1.35) {Nhận tham số của thủ tục};
-\node[decision] (v) at (0,-3.0) {Mã, tên mới hợp lệ?};
-\node[decision] (c) at (0,-5.0) {Khu vực tồn tại; tên không trùng khu khác?};
-\node[process] (a) at (0,-6.9) {UPDATE tên và vị trí};
-\node[process] (r) at (0,-8.35) {Trả mã khu vực và số dòng sửa};
-\node[start] (e) at (0,-9.7) {Kết thúc thành công};
-\node[error, text width=3.8cm] (err) at (6.5,-4.0) {SIGNAL theo điều kiện\\60001: đầu vào/tên trùng\\60002: không tồn tại};
-\node[start,fill=ErrorInk] (stop) at (6.5,-6.25) {Dừng xử lý};
-\draw[arrow] (s)--(i);\draw[arrow] (i)--(v);\draw[arrow] (v)--node[left]{Có}(c);
-\draw[arrow] (c)--node[left]{Có}(a);\draw[arrow] (a)--(r);\draw[arrow] (r)--(e);
-\draw[arrow] (v.east)-|node[pos=.25,above]{Không}(err.north);
-\draw[arrow] (c.east)-|node[pos=.25,above]{Không}(err.south west);
-\draw[arrow] (err)--(stop);
+\node[start] (s) {Bắt đầu UPDATE};
+\node[process,below=7mm of s] (i) {Nhận tham số của thủ tục};
+\node[decision,below=9mm of i] (v) {Mã, tên mới, vị trí\\đúng miền dữ liệu?};
+\node[decision,below=11mm of v] (c) {Khu vực tồn tại;\\tên mới không trùng?};
+\node[process,below=11mm of c] (a) {UPDATE tên và vị trí};
+\node[process,below=7mm of a] (r) {Trả mã khu vực và số dòng sửa};
+\node[start,below=7mm of r] (e) {Kết thúc thành công};
+\node[reject] (x1) at ($(v.center)+(6.4,0)$) {SIGNAL 60001\\Đầu vào không hợp lệ};
+\node[reject] (x2) at ($(c.center)+(6.4,0)$) {SIGNAL 60002 / 60001\\Không tồn tại hoặc trùng tên};
+\draw[arrow] (s.south)--(i.north);
+\draw[arrow] (i.south)--(v.north);
+\draw[arrow] (v.south)--node[branch,right=1.5mm]{Có}(c.north);
+\draw[arrow] (c.south)--node[branch,right=1.5mm]{Có}(a.north);
+\draw[arrow] (v.east)--node[branch,above=1mm]{Không}(x1.west);
+\draw[arrow] (c.east)--node[branch,above=1mm]{Không}(x2.west);
+\draw[arrow] (a.south)--(r.north);
+\draw[arrow] (r.south)--(e.north);
 \end{tikzpicture}

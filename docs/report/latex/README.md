@@ -43,3 +43,5 @@ Phông TeX Gyre Termes/Heros thuộc bộ TeX; bốn kiểu Liberation Mono đã
 GVHD: ThS. Trần Thị Quế Nguyệt. Logo kế thừa trang bìa BTL1; lưu đồ TikZ và EER/PDF vector giữ nét khi phóng to. Minh chứng SQL được xuất từ MySQL thật.
 
 Để cập nhật nội dung từ SQL hiện hành, chạy `python3 scripts/build_latex_report.py` tại gốc repository rồi biên dịch lại. Phân công nằm trong `team_assignments.json`; tỉ lệ đóng góp là đề xuất của nhóm.
+
+Các lưu đồ được chỉnh trực tiếp trong `diagrams/*.tex`, dùng chung hình học và kiểu chữ trong `diagrams/styles.tex`. Script cập nhật SQL giữ nguyên các tệp sơ đồ để tránh làm mất phần dàn trang đã kiểm tra.
