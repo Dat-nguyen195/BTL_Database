@@ -1,0 +1,9 @@
+\begin{tikzpicture}[flow]
+\node[start] (s) at (0,0) {BEFORE UPDATE hoặc DELETE};
+\node[decision] (v) at (0,-2.0) {Biên lai cũ đã thanh toán?};
+\node[error] (err) at (-3.8,-4.5) {SIGNAL 60011\\IMMUTABLE\_DOCUMENT};
+\node[process] (ok) at (3.8,-4.5) {Cho phép thao tác tiếp tục\\Các ràng buộc khác vẫn áp dụng};
+\node[start,fill=ErrorInk] (x) at (-3.8,-6.4) {Từ chối thay đổi};
+\node[start] (e) at (3.8,-6.4) {Hoàn tất thao tác hợp lệ};
+\draw[arrow](s)--(v);\draw[arrow](v)-|node[near start,above]{Có}(err);\draw[arrow](v)-|node[near start,above]{Không}(ok);\draw[arrow](err)--(x);\draw[arrow](ok)--(e);
+\end{tikzpicture}

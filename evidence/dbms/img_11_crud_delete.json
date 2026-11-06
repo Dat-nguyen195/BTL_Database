@@ -1,0 +1,45 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [],
+      "elapsed_ms": 5.244705000222893,
+      "errno": 60015,
+      "error": "DEPENDENCY_CONFLICT: Con may tram thuoc khu vuc nay",
+      "rows": [],
+      "sql": "CALL sp_khu_vuc_delete('KV01')",
+      "sqlstate": "45000"
+    },
+    {
+      "columns": [
+        "MaKhuVuc",
+        "ThaoTac",
+        "SoDongTacDong"
+      ],
+      "elapsed_ms": 11.26648799981922,
+      "error": null,
+      "rows": [
+        [
+          "KV99",
+          "DELETE",
+          1
+        ]
+      ],
+      "sql": "CALL sp_khu_vuc_delete('KV99')"
+    },
+    {
+      "columns": [
+        "ConLai"
+      ],
+      "elapsed_ms": 2.391949999946519,
+      "error": null,
+      "rows": [
+        [
+          0
+        ]
+      ],
+      "sql": "SELECT COUNT(*) AS ConLai FROM KHU_VUC WHERE MaKhuVuc='KV99'"
+    }
+  ],
+  "version": "8.4.13"
+}

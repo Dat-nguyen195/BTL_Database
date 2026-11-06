@@ -1,0 +1,19 @@
+{
+  "database": "btl2_benchmark_95332505a18a",
+  "results": [
+    {
+      "columns": [
+        "EXPLAIN"
+      ],
+      "elapsed_ms": 35.15105999940715,
+      "error": null,
+      "rows": [
+        [
+          "-> Sort: d.GiaBanHienHanh DESC, d.MaDichVu  (actual time=27.9..28.1 rows=949 loops=1)\n    -> Stream results  (cost=618 rows=949) (actual time=24.1..25.6 rows=949 loops=1)\n        -> Inner hash join (dvt.MaDonVi = d.MaDonVi)  (cost=618 rows=949) (actual time=24.1..24.6 rows=949 loops=1)\n            -> Table scan on dvt  (cost=956e-6 rows=2) (actual time=0.0282..0.0524 rows=2 loops=1)\n            -> Hash\n                -> Index range scan on d using ix_dich_vu_filter over (MaNhomDV = 'NDV01' AND TrangThaiKinhDoanh = 'DangKinhDoanh' AND 10000 <= GiaBanHienHanh <= 50000), with index condition: ((d.MaNhomDV = 'NDV01') and (d.TrangThaiKinhDoanh = 'DangKinhDoanh') and (d.GiaBanHienHanh between 10000 and 50000))  (cost=427 rows=949) (actual time=2.37..22.9 rows=949 loops=1)\n"
+        ]
+      ],
+      "sql": "EXPLAIN ANALYZE SELECT\n    d.`MaDichVu`,\n    d.`TenDichVu`,\n    ndv.`TenNhomDV`,\n    dvt.`TenDonVi`,\n    d.`GiaBanHienHanh`,\n    d.`SoLuongTon`\nFROM `DICH_VU` d\nJOIN `NHOM_DICH_VU` ndv ON d.`MaNhomDV` = ndv.`MaNhomDV`\nJOIN `DON_VI_TINH` dvt ON d.`MaDonVi` = dvt.`MaDonVi`\nWHERE d.`TrangThaiKinhDoanh` = 'DangKinhDoanh'\n  AND d.`MaNhomDV` = 'NDV01'\n  AND d.`GiaBanHienHanh` BETWEEN 10000 AND 50000\nORDER BY d.`GiaBanHienHanh` DESC, d.`MaDichVu` ASC"
+    }
+  ],
+  "version": "8.4.13"
+}

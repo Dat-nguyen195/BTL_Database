@@ -1,0 +1,15 @@
+\begin{tikzpicture}[flow]
+\node[start,text width=6.0cm] (s) at (0,0) {fn\_tong\_tien\_don};
+\node[decision] (v) at (0,-1.9) {Đơn hàng tồn tại?};
+\node[process] (i) at (0,-3.8) {Tổng tiền = 0; mở CURSOR chi tiết};
+\node[process] (f) at (0,-5.3) {FETCH số lượng và đơn giá};
+\node[decision] (c) at (0,-7.1) {Đã hết dòng?};
+\node[process,text width=6.0cm] (a) at (0,-9.5) {Nếu số lượng $>$ 0 và đơn giá $\geq$ 0:\\cộng số lượng $\times$ đơn giá\\vào tổng tiền.};
+\node[error,text width=3.6cm] (x) at (6.4,-1.9) {RETURN NULL};
+\node[process,text width=3.6cm] (r) at (6.4,-7.1) {Đóng CURSOR; RETURN tổng tiền};
+\node[start] (e) at (6.4,-9.5) {Kết thúc};
+\draw[arrow](s)--(v);\draw[arrow](v)--node[left]{Có}(i);\draw[arrow](v)--node[above]{Không}(x);
+\draw[arrow](i)--(f);\draw[arrow](f)--(c);\draw[arrow](c)--node[left]{Không}(a);
+\draw[arrow](c)--node[above]{Có}(r);\draw[arrow](r)--(e);
+\draw[arrow](a.west)--++(-1.0,0)|-(f.west);
+\end{tikzpicture}

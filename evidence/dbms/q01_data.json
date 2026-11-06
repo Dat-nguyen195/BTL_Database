@@ -1,0 +1,94 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "MaMay",
+        "MaNhomMay",
+        "MaKhuVuc",
+        "TrangThaiMay"
+      ],
+      "elapsed_ms": 2.172083000004932,
+      "error": null,
+      "rows": [
+        [
+          "M01",
+          "VIP",
+          "KV01",
+          "AVAILABLE"
+        ],
+        [
+          "M02",
+          "VIP",
+          "KV01",
+          "AVAILABLE"
+        ],
+        [
+          "M03",
+          "VIP",
+          "KV01",
+          "MAINTENANCE"
+        ],
+        [
+          "M04",
+          "VIP",
+          "KV01",
+          "AVAILABLE"
+        ],
+        [
+          "M05",
+          "VIP",
+          "KV02",
+          "ONLINE"
+        ],
+        [
+          "M06",
+          "VIP",
+          "KV02",
+          "OFFLINE"
+        ]
+      ],
+      "sql": "SELECT MaMay,MaNhomMay,MaKhuVuc,TrangThaiMay FROM MAY_TRAM"
+    },
+    {
+      "columns": [
+        "MaKhuVuc",
+        "TenKhuVuc",
+        "MoTaViTri"
+      ],
+      "elapsed_ms": 5.036794999796257,
+      "error": null,
+      "rows": [
+        [
+          "KV01",
+          "Khu thường",
+          null
+        ],
+        [
+          "KV02",
+          "Khu khác",
+          null
+        ]
+      ],
+      "sql": "SELECT * FROM KHU_VUC"
+    },
+    {
+      "columns": [
+        "MaNhomMay",
+        "TenNhomMay",
+        "DonGiaGioMacDinh"
+      ],
+      "elapsed_ms": 2.7968189997409354,
+      "error": null,
+      "rows": [
+        [
+          "VIP",
+          "Máy VIP",
+          "15000"
+        ]
+      ],
+      "sql": "SELECT MaNhomMay,TenNhomMay,DonGiaGioMacDinh FROM NHOM_MAY"
+    }
+  ],
+  "version": "8.4.13"
+}

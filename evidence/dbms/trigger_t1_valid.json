@@ -1,0 +1,66 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [],
+      "elapsed_ms": 13.677404000191018,
+      "error": null,
+      "rows": [],
+      "sql": "INSERT INTO PHIEN_SU_DUNG(MaPhien,MaMay,MaNguoiChoi,HinhThucDangNhap,ThoiDiemBatDau,ThoiDiemKetThuc,DonGiaGioApDung,TienNapTruoc,TienGiuCho,TongTienTamTinh,TrangThaiPhien) VALUES('P_VALID','M04',NULL,'MienPhi','2026-10-23 10:00:00','2026-10-23 11:00:00',0,0,0,0,'DaKetThuc')"
+    },
+    {
+      "columns": [],
+      "elapsed_ms": 7.3639480006022495,
+      "error": null,
+      "rows": [],
+      "sql": "INSERT INTO BIEN_LAI_TIEN_MAY(MaBienLai,MaPhien,ThoiDiemLap,TongTienGio,TienNhan,TienHoan,HinhThucThanhToan,TrangThaiBienLai,MaNhanVienThu) VALUES('BL_REVIEW','P_VALID',NOW(),0,0,0,'MienPhi','ChuaThanhToan','TK03')"
+    },
+    {
+      "columns": [],
+      "elapsed_ms": 4.758986000524601,
+      "error": null,
+      "rows": [],
+      "sql": "UPDATE BIEN_LAI_TIEN_MAY SET TienNhan=1,TienHoan=1 WHERE MaBienLai='BL_REVIEW'"
+    },
+    {
+      "columns": [
+        "MaBienLai",
+        "TrangThaiBienLai",
+        "TienNhan",
+        "TienHoan"
+      ],
+      "elapsed_ms": 1.1372720000508707,
+      "error": null,
+      "rows": [
+        [
+          "BL_REVIEW",
+          "ChuaThanhToan",
+          "1",
+          "1"
+        ]
+      ],
+      "sql": "SELECT MaBienLai,TrangThaiBienLai,TienNhan,TienHoan FROM BIEN_LAI_TIEN_MAY WHERE MaBienLai='BL_REVIEW'"
+    },
+    {
+      "columns": [],
+      "elapsed_ms": 3.309286000330758,
+      "error": null,
+      "rows": [],
+      "sql": "DELETE FROM BIEN_LAI_TIEN_MAY WHERE MaBienLai='BL_REVIEW'"
+    },
+    {
+      "columns": [
+        "ConLai"
+      ],
+      "elapsed_ms": 4.875284999798168,
+      "error": null,
+      "rows": [
+        [
+          0
+        ]
+      ],
+      "sql": "SELECT COUNT(*) AS ConLai FROM BIEN_LAI_TIEN_MAY WHERE MaBienLai='BL_REVIEW'"
+    }
+  ],
+  "version": "8.4.13"
+}

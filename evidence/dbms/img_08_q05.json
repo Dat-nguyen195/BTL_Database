@@ -1,0 +1,27 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "MaHoiVien",
+        "TenHoiVien",
+        "SoCCCD",
+        "SoDuVi",
+        "NgayDangKy"
+      ],
+      "elapsed_ms": 5.093058999591449,
+      "error": null,
+      "rows": [
+        [
+          "TK09",
+          "Demo player3",
+          "DEMO-TK09",
+          "250000",
+          "2026-10-01"
+        ]
+      ],
+      "sql": "SELECT\n    nc.`MaTaiKhoan` AS `MaHoiVien`,\n    tk.`Ten` AS `TenHoiVien`,\n    nc.`SoCCCD`,\n    nc.`SoDuVi`,\n    nc.`NgayDangKy`\nFROM `NGUOI_CHOI` nc\nJOIN `TAI_KHOAN` tk ON nc.`MaTaiKhoan` = tk.`MaTaiKhoan`\nWHERE nc.`SoDuVi` > (\n    SELECT AVG(sub_nc.`SoDuVi`)\n    FROM `NGUOI_CHOI` sub_nc\n    WHERE sub_nc.`MaTaiKhoan` IN (\n        SELECT DISTINCT gd.`MaNguoiChoi`\n        FROM `GIAO_DICH_VI` gd\n        WHERE gd.`TrangThaiGD` = 'ThanhCong'\n          AND gd.`ThoiDiemGD` >= '2026-10-01 00:00:00'\n          AND gd.`ThoiDiemGD` <= '2026-11-30 23:59:59'\n    )\n)\nORDER BY nc.`SoDuVi` DESC, nc.`MaTaiKhoan` ASC"
+    }
+  ],
+  "version": "8.4.13"
+}

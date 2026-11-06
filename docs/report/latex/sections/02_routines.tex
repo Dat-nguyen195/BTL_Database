@@ -1,0 +1,75 @@
+\chapter{Thủ tục, trigger và hàm}\label{chap:routines}
+\section{Ba thủ tục INSERT, UPDATE và DELETE}
+\subsection{Lựa chọn bảng và nguyên tắc xử lý}
+Bảng KHU\_VUC được chọn để minh họa CRUD vì có ý nghĩa quản trị rõ ràng và có tham chiếu từ máy trạm, phân công trực. Thủ tục nhận chuỗi đầu vào đủ rộng để kiểm tra độ dài trước khi ghi xuống cột; thông báo lỗi thể hiện nguyên nhân đầu vào, không tồn tại hoặc còn phụ thuộc. Mỗi thủ tục trả mã khu vực, tên thao tác và số dòng tác động.
+\subsection{Thêm khu vực}
+Đầu vào gồm mã, tên và mô tả vị trí. Tên/mã rỗng hoặc vượt miền bị từ chối; mã đã có trả 60009; tên trùng trả 60001. Nếu hợp lệ, ghi một dòng mới.
+\flowfigure{diagrams/crud_insert.tex}{Lưu đồ thủ tục INSERT khu vực}{fig:flow-crud_insert}
+\sqlinput{sql/insert.sql}{Định nghĩa thủ tục INSERT}
+\sqlinput{sql/demo_img_09_crud_insert.sql}{Câu lệnh kiểm chứng trên MySQL}
+\snapshot{img_09_crud_insert}{Ca hợp lệ và ca bị từ chối của thủ tục INSERT}{fig:img_09_crud_insert}
+\subsection{Cập nhật khu vực}
+Kiểm tra đầu vào, sự tồn tại của mã và việc tên mới trùng khu khác. Không đổi mã định danh. Mã không tồn tại trả 60002; tên mới sai hoặc trùng trả 60001.
+\flowfigure{diagrams/crud_update.tex}{Lưu đồ thủ tục UPDATE khu vực}{fig:flow-crud_update}
+\sqlinput{sql/update.sql}{Định nghĩa thủ tục UPDATE}
+\sqlinput{sql/demo_img_10_crud_update.sql}{Câu lệnh kiểm chứng trên MySQL}
+\snapshot{img_10_crud_update}{Ca hợp lệ và ca bị từ chối của thủ tục UPDATE}{fig:img_10_crud_update}
+\subsection{Xóa khu vực}
+Chỉ xóa khu vực tồn tại và không còn máy trạm hoặc phân công trực tham chiếu. Khi còn phụ thuộc, trả 60015 thay vì làm mất dữ liệu liên quan.
+\flowfigure{diagrams/crud_delete.tex}{Lưu đồ thủ tục DELETE khu vực}{fig:flow-crud_delete}
+\sqlinput{sql/delete.sql}{Định nghĩa thủ tục DELETE}
+\sqlinput{sql/demo_img_11_crud_delete.sql}{Câu lệnh kiểm chứng trên MySQL}
+\snapshot{img_11_crud_delete}{Ca hợp lệ và ca bị từ chối của thủ tục DELETE}{fig:img_11_crud_delete}
+\snapshot{routines_created}{Các routine đã được tạo trong database kiểm chứng}{fig:routines_created}
+\section{Hai yêu cầu sử dụng trigger}
+\subsection{Bảo vệ biên lai đã thanh toán}
+Đây là ràng buộc phụ thuộc giá trị cũ của dòng khi xảy ra UPDATE/DELETE, không thể thay thế bằng CHECK chỉ xét giá trị mới. BEFORE trigger kiểm tra trạng thái cũ; biên lai đã thanh toán trả 60011. Biên lai chưa thanh toán vẫn được cập nhật/xóa nếu các ràng buộc khác hợp lệ. Trigger không tự COMMIT và không vô hiệu hóa các khóa ngoại hay CHECK.
+\flowfigure{diagrams/receipt.tex}{Bảo vệ chứng từ đã thanh toán}{fig:flow-receipt}
+\sqlinput{sql/trigger_receipt.sql}{Nhóm trigger trên BIEN\_LAI\_TIEN\_MAY}
+\sqlinput{sql/demo_img_12_trigger_t1.sql}{Câu lệnh kiểm chứng trên MySQL}
+\snapshot{img_12_trigger_t1}{Sửa và xóa biên lai đã thanh toán đều bị từ chối; dữ liệu không đổi}{fig:img_12_trigger_t1}
+\sqlinput{sql/demo_trigger_t1_valid.sql}{Câu lệnh kiểm chứng trên MySQL}
+\snapshot{trigger_t1_valid}{Cập nhật và xóa biên lai chưa thanh toán hợp lệ}{fig:trigger_t1_valid}
+\subsection{Đồng bộ tổng tiền đơn từ chi tiết}
+Nhóm AFTER trigger trên CHI\_TIET\_GOI\_DICH\_VU cập nhật DON\_GOI\_DICH\_VU: INSERT cộng giá trị mới; UPDATE cộng chênh lệch; DELETE trừ giá trị cũ. Các BEFORE trigger hiện có chặn thay đổi chi tiết của đơn đã chốt và đổi mã đơn. Nhờ vậy, tổng đầu đơn và dòng chi tiết thay đổi trong cùng giao dịch; nếu lỗi, thay đổi bị rollback theo giao dịch của bên gọi.
+\flowfigure{diagrams/order_total.tex}{Nhóm trigger liên bảng duy trì tổng tiền đơn}{fig:flow-order_total}
+\sqlinput{sql/trigger_total.sql}{Ba AFTER trigger trên chi tiết đơn}
+\sqlinput{sql/demo_trigger_t2_before.sql}{Câu lệnh kiểm chứng trên MySQL}
+\snapshot{trigger_t2_before}{Đơn nháp ban đầu có tổng tiền bằng 0}{fig:trigger_t2_before}
+\sqlinput{sql/demo_img_13_trigger_t2.sql}{Câu lệnh kiểm chứng trên MySQL}
+\snapshot{img_13_trigger_t2}{Thêm, sửa, xóa chi tiết làm tổng lần lượt bằng 30.000, 45.000 và 0đ}{fig:img_13_trigger_t2}
+\sqlinput{sql/demo_trigger_t2_errors.sql}{Câu lệnh kiểm chứng trên MySQL}
+\snapshot{trigger_t2_errors}{INSERT, UPDATE và DELETE bị chặn trên chi tiết đơn đã chốt}{fig:trigger_t2_errors}
+\snapshot{triggers_created}{Các trigger trong hai yêu cầu đã được tạo}{fig:triggers_created}
+\section{Hai thủ tục tổng hợp dữ liệu}
+\subsection{Doanh thu theo ngày}
+\code{sp_bao_cao_doanh_thu_ngay} nhận ngày bắt đầu và kết thúc, kiểm tra NULL, thứ tự ngày và giới hạn chênh lệch ngày DATEDIFF không quá 31, sau đó duyệt từng ngày bằng WHILE. Mỗi ngày lấy tiền máy từ biên lai theo thời điểm thanh toán; tiền dịch vụ theo thời điểm thanh toán của đơn; tiền hoàn theo thời điểm hoàn thực tế. Thu ròng bằng thu máy cộng thu dịch vụ trừ hoàn dịch vụ.
+
+Đầu ra là một dòng chứa mảng JSON. Cách tách ba mốc thời gian tránh kéo khoản thu hoặc hoàn về ngày đặt đơn. Các ngày không có phát sinh vẫn có số tổng bằng 0, thuận tiện cho màn hình báo cáo liên tục theo ngày.
+\flowfigure{diagrams/revenue.tex}{Duyệt khoảng ngày và tổng hợp thu/hoàn theo mốc phát sinh}{fig:flow-revenue}
+\sqlinput{sql/report_revenue.sql}{Thủ tục báo cáo doanh thu theo ngày}
+\sqlinput{sql/demo_img_14_sp_doanh_thu.sql}{Câu lệnh kiểm chứng trên MySQL}
+\snapshot{img_14_sp_doanh_thu}{Khoảng ngày ngược bị từ chối; khoảng hợp lệ trả số thu từng ngày}{fig:img_14_sp_doanh_thu}
+\subsection{Báo cáo tồn và phân loại dịch vụ}
+\code{sp_bao_cao_ton_dich_vu} nhận nhóm dịch vụ (có thể bỏ trống để xét toàn bộ) và ngưỡng tồn không âm. CURSOR đọc dữ liệu nối từ DICH\_VU, NHOM\_DICH\_VU và DON\_VI\_TINH. Mỗi dòng được phân loại: tồn bằng 0 là HetHang; tồn dương không quá ngưỡng là SapHet; còn lại là DuHang. Dữ liệu được gom vào JSON và trả sau khi đóng cursor.
+
+Biến đọc tên dịch vụ dài 100 ký tự và đơn vị dài 30 ký tự, khớp miền cột gốc. Đây là điều kiện cần để dữ liệu hợp lệ ở bảng không bị cắt khi đọc qua cursor.
+\flowfigure{diagrams/stock.tex}{CURSOR đọc dịch vụ và phân loại theo ngưỡng tồn}{fig:flow-stock}
+\sqlinput{sql/report_stock.sql}{Thủ tục báo cáo tồn dịch vụ}
+\sqlinput{sql/demo_img_15_sp_ton_kho.sql}{Câu lệnh kiểm chứng trên MySQL}
+\snapshot{img_15_sp_ton_kho}{Ngưỡng âm bị từ chối; dữ liệu nhóm NDV02 thể hiện đủ ba mức tồn}{fig:img_15_sp_ton_kho}
+\section{Hai hàm đọc và xử lý dữ liệu}
+\subsection{Tổng chi ví ròng}
+\code{fn_tong_chi_vi_rong} nhận mã người chơi và khoảng thời gian nửa mở từ giờ bắt đầu (bao gồm) đến giờ kết thúc (không gồm). Hàm trả NULL nếu hội viên không tồn tại hoặc khoảng thời gian không hợp lệ. CURSOR chỉ lấy giao dịch thành công; cộng TruTienMay/TruTienDichVu, trừ HoanTien và bỏ qua NapTien. Khi không có giao dịch phù hợp, tổng khởi tạo bằng 0 được giữ nguyên.
+
+Giá trị cộng dồn và kiểu trả về là DECIMAL(18,0), phù hợp tiền VND nguyên và rộng hơn miền một giao dịch riêng lẻ. Dấu của kết quả phản ánh chênh lệch chi và hoàn trong khoảng, không phải số dư ví hiện tại.
+\flowfigure{diagrams/wallet.tex}{Tính tổng chi ròng theo loại giao dịch ví}{fig:flow-wallet}
+\sqlinput{sql/fn_wallet.sql}{Hàm tổng chi ví ròng}
+\sqlinput{sql/demo_img_16_fn_chi_vi.sql}{Câu lệnh kiểm chứng trên MySQL}
+\snapshot{img_16_fn_chi_vi}{Hàm tổng chi trả 15.000đ cho TK02; mã không tồn tại trả NULL}{fig:img_16_fn_chi_vi}
+\subsection{Tổng tiền từ dòng chi tiết đơn}
+\code{fn_tong_tien_don} trả NULL nếu đơn không tồn tại. Nếu tồn tại, CURSOR duyệt từng dòng, kiểm tra số lượng và đơn giá, rồi cộng tích của hai giá trị. Hàm dùng DECIMAL(18,0) để không làm hẹp miền tổng tiền đã được schema cho phép. Hàm có thể dùng để đối chiếu giá trị đầu đơn với tổng các chi tiết; việc duy trì tổng tự động vẫn do trigger đảm nhiệm.
+\flowfigure{diagrams/order.tex}{Cộng dồn số lượng nhân đơn giá của từng dòng chi tiết}{fig:flow-order}
+\sqlinput{sql/fn_order.sql}{Hàm tổng tiền đơn hàng}
+\sqlinput{sql/demo_img_17_fn_tien_don.sql}{Câu lệnh kiểm chứng trên MySQL}
+\snapshot{img_17_fn_tien_don}{Tổng đơn DH\_P12\_01 là 52.000đ; mã không tồn tại trả NULL}{fig:img_17_fn_tien_don}

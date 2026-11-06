@@ -1,9 +1,0 @@
-CREATE UNIQUE INDEX uq_phien_may_active ON PHIEN_SU_DUNG(MaMayDangHoatDong);
-CREATE UNIQUE INDEX uq_phien_nguoi_active ON PHIEN_SU_DUNG(MaNguoiChoiDangHoatDong);
-CREATE UNIQUE INDEX uq_vi_thu_phien ON GIAO_DICH_VI(MaPhienThuThanhCong);
-CREATE UNIQUE INDEX uq_vi_thu_don ON GIAO_DICH_VI(MaDonHangThuThanhCong);
-CREATE UNIQUE INDEX uq_vi_hoan_goc ON GIAO_DICH_VI(MaGDGocHoanThanhCong);
-CREATE INDEX ix_don_thoi_diem ON DON_GOI_DICH_VU(ThoiDiemDat);
-CREATE INDEX ix_bien_lai_thanh_toan ON BIEN_LAI_TIEN_MAY(ThoiDiemThanhToan);
-CREATE INDEX ix_vi_nguoi_thoi_diem ON GIAO_DICH_VI(MaNguoiChoi,ThoiDiemGD);
-CREATE INDEX ix_ca_khoang ON CA_TRUC(ThoiDiemBatDau,ThoiDiemKetThuc);

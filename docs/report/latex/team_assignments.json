@@ -1,0 +1,130 @@
+[
+  {
+    "task": "Tạo bảng dữ liệu phần 1: 12 bảng danh tính và máy trạm",
+    "assignee_mssv": "2410694"
+  },
+  {
+    "task": "Tạo bảng dữ liệu phần 2: 11 bảng dịch vụ, kho, ca trực và ví",
+    "assignee_mssv": "2413095"
+  },
+  {
+    "task": "Tạo các ràng buộc khóa chính, duy nhất và miền giá trị (CHECK)",
+    "assignee_mssv": "2410694"
+  },
+  {
+    "task": "Tạo các ràng buộc khóa ngoại bảo toàn toàn vẹn tham chiếu",
+    "assignee_mssv": "2413095"
+  },
+  {
+    "task": "Demo kiểm tra tạo bảng, ràng buộc và kiểm đếm 23 bảng thành công",
+    "assignee_mssv": "2410694"
+  },
+  {
+    "task": "Tạo chỉ mục phần 1: ix_dich_vu_filter tăng tốc lọc thực đơn",
+    "assignee_mssv": "2413181"
+  },
+  {
+    "task": "Tạo chỉ mục phần 2 cho các bảng vận hành",
+    "assignee_mssv": "2410696"
+  },
+  {
+    "task": "Đo lường hiệu năng chỉ mục trước và sau bằng EXPLAIN ANALYZE",
+    "assignee_mssv": "2413181"
+  },
+  {
+    "task": "Câu truy vấn 1 (Q-P12-01) - Bảng liên quan: MAY_TRAM, KHU_VUC",
+    "assignee_mssv": "2410694"
+  },
+  {
+    "task": "Câu truy vấn 2 (Q-P12-02) - Bảng liên quan: DICH_VU, NHOM_DICH_VU",
+    "assignee_mssv": "2410696"
+  },
+  {
+    "task": "Câu truy vấn 3 (Q-P12-03) - Bảng liên quan: DON_GOI_DICH_VU",
+    "assignee_mssv": "2410696"
+  },
+  {
+    "task": "Câu truy vấn 4 (Q-P12-04) - Bảng liên quan: CA_TRUC, PHAN_CONG_TRUC",
+    "assignee_mssv": "2413181"
+  },
+  {
+    "task": "Câu truy vấn 5 (Q-P12-05) - Bảng liên quan: NGUOI_CHOI, GIAO_DICH_VI",
+    "assignee_mssv": "2413095"
+  },
+  {
+    "task": "Thủ tục INSERT (sp_khu_vuc_insert) - Bảng: KHU_VUC",
+    "assignee_mssv": "2410694"
+  },
+  {
+    "task": "Thủ tục UPDATE (sp_khu_vuc_update) - Bảng: KHU_VUC",
+    "assignee_mssv": "2410694"
+  },
+  {
+    "task": "Thủ tục DELETE (sp_khu_vuc_delete) - Bảng: KHU_VUC",
+    "assignee_mssv": "2410694"
+  },
+  {
+    "task": "Demo kiểm tra ba thủ tục CRUD khu vực với các ca đúng và lỗi",
+    "assignee_mssv": "2410694"
+  },
+  {
+    "task": "Trigger 1 (T-P12-01) - Bảng: BIEN_LAI_TIEN_MAY",
+    "assignee_mssv": "2413095"
+  },
+  {
+    "task": "Demo kiểm tra Trigger 1 chặn sửa/xóa biên lai đã thanh toán",
+    "assignee_mssv": "2413095"
+  },
+  {
+    "task": "Trigger 2 (T-P12-02) - Bảng: CHI_TIET_GOI_DICH_VU, DON_GOI_DICH_VU",
+    "assignee_mssv": "2410709"
+  },
+  {
+    "task": "Demo kiểm tra Trigger 2 duy trì tổng tiền đầu đơn từ chi tiết",
+    "assignee_mssv": "2410709"
+  },
+  {
+    "task": "Thủ tục 1 (sp_bao_cao_doanh_thu_ngay) - Bảng: BIEN_LAI, DON_GOI",
+    "assignee_mssv": "2410696"
+  },
+  {
+    "task": "Demo kiểm tra Thủ tục 1 tổng hợp doanh thu theo ngày",
+    "assignee_mssv": "2410696"
+  },
+  {
+    "task": "Thủ tục 2 (sp_bao_cao_ton_dich_vu) - Bảng: DICH_VU, NHOM_DICH_VU",
+    "assignee_mssv": "2413181"
+  },
+  {
+    "task": "Demo kiểm tra Thủ tục 2 phân loại tồn kho bằng CURSOR và IF",
+    "assignee_mssv": "2413181"
+  },
+  {
+    "task": "Hàm 1 (fn_tong_chi_vi_rong) - Bảng: GIAO_DICH_VI, NGUOI_CHOI",
+    "assignee_mssv": "2413095"
+  },
+  {
+    "task": "Demo kiểm tra Hàm 1 tính tổng chi ví ròng",
+    "assignee_mssv": "2413095"
+  },
+  {
+    "task": "Hàm 2 (fn_tong_tien_don) - Bảng: CHI_TIET_GOI_DICH_VU",
+    "assignee_mssv": "2410709"
+  },
+  {
+    "task": "Demo kiểm tra Hàm 2 tính tổng tiền đơn hàng",
+    "assignee_mssv": "2410709"
+  },
+  {
+    "task": "Kiến trúc tích hợp Backend Flask và Test suite tự động 79 ca",
+    "assignee_mssv": "2410709"
+  },
+  {
+    "task": "Thiết kế sơ đồ giải thuật lưu đồ TikZ cho toàn bộ Routine",
+    "assignee_mssv": "2410694"
+  },
+  {
+    "task": "Kịch bản dữ liệu và benchmark đo lường chỉ mục",
+    "assignee_mssv": "2410696"
+  }
+]

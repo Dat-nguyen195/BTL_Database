@@ -1,0 +1,37 @@
+\chapter{Kiểm chứng và tích hợp ứng dụng}\label{chap:verification}
+\section{Kiến trúc và giao dịch}
+Giao diện HTML/CSS/JavaScript gọi REST API Flask trên cùng origin. Backend tách tuyến HTTP, dịch vụ nghiệp vụ và lớp truy cập dữ liệu. Dịch vụ nắm ranh giới BEGIN/COMMIT/ROLLBACK trên một kết nối; routine được gọi trong giao dịch đó, không tự chốt độc lập. Runtime dùng tài khoản hạn quyền, không cấp trực tiếp quyền cập nhật số dư ví hoặc tồn kho.
+
+\flowfigure{diagrams/architecture.tex}{Luồng giao tiếp giữa giao diện, backend và MySQL}{fig:architecture}
+
+Xác thực dùng phiên đăng nhập và kiểm tra CSRF cho API ghi. Dữ liệu đầu vào bị kiểm tra miền kiểu và phạm vi; mã yêu cầu được dùng để phân biệt gửi lặp với xung đột nội dung. Khi có tranh chấp, dữ liệu được đọc lại dưới khóa thay vì tin vào trạng thái đã đọc trước giao dịch.
+\section{Ba luồng kiểm chứng}
+\begin{enumerate}
+\item \textbf{Phiên chơi:} chọn máy, mở phiên, kết thúc, đối chiếu biên lai và giải phóng máy. Với trả trước, giờ sử dụng và số dư khả dụng được kiểm soát tại server.
+\item \textbf{Ví và dịch vụ:} nạp ví, gửi lại cùng mã, tạo/tiếp nhận/thanh toán đơn, đối chiếu số dư và tồn. Thanh toán đơn của phiên cũ vẫn phải tính tiền giữ chỗ của phiên đang hoạt động.
+\item \textbf{Kho và báo cáo:} phiếu nháp không đổi tồn; ghi sổ chỉ tác động một lần; xem báo cáo với khoảng ngày chứa dữ liệu phát sinh.
+\end{enumerate}
+\section{Tổng hợp bộ kiểm thử}
+\begin{table}[H]\centering\caption{Kết quả kiểm chứng được lưu trong hồ sơ nghiệm thu}
+\begin{tabularx}{\linewidth}{@{}Yr@{}}\toprule\textbf{Nhóm ca}&\textbf{PASS}\\\midrule
+API: quyền, đầu vào, chống lặp &30\\
+Integration: rollback, retry, khóa và tranh chấp &45\\
+SQL P1–2 &14\\
+E2E HTTP và Chrome ba luồng &4\\
+Ba ca hồi quy bổ sung &3\\\midrule
+\textbf{Tổng; không FAIL, ERROR hoặc SKIP}&\textbf{96}\\\bottomrule
+\end{tabularx}\end{table}
+Đây là kết quả của bộ ca đã triển khai, không phải khẳng định mọi trạng thái có thể có đều được bao phủ. Dữ liệu test và tài khoản test được tạo riêng rồi dọn sau từng ca; không reset database ứng dụng. JUnit và log gốc nằm trong \path{evidence/final_verification/}.
+\subsection{Các ca biên có ảnh hưởng trực tiếp đến tính đúng}
+\begin{itemize}
+\item Đơn đặt, thanh toán và hoàn ở ba ngày khác nhau được phân bổ đúng mốc thu/hoàn.
+\item Ví 100.000đ đang giữ 90.000đ cho phiên mới không được trả đơn cũ 15.000đ.
+\item Đơn tổng 10 tỷ và tên dịch vụ 90 ký tự không bị tràn/cắt trong hai routine liên quan.
+\item Gửi lại phiếu kho khác loại trả 409; page quá lớn trả 422, không thành lỗi 500.
+\end{itemize}
+\section{Cài mới và đối chiếu từ gói bàn giao}
+Bộ cài từ bản ZIP đã được chạy trên database/user mới: tạo 23 bảng, nạp hai đơn seed P1–2, mở giao diện và đăng nhập thành công. Chạy seed lại giữ nguyên dữ liệu; bộ seed một phần bị từ chối để tránh ghi đè không rõ trạng thái.
+
+Các bước vận hành: cài thư viện đã khóa phiên bản, chạy script demo để sinh cấu hình riêng và khởi động MySQL/Flask, sau đó sử dụng tài khoản demo. Mật khẩu quản trị không được đưa vào báo cáo hay ZIP. Hướng dẫn đầy đủ ở README và runbook; kết quả phép thử từ ZIP ở \path{evidence/final_verification/zip_smoke.json}.
+\section{Phạm vi chưa đưa vào demo}
+Ứng dụng hiện minh họa ba luồng trên, chưa khóa máy vật lý. API chưa bao gồm đầy đủ hủy/hoàn, quản trị tài khoản, danh mục và ca trực. Các thao tác SQL quản trị ngoài API cần được đối chiếu riêng với toàn bộ quy tắc BTL1. Phần trình bày ứng dụng theo đợt riêng của môn học cần tuân thủ yêu cầu của đợt đó; báo cáo này tập trung vào Phần 1–2.

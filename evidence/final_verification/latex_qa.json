@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-05",
+  "report_format": "XeLaTeX",
+  "pages": 64,
+  "rendered_and_visually_reviewed_pages": 64,
+  "cover_gvhd": "ThS. Trần Thị Quế Nguyệt",
+  "cover_names_verified": 5,
+  "dbms_vector_pdfs": 28,
+  "eer_vector_pdfs": 7,
+  "tikz_flowcharts": 9,
+  "tikz_architecture": 1,
+  "source_ddl_tables": 23,
+  "compiler_layout_font_reference_warnings": [],
+  "bitmap_assets_in_pdf": [
+    {
+      "name": "/Im0",
+      "width": 356,
+      "height": 257
+    }
+  ],
+  "standalone_source_zip": {
+    "files": 96,
+    "crc": "PASS",
+    "hashes": "PASS",
+    "fresh_compile": "PASS",
+    "same_page_count_and_extracted_text": true
+  },
+  "pdf_sha256": "1d354d4a09cef74e08cbd76b1c992d64ab4b927ecd169c67bde7e430ba79081e",
+  "functional_tests": "Full suite rerun after project cleanup: 96 PASS, 0 FAIL, 0 ERROR, 0 SKIP; see all.xml and summary.json.",
+  "live_sql_evidence": "28 MySQL captures and index benchmark rerun for this revision.",
+  "visual_review": "All 64 page renders checked; cover, flowcharts and EER additionally inspected individually. No observed image/page clipping, overlap or missing glyphs. Full EER is an overview; six domain pages and original SVG/PDF support zoom.",
+  "cleanup": "Removed obsolete Word/report/review/scaffold files; assignment source is team_assignments.json; EER exporter uses bundled SVGs.",
+  "content_unchanged_after_cleanup": true,
+  "eer_export_without_external_baseline": "PASS; seven PDFs, matching original extracted text"
+}

@@ -1,0 +1,49 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "MaKhuVuc",
+        "ThaoTac",
+        "SoDongTacDong"
+      ],
+      "elapsed_ms": 10.410727999442315,
+      "error": null,
+      "rows": [
+        [
+          "KV99",
+          "UPDATE",
+          1
+        ]
+      ],
+      "sql": "CALL sp_khu_vuc_update('KV99','Khu Demo Mới','Tầng 3')"
+    },
+    {
+      "columns": [],
+      "elapsed_ms": 3.9015230004224577,
+      "errno": 60002,
+      "error": "NOT_FOUND: Khu vuc khong ton tai",
+      "rows": [],
+      "sql": "CALL sp_khu_vuc_update('KV_NONE','Không có','')",
+      "sqlstate": "45000"
+    },
+    {
+      "columns": [
+        "MaKhuVuc",
+        "TenKhuVuc",
+        "MoTaViTri"
+      ],
+      "elapsed_ms": 3.5370129999137134,
+      "error": null,
+      "rows": [
+        [
+          "KV99",
+          "Khu Demo Mới",
+          "Tầng 3"
+        ]
+      ],
+      "sql": "SELECT * FROM KHU_VUC WHERE MaKhuVuc='KV99'"
+    }
+  ],
+  "version": "8.4.13"
+}

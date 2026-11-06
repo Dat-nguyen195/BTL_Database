@@ -1,0 +1,33 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [],
+      "elapsed_ms": 2.270544000566588,
+      "errno": 60011,
+      "error": "IMMUTABLE_DOCUMENT",
+      "rows": [],
+      "sql": "INSERT INTO CHI_TIET_GOI_DICH_VU VALUES('DH_P12_01','DV04',1,18000,DEFAULT)",
+      "sqlstate": "45000"
+    },
+    {
+      "columns": [],
+      "elapsed_ms": 3.942780999750539,
+      "errno": 60011,
+      "error": "IMMUTABLE_DOCUMENT",
+      "rows": [],
+      "sql": "UPDATE CHI_TIET_GOI_DICH_VU SET SoLuong=2 WHERE MaDonHang='DH_P12_01'",
+      "sqlstate": "45000"
+    },
+    {
+      "columns": [],
+      "elapsed_ms": 2.1410700001069927,
+      "errno": 60011,
+      "error": "IMMUTABLE_DOCUMENT",
+      "rows": [],
+      "sql": "DELETE FROM CHI_TIET_GOI_DICH_VU WHERE MaDonHang='DH_P12_01'",
+      "sqlstate": "45000"
+    }
+  ],
+  "version": "8.4.13"
+}

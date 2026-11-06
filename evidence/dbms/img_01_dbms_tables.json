@@ -1,0 +1,100 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "Tables_in_btl2_evidence_a62ff5712250"
+      ],
+      "elapsed_ms": 16.338293000444537,
+      "error": null,
+      "rows": [
+        [
+          "BANG_GIA"
+        ],
+        [
+          "BIEN_LAI_TIEN_MAY"
+        ],
+        [
+          "CA_TRUC"
+        ],
+        [
+          "CHI_TIET_GOI_DICH_VU"
+        ],
+        [
+          "CHI_TIET_PHIEU_KHO"
+        ],
+        [
+          "DIA_CHI_NV"
+        ],
+        [
+          "DICH_VU"
+        ],
+        [
+          "DON_GOI_DICH_VU"
+        ],
+        [
+          "DON_VI_TINH"
+        ],
+        [
+          "GIAO_DICH_VI"
+        ],
+        [
+          "KHU_VUC"
+        ],
+        [
+          "MAY_IN"
+        ],
+        [
+          "MAY_TRAM"
+        ],
+        [
+          "NGUOI_CHOI"
+        ],
+        [
+          "NHAN_VIEN"
+        ],
+        [
+          "NHOM_DICH_VU"
+        ],
+        [
+          "NHOM_MAY"
+        ],
+        [
+          "NHOM_NGUOI_DUNG"
+        ],
+        [
+          "PHAN_CONG_TRUC"
+        ],
+        [
+          "PHIEN_SU_DUNG"
+        ],
+        [
+          "PHIEU_KHO"
+        ],
+        [
+          "SO_DIEN_THOAI"
+        ],
+        [
+          "TAI_KHOAN"
+        ]
+      ],
+      "sql": "SHOW TABLES"
+    },
+    {
+      "columns": [
+        "MySQLVersion",
+        "SoBang"
+      ],
+      "elapsed_ms": 5.067598000096041,
+      "error": null,
+      "rows": [
+        [
+          "8.4.13",
+          23
+        ]
+      ],
+      "sql": "SELECT VERSION() AS MySQLVersion, COUNT(*) AS SoBang FROM information_schema.TABLES WHERE TABLE_SCHEMA=DATABASE()"
+    }
+  ],
+  "version": "8.4.13"
+}

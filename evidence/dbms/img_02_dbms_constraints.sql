@@ -1,0 +1,3 @@
+INSERT INTO MAY_TRAM(MaMay,TenMay,TrangThaiMay,MaNhomMay,MaKhuVuc) VALUES('BAD_FK','Sai FK','AVAILABLE','NONE','KV01');
+UPDATE MAY_TRAM SET TrangThaiMay='INVALID' WHERE MaMay='M01';
+SELECT MaMay,TrangThaiMay,MaNhomMay,MaKhuVuc FROM MAY_TRAM WHERE MaMay='M01';

@@ -1,33 +1,48 @@
-# Cấu hình riêng và thông tin xác thực
+# Cấu hình và môi trường riêng
 .env
 .env.*
 !.env.example
+.venv/
+venv/
+node_modules/
+
+# Bộ nhớ đệm và tệp sinh khi chạy
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+*.tmp
+coverage/
+.coverage
+htmlcov/
+dist/
+build/
+tmp/
+.DS_Store
+Thumbs.db
+
+# Tệp biên dịch LaTeX
+*.aux
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.xdv
+*.synctex.gz
+
+# Gói bàn giao được tạo lại từ nguồn
+deliverables/*.zip
+deliverables/SHA256SUMS
+
+# Tệp riêng và tài liệu gốc tham chiếu theo chính sách kho công khai
 .aws/
 .codex/
 .agents/
 *.pem
 *.key
-# Môi trường, thư viện và tệp sinh tạm
-.venv/
-venv/
-__pycache__/
-*.py[cod]
-node_modules/
-dist/
-build/
-coverage/
-*.log
-.DS_Store
-Thumbs.db
-# Bản đóng gói và tệp phụ TeX không cần cho quá trình triển khai
-*.zip
-*.aux
-*.out
-*.toc
-*.synctex.gz
-*.fls
-*.fdb_latexmk
-
-# Tài liệu PDF gốc chỉ tham khảo qua nguồn, không đưa vào bản công khai
-/BTL2_Database_HK261/docs/btl1_baseline/BTL1_report.pdf
-/BTL2_Database_HK261/docs/requirements/de_bai_goc.pdf
+/docs/btl1_baseline/BTL1_report.pdf
+/docs/requirements/de_bai_goc.pdf

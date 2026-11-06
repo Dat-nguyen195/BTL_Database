@@ -1,0 +1,250 @@
+{
+  "mysql_version": "8.4.13",
+  "source": "live MySQL SQL client",
+  "shots": [
+    {
+      "name": "img_01_dbms_tables",
+      "sql": "img_01_dbms_tables.sql",
+      "result": "img_01_dbms_tables.json",
+      "image": "../report_assets/img_01_dbms_tables.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_01_dbms_tables.pdf",
+      "errors": []
+    },
+    {
+      "name": "img_02_dbms_constraints",
+      "sql": "img_02_dbms_constraints.sql",
+      "result": "img_02_dbms_constraints.json",
+      "image": "../report_assets/img_02_dbms_constraints.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_02_dbms_constraints.pdf",
+      "errors": [
+        1452,
+        3819
+      ]
+    },
+    {
+      "name": "routines_created",
+      "sql": "routines_created.sql",
+      "result": "routines_created.json",
+      "image": "../report_assets/routines_created.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/routines_created.pdf",
+      "errors": []
+    },
+    {
+      "name": "triggers_created",
+      "sql": "triggers_created.sql",
+      "result": "triggers_created.json",
+      "image": "../report_assets/triggers_created.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/triggers_created.pdf",
+      "errors": []
+    },
+    {
+      "name": "q01_data",
+      "sql": "q01_data.sql",
+      "result": "q01_data.json",
+      "image": "../report_assets/q01_data.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/q01_data.pdf",
+      "errors": []
+    },
+    {
+      "name": "img_04_q01",
+      "sql": "img_04_q01.sql",
+      "result": "img_04_q01.json",
+      "image": "../report_assets/img_04_q01.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_04_q01.pdf",
+      "errors": []
+    },
+    {
+      "name": "q02_data",
+      "sql": "q02_data.sql",
+      "result": "q02_data.json",
+      "image": "../report_assets/q02_data.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/q02_data.pdf",
+      "errors": []
+    },
+    {
+      "name": "img_05_q02",
+      "sql": "img_05_q02.sql",
+      "result": "img_05_q02.json",
+      "image": "../report_assets/img_05_q02.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_05_q02.pdf",
+      "errors": []
+    },
+    {
+      "name": "q03_data",
+      "sql": "q03_data.sql",
+      "result": "q03_data.json",
+      "image": "../report_assets/q03_data.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/q03_data.pdf",
+      "errors": []
+    },
+    {
+      "name": "img_06_q03",
+      "sql": "img_06_q03.sql",
+      "result": "img_06_q03.json",
+      "image": "../report_assets/img_06_q03.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_06_q03.pdf",
+      "errors": []
+    },
+    {
+      "name": "q04_data",
+      "sql": "q04_data.sql",
+      "result": "q04_data.json",
+      "image": "../report_assets/q04_data.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/q04_data.pdf",
+      "errors": []
+    },
+    {
+      "name": "img_07_q04",
+      "sql": "img_07_q04.sql",
+      "result": "img_07_q04.json",
+      "image": "../report_assets/img_07_q04.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_07_q04.pdf",
+      "errors": []
+    },
+    {
+      "name": "q05_data",
+      "sql": "q05_data.sql",
+      "result": "q05_data.json",
+      "image": "../report_assets/q05_data.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/q05_data.pdf",
+      "errors": []
+    },
+    {
+      "name": "img_08_q05",
+      "sql": "img_08_q05.sql",
+      "result": "img_08_q05.json",
+      "image": "../report_assets/img_08_q05.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_08_q05.pdf",
+      "errors": []
+    },
+    {
+      "name": "img_09_crud_insert",
+      "sql": "img_09_crud_insert.sql",
+      "result": "img_09_crud_insert.json",
+      "image": "../report_assets/img_09_crud_insert.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_09_crud_insert.pdf",
+      "errors": [
+        60009
+      ]
+    },
+    {
+      "name": "img_10_crud_update",
+      "sql": "img_10_crud_update.sql",
+      "result": "img_10_crud_update.json",
+      "image": "../report_assets/img_10_crud_update.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_10_crud_update.pdf",
+      "errors": [
+        60002
+      ]
+    },
+    {
+      "name": "img_11_crud_delete",
+      "sql": "img_11_crud_delete.sql",
+      "result": "img_11_crud_delete.json",
+      "image": "../report_assets/img_11_crud_delete.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_11_crud_delete.pdf",
+      "errors": [
+        60015
+      ]
+    },
+    {
+      "name": "img_12_trigger_t1",
+      "sql": "img_12_trigger_t1.sql",
+      "result": "img_12_trigger_t1.json",
+      "image": "../report_assets/img_12_trigger_t1.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_12_trigger_t1.pdf",
+      "errors": [
+        60011,
+        60011
+      ]
+    },
+    {
+      "name": "trigger_t1_valid",
+      "sql": "trigger_t1_valid.sql",
+      "result": "trigger_t1_valid.json",
+      "image": "../report_assets/trigger_t1_valid.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/trigger_t1_valid.pdf",
+      "errors": []
+    },
+    {
+      "name": "trigger_t2_before",
+      "sql": "trigger_t2_before.sql",
+      "result": "trigger_t2_before.json",
+      "image": "../report_assets/trigger_t2_before.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/trigger_t2_before.pdf",
+      "errors": []
+    },
+    {
+      "name": "img_13_trigger_t2",
+      "sql": "img_13_trigger_t2.sql",
+      "result": "img_13_trigger_t2.json",
+      "image": "../report_assets/img_13_trigger_t2.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_13_trigger_t2.pdf",
+      "errors": []
+    },
+    {
+      "name": "trigger_t2_errors",
+      "sql": "trigger_t2_errors.sql",
+      "result": "trigger_t2_errors.json",
+      "image": "../report_assets/trigger_t2_errors.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/trigger_t2_errors.pdf",
+      "errors": [
+        60011,
+        60011,
+        60011
+      ]
+    },
+    {
+      "name": "img_14_sp_doanh_thu",
+      "sql": "img_14_sp_doanh_thu.sql",
+      "result": "img_14_sp_doanh_thu.json",
+      "image": "../report_assets/img_14_sp_doanh_thu.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_14_sp_doanh_thu.pdf",
+      "errors": [
+        60001
+      ]
+    },
+    {
+      "name": "img_15_sp_ton_kho",
+      "sql": "img_15_sp_ton_kho.sql",
+      "result": "img_15_sp_ton_kho.json",
+      "image": "../report_assets/img_15_sp_ton_kho.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_15_sp_ton_kho.pdf",
+      "errors": [
+        60001
+      ]
+    },
+    {
+      "name": "img_16_fn_chi_vi",
+      "sql": "img_16_fn_chi_vi.sql",
+      "result": "img_16_fn_chi_vi.json",
+      "image": "../report_assets/img_16_fn_chi_vi.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_16_fn_chi_vi.pdf",
+      "errors": []
+    },
+    {
+      "name": "img_17_fn_tien_don",
+      "sql": "img_17_fn_tien_don.sql",
+      "result": "img_17_fn_tien_don.json",
+      "image": "../report_assets/img_17_fn_tien_don.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/img_17_fn_tien_don.pdf",
+      "errors": []
+    },
+    {
+      "name": "index_before",
+      "sql": "index_before.sql",
+      "result": "index_before.json",
+      "image": "../report_assets/index_before.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/index_before.pdf",
+      "errors": []
+    },
+    {
+      "name": "index_after",
+      "sql": "index_after.sql",
+      "result": "index_after.json",
+      "image": "../report_assets/index_after.png",
+      "vector_pdf": "../../docs/report/latex/assets/dbms/index_after.pdf",
+      "errors": []
+    }
+  ]
+}

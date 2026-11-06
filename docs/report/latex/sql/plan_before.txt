@@ -1,0 +1,6 @@
+-> Sort: d.GiaBanHienHanh DESC, d.MaDichVu  (actual time=249..250 rows=949 loops=1)
+    -> Stream results  (cost=1.15 rows=0.1) (actual time=1.97..247 rows=949 loops=1)
+        -> Nested loop inner join  (cost=1.15 rows=0.1) (actual time=1.96..246 rows=949 loops=1)
+            -> Table scan on dvt  (cost=0.45 rows=2) (actual time=0.538..0.549 rows=2 loops=1)
+            -> Filter: ((d.MaNhomDV = 'NDV01') and (d.TrangThaiKinhDoanh = 'DangKinhDoanh') and (d.GiaBanHienHanh between 10000 and 50000))  (cost=0.253 rows=0.05) (actual time=64.9..122 rows=474 loops=2)
+                -> Index lookup on d using MaDonVi (MaDonVi=dvt.MaDonVi)  (cost=0.253 rows=1) (actual time=0.141..115 rows=10000 loops=2)

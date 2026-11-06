@@ -1,0 +1,43 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [],
+      "elapsed_ms": 11.493474999952014,
+      "errno": 1452,
+      "error": "Cannot add or update a child row: a foreign key constraint fails (`btl2_evidence_a62ff5712250`.`MAY_TRAM`, CONSTRAINT `fk_may_tram_0` FOREIGN KEY (`MaNhomMay`) REFERENCES `NHOM_MAY` (`MaNhomMay`) ON DELETE RESTRICT)",
+      "rows": [],
+      "sql": "INSERT INTO MAY_TRAM(MaMay,TenMay,TrangThaiMay,MaNhomMay,MaKhuVuc) VALUES('BAD_FK','Sai FK','AVAILABLE','NONE','KV01')",
+      "sqlstate": "23000"
+    },
+    {
+      "columns": [],
+      "elapsed_ms": 5.317334999745071,
+      "errno": 3819,
+      "error": "Check constraint 'ck_may_tram_0' is violated.",
+      "rows": [],
+      "sql": "UPDATE MAY_TRAM SET TrangThaiMay='INVALID' WHERE MaMay='M01'",
+      "sqlstate": "HY000"
+    },
+    {
+      "columns": [
+        "MaMay",
+        "TrangThaiMay",
+        "MaNhomMay",
+        "MaKhuVuc"
+      ],
+      "elapsed_ms": 2.4229780001405743,
+      "error": null,
+      "rows": [
+        [
+          "M01",
+          "AVAILABLE",
+          "VIP",
+          "KV01"
+        ]
+      ],
+      "sql": "SELECT MaMay,TrangThaiMay,MaNhomMay,MaKhuVuc FROM MAY_TRAM WHERE MaMay='M01'"
+    }
+  ],
+  "version": "8.4.13"
+}

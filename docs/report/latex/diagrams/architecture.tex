@@ -1,0 +1,10 @@
+\begin{tikzpicture}[flow]
+\node[process,text width=8.0cm] (ui) at (0,0) {Giao diện trình duyệt\\HTML/CSS/JavaScript};
+\node[process,text width=8.0cm] (api) at (0,-1.6) {Flask Routes\\Đăng nhập, CSRF, quyền và kiểm tra đầu vào};
+\node[process,text width=8.0cm] (service) at (0,-3.2) {Services\\Giao dịch, chống lặp, tiền giữ chỗ và retry};
+\node[process,text width=8.0cm] (repo) at (0,-4.8) {Repositories\\SQL tham số hóa và gọi routine};
+\node[start,text width=8.0cm] (db) at (0,-6.5) {MySQL 8.4.13\\23 bảng, FK/CHECK, chỉ mục, procedure/function/trigger};
+\node[process,text width=3.0cm] (worker) at (6.6,-3.2) {Worker trả trước\\Đối soát hạn dùng};
+\draw[arrow] (ui)--node[right]{HTTP}(api);
+\draw[arrow](api)--(service);\draw[arrow](service)--(repo);\draw[arrow](repo)--(db);\draw[arrow](worker)--(service);
+\end{tikzpicture}

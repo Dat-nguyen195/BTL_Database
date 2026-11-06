@@ -1,0 +1,84 @@
+{
+  "before_balance": 100000,
+  "after_balance": 110000,
+  "request": {
+    "MaGiaoDich": "G_EVIDENCE",
+    "MaYeuCau": "nap:271aa86e-6954-406a-a022-25a59f74ab4b",
+    "MaNguoiChoi": "TK02",
+    "SoTien": 10000,
+    "PhuongThucGD": "TienMat"
+  },
+  "responses": {
+    "create": {
+      "status": 201,
+      "body": {
+        "data": {
+          "CanUseUntil": null,
+          "LoaiGiaoDich": "NapTien",
+          "MaDonHang": null,
+          "MaGDGoc": null,
+          "MaGiaoDich": "G_EVIDENCE",
+          "MaNguoiChoi": "TK02",
+          "MaNhanVienXuLy": "TK01",
+          "MaPhien": null,
+          "MaYeuCau": "nap:271aa86e-6954-406a-a022-25a59f74ab4b",
+          "PhuongThucGD": "TienMat",
+          "SoTien": 10000,
+          "ThoiDiemGD": "2026-11-05T22:38:50+07:00",
+          "TrangThaiGD": "ThanhCong"
+        },
+        "meta": {
+          "replayed": false
+        },
+        "ok": true,
+        "requestId": "94ec2ec7-0293-4bd6-8b82-6e699ce8cbef"
+      }
+    },
+    "replay": {
+      "status": 200,
+      "body": {
+        "data": {
+          "LoaiGiaoDich": "NapTien",
+          "MaDonHang": null,
+          "MaGDGoc": null,
+          "MaGiaoDich": "G_EVIDENCE",
+          "MaNguoiChoi": "TK02",
+          "MaNhanVienXuLy": "TK01",
+          "MaPhien": null,
+          "MaYeuCau": "nap:271aa86e-6954-406a-a022-25a59f74ab4b",
+          "PhuongThucGD": "TienMat",
+          "SoTien": 10000,
+          "ThoiDiemGD": "2026-11-05T22:38:50+07:00",
+          "TrangThaiGD": "ThanhCong"
+        },
+        "meta": {
+          "replayed": true
+        },
+        "ok": true,
+        "requestId": "4319485a-d7e4-4766-b9eb-389662ae6c80"
+      }
+    },
+    "conflict": {
+      "status": 409,
+      "body": {
+        "error": {
+          "code": "IDEMPOTENCY_CONFLICT",
+          "message": "Cùng khóa/mã đối tượng nhưng nội dung nghiệp vụ khác."
+        },
+        "ok": false,
+        "requestId": "70d31e97-fbc6-47e4-8f3f-1a25a6351ee2"
+      }
+    },
+    "fraction_rejected": {
+      "status": 422,
+      "body": {
+        "error": {
+          "code": "INVALID_INPUT",
+          "message": "SoTien phải là số nguyên trong [1, 999999999999]."
+        },
+        "ok": false,
+        "requestId": "ca81fbfb-44bf-420d-aba4-146790a805af"
+      }
+    }
+  }
+}

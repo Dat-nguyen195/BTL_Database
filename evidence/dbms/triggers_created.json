@@ -1,0 +1,58 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "TRIGGER_NAME",
+        "EVENT_MANIPULATION",
+        "EVENT_OBJECT_TABLE"
+      ],
+      "elapsed_ms": 10.848096999325207,
+      "error": null,
+      "rows": [
+        [
+          "tr_bien_lai_tien_may_update",
+          "UPDATE",
+          "BIEN_LAI_TIEN_MAY"
+        ],
+        [
+          "tr_bien_lai_tien_may_delete",
+          "DELETE",
+          "BIEN_LAI_TIEN_MAY"
+        ],
+        [
+          "tr_chi_tiet_goi_dich_vu_insert",
+          "INSERT",
+          "CHI_TIET_GOI_DICH_VU"
+        ],
+        [
+          "tr_chi_tiet_goi_dich_vu_after_insert",
+          "INSERT",
+          "CHI_TIET_GOI_DICH_VU"
+        ],
+        [
+          "tr_chi_tiet_goi_dich_vu_update",
+          "UPDATE",
+          "CHI_TIET_GOI_DICH_VU"
+        ],
+        [
+          "tr_chi_tiet_goi_dich_vu_after_update",
+          "UPDATE",
+          "CHI_TIET_GOI_DICH_VU"
+        ],
+        [
+          "tr_chi_tiet_goi_dich_vu_delete",
+          "DELETE",
+          "CHI_TIET_GOI_DICH_VU"
+        ],
+        [
+          "tr_chi_tiet_goi_dich_vu_after_delete",
+          "DELETE",
+          "CHI_TIET_GOI_DICH_VU"
+        ]
+      ],
+      "sql": "SELECT TRIGGER_NAME,EVENT_MANIPULATION,EVENT_OBJECT_TABLE FROM information_schema.TRIGGERS WHERE TRIGGER_SCHEMA=DATABASE() AND EVENT_OBJECT_TABLE IN ('BIEN_LAI_TIEN_MAY','CHI_TIET_GOI_DICH_VU')"
+    }
+  ],
+  "version": "8.4.13"
+}

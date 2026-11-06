@@ -1,0 +1,49 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "MaKhuVuc",
+        "ThaoTac",
+        "SoDongTacDong"
+      ],
+      "elapsed_ms": 13.114305000271997,
+      "error": null,
+      "rows": [
+        [
+          "KV99",
+          "INSERT",
+          1
+        ]
+      ],
+      "sql": "CALL sp_khu_vuc_insert('KV99','Khu Demo','Tầng 2')"
+    },
+    {
+      "columns": [],
+      "elapsed_ms": 1.580078000188223,
+      "errno": 60009,
+      "error": "IDEMPOTENCY_CONFLICT: MaKhuVuc da ton tai",
+      "rows": [],
+      "sql": "CALL sp_khu_vuc_insert('KV99','Khu Demo','Tầng 2')",
+      "sqlstate": "45000"
+    },
+    {
+      "columns": [
+        "MaKhuVuc",
+        "TenKhuVuc",
+        "MoTaViTri"
+      ],
+      "elapsed_ms": 4.749225000523438,
+      "error": null,
+      "rows": [
+        [
+          "KV99",
+          "Khu Demo",
+          "Tầng 2"
+        ]
+      ],
+      "sql": "SELECT * FROM KHU_VUC WHERE MaKhuVuc='KV99'"
+    }
+  ],
+  "version": "8.4.13"
+}

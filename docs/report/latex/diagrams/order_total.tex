@@ -1,0 +1,13 @@
+\begin{tikzpicture}[flow]
+\node[start] (s) at (0,0) {DML trên chi tiết đơn};
+\node[process] (guard) at (0,-1.5) {BEFORE trigger kiểm tra đơn nháp\\và không đổi mã đơn};
+\node[decision] (v) at (0,-3.4) {Sự kiện hợp lệ?};
+\node[process,text width=3.9cm] (i) at (-5.0,-5.8) {AFTER INSERT\\Cộng NEW.SoLuong\\$\times$ NEW.DonGiaBan};
+\node[process,text width=3.9cm] (u) at (0,-5.8) {AFTER UPDATE\\Cộng chênh lệch\\giá trị mới trừ giá trị cũ};
+\node[process,text width=3.9cm] (d) at (5.0,-5.8) {AFTER DELETE\\Trừ OLD.SoLuong\\$\times$ OLD.DonGiaBan};
+\node[process] (t) at (0,-8.1) {UPDATE TongTien của đơn tương ứng};
+\node[start] (e) at (0,-9.7) {Tổng đơn đồng bộ với chi tiết};
+\draw[arrow](s)--(guard);\draw[arrow](guard)--(v);
+\draw[arrow](v)-|node[pos=.7,left]{INSERT}(i);\draw[arrow](v)--node[right]{UPDATE}(u);\draw[arrow](v)-|node[pos=.7,right]{DELETE}(d);
+\draw[arrow](i)|-(t);\draw[arrow](u)--(t);\draw[arrow](d)|-(t);\draw[arrow](t)--(e);
+\end{tikzpicture}

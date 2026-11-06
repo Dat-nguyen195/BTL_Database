@@ -1,0 +1,72 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [],
+      "elapsed_ms": 13.867724999727216,
+      "error": null,
+      "rows": [],
+      "sql": "INSERT INTO CHI_TIET_GOI_DICH_VU(MaDonHang,MaDichVu,SoLuong,DonGiaBan) VALUES('DH_EVIDENCE','DV01',2,15000)"
+    },
+    {
+      "columns": [
+        "MaDonHang",
+        "TongTien"
+      ],
+      "elapsed_ms": 3.080137000324612,
+      "error": null,
+      "rows": [
+        [
+          "DH_EVIDENCE",
+          "30000"
+        ]
+      ],
+      "sql": "SELECT MaDonHang,TongTien FROM DON_GOI_DICH_VU WHERE MaDonHang='DH_EVIDENCE'"
+    },
+    {
+      "columns": [],
+      "elapsed_ms": 6.46085900007165,
+      "error": null,
+      "rows": [],
+      "sql": "UPDATE CHI_TIET_GOI_DICH_VU SET SoLuong=3 WHERE MaDonHang='DH_EVIDENCE'"
+    },
+    {
+      "columns": [
+        "MaDonHang",
+        "TongTien"
+      ],
+      "elapsed_ms": 2.425938000669703,
+      "error": null,
+      "rows": [
+        [
+          "DH_EVIDENCE",
+          "45000"
+        ]
+      ],
+      "sql": "SELECT MaDonHang,TongTien FROM DON_GOI_DICH_VU WHERE MaDonHang='DH_EVIDENCE'"
+    },
+    {
+      "columns": [],
+      "elapsed_ms": 10.916847000771668,
+      "error": null,
+      "rows": [],
+      "sql": "DELETE FROM CHI_TIET_GOI_DICH_VU WHERE MaDonHang='DH_EVIDENCE'"
+    },
+    {
+      "columns": [
+        "MaDonHang",
+        "TongTien"
+      ],
+      "elapsed_ms": 2.4713699995118077,
+      "error": null,
+      "rows": [
+        [
+          "DH_EVIDENCE",
+          "0"
+        ]
+      ],
+      "sql": "SELECT MaDonHang,TongTien FROM DON_GOI_DICH_VU WHERE MaDonHang='DH_EVIDENCE'"
+    }
+  ],
+  "version": "8.4.13"
+}
