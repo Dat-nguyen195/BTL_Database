@@ -19,17 +19,36 @@
     }
   ],
   "standalone_source_zip": {
-    "files": 96,
+    "files": 102,
     "crc": "PASS",
     "hashes": "PASS",
     "fresh_compile": "PASS",
     "same_page_count_and_extracted_text": true
   },
-  "pdf_sha256": "1d354d4a09cef74e08cbd76b1c992d64ab4b927ecd169c67bde7e430ba79081e",
+  "pdf_sha256": "c3fd33ef01a0e150907be11edc7836649bea34204f7c5bc7f0b3604b545b87df",
   "functional_tests": "Full suite rerun after project cleanup: 96 PASS, 0 FAIL, 0 ERROR, 0 SKIP; see all.xml and summary.json.",
   "live_sql_evidence": "28 MySQL captures and index benchmark rerun for this revision.",
   "visual_review": "All 64 page renders checked; cover, flowcharts and EER additionally inspected individually. No observed image/page clipping, overlap or missing glyphs. Full EER is an overview; six domain pages and original SVG/PDF support zoom.",
   "cleanup": "Removed obsolete Word/report/review/scaffold files; assignment source is team_assignments.json; EER exporter uses bundled SVGs.",
   "content_unchanged_after_cleanup": true,
-  "eer_export_without_external_baseline": "PASS; seven PDFs, matching original extracted text"
+  "eer_export_without_external_baseline": "PASS; seven PDFs, matching original extracted text",
+  "compiler_fix": {
+    "date": "2026-11-06",
+    "observed_failure": "The user log ran pdfLaTeX, which stopped at fontspec (requires XeTeX/LuaTeX).",
+    "default_engine": "XeLaTeX via .latexmkrc; main.tex magic comment runs latexmk.",
+    "default_latexmk_clean_source": "PASS",
+    "vscode_recipe_clean_source": "PASS; executed the exact configured tool argument array.",
+    "source_directory_with_spaces": "PASS",
+    "bundled_mono_fonts": [
+      "Regular",
+      "Bold",
+      "Italic",
+      "BoldItalic"
+    ],
+    "font_license": "assets/fonts/LICENSE.txt (SIL OFL 1.1)",
+    "pages": 64,
+    "same_text_and_page_drawing_commands": true,
+    "font_layout_reference_warnings": [],
+    "functional_tests": "No backend/SQL changes; existing 96 PASS evidence retained, not rerun for this compiler configuration fix."
+  }
 }

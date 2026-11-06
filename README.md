@@ -75,7 +75,7 @@ PDF chính: [BTL2 Phần 1–2](deliverables/BTL2_L09_Nhom10_P1_P2.pdf). Nguồn
 apps/backend/.venv/bin/python scripts/package_deliverables.py
 ```
 
-Cần TeX Live/XeLaTeX, latexmk và các phông được nêu trong [README LaTeX](docs/report/latex/README.md). ZIP là sản phẩm sinh lại từ nguồn, được giữ local và không commit để tránh lặp toàn bộ repository. Tên tệp đầu ra được liệt kê trong [deliverables](deliverables/README.md).
+Cần TeX Live/XeLaTeX và latexmk; cấu hình VS Code/latexmk đã kèm trong dự án, phông mã nguồn đã được đóng gói. Chi tiết trong [README LaTeX](docs/report/latex/README.md). ZIP là sản phẩm sinh lại từ nguồn, được giữ local và không commit để tránh lặp toàn bộ repository. Tên tệp đầu ra được liệt kê trong [deliverables](deliverables/README.md).
 
 Muốn cập nhật báo cáo từ SQL hiện hành: chạy `python3 scripts/build_latex_report.py` rồi biên dịch. Muốn chạy lại SQL client hoặc benchmark: xem [danh mục công cụ](scripts/README.md).
 

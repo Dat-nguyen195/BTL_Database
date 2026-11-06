@@ -4,10 +4,11 @@ import hashlib,os,zipfile
 from dotenv import dotenv_values
 ROOT=Path(__file__).resolve().parents[1]
 OUTPUT_ZIP=ROOT/'deliverables/BTL2_L09_Nhom10_BanGiao.zip'
-EXCLUDE_DIRS={'.git','.venv','__pycache__','.pytest_cache','.idea','.vscode','.agents','.aws','.codex','tmp','node_modules'}
+EXCLUDE_DIRS={'.git','.venv','__pycache__','.pytest_cache','.idea','.agents','.aws','.codex','tmp','node_modules'}
 def should_include(p):
     return (
         not any(s in EXCLUDE_DIRS or s == 'build' for s in p.parts)
+        and not ('.vscode' in p.parts and p.name != 'settings.json')
         and not (p.name.startswith('.env') and p.name != '.env.example')
         and p.name not in {'.DS_Store','Thumbs.db'}
         and p != Path('deliverables/SHA256SUMS')
