@@ -11,7 +11,7 @@ def should_include(p):
         and not ('.vscode' in p.parts and p.name != 'settings.json')
         and not (p.name.startswith('.env') and p.name != '.env.example')
         and p.name not in {'.DS_Store','Thumbs.db'}
-        and p != Path('deliverables/SHA256SUMS')
+        and p not in {Path('deliverables/SHA256SUMS'),Path('docs/report/latex/main.pdf')}
         and p.suffix not in {'.pyc','.pyo','.pyd','.zip','.tmp','.aux','.log','.out','.toc','.lof','.lot','.fls','.fdb_latexmk','.xdv'}
         and not p.name.endswith('.synctex.gz')
     )

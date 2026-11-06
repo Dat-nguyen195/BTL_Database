@@ -12,17 +12,17 @@ Từ thư mục chứa main.tex, chạy:
 latexmk main.tex
 ```
 
-Tệp cấu hình ẩn `.latexmkrc` đã chọn XeLaTeX, tự chạy đủ các lượt để cập nhật mục lục/tham chiếu và ghi PDF vào `build/main.pdf`. Nếu công cụ không đọc tệp cấu hình ẩn, dùng lệnh rõ trình biên dịch:
+Tệp cấu hình ẩn `.latexmkrc` đã chọn XeLaTeX, tự chạy đủ các lượt để cập nhật mục lục/tham chiếu và ghi PDF vào `main.pdf` ngay cạnh main.tex. Vị trí này khớp trình xem PDF mặc định của LaTeX Workshop, kể cả khi mở thư mục cha chứa cả BTL1 và BTL2. Nếu công cụ không đọc tệp cấu hình ẩn, dùng lệnh rõ trình biên dịch:
 
 ```bash
-latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build main.tex
+latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-Từ gốc repository có thể chạy `./scripts/build_report_latex.sh` để biên dịch và cập nhật PDF trong deliverables.
+Từ gốc repository có thể chạy `./scripts/build_report_latex.sh` để biên dịch riêng vào `build/` và cập nhật PDF nộp trong deliverables.
 
 ## VS Code / LaTeX Workshop
 
-Mở thư mục repository rồi mở `docs/report/latex/main.tex`, chọn **Build LaTeX project**. Repository có recipe XeLaTeX trong `.vscode/settings.json`; main.tex có chỉ dẫn chạy latexmk và các tệp con trỏ về main.tex. Không chọn recipe pdfLaTeX hoặc biên dịch riêng một tệp trong sections/.
+Mở `docs/report/latex/main.tex`, chọn **Build LaTeX project** (Ctrl+Alt+B), rồi **View LaTeX PDF** (Ctrl+Alt+V). Nếu mở thư mục cha như Assignment, hai lệnh này vẫn dùng main.pdf ngay cạnh main.tex. Repository có recipe XeLaTeX trong `.vscode/settings.json`; main.tex có chỉ dẫn chạy latexmk và các tệp con trỏ về main.tex. Không chọn recipe pdfLaTeX hoặc biên dịch riêng một tệp trong sections/.
 
 Nếu từng gặp lỗi fontspec, sau khi cập nhật nguồn hãy chạy lệnh XeLaTeX ở trên hoặc chọn recipe **BTL2: XeLaTeX (latexmk)**. Không dùng lại kết quả thất bại được lưu từ lượt pdfLaTeX cũ.
 

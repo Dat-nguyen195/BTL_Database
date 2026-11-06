@@ -49,6 +49,19 @@
     "pages": 64,
     "same_text_and_page_drawing_commands": true,
     "font_layout_reference_warnings": [],
-    "functional_tests": "No backend/SQL changes; existing 96 PASS evidence retained, not rerun for this compiler configuration fix."
+    "functional_tests": "No backend/SQL changes; existing 96 PASS evidence retained, not rerun for this compiler configuration fix.",
+    "editor_pdf_location": "main.pdf next to main.tex; matches %DIR% even in a parent workspace"
+  },
+  "parent_workspace_viewer_fix": {
+    "date": "2026-11-06",
+    "workspace": "Assignment (parent of the BTL2 repository)",
+    "observed_failure": "BUILD_DONE succeeded, but the PDF viewer requested main.pdf while latexmk wrote build/main.pdf; ENOENT.",
+    "fix": "Default editor/latexmk output is now main.pdf next to main.tex. The publication script still uses build/ explicitly.",
+    "exact_extension_build_arguments": "latexmk -synctex=1 -interaction=nonstopmode -file-line-error main",
+    "extension_pdf_watcher_refreshed": true,
+    "existing_viewer_server_http": 200,
+    "viewer_response_matches_generated_pdf": true,
+    "generated_editor_pdf_sha256": "81a43a1cb45f562e54ac6ad4c7410ca768d4e598834f16201417039cebd3d310",
+    "clean_zip_default_output": "PASS: main.pdf beside main.tex, 64 pages, no compiler warnings, same page drawing commands"
   }
 }
