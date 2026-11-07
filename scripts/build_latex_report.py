@@ -311,13 +311,10 @@ Nguyễn Hữu Tây&2413095&20\%&&&\\
 Trần Tiến Thành&2413181&20\%&&&\\\bottomrule
 \end{tabularx}\end{table}
 \chapter{PHỤ LỤC: Thiết kế ERD cập nhật mới nhất}\label{app:eer}
-\section{Sơ đồ tổng thể dạng vector}
-Sơ đồ giữ ký hiệu EER Chen của BTL1. Bản tổng quan trình bày toàn hệ thống; các trang tiếp theo phóng riêng từng phân hệ. Tệp PDF/SVG nguồn được kèm trong bộ LaTeX, cho phép phóng to mà không vỡ nét hoặc dùng để in khổ lớn.
-\begin{figure}[H]\centering\includegraphics[width=\linewidth,height=.76\textheight,keepaspectratio]{assets/eer/erd_full_vector.pdf}\caption{EER tổng thể kế thừa từ thiết kế BTL1}\end{figure}
-'''
-    for name,title in [('eerd_sub_user','Danh tính và người dùng'),('eerd_sub_workstation','Máy trạm và phiên sử dụng'),('eerd_sub_wallet','Ví hội viên và chứng từ'),('eerd_sub_shift','Ca trực và phân công'),('eerd_sub_service_inventory','Dịch vụ và đơn hàng'),('eerd_sub_inventory','Phiếu kho và kiểm kê')]:
-        append+='\\clearpage\\section{'+title+'}\n\\begin{figure}[H]\\centering\\includegraphics[width=\\linewidth,height=.78\\textheight,keepaspectratio]{assets/eer/'+name+'.pdf}\\caption{EER phân hệ '+title.lower()+'}\\end{figure}\n'
-    append+=r'''\clearpage\section{Bảng ghi chú các thay đổi so với BTL1}
+\section{Sơ đồ tổng thể EER dạng vector}
+Sơ đồ tuân thủ chặt chẽ ký hiệu Chen chuẩn (thực thể hình chữ nhật, mối quan hệ hình thoi, thuộc tính hình elip, khóa chính gạch chân, thực thể và liên kết yếu nét đôi, thuộc tính đa trị nét đôi, thuộc tính dẫn xuất nét đứt, tham gia toàn phần nét đôi), được đồng bộ lại theo phong cách đơn sắc đen trắng rõ nét. Sơ đồ bao quát toàn bộ 18 thực thể và tất cả các mối quan hệ nghiệp vụ của hệ thống 23 bảng. Tệp PDF/SVG nguồn vector được lưu tại \path{assets/eer/erd_full_vector.pdf} và mô hình chỉnh sửa tại \path{docs/btl1_baseline/BTL1_EER.drawio}.
+\begin{figure}[H]\centering\includegraphics[width=\linewidth,height=.82\textheight,keepaspectratio]{assets/eer/erd_full_vector.pdf}\caption{Sơ đồ EER tổng thể toàn hệ thống theo ký hiệu Chen}\end{figure}
+\clearpage\section{Bảng ghi chú các thay đổi so với BTL1}
 \begingroup\small\setlength{\tabcolsep}{3.5pt}\renewcommand{\arraystretch}{1.2}
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{28mm}>{\raggedright\arraybackslash}p{38mm}>{\raggedright\arraybackslash}p{44mm}>{\raggedright\arraybackslash}p{44mm}@{}}\toprule
 \textbf{Nội dung thay đổi}&\textbf{Phiên bản cũ (BTL1)}&\textbf{Phiên bản mới (BTL2)}&\textbf{Lí do}\\\midrule\endhead
