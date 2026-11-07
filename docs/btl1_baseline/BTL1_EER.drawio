@@ -464,2090 +464,794 @@
         <mxCell id="SDKD" parent="1" vertex="1" value="SoDuKhaDung" style="shape=ellipse;whiteSpace=wrap;html=1;rounded=0;fontFamily=Arial;fontSize=10;fontColor=#000000;strokeColor=#000000;fillColor=#FFFFFF;dashed=1;dashPattern=5 5;strokeWidth=1;">
           <mxGeometry x="2481.52" y="1457.2" width="134.35" height="39.6" as="geometry" />
         </mxCell>
-        <mxCell id="edge0" parent="1" edge="1" source="NHOM_NGUOI_DUNG" target="A0" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge0" parent="1" edge="1" source="NHOM_NGUOI_DUNG" target="A0" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2907.1" y="190.19999999999982" />
-              <mxPoint x="2968.5" y="215.5999999999999" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_0" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="2918.7" y="186.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge1" parent="1" edge="1" source="NHOM_NGUOI_DUNG" target="NHOM_NGUOI_DUNG__MaNhomND" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge1" parent="1" edge="1" source="NHOM_NGUOI_DUNG" target="NHOM_NGUOI_DUNG__MaNhomND" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2912.6" y="161.30000000000018" />
-              <mxPoint x="2922.7" y="162.0" />
-              <mxPoint x="2922.7" y="162.0" />
-              <mxPoint x="2922.7" y="162.0" />
-              <mxPoint x="2931.7" y="162.0" />
-              <mxPoint x="2931.7" y="162.0" />
-              <mxPoint x="2931.7" y="162.0" />
-              <mxPoint x="2976.1" y="159.30000000000018" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge2" parent="1" edge="1" source="NHOM_NGUOI_DUNG" target="NHOM_NGUOI_DUNG__TenNhomND" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge2" parent="1" edge="1" source="NHOM_NGUOI_DUNG" target="NHOM_NGUOI_DUNG__TenNhomND" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2936.3" y="127.59999999999991" />
-              <mxPoint x="2982.0" y="116.59999999999991" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge3" parent="1" edge="1" source="TAI_KHOAN" target="ISA" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge3" parent="1" edge="1" source="TAI_KHOAN" target="ISA" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1212.4" y="660.8000000000002" />
-              <mxPoint x="1378.0" y="866.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge4" parent="1" edge="1" source="TAI_KHOAN" target="R0" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge4" parent="1" edge="1" source="TAI_KHOAN" target="R0" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1203.3" y="507.3000000000002" />
-              <mxPoint x="1323.8" y="351.0" />
-              <mxPoint x="1323.8" y="351.0" />
-              <mxPoint x="1323.8" y="351.0" />
-              <mxPoint x="1375.9" y="289.3000000000002" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_4" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1263.3" y="372.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge5" parent="1" edge="1" source="TAI_KHOAN" target="TAI_KHOAN__MaTaiKhoan" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge5" parent="1" edge="1" source="TAI_KHOAN" target="TAI_KHOAN__MaTaiKhoan" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1218.9" y="590.4000000000001" />
-              <mxPoint x="1243.8" y="594.0" />
-              <mxPoint x="1243.8" y="594.0" />
-              <mxPoint x="1243.8" y="594.0" />
-              <mxPoint x="1299.8" y="594.0" />
-              <mxPoint x="1299.8" y="594.0" />
-              <mxPoint x="1299.8" y="594.0" />
-              <mxPoint x="1531.8" y="584.0" />
-              <mxPoint x="1531.8" y="584.0" />
-              <mxPoint x="1531.8" y="584.0" />
-              <mxPoint x="1546.5" y="583.0999999999999" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge6" parent="1" edge="1" source="TAI_KHOAN" target="TAI_KHOAN__TenDangNhap" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge6" parent="1" edge="1" source="TAI_KHOAN" target="TAI_KHOAN__TenDangNhap" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1218.9" y="583.6999999999998" />
-              <mxPoint x="1243.8" y="585.0" />
-              <mxPoint x="1243.8" y="585.0" />
-              <mxPoint x="1243.8" y="585.0" />
-              <mxPoint x="1299.8" y="585.0" />
-              <mxPoint x="1299.8" y="585.0" />
-              <mxPoint x="1299.8" y="585.0" />
-              <mxPoint x="1531.8" y="564.0" />
-              <mxPoint x="1531.8" y="564.0" />
-              <mxPoint x="1531.8" y="564.0" />
-              <mxPoint x="1549.9" y="557.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge7" parent="1" edge="1" source="TAI_KHOAN" target="TAI_KHOAN__MatKhauBam" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge7" parent="1" edge="1" source="TAI_KHOAN" target="TAI_KHOAN__MatKhauBam" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1297.1" y="567.9000000000001" />
-              <mxPoint x="1531.8" y="549.0" />
-              <mxPoint x="1531.8" y="549.0" />
-              <mxPoint x="1531.8" y="549.0" />
-              <mxPoint x="1555.8" y="519.0" />
-              <mxPoint x="1555.8" y="519.0" />
-              <mxPoint x="1555.8" y="519.0" />
-              <mxPoint x="1563.2" y="515.1999999999998" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge8" parent="1" edge="1" source="TAI_KHOAN" target="TAI_KHOAN__TrangThai" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge8" parent="1" edge="1" source="TAI_KHOAN" target="TAI_KHOAN__TrangThai" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1252.1" y="558.1999999999998" />
-              <mxPoint x="1348.2" y="538.3000000000002" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge9" parent="1" edge="1" source="TAI_KHOAN" target="HoTen" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge9" parent="1" edge="1" source="TAI_KHOAN" target="HoTen" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1236.6" y="537.0" />
-              <mxPoint x="1323.8" y="495.0" />
-              <mxPoint x="1323.8" y="495.0" />
-              <mxPoint x="1323.8" y="495.0" />
-              <mxPoint x="1361.8" y="483.9000000000001" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge10" parent="1" edge="1" source="TAI_KHOAN" target="SDT" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge10" parent="1" edge="1" source="TAI_KHOAN" target="SDT" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1216.6" y="523.0999999999999" />
-              <mxPoint x="1323.8" y="435.0" />
-              <mxPoint x="1323.8" y="435.0" />
-              <mxPoint x="1323.8" y="435.0" />
-              <mxPoint x="1350.4" y="426.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge11" parent="1" edge="1" source="NGUOI_CHOI" target="NGUOI_CHOI__SoCCCD" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge11" parent="1" edge="1" source="NGUOI_CHOI" target="NGUOI_CHOI__SoCCCD" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2367.4" y="1648.9" />
-              <mxPoint x="2381.7" y="1651.0" />
-              <mxPoint x="2381.7" y="1651.0" />
-              <mxPoint x="2381.7" y="1651.0" />
-              <mxPoint x="2390.7" y="1651.0" />
-              <mxPoint x="2390.7" y="1651.0" />
-              <mxPoint x="2390.7" y="1651.0" />
-              <mxPoint x="2475.4" y="1645.6" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge12" parent="1" edge="1" source="NGUOI_CHOI" target="NGUOI_CHOI__SoDuVi" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge12" parent="1" edge="1" source="NGUOI_CHOI" target="NGUOI_CHOI__SoDuVi" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2367.4" y="1642.3" />
-              <mxPoint x="2381.7" y="1643.0" />
-              <mxPoint x="2381.7" y="1643.0" />
-              <mxPoint x="2381.7" y="1643.0" />
-              <mxPoint x="2390.7" y="1643.0" />
-              <mxPoint x="2390.7" y="1643.0" />
-              <mxPoint x="2390.7" y="1643.0" />
-              <mxPoint x="2414.7" y="1614.0" />
-              <mxPoint x="2414.7" y="1614.0" />
-              <mxPoint x="2414.7" y="1614.0" />
-              <mxPoint x="2484.1" y="1599.9" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge13" parent="1" edge="1" source="NGUOI_CHOI" target="NGUOI_CHOI__NgayDangKy" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge13" parent="1" edge="1" source="NGUOI_CHOI" target="NGUOI_CHOI__NgayDangKy" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2359.3" y="1597.6" />
-              <mxPoint x="2414.7" y="1560.0" />
-              <mxPoint x="2414.7" y="1560.0" />
-              <mxPoint x="2414.7" y="1560.0" />
-              <mxPoint x="2472.3" y="1548.3" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge14" parent="1" edge="1" source="NGUOI_CHOI" target="SDKD" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge14" parent="1" edge="1" source="NGUOI_CHOI" target="SDKD" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2346.1" y="1584.4" />
-              <mxPoint x="2414.7" y="1506.0" />
-              <mxPoint x="2414.7" y="1506.0" />
-              <mxPoint x="2414.7" y="1506.0" />
-              <mxPoint x="2457.1" y="1496.8" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge15" parent="1" edge="1" source="NHAN_VIEN" target="R1" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge15" parent="1" edge="1" source="NHAN_VIEN" target="R1" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1787.8" y="1034.5" />
-              <mxPoint x="1827.6" y="1067.0" />
-              <mxPoint x="1827.6" y="1067.0" />
-              <mxPoint x="1827.6" y="1067.0" />
-              <mxPoint x="1898.7" y="1075.1999999999998" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_15" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1823.1" y="1054.0" width="68" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge16" parent="1" edge="1" source="NHAN_VIEN" target="A2" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge16" parent="1" edge="1" source="NHAN_VIEN" target="A2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1797.1" y="927.3000000000002" />
-              <mxPoint x="1910.6" y="794.0" />
-              <mxPoint x="1910.6" y="794.0" />
-              <mxPoint x="1910.6" y="794.0" />
-              <mxPoint x="2009.6" y="771.0" />
-              <mxPoint x="2009.6" y="771.0" />
-              <mxPoint x="2009.6" y="771.0" />
-              <mxPoint x="2009.6" y="771.0" />
-              <mxPoint x="2822.2" y="771.0" />
-              <mxPoint x="2822.2" y="771.0" />
-              <mxPoint x="2909.6" y="779.1999999999998" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_16" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="2377.7" y="758.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge17" parent="1" edge="1" source="NHAN_VIEN" target="NHAN_VIEN__ChucVu" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge17" parent="1" edge="1" source="NHAN_VIEN" target="NHAN_VIEN__ChucVu" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1808.2" y="1002.0" />
-              <mxPoint x="1827.6" y="1004.0" />
-              <mxPoint x="1827.6" y="1004.0" />
-              <mxPoint x="1827.6" y="1004.0" />
-              <mxPoint x="1886.6" y="1004.0" />
-              <mxPoint x="1886.6" y="1004.0" />
-              <mxPoint x="1886.6" y="1004.0" />
-              <mxPoint x="2076.4" y="994.0999999999999" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge18" parent="1" edge="1" source="NHAN_VIEN" target="NHAN_VIEN__LuongCoBan" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge18" parent="1" edge="1" source="NHAN_VIEN" target="NHAN_VIEN__LuongCoBan" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1888.1" y="967.0" />
-              <mxPoint x="2110.6" y="925.0" />
-              <mxPoint x="2110.6" y="925.0" />
-              <mxPoint x="2110.6" y="925.0" />
-              <mxPoint x="2126.3" y="919.8000000000002" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge19" parent="1" edge="1" source="NHAN_VIEN" target="NHAN_VIEN__NgayVaoLam" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge19" parent="1" edge="1" source="NHAN_VIEN" target="NHAN_VIEN__NgayVaoLam" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1842.9" y="957.9000000000001" />
-              <mxPoint x="1931.3" y="926.0999999999999" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge20" parent="1" edge="1" source="NHAN_VIEN" target="DiaChi" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge20" parent="1" edge="1" source="NHAN_VIEN" target="DiaChi" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1811.9" y="942.5999999999999" />
-              <mxPoint x="1910.6" y="871.0" />
-              <mxPoint x="1910.6" y="871.0" />
-              <mxPoint x="1910.6" y="871.0" />
-              <mxPoint x="1945.5" y="855.8000000000002" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge21" parent="1" edge="1" source="KHU_VUC" target="A2" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge21" parent="1" edge="1" source="KHU_VUC" target="A2" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2904.9" y="733.3000000000002" />
-              <mxPoint x="2965.7" y="758.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_21" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="2918.7" y="730.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge22" parent="1" edge="1" source="KHU_VUC" target="KHU_VUC__MaKhuVuc" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge22" parent="1" edge="1" source="KHU_VUC" target="KHU_VUC__MaKhuVuc" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2891.8" y="706.5999999999999" />
-              <mxPoint x="2922.7" y="710.0" />
-              <mxPoint x="2922.7" y="710.0" />
-              <mxPoint x="2922.7" y="710.0" />
-              <mxPoint x="2931.7" y="710.0" />
-              <mxPoint x="2931.7" y="710.0" />
-              <mxPoint x="2931.7" y="710.0" />
-              <mxPoint x="2979.5" y="705.4000000000001" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge23" parent="1" edge="1" source="KHU_VUC" target="KHU_VUC__TenKhuVuc" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge23" parent="1" edge="1" source="KHU_VUC" target="KHU_VUC__TenKhuVuc" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2891.8" y="701.0999999999999" />
-              <mxPoint x="2922.7" y="702.0" />
-              <mxPoint x="2922.7" y="702.0" />
-              <mxPoint x="2922.7" y="702.0" />
-              <mxPoint x="2931.7" y="702.0" />
-              <mxPoint x="2931.7" y="702.0" />
-              <mxPoint x="2931.7" y="702.0" />
-              <mxPoint x="2955.7" y="672.0" />
-              <mxPoint x="2955.7" y="672.0" />
-              <mxPoint x="2955.7" y="672.0" />
-              <mxPoint x="2989.9" y="661.8000000000002" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge24" parent="1" edge="1" source="KHU_VUC" target="KHU_VUC__MoTaViTri" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge24" parent="1" edge="1" source="KHU_VUC" target="KHU_VUC__MoTaViTri" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2891.5" y="656.9000000000001" />
-              <mxPoint x="2955.7" y="618.0" />
-              <mxPoint x="2955.7" y="618.0" />
-              <mxPoint x="2955.7" y="618.0" />
-              <mxPoint x="2993.0" y="606.9000000000001" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge25" parent="1" edge="1" source="NHOM_MAY" target="A0" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge25" parent="1" edge="1" source="NHOM_MAY" target="A0" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2899.7" y="324.0" />
-              <mxPoint x="2970.6" y="287.3000000000002" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_25" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="2918.7" y="297.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge26" parent="1" edge="1" source="NHOM_MAY" target="NHOM_MAY__MaNhomMay" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge26" parent="1" edge="1" source="NHOM_MAY" target="NHOM_MAY__MaNhomMay" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2881.8" y="414.0" />
-              <mxPoint x="2955.7" y="476.0" />
-              <mxPoint x="2955.7" y="476.0" />
-              <mxPoint x="2955.7" y="476.0" />
-              <mxPoint x="2987.6" y="485.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge27" parent="1" edge="1" source="NHOM_MAY" target="NHOM_MAY__TenNhomMay" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge27" parent="1" edge="1" source="NHOM_MAY" target="NHOM_MAY__TenNhomMay" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2902.9" y="399.0999999999999" />
-              <mxPoint x="2955.7" y="422.0" />
-              <mxPoint x="2955.7" y="422.0" />
-              <mxPoint x="2955.7" y="422.0" />
-              <mxPoint x="2986.7" y="431.1999999999998" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge28" parent="1" edge="1" source="NHOM_MAY" target="NHOM_MAY__DonGiaGioMacDinh" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge28" parent="1" edge="1" source="NHOM_MAY" target="NHOM_MAY__DonGiaGioMacDinh" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2907.2" y="375.6999999999998" />
-              <mxPoint x="2957.9" y="382.6999999999998" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge29" parent="1" edge="1" source="NHOM_MAY" target="NHOM_MAY__MoTa" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge29" parent="1" edge="1" source="NHOM_MAY" target="NHOM_MAY__MoTa" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2916.5" y="354.3000000000002" />
-              <mxPoint x="2984.3" y="347.4000000000001" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge30" parent="1" edge="1" source="MAY_TRAM" target="R2" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge30" parent="1" edge="1" source="MAY_TRAM" target="R2" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2350.1" y="1052.6999999999998" />
-              <mxPoint x="2373.7" y="1039.0" />
-              <mxPoint x="2373.7" y="1039.0" />
-              <mxPoint x="2373.7" y="1039.0" />
-              <mxPoint x="2414.7" y="930.0" />
-              <mxPoint x="2414.7" y="930.0" />
-              <mxPoint x="2414.7" y="930.0" />
-              <mxPoint x="2471.3" y="896.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_30" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="2377.7" y="982.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge31" parent="1" edge="1" source="MAY_TRAM" target="R3" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge31" parent="1" edge="1" source="MAY_TRAM" target="R3" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2387.4" y="1042.6" />
-              <mxPoint x="2470.6" y="1004.9000000000001" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_31" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="2377.7" y="1031.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge32" parent="1" edge="1" source="MAY_TRAM" target="MAY_TRAM__MaMay" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge32" parent="1" edge="1" source="MAY_TRAM" target="MAY_TRAM__MaMay" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2345.7" y="1138.1" />
-              <mxPoint x="2414.7" y="1218.0" />
-              <mxPoint x="2414.7" y="1218.0" />
-              <mxPoint x="2414.7" y="1218.0" />
-              <mxPoint x="2484.1" y="1232.1" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge33" parent="1" edge="1" source="MAY_TRAM" target="MAY_TRAM__TenMay" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge33" parent="1" edge="1" source="MAY_TRAM" target="MAY_TRAM__TenMay" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2358.7" y="1125.1" />
-              <mxPoint x="2414.7" y="1164.0" />
-              <mxPoint x="2414.7" y="1164.0" />
-              <mxPoint x="2414.7" y="1164.0" />
-              <mxPoint x="2484.1" y="1178.1" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge34" parent="1" edge="1" source="MAY_TRAM" target="MAY_TRAM__TrangThaiMay" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge34" parent="1" edge="1" source="MAY_TRAM" target="MAY_TRAM__TrangThaiMay" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2376.8" y="1101.1999999999998" />
-              <mxPoint x="2414.7" y="1110.0" />
-              <mxPoint x="2414.7" y="1110.0" />
-              <mxPoint x="2414.7" y="1110.0" />
-              <mxPoint x="2470.3" y="1121.3000000000002" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge35" parent="1" edge="1" source="MAY_TRAM" target="MAY_TRAM__ViTriHang" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge35" parent="1" edge="1" source="MAY_TRAM" target="MAY_TRAM__ViTriHang" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2363.7" y="1088.5" />
-              <mxPoint x="2381.7" y="1090.0" />
-              <mxPoint x="2381.7" y="1090.0" />
-              <mxPoint x="2381.7" y="1090.0" />
-              <mxPoint x="2390.7" y="1090.0" />
-              <mxPoint x="2390.7" y="1090.0" />
-              <mxPoint x="2390.7" y="1090.0" />
-              <mxPoint x="2470.9" y="1086.4" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge36" parent="1" edge="1" source="MAY_TRAM" target="MAY_TRAM__ViTriCot" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge36" parent="1" edge="1" source="MAY_TRAM" target="MAY_TRAM__ViTriCot" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2338.6" y="1148.4" />
-              <mxPoint x="2414.7" y="1272.0" />
-              <mxPoint x="2414.7" y="1272.0" />
-              <mxPoint x="2414.7" y="1272.0" />
-              <mxPoint x="2484.1" y="1286.1" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge37" parent="1" edge="1" source="PHIEN_SU_DUNG" target="R4" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge37" parent="1" edge="1" source="PHIEN_SU_DUNG" target="R4" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1794.7" y="1647.9" />
-              <mxPoint x="1942.7" y="1422.1" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_37" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1848.6" y="1501.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge38" parent="1" edge="1" source="PHIEN_SU_DUNG" target="R5" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge38" parent="1" edge="1" source="PHIEN_SU_DUNG" target="R5" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1846.2" y="1695.3" />
-              <mxPoint x="1929.5" y="1666.6" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_38" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1848.6" y="1670.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge39" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__MaPhien" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge39" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__MaPhien" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1790.9" y="1797.0" />
-              <mxPoint x="1886.6" y="1918.0" />
-              <mxPoint x="1886.6" y="1918.0" />
-              <mxPoint x="1886.6" y="1918.0" />
-              <mxPoint x="1910.6" y="1975.0" />
-              <mxPoint x="1910.6" y="1975.0" />
-              <mxPoint x="1910.6" y="1975.0" />
-              <mxPoint x="1954.5" y="1987.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge40" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__HinhThucDangNhap" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge40" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__HinhThucDangNhap" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1811.4" y="1777.0" />
-              <mxPoint x="1886.6" y="1824.0" />
-              <mxPoint x="1886.6" y="1824.0" />
-              <mxPoint x="1886.6" y="1824.0" />
-              <mxPoint x="1910.6" y="1921.0" />
-              <mxPoint x="1910.6" y="1921.0" />
-              <mxPoint x="1910.6" y="1921.0" />
-              <mxPoint x="1939.1" y="1928.8" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge41" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__ThoiDiemBatDau" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge41" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__ThoiDiemBatDau" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1843.2" y="1760.9" />
-              <mxPoint x="1886.6" y="1773.0" />
-              <mxPoint x="1886.6" y="1773.0" />
-              <mxPoint x="1886.6" y="1773.0" />
-              <mxPoint x="1910.6" y="1867.0" />
-              <mxPoint x="1910.6" y="1867.0" />
-              <mxPoint x="1910.6" y="1867.0" />
-              <mxPoint x="1942.3" y="1875.7" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge42" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__ThoiDiemKetThuc" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge42" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__ThoiDiemKetThuc" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1843.2" y="1740.5" />
-              <mxPoint x="1886.6" y="1744.0" />
-              <mxPoint x="1886.6" y="1744.0" />
-              <mxPoint x="1886.6" y="1744.0" />
-              <mxPoint x="1910.6" y="1813.0" />
-              <mxPoint x="1910.6" y="1813.0" />
-              <mxPoint x="1910.6" y="1813.0" />
-              <mxPoint x="1941.7" y="1821.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge43" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__DonGiaGioApDung" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge43" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__DonGiaGioApDung" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1817.4" y="1728.5" />
-              <mxPoint x="1827.6" y="1728.0" />
-              <mxPoint x="1827.6" y="1728.0" />
-              <mxPoint x="1827.6" y="1728.0" />
-              <mxPoint x="1886.6" y="1728.0" />
-              <mxPoint x="1886.6" y="1728.0" />
-              <mxPoint x="1886.6" y="1728.0" />
-              <mxPoint x="1910.6" y="1759.0" />
-              <mxPoint x="1910.6" y="1759.0" />
-              <mxPoint x="1910.6" y="1759.0" />
-              <mxPoint x="1940.6" y="1767.2" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge44" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__TienNapTruoc" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge44" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__TienNapTruoc" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1817.4" y="1722.3" />
-              <mxPoint x="1827.6" y="1721.0" />
-              <mxPoint x="1827.6" y="1721.0" />
-              <mxPoint x="1827.6" y="1721.0" />
-              <mxPoint x="1886.6" y="1721.0" />
-              <mxPoint x="1886.6" y="1721.0" />
-              <mxPoint x="1886.6" y="1721.0" />
-              <mxPoint x="1932.8" y="1725.1" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge45" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__TienGiuCho" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge45" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__TienGiuCho" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1760.9" y="1827.0" />
-              <mxPoint x="1827.6" y="2123.0" />
-              <mxPoint x="1827.6" y="2123.0" />
-              <mxPoint x="1827.6" y="2123.0" />
-              <mxPoint x="1910.6" y="2195.0" />
-              <mxPoint x="1910.6" y="2195.0" />
-              <mxPoint x="1910.6" y="2195.0" />
-              <mxPoint x="1949.0" y="2205.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge46" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__TongTienTamTinh" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge46" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__TongTienTamTinh" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1762.9" y="1820.5" />
-              <mxPoint x="1827.6" y="2066.0" />
-              <mxPoint x="1827.6" y="2066.0" />
-              <mxPoint x="1827.6" y="2066.0" />
-              <mxPoint x="1910.6" y="2141.0" />
-              <mxPoint x="1910.6" y="2141.0" />
-              <mxPoint x="1910.6" y="2141.0" />
-              <mxPoint x="1941.9" y="2149.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge47" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__TrangThaiPhien" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge47" parent="1" edge="1" source="PHIEN_SU_DUNG" target="PHIEN_SU_DUNG__TrangThaiPhien" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1765.2" y="1810.4" />
-              <mxPoint x="1827.6" y="2001.0" />
-              <mxPoint x="1827.6" y="2001.0" />
-              <mxPoint x="1827.6" y="2001.0" />
-              <mxPoint x="1910.6" y="2087.0" />
-              <mxPoint x="1910.6" y="2087.0" />
-              <mxPoint x="1910.6" y="2087.0" />
-              <mxPoint x="1943.7" y="2096.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge48" parent="1" edge="1" source="PHIEN_SU_DUNG" target="TGD" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge48" parent="1" edge="1" source="PHIEN_SU_DUNG" target="TGD" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1770.3" y="1797.0" />
-              <mxPoint x="1827.6" y="1918.0" />
-              <mxPoint x="1827.6" y="1918.0" />
-              <mxPoint x="1827.6" y="1918.0" />
-              <mxPoint x="1910.6" y="2029.0" />
-              <mxPoint x="1910.6" y="2029.0" />
-              <mxPoint x="1910.6" y="2029.0" />
-              <mxPoint x="1935.3" y="2036.2" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge49" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="R6" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge49" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="R6" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1219.3" y="1591.1" />
-              <mxPoint x="1323.8" y="1671.0" />
-              <mxPoint x="1323.8" y="1671.0" />
-              <mxPoint x="1323.8" y="1671.0" />
-              <mxPoint x="1355.5" y="1683.3" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_49" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1264.3" y="1599.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge50" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="R7" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge50" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="R7" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1175.4" y="1457.6" />
-              <mxPoint x="1243.8" y="1267.0" />
-              <mxPoint x="1243.8" y="1267.0" />
-              <mxPoint x="1243.8" y="1267.0" />
-              <mxPoint x="1323.8" y="1116.0" />
-              <mxPoint x="1323.8" y="1116.0" />
-              <mxPoint x="1323.8" y="1116.0" />
-              <mxPoint x="1362.1" y="1097.8000000000002" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_50" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1263.3" y="1152.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge51" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__MaBienLai" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge51" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__MaBienLai" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1233.7" y="1546.7" />
-              <mxPoint x="1243.8" y="1548.0" />
-              <mxPoint x="1243.8" y="1548.0" />
-              <mxPoint x="1243.8" y="1548.0" />
-              <mxPoint x="1299.8" y="1548.0" />
-              <mxPoint x="1299.8" y="1548.0" />
-              <mxPoint x="1299.8" y="1548.0" />
-              <mxPoint x="1356.8" y="1543.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge52" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__ThoiDiemLap" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge52" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__ThoiDiemLap" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1233.7" y="1539.6" />
-              <mxPoint x="1243.8" y="1540.0" />
-              <mxPoint x="1243.8" y="1540.0" />
-              <mxPoint x="1243.8" y="1540.0" />
-              <mxPoint x="1299.8" y="1540.0" />
-              <mxPoint x="1299.8" y="1540.0" />
-              <mxPoint x="1299.8" y="1540.0" />
-              <mxPoint x="1323.8" y="1511.0" />
-              <mxPoint x="1323.8" y="1511.0" />
-              <mxPoint x="1323.8" y="1511.0" />
-              <mxPoint x="1362.3" y="1500.9" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge53" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__ThoiDiemThanhToan" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge53" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__ThoiDiemThanhToan" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1239.9" y="1494.6" />
-              <mxPoint x="1323.8" y="1457.0" />
-              <mxPoint x="1323.8" y="1457.0" />
-              <mxPoint x="1323.8" y="1457.0" />
-              <mxPoint x="1354.4" y="1449.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge54" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__TongTienGio" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge54" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__TongTienGio" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1219.8" y="1481.4" />
-              <mxPoint x="1323.8" y="1403.0" />
-              <mxPoint x="1323.8" y="1403.0" />
-              <mxPoint x="1323.8" y="1403.0" />
-              <mxPoint x="1363.5" y="1392.6" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge55" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__HinhThucThanhToan" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge55" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__HinhThucThanhToan" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1209.0" y="1470.7" />
-              <mxPoint x="1323.8" y="1349.0" />
-              <mxPoint x="1323.8" y="1349.0" />
-              <mxPoint x="1323.8" y="1349.0" />
-              <mxPoint x="1354.0" y="1341.1" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge56" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__TienNhan" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge56" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__TienNhan" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1186.4" y="1480.5" />
-              <mxPoint x="1243.8" y="1399.0" />
-              <mxPoint x="1243.8" y="1399.0" />
-              <mxPoint x="1243.8" y="1399.0" />
-              <mxPoint x="1323.8" y="1295.0" />
-              <mxPoint x="1323.8" y="1295.0" />
-              <mxPoint x="1323.8" y="1295.0" />
-              <mxPoint x="1368.2" y="1283.4" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge57" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__TienHoan" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge57" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__TienHoan" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1181.9" y="1472.5" />
-              <mxPoint x="1243.8" y="1359.0" />
-              <mxPoint x="1243.8" y="1359.0" />
-              <mxPoint x="1243.8" y="1359.0" />
-              <mxPoint x="1323.8" y="1241.0" />
-              <mxPoint x="1323.8" y="1241.0" />
-              <mxPoint x="1323.8" y="1241.0" />
-              <mxPoint x="1368.2" y="1229.4" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge58" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__TrangThaiBienLai" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge58" parent="1" edge="1" source="BIEN_LAI_TIEN_MAY" target="BIEN_LAI_TIEN_MAY__TrangThaiBienLai" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1178.3" y="1465.1" />
-              <mxPoint x="1243.8" y="1315.0" />
-              <mxPoint x="1243.8" y="1315.0" />
-              <mxPoint x="1243.8" y="1315.0" />
-              <mxPoint x="1323.8" y="1187.0" />
-              <mxPoint x="1323.8" y="1187.0" />
-              <mxPoint x="1323.8" y="1187.0" />
-              <mxPoint x="1357.3" y="1178.1999999999998" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge59" parent="1" edge="1" source="CA_TRUC" target="A2" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge59" parent="1" edge="1" source="CA_TRUC" target="A2" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2903.9" y="851.1999999999998" />
-              <mxPoint x="2965.4" y="825.6999999999998" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_59" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="2918.7" y="829.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge60" parent="1" edge="1" source="CA_TRUC" target="CA_TRUC__MaCa" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge60" parent="1" edge="1" source="CA_TRUC" target="CA_TRUC__MaCa" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2876.6" y="940.0999999999999" />
-              <mxPoint x="2955.7" y="1020.0" />
-              <mxPoint x="2955.7" y="1020.0" />
-              <mxPoint x="2955.7" y="1020.0" />
-              <mxPoint x="2995.8" y="1031.9" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge61" parent="1" edge="1" source="CA_TRUC" target="CA_TRUC__TenCa" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge61" parent="1" edge="1" source="CA_TRUC" target="CA_TRUC__TenCa" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2891.5" y="927.0999999999999" />
-              <mxPoint x="2955.7" y="966.0" />
-              <mxPoint x="2955.7" y="966.0" />
-              <mxPoint x="2955.7" y="966.0" />
-              <mxPoint x="2995.8" y="977.9000000000001" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge62" parent="1" edge="1" source="CA_TRUC" target="CA_TRUC__ThoiDiemBatDau" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge62" parent="1" edge="1" source="CA_TRUC" target="CA_TRUC__ThoiDiemBatDau" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2903.6" y="904.5999999999999" />
-              <mxPoint x="2964.6" y="919.3000000000002" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge63" parent="1" edge="1" source="CA_TRUC" target="CA_TRUC__ThoiDiemKetThuc" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge63" parent="1" edge="1" source="CA_TRUC" target="CA_TRUC__ThoiDiemKetThuc" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2891.1" y="889.8000000000002" />
-              <mxPoint x="2922.7" y="892.0" />
-              <mxPoint x="2922.7" y="892.0" />
-              <mxPoint x="2922.7" y="892.0" />
-              <mxPoint x="2931.7" y="892.0" />
-              <mxPoint x="2931.7" y="892.0" />
-              <mxPoint x="2931.7" y="892.0" />
-              <mxPoint x="2965.1" y="890.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge64" parent="1" edge="1" source="NHOM_DICH_VU" target="NHOM_DICH_VU__MaNhomDV" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge64" parent="1" edge="1" source="NHOM_DICH_VU" target="NHOM_DICH_VU__MaNhomDV" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1265.6" y="2772.4700000000003" />
-              <mxPoint x="1346.6" y="2785.8" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge65" parent="1" edge="1" source="NHOM_DICH_VU" target="NHOM_DICH_VU__TenNhomDV" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge65" parent="1" edge="1" source="NHOM_DICH_VU" target="NHOM_DICH_VU__TenNhomDV" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1264.3" y="2749.65" />
-              <mxPoint x="1342.9" y="2747.4" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge66" parent="1" edge="1" source="DON_VI_TINH" target="DON_VI_TINH__MaDonVi" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge66" parent="1" edge="1" source="DON_VI_TINH" target="DON_VI_TINH__MaDonVi" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1260.7" y="2908.92" />
-              <mxPoint x="1353.2" y="2926.79" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge67" parent="1" edge="1" source="DON_VI_TINH" target="DON_VI_TINH__TenDonVi" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge67" parent="1" edge="1" source="DON_VI_TINH" target="DON_VI_TINH__TenDonVi" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1259.6" y="2887.0" />
-              <mxPoint x="1349.8" y="2887.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge68" parent="1" edge="1" source="MAY_IN" target="MAY_IN__MaMayIn" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge68" parent="1" edge="1" source="MAY_IN" target="MAY_IN__MaMayIn" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1234.6" y="3069.06" />
-              <mxPoint x="1323.8" y="3110.0" />
-              <mxPoint x="1323.8" y="3110.0" />
-              <mxPoint x="1323.8" y="3110.0" />
-              <mxPoint x="1369.5" y="3121.98" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge69" parent="1" edge="1" source="MAY_IN" target="MAY_IN__TenMayIn" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge69" parent="1" edge="1" source="MAY_IN" target="MAY_IN__TenMayIn" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1238.8" y="3046.67" />
-              <mxPoint x="1345.6" y="3067.3" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge70" parent="1" edge="1" source="MAY_IN" target="MAY_IN__ViTriDat" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge70" parent="1" edge="1" source="MAY_IN" target="MAY_IN__ViTriDat" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1239.9" y="3029.0" />
-              <mxPoint x="1350.1" y="3029.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge71" parent="1" edge="1" source="DICH_VU" target="R8" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge71" parent="1" edge="1" source="DICH_VU" target="R8" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="639.49" y="2950.95" />
-              <mxPoint x="686.81" y="2870.0" />
-              <mxPoint x="686.81" y="2870.0" />
-              <mxPoint x="686.81" y="2870.0" />
-              <mxPoint x="803.81" y="2793.0" />
-              <mxPoint x="803.81" y="2793.0" />
-              <mxPoint x="803.81" y="2793.0" />
-              <mxPoint x="834.75" y="2780.87" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_71" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="724.81" y="2796.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge72" parent="1" edge="1" source="DICH_VU" target="R9" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge72" parent="1" edge="1" source="DICH_VU" target="R9" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="651.75" y="2967.43" />
-              <mxPoint x="686.81" y="2937.0" />
-              <mxPoint x="686.81" y="2937.0" />
-              <mxPoint x="686.81" y="2937.0" />
-              <mxPoint x="803.81" y="2873.0" />
-              <mxPoint x="803.81" y="2873.0" />
-              <mxPoint x="803.81" y="2873.0" />
-              <mxPoint x="840.72" y="2858.52" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_72" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="724.81" y="2873.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge73" parent="1" edge="1" source="DICH_VU" target="R10" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge73" parent="1" edge="1" source="DICH_VU" target="R10" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="705.81" y="2975.31" />
-              <mxPoint x="812.75" y="2941.99" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_73" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="724.81" y="2940.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge74" parent="1" edge="1" source="DICH_VU" target="A1" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge74" parent="1" edge="1" source="DICH_VU" target="A1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="633.31" y="2936.33" />
-              <mxPoint x="686.81" y="2793.0" />
-              <mxPoint x="686.81" y="2793.0" />
-              <mxPoint x="686.81" y="2793.0" />
-              <mxPoint x="803.81" y="2713.0" />
-              <mxPoint x="803.81" y="2713.0" />
-              <mxPoint x="803.81" y="2713.0" />
-              <mxPoint x="1210.6" y="2648.35" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_74" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1029.8" y="2662.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge75" parent="1" edge="1" source="DICH_VU" target="DICH_VU__MaDichVu" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge75" parent="1" edge="1" source="DICH_VU" target="DICH_VU__MaDichVu" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="640.45" y="3059.77" />
-              <mxPoint x="686.81" y="3135.0" />
-              <mxPoint x="686.81" y="3135.0" />
-              <mxPoint x="686.81" y="3135.0" />
-              <mxPoint x="803.81" y="3199.0" />
-              <mxPoint x="803.81" y="3199.0" />
-              <mxPoint x="803.81" y="3199.0" />
-              <mxPoint x="846.7" y="3210.353" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge76" parent="1" edge="1" source="DICH_VU" target="DICH_VU__TenDichVu" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge76" parent="1" edge="1" source="DICH_VU" target="DICH_VU__TenDichVu" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="649.23" y="3047.13" />
-              <mxPoint x="686.81" y="3084.0" />
-              <mxPoint x="686.81" y="3084.0" />
-              <mxPoint x="686.81" y="3084.0" />
-              <mxPoint x="803.81" y="3145.0" />
-              <mxPoint x="803.81" y="3145.0" />
-              <mxPoint x="803.81" y="3145.0" />
-              <mxPoint x="845.93" y="3156.15" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge77" parent="1" edge="1" source="DICH_VU" target="DICH_VU__GiaBanHienHanh" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge77" parent="1" edge="1" source="DICH_VU" target="DICH_VU__GiaBanHienHanh" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="667.24" y="3033.14" />
-              <mxPoint x="686.81" y="3042.0" />
-              <mxPoint x="686.81" y="3042.0" />
-              <mxPoint x="686.81" y="3042.0" />
-              <mxPoint x="803.81" y="3091.0" />
-              <mxPoint x="803.81" y="3091.0" />
-              <mxPoint x="803.81" y="3091.0" />
-              <mxPoint x="836.99" y="3099.78" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge78" parent="1" edge="1" source="DICH_VU" target="DICH_VU__SoLuongTon" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge78" parent="1" edge="1" source="DICH_VU" target="DICH_VU__SoLuongTon" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="706.45" y="3025.26" />
-              <mxPoint x="815.09" y="3046.37" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge79" parent="1" edge="1" source="DICH_VU" target="DICH_VU__TrangThaiKinhDoanh" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge79" parent="1" edge="1" source="DICH_VU" target="DICH_VU__TrangThaiKinhDoanh" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="667.24" y="3000.7200000000003" />
-              <mxPoint x="686.81" y="2999.0" />
-              <mxPoint x="686.81" y="2999.0" />
-              <mxPoint x="686.81" y="2999.0" />
-              <mxPoint x="779.81" y="2999.0" />
-              <mxPoint x="779.81" y="2999.0" />
-              <mxPoint x="779.81" y="2999.0" />
-              <mxPoint x="818.58" y="3001.77" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge80" parent="1" edge="1" source="DON_GOI_DICH_VU" target="R11" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge80" parent="1" edge="1" source="DON_GOI_DICH_VU" target="R11" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1254.4" y="1848.4" />
-              <mxPoint x="1333.8" y="1822.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_80" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1263.3" y="1822.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge81" parent="1" edge="1" source="DON_GOI_DICH_VU" target="R12" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge81" parent="1" edge="1" source="DON_GOI_DICH_VU" target="R12" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1205.0" y="1814.3" />
-              <mxPoint x="1323.8" y="1671.0" />
-              <mxPoint x="1323.8" y="1671.0" />
-              <mxPoint x="1323.8" y="1671.0" />
-              <mxPoint x="1356.9" y="1658.2" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_81" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1263.3" y="1689.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge82" parent="1" edge="1" source="DON_GOI_DICH_VU" target="A1" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge82" parent="1" edge="1" source="DON_GOI_DICH_VU" target="A1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1164.9" y="2012.7" />
-              <mxPoint x="1243.8" y="2590.0" />
-              <mxPoint x="1243.8" y="2590.0" />
-              <mxPoint x="1243.8" y="2590.0" />
-              <mxPoint x="1310.5" y="2598.74" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_82" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1263.3" y="2577.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge83" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__MaDonHang" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge83" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__MaDonHang" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1169.1" y="1987.2" />
-              <mxPoint x="1243.8" y="2341.0" />
-              <mxPoint x="1243.8" y="2341.0" />
-              <mxPoint x="1243.8" y="2341.0" />
-              <mxPoint x="1323.8" y="2455.0" />
-              <mxPoint x="1323.8" y="2455.0" />
-              <mxPoint x="1323.8" y="2455.0" />
-              <mxPoint x="1363.5" y="2465.42" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge84" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__ThoiDiemDat" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge84" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__ThoiDiemDat" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1173.5" y="1970.1" />
-              <mxPoint x="1243.8" y="2201.0" />
-              <mxPoint x="1243.8" y="2201.0" />
-              <mxPoint x="1243.8" y="2201.0" />
-              <mxPoint x="1323.8" y="2401.0" />
-              <mxPoint x="1323.8" y="2401.0" />
-              <mxPoint x="1323.8" y="2401.0" />
-              <mxPoint x="1362.5" y="2411.16" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge85" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__KenhDat" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge85" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__KenhDat" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1188.7" y="1970.1" />
-              <mxPoint x="1299.8" y="2201.0" />
-              <mxPoint x="1299.8" y="2201.0" />
-              <mxPoint x="1299.8" y="2201.0" />
-              <mxPoint x="1323.8" y="2347.0" />
-              <mxPoint x="1323.8" y="2347.0" />
-              <mxPoint x="1323.8" y="2347.0" />
-              <mxPoint x="1370.0" y="2359.12" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge86" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__TongTien" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge86" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__TongTien" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1202.0" y="1947.1" />
-              <mxPoint x="1299.8" y="2060.0" />
-              <mxPoint x="1299.8" y="2060.0" />
-              <mxPoint x="1299.8" y="2060.0" />
-              <mxPoint x="1323.8" y="2293.0" />
-              <mxPoint x="1323.8" y="2293.0" />
-              <mxPoint x="1323.8" y="2293.0" />
-              <mxPoint x="1369.5" y="2304.98" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge87" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__TrangThaiPhucVu" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge87" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__TrangThaiPhucVu" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1218.0" y="1931.3" />
-              <mxPoint x="1299.8" y="1986.0" />
-              <mxPoint x="1299.8" y="1986.0" />
-              <mxPoint x="1299.8" y="1986.0" />
-              <mxPoint x="1323.8" y="2239.0" />
-              <mxPoint x="1323.8" y="2239.0" />
-              <mxPoint x="1323.8" y="2239.0" />
-              <mxPoint x="1356.9" y="2247.7" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge88" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__TrangThaiTruocHuy" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge88" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__TrangThaiTruocHuy" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1237.6" y="1920.1" />
-              <mxPoint x="1299.8" y="1945.0" />
-              <mxPoint x="1299.8" y="1945.0" />
-              <mxPoint x="1299.8" y="1945.0" />
-              <mxPoint x="1323.8" y="2185.0" />
-              <mxPoint x="1323.8" y="2185.0" />
-              <mxPoint x="1323.8" y="2185.0" />
-              <mxPoint x="1355.1" y="2193.2" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge89" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__ThoiDiemHuy" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge89" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__ThoiDiemHuy" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1258.3" y="1910.9" />
-              <mxPoint x="1299.8" y="1921.0" />
-              <mxPoint x="1299.8" y="1921.0" />
-              <mxPoint x="1299.8" y="1921.0" />
-              <mxPoint x="1323.8" y="2131.0" />
-              <mxPoint x="1323.8" y="2131.0" />
-              <mxPoint x="1323.8" y="2131.0" />
-              <mxPoint x="1361.6" y="2140.9" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge90" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__TrangThaiThanhToan" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge90" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__TrangThaiThanhToan" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1258.3" y="1900.0" />
-              <mxPoint x="1299.8" y="1906.0" />
-              <mxPoint x="1299.8" y="1906.0" />
-              <mxPoint x="1299.8" y="1906.0" />
-              <mxPoint x="1323.8" y="2073.0" />
-              <mxPoint x="1323.8" y="2073.0" />
-              <mxPoint x="1323.8" y="2073.0" />
-              <mxPoint x="1354.0" y="2081.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge91" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__HinhThucThanhToan" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge91" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__HinhThucThanhToan" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1258.3" y="1892.7" />
-              <mxPoint x="1299.8" y="1896.0" />
-              <mxPoint x="1299.8" y="1896.0" />
-              <mxPoint x="1299.8" y="1896.0" />
-              <mxPoint x="1323.8" y="2019.0" />
-              <mxPoint x="1323.8" y="2019.0" />
-              <mxPoint x="1323.8" y="2019.0" />
-              <mxPoint x="1354.0" y="2026.9" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge92" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__ThoiDiemThanhToan" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge92" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__ThoiDiemThanhToan" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1258.3" y="1886.9" />
-              <mxPoint x="1299.8" y="1888.0" />
-              <mxPoint x="1299.8" y="1888.0" />
-              <mxPoint x="1299.8" y="1888.0" />
-              <mxPoint x="1323.8" y="1965.0" />
-              <mxPoint x="1323.8" y="1965.0" />
-              <mxPoint x="1323.8" y="1965.0" />
-              <mxPoint x="1354.4" y="1973.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge93" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__SoTienDaHoan" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge93" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__SoTienDaHoan" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1232.9" y="1880.5" />
-              <mxPoint x="1243.8" y="1880.0" />
-              <mxPoint x="1243.8" y="1880.0" />
-              <mxPoint x="1243.8" y="1880.0" />
-              <mxPoint x="1299.8" y="1880.0" />
-              <mxPoint x="1299.8" y="1880.0" />
-              <mxPoint x="1299.8" y="1880.0" />
-              <mxPoint x="1323.8" y="1911.0" />
-              <mxPoint x="1323.8" y="1911.0" />
-              <mxPoint x="1323.8" y="1911.0" />
-              <mxPoint x="1360.1" y="1920.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge94" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__ThoiDiemHoanTien" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge94" parent="1" edge="1" source="DON_GOI_DICH_VU" target="DON_GOI_DICH_VU__ThoiDiemHoanTien" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1232.9" y="1874.2" />
-              <mxPoint x="1243.8" y="1873.0" />
-              <mxPoint x="1243.8" y="1873.0" />
-              <mxPoint x="1243.8" y="1873.0" />
-              <mxPoint x="1299.8" y="1873.0" />
-              <mxPoint x="1299.8" y="1873.0" />
-              <mxPoint x="1299.8" y="1873.0" />
-              <mxPoint x="1338.6" y="1876.4" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge95" parent="1" edge="1" source="PHIEU_KHO" target="R13" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge95" parent="1" edge="1" source="PHIEU_KHO" target="R13" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="672.13" y="1633.0" />
-              <mxPoint x="686.81" y="1638.0" />
-              <mxPoint x="686.81" y="1638.0" />
-              <mxPoint x="686.81" y="1638.0" />
-              <mxPoint x="794.78" y="1670.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_95" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="724.81" y="1625.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge96" parent="1" edge="1" source="PHIEU_KHO" target="R14" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge96" parent="1" edge="1" source="PHIEU_KHO" target="R14" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="651.34" y="1650.3" />
-              <mxPoint x="686.81" y="1682.0" />
-              <mxPoint x="686.81" y="1682.0" />
-              <mxPoint x="686.81" y="1682.0" />
-              <mxPoint x="803.81" y="1744.0" />
-              <mxPoint x="803.81" y="1744.0" />
-              <mxPoint x="803.81" y="1744.0" />
-              <mxPoint x="833.88" y="1755.8" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_96" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="725.81" y="1669.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge97" parent="1" edge="1" source="PHIEU_KHO" target="PHIEU_KHO__MaPhieuKho" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge97" parent="1" edge="1" source="PHIEU_KHO" target="PHIEU_KHO__MaPhieuKho" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="672.13" y="1620.0" />
-              <mxPoint x="686.81" y="1622.0" />
-              <mxPoint x="686.81" y="1622.0" />
-              <mxPoint x="686.81" y="1622.0" />
-              <mxPoint x="779.81" y="1622.0" />
-              <mxPoint x="779.81" y="1622.0" />
-              <mxPoint x="779.81" y="1622.0" />
-              <mxPoint x="831.52" y="1617.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge98" parent="1" edge="1" source="PHIEU_KHO" target="PHIEU_KHO__LoaiPhieu" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge98" parent="1" edge="1" source="PHIEU_KHO" target="PHIEU_KHO__LoaiPhieu" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="672.13" y="1613.4" />
-              <mxPoint x="686.81" y="1614.0" />
-              <mxPoint x="686.81" y="1614.0" />
-              <mxPoint x="686.81" y="1614.0" />
-              <mxPoint x="779.81" y="1614.0" />
-              <mxPoint x="779.81" y="1614.0" />
-              <mxPoint x="779.81" y="1614.0" />
-              <mxPoint x="803.81" y="1584.0" />
-              <mxPoint x="803.81" y="1584.0" />
-              <mxPoint x="803.81" y="1584.0" />
-              <mxPoint x="847.48" y="1572.4" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge99" parent="1" edge="1" source="PHIEU_KHO" target="PHIEU_KHO__TrangThaiPhieu" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge99" parent="1" edge="1" source="PHIEU_KHO" target="PHIEU_KHO__TrangThaiPhieu" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="709.34" y="1568.9" />
-              <mxPoint x="803.81" y="1530.0" />
-              <mxPoint x="803.81" y="1530.0" />
-              <mxPoint x="803.81" y="1530.0" />
-              <mxPoint x="838.59" y="1520.8" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge100" parent="1" edge="1" source="PHIEU_KHO" target="PHIEU_KHO__ThoiDiemLap" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge100" parent="1" edge="1" source="PHIEU_KHO" target="PHIEU_KHO__ThoiDiemLap" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="655.75" y="1576.3" />
-              <mxPoint x="686.81" y="1554.0" />
-              <mxPoint x="686.81" y="1554.0" />
-              <mxPoint x="686.81" y="1554.0" />
-              <mxPoint x="803.81" y="1476.0" />
-              <mxPoint x="803.81" y="1476.0" />
-              <mxPoint x="803.81" y="1476.0" />
-              <mxPoint x="841.69" y="1466.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge101" parent="1" edge="1" source="PHIEU_KHO" target="PHIEU_KHO__ThoiDiemGhiSo" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge101" parent="1" edge="1" source="PHIEU_KHO" target="PHIEU_KHO__ThoiDiemGhiSo" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="646.18" y="1566.0" />
-              <mxPoint x="686.81" y="1519.0" />
-              <mxPoint x="686.81" y="1519.0" />
-              <mxPoint x="686.81" y="1519.0" />
-              <mxPoint x="803.81" y="1422.0" />
-              <mxPoint x="803.81" y="1422.0" />
-              <mxPoint x="803.81" y="1422.0" />
-              <mxPoint x="838.83" y="1412.7" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge102" parent="1" edge="1" source="PHIEU_KHO" target="PHIEU_KHO__GhiChuLyDo" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge102" parent="1" edge="1" source="PHIEU_KHO" target="PHIEU_KHO__GhiChuLyDo" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="639.73" y="1555.9" />
-              <mxPoint x="686.81" y="1476.0" />
-              <mxPoint x="686.81" y="1476.0" />
-              <mxPoint x="686.81" y="1476.0" />
-              <mxPoint x="803.81" y="1368.0" />
-              <mxPoint x="803.81" y="1368.0" />
-              <mxPoint x="803.81" y="1368.0" />
-              <mxPoint x="842.91" y="1357.6" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge103" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="R15" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge103" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="R15" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="184.54" y="2005.2" />
-              <mxPoint x="282.0" y="1780.0" />
-              <mxPoint x="282.0" y="1780.0" />
-              <mxPoint x="282.0" y="1780.0" />
-              <mxPoint x="329.31" y="1728.7" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_103" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="245.0" y="1829.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge104" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="R16" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge104" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="R16" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="191.2" y="2210.7" />
-              <mxPoint x="331.83" y="2537.02" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_104" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="245.0" y="2334.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge105" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="CHI_TIET_PHIEU_KHO__STTDong" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge105" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="CHI_TIET_PHIEU_KHO__STTDong" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="224.12" y="2055.2" />
-              <mxPoint x="282.0" y="2023.0" />
-              <mxPoint x="282.0" y="2023.0" />
-              <mxPoint x="282.0" y="2023.0" />
-              <mxPoint x="319.78" y="2011.2" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge106" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="CHI_TIET_PHIEU_KHO__SoLuong" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge106" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="CHI_TIET_PHIEU_KHO__SoLuong" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="204.09" y="2038.3" />
-              <mxPoint x="282.0" y="1959.0" />
-              <mxPoint x="282.0" y="1959.0" />
-              <mxPoint x="282.0" y="1959.0" />
-              <mxPoint x="327.16" y="1947.1" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge107" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="CHI_TIET_PHIEU_KHO__SoLuongSoSach" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge107" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="CHI_TIET_PHIEU_KHO__SoLuongSoSach" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="195.77" y="2026.4" />
-              <mxPoint x="282.0" y="1905.0" />
-              <mxPoint x="282.0" y="1905.0" />
-              <mxPoint x="282.0" y="1905.0" />
-              <mxPoint x="316.23" y="1896.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge108" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="CHI_TIET_PHIEU_KHO__SoLuongThucTe" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge108" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="CHI_TIET_PHIEU_KHO__SoLuongThucTe" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="189.69" y="2017.0" />
-              <mxPoint x="282.0" y="1851.0" />
-              <mxPoint x="282.0" y="1851.0" />
-              <mxPoint x="282.0" y="1851.0" />
-              <mxPoint x="316.69" y="1841.9" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge109" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="CHI_TIET_PHIEU_KHO__SoLuongChenhLech" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge109" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="CHI_TIET_PHIEU_KHO__SoLuongChenhLech" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="238.95" y="2111.8" />
-              <mxPoint x="249.0" y="2113.0" />
-              <mxPoint x="249.0" y="2113.0" />
-              <mxPoint x="249.0" y="2113.0" />
-              <mxPoint x="258.0" y="2113.0" />
-              <mxPoint x="258.0" y="2113.0" />
-              <mxPoint x="258.0" y="2113.0" />
-              <mxPoint x="294.2" y="2110.4" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge110" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="CHI_TIET_PHIEU_KHO__DonGiaVon" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge110" parent="1" edge="1" source="CHI_TIET_PHIEU_KHO" target="CHI_TIET_PHIEU_KHO__DonGiaVon" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="238.95" y="2103.6" />
-              <mxPoint x="249.0" y="2104.0" />
-              <mxPoint x="249.0" y="2104.0" />
-              <mxPoint x="249.0" y="2104.0" />
-              <mxPoint x="258.0" y="2104.0" />
-              <mxPoint x="258.0" y="2104.0" />
-              <mxPoint x="258.0" y="2104.0" />
-              <mxPoint x="282.0" y="2077.0" />
-              <mxPoint x="282.0" y="2077.0" />
-              <mxPoint x="282.0" y="2077.0" />
-              <mxPoint x="323.52" y="2066.1" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge111" parent="1" edge="1" source="GIAO_DICH_VI" target="R17" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1;shape=link;">
+        <mxCell id="edge111" parent="1" edge="1" source="GIAO_DICH_VI" target="R17" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;shape=link;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="629.42" y="2280.45" />
-              <mxPoint x="686.81" y="2497.0" />
-              <mxPoint x="686.81" y="2497.0" />
-              <mxPoint x="686.81" y="2497.0" />
-              <mxPoint x="803.81" y="2565.0" />
-              <mxPoint x="803.81" y="2565.0" />
-              <mxPoint x="803.81" y="2565.0" />
-              <mxPoint x="841.2" y="2582.96" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_111" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="724.81" y="2484.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge112" parent="1" edge="1" source="GIAO_DICH_VI" target="R18" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge112" parent="1" edge="1" source="GIAO_DICH_VI" target="R18" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="633.31" y="2127.3" />
-              <mxPoint x="686.81" y="1984.0" />
-              <mxPoint x="686.81" y="1984.0" />
-              <mxPoint x="686.81" y="1984.0" />
-              <mxPoint x="803.81" y="1904.0" />
-              <mxPoint x="803.81" y="1904.0" />
-              <mxPoint x="803.81" y="1904.0" />
-              <mxPoint x="836.76" y="1891.1" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_112" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="724.81" y="1909.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge113" parent="1" edge="1" source="GIAO_DICH_VI" target="R19" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge113" parent="1" edge="1" source="GIAO_DICH_VI" target="R19" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="639.01" y="2141.2" />
-              <mxPoint x="686.81" y="2057.0" />
-              <mxPoint x="686.81" y="2057.0" />
-              <mxPoint x="686.81" y="2057.0" />
-              <mxPoint x="803.81" y="1984.0" />
-              <mxPoint x="803.81" y="1984.0" />
-              <mxPoint x="803.81" y="1984.0" />
-              <mxPoint x="839.06" y="1970.2" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_113" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="724.81" y="1987.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge114" parent="1" edge="1" source="GIAO_DICH_VI" target="R20" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge114" parent="1" edge="1" source="GIAO_DICH_VI" target="R20" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="646.63" y="2152.5" />
-              <mxPoint x="686.81" y="2107.0" />
-              <mxPoint x="686.81" y="2107.0" />
-              <mxPoint x="686.81" y="2107.0" />
-              <mxPoint x="806.81" y="2061.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_114" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="724.81" y="2060.0" width="17.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge115" parent="1" edge="1" source="GIAO_DICH_VI" target="R21" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge115" parent="1" edge="1" source="GIAO_DICH_VI" target="R21" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="654.58" y="2160.7" />
-              <mxPoint x="686.81" y="2136.0" />
-              <mxPoint x="686.81" y="2136.0" />
-              <mxPoint x="686.81" y="2136.0" />
-              <mxPoint x="785.67" y="2121.6" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_115" parent="1" vertex="1" connectable="0" value="N" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="681.31" y="2110.0" width="104" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge116" parent="1" edge="1" source="GIAO_DICH_VI" target="GIAO_DICH_VI__MaGiaoDich" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge116" parent="1" edge="1" source="GIAO_DICH_VI" target="GIAO_DICH_VI__MaGiaoDich" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="713.27" y="2197.6" />
-              <mxPoint x="779.81" y="2198.0" />
-              <mxPoint x="779.81" y="2198.0" />
-              <mxPoint x="779.81" y="2198.0" />
-              <mxPoint x="803.81" y="2224.0" />
-              <mxPoint x="803.81" y="2224.0" />
-              <mxPoint x="803.81" y="2224.0" />
-              <mxPoint x="843.65" y="2234.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge117" parent="1" edge="1" source="GIAO_DICH_VI" target="GIAO_DICH_VI__MaYeuCau" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge117" parent="1" edge="1" source="GIAO_DICH_VI" target="GIAO_DICH_VI__MaYeuCau" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="676.32" y="2190.9" />
-              <mxPoint x="686.81" y="2190.0" />
-              <mxPoint x="686.81" y="2190.0" />
-              <mxPoint x="686.81" y="2190.0" />
-              <mxPoint x="779.81" y="2190.0" />
-              <mxPoint x="779.81" y="2190.0" />
-              <mxPoint x="779.81" y="2190.0" />
-              <mxPoint x="836.03" y="2193.1" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge118" parent="1" edge="1" source="GIAO_DICH_VI" target="GIAO_DICH_VI__LoaiGiaoDich" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge118" parent="1" edge="1" source="GIAO_DICH_VI" target="GIAO_DICH_VI__LoaiGiaoDich" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="632.29" y="2270.5" />
-              <mxPoint x="686.81" y="2431.0" />
-              <mxPoint x="686.81" y="2431.0" />
-              <mxPoint x="686.81" y="2431.0" />
-              <mxPoint x="803.81" y="2494.0" />
-              <mxPoint x="803.81" y="2494.0" />
-              <mxPoint x="803.81" y="2494.0" />
-              <mxPoint x="841.93" y="2504.09" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge119" parent="1" edge="1" source="GIAO_DICH_VI" target="GIAO_DICH_VI__SoTien" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge119" parent="1" edge="1" source="GIAO_DICH_VI" target="GIAO_DICH_VI__SoTien" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="635.58" y="2261.0" />
-              <mxPoint x="686.81" y="2377.0" />
-              <mxPoint x="686.81" y="2377.0" />
-              <mxPoint x="686.81" y="2377.0" />
-              <mxPoint x="803.81" y="2440.0" />
-              <mxPoint x="803.81" y="2440.0" />
-              <mxPoint x="803.81" y="2440.0" />
-              <mxPoint x="851.2" y="2452.55" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge120" parent="1" edge="1" source="GIAO_DICH_VI" target="GIAO_DICH_VI__ThoiDiemGD" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge120" parent="1" edge="1" source="GIAO_DICH_VI" target="GIAO_DICH_VI__ThoiDiemGD" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="640.68" y="2250.3" />
-              <mxPoint x="686.81" y="2324.0" />
-              <mxPoint x="686.81" y="2324.0" />
-              <mxPoint x="686.81" y="2324.0" />
-              <mxPoint x="803.81" y="2386.0" />
-              <mxPoint x="803.81" y="2386.0" />
-              <mxPoint x="803.81" y="2386.0" />
-              <mxPoint x="842.66" y="2396.2799999999997" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge121" parent="1" edge="1" source="GIAO_DICH_VI" target="GIAO_DICH_VI__TrangThaiGD" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge121" parent="1" edge="1" source="GIAO_DICH_VI" target="GIAO_DICH_VI__TrangThaiGD" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="650.08" y="2237.4" />
-              <mxPoint x="686.81" y="2272.0" />
-              <mxPoint x="686.81" y="2272.0" />
-              <mxPoint x="686.81" y="2272.0" />
-              <mxPoint x="803.81" y="2332.0" />
-              <mxPoint x="803.81" y="2332.0" />
-              <mxPoint x="803.81" y="2332.0" />
-              <mxPoint x="841.93" y="2342.09" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge122" parent="1" edge="1" source="GIAO_DICH_VI" target="GIAO_DICH_VI__PhuongThucGD" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge122" parent="1" edge="1" source="GIAO_DICH_VI" target="GIAO_DICH_VI__PhuongThucGD" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="709.34" y="2239.1" />
-              <mxPoint x="803.81" y="2278.0" />
-              <mxPoint x="803.81" y="2278.0" />
-              <mxPoint x="803.81" y="2278.0" />
-              <mxPoint x="838.36" y="2287.15" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge123" parent="1" edge="1" source="ISA" target="NGUOI_CHOI" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge123" parent="1" edge="1" source="ISA" target="NGUOI_CHOI" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1487.1" y="955.0" />
-              <mxPoint x="1643.6" y="1030.0" />
-              <mxPoint x="1643.6" y="1030.0" />
-              <mxPoint x="1643.6" y="1030.0" />
-              <mxPoint x="1651.6" y="1039.0" />
-              <mxPoint x="1651.6" y="1039.0" />
-              <mxPoint x="1651.6" y="1039.0" />
-              <mxPoint x="2110.6" y="1280.0" />
-              <mxPoint x="2110.6" y="1280.0" />
-              <mxPoint x="2110.6" y="1280.0" />
-              <mxPoint x="2248.9" y="1547.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge124" parent="1" edge="1" source="ISA" target="NHAN_VIEN" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge124" parent="1" edge="1" source="ISA" target="NHAN_VIEN" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1489.3" y="935.1999999999998" />
-              <mxPoint x="1643.6" y="956.0" />
-              <mxPoint x="1643.6" y="956.0" />
-              <mxPoint x="1643.6" y="956.0" />
-              <mxPoint x="1669.5" y="966.8000000000002" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge125" parent="1" edge="1" source="R0" target="NHOM_NGUOI_DUNG" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge125" parent="1" edge="1" source="R0" target="NHOM_NGUOI_DUNG" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1593.7" y="209.19999999999982" />
-              <mxPoint x="1737.6" y="192.0" />
-              <mxPoint x="1737.6" y="192.0" />
-              <mxPoint x="1737.6" y="192.0" />
-              <mxPoint x="1737.6" y="192.0" />
-              <mxPoint x="2549.7" y="192.0" />
-              <mxPoint x="2549.7" y="192.0" />
-              <mxPoint x="2663.4" y="176.4000000000001" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_125" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="2166.9" y="179.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge126" parent="1" edge="1" source="R1" target="NHAN_VIEN" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge126" parent="1" edge="1" source="R1" target="NHAN_VIEN" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1915.6" y="1056.0" />
-              <mxPoint x="1827.6" y="1026.0" />
-              <mxPoint x="1827.6" y="1026.0" />
-              <mxPoint x="1827.6" y="1026.0" />
-              <mxPoint x="1808.2" y="1019.1999999999998" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_126" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1823.1" y="1013.0" width="68" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge127" parent="1" edge="1" source="R2" target="NHOM_MAY" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge127" parent="1" edge="1" source="R2" target="NHOM_MAY" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2614.5" y="733.5999999999999" />
-              <mxPoint x="2769.0" y="455.9000000000001" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_127" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="2702.7" y="551.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge128" parent="1" edge="1" source="R3" target="KHU_VUC" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge128" parent="1" edge="1" source="R3" target="KHU_VUC" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2616.2" y="930.0" />
-              <mxPoint x="2682.7" y="890.0" />
-              <mxPoint x="2682.7" y="890.0" />
-              <mxPoint x="2682.7" y="890.0" />
-              <mxPoint x="2772.6" y="765.0999999999999" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_128" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="2702.7" y="836.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge129" parent="1" edge="1" source="R4" target="MAY_TRAM" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge129" parent="1" edge="1" source="R4" target="MAY_TRAM" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2094.8" y="1250.7" />
-              <mxPoint x="2223.3" y="1143.6999999999998" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_129" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="2166.9" y="1141.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge130" parent="1" edge="1" source="R5" target="NGUOI_CHOI" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge130" parent="1" edge="1" source="R5" target="NGUOI_CHOI" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2117.1" y="1639.0" />
-              <mxPoint x="2193.6" y="1639.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_130" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="2166.9" y="1626.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge131" parent="1" edge="1" source="R6" target="PHIEN_SU_DUNG" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge131" parent="1" edge="1" source="R6" target="PHIEN_SU_DUNG" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1558.3" y="1719.8" />
-              <mxPoint x="1625.0" y="1724.3" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_131" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1592.2" y="1708.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge132" parent="1" edge="1" source="R7" target="NHAN_VIEN" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge132" parent="1" edge="1" source="R7" target="NHAN_VIEN" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1553.5" y="1054.8000000000002" />
-              <mxPoint x="1643.6" y="1046.0" />
-              <mxPoint x="1643.6" y="1046.0" />
-              <mxPoint x="1643.6" y="1046.0" />
-              <mxPoint x="1677.1" y="1027.8000000000002" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_132" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1592.2" y="1033.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge133" parent="1" edge="1" source="R8" target="NHOM_DICH_VU" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge133" parent="1" edge="1" source="R8" target="NHOM_DICH_VU" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1030.7" y="2753.0" />
-              <mxPoint x="1058.9" y="2753.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_133" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1030.8" y="2740.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge134" parent="1" edge="1" source="R9" target="DON_VI_TINH" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge134" parent="1" edge="1" source="R9" target="DON_VI_TINH" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="990.92" y="2851.9" />
-              <mxPoint x="1048.7" y="2865.0299999999997" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_134" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1030.8" y="2850.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge135" parent="1" edge="1" source="R10" target="MAY_IN" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge135" parent="1" edge="1" source="R10" target="MAY_IN" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="968.2" y="2942.01" />
-              <mxPoint x="1009.81" y="2962.0" />
-              <mxPoint x="1009.81" y="2962.0" />
-              <mxPoint x="1009.81" y="2962.0" />
-              <mxPoint x="1050.8" y="2985.0" />
-              <mxPoint x="1050.8" y="2985.0" />
-              <mxPoint x="1050.8" y="2985.0" />
-              <mxPoint x="1082.8" y="2999.91" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_135" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1030.8" y="2962.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge136" parent="1" edge="1" source="R11" target="PHIEN_SU_DUNG" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge136" parent="1" edge="1" source="R11" target="PHIEN_SU_DUNG" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1537.2" y="1770.3" />
-              <mxPoint x="1617.6" y="1754.9" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_136" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1592.2" y="1739.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge137" parent="1" edge="1" source="R12" target="NHAN_VIEN" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge137" parent="1" edge="1" source="R12" target="NHAN_VIEN" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1495.3" y="1599.4" />
-              <mxPoint x="1531.8" y="1582.0" />
-              <mxPoint x="1531.8" y="1582.0" />
-              <mxPoint x="1531.8" y="1582.0" />
-              <mxPoint x="1696.5" y="1112.3000000000002" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_137" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1592.2" y="1258.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge138" parent="1" edge="1" source="R13" target="NHAN_VIEN" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge138" parent="1" edge="1" source="R13" target="NHAN_VIEN" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="973.85" y="1672.3" />
-              <mxPoint x="1009.81" y="1655.0" />
-              <mxPoint x="1009.81" y="1655.0" />
-              <mxPoint x="1009.81" y="1655.0" />
-              <mxPoint x="1033.8" y="994.0" />
-              <mxPoint x="1033.8" y="994.0" />
-              <mxPoint x="1033.8" y="994.0" />
-              <mxPoint x="1243.8" y="992.0" />
-              <mxPoint x="1243.8" y="992.0" />
-              <mxPoint x="1243.8" y="992.0" />
-              <mxPoint x="1299.8" y="992.0" />
-              <mxPoint x="1299.8" y="992.0" />
-              <mxPoint x="1299.8" y="992.0" />
-              <mxPoint x="1575.7" y="993.9000000000001" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_138" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1264.3" y="979.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge139" parent="1" edge="1" source="R14" target="DON_GOI_DICH_VU" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge139" parent="1" edge="1" source="R14" target="DON_GOI_DICH_VU" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="979.74" y="1812.2" />
-              <mxPoint x="1009.81" y="1824.0" />
-              <mxPoint x="1009.81" y="1824.0" />
-              <mxPoint x="1009.81" y="1824.0" />
-              <mxPoint x="1064.7" y="1848.3" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_139" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1030.8" y="1823.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge140" parent="1" edge="1" source="R15" target="PHIEU_KHO" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge140" parent="1" edge="1" source="R15" target="PHIEU_KHO" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="479.42" y="1644.4" />
-              <mxPoint x="523.89" y="1632.6" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_140" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="508.80999999999995" y="1622.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge141" parent="1" edge="1" source="R16" target="DICH_VU" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge141" parent="1" edge="1" source="R16" target="DICH_VU" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="444.01" y="2750.31" />
-              <mxPoint x="557.35" y="2929.98" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_141" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="508.80999999999995" y="2850.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge142" parent="1" edge="1" source="R17" target="NGUOI_CHOI" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge142" parent="1" edge="1" source="R17" target="NGUOI_CHOI" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1105.3" y="2636.45" />
-              <mxPoint x="1426.8" y="2673.0" />
-              <mxPoint x="1426.8" y="2673.0" />
-              <mxPoint x="1426.8" y="2673.0" />
-              <mxPoint x="1426.8" y="2673.0" />
-              <mxPoint x="2011.6" y="2673.0" />
-              <mxPoint x="2011.6" y="2673.0" />
-              <mxPoint x="2253.0" y="1796.1" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_142" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1592.2" y="2660.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge143" parent="1" edge="1" source="R18" target="NHAN_VIEN" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge143" parent="1" edge="1" source="R18" target="NHAN_VIEN" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="976.86" y="1836.9" />
-              <mxPoint x="1009.81" y="1824.0" />
-              <mxPoint x="1009.81" y="1824.0" />
-              <mxPoint x="1009.81" y="1824.0" />
-              <mxPoint x="1050.8" y="1116.0" />
-              <mxPoint x="1050.8" y="1116.0" />
-              <mxPoint x="1050.8" y="1116.0" />
-              <mxPoint x="1323.8" y="1027.0" />
-              <mxPoint x="1323.8" y="1027.0" />
-              <mxPoint x="1323.8" y="1027.0" />
-              <mxPoint x="1580.1" y="1007.1999999999998" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_143" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1264.3" y="1022.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge144" parent="1" edge="1" source="R19" target="DON_GOI_DICH_VU" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge144" parent="1" edge="1" source="R19" target="DON_GOI_DICH_VU" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="987.23" y="1923.9" />
-              <mxPoint x="1034.8" y="1911.9" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_144" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1030.8" y="1898.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge145" parent="1" edge="1" source="R20" target="PHIEN_SU_DUNG" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge145" parent="1" edge="1" source="R20" target="PHIEN_SU_DUNG" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="973.38" y="2049.7" />
-              <mxPoint x="1009.81" y="2064.0" />
-              <mxPoint x="1009.81" y="2064.0" />
-              <mxPoint x="1009.81" y="2064.0" />
-              <mxPoint x="1050.8" y="2526.0" />
-              <mxPoint x="1050.8" y="2526.0" />
-              <mxPoint x="1050.8" y="2526.0" />
-              <mxPoint x="1243.8" y="2538.0" />
-              <mxPoint x="1243.8" y="2538.0" />
-              <mxPoint x="1243.8" y="2538.0" />
-              <mxPoint x="1299.8" y="2538.0" />
-              <mxPoint x="1299.8" y="2538.0" />
-              <mxPoint x="1299.8" y="2538.0" />
-              <mxPoint x="1531.8" y="2526.0" />
-              <mxPoint x="1531.8" y="2526.0" />
-              <mxPoint x="1531.8" y="2526.0" />
-              <mxPoint x="1702.3" y="1868.3" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_145" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="1264.3" y="2525.0" width="15.0" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge146" parent="1" edge="1" source="R21" target="GIAO_DICH_VI" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge146" parent="1" edge="1" source="R21" target="GIAO_DICH_VI" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1.2;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="829.96" y="2132.9" />
-              <mxPoint x="779.81" y="2152.0" />
-              <mxPoint x="779.81" y="2152.0" />
-              <mxPoint x="779.81" y="2152.0" />
-              <mxPoint x="713.27" y="2169.4" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="edge_label_146" parent="1" vertex="1" connectable="0" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#000000;fillColor=#FFFFFF;strokeColor=none;">
           <mxGeometry x="684.31" y="2139.0" width="98" height="14" as="geometry" />
         </mxCell>
-        <mxCell id="edge147" parent="1" edge="1" source="A0" target="A0a0" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge147" parent="1" edge="1" source="A0" target="A0a0" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="3108.0" y="280.0" />
-              <mxPoint x="3139.7" y="297.0" />
-              <mxPoint x="3139.7" y="297.0" />
-              <mxPoint x="3139.7" y="297.0" />
-              <mxPoint x="3217.5" y="422.5999999999999" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge148" parent="1" edge="1" source="A1" target="A1a0" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge148" parent="1" edge="1" source="A1" target="A1a0" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1525.3" y="2625.4" />
-              <mxPoint x="1555.8" y="2629.0" />
-              <mxPoint x="1555.8" y="2629.0" />
-              <mxPoint x="1555.8" y="2629.0" />
-              <mxPoint x="1643.6" y="2629.0" />
-              <mxPoint x="1643.6" y="2629.0" />
-              <mxPoint x="1643.6" y="2629.0" />
-              <mxPoint x="1674.6" y="2618.45" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge149" parent="1" edge="1" source="A1" target="A1a1" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge149" parent="1" edge="1" source="A1" target="A1a1" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1547.2" y="2589.2" />
-              <mxPoint x="1643.6" y="2569.0" />
-              <mxPoint x="1643.6" y="2569.0" />
-              <mxPoint x="1643.6" y="2569.0" />
-              <mxPoint x="1651.6" y="2454.0" />
-              <mxPoint x="1651.6" y="2454.0" />
-              <mxPoint x="1651.6" y="2454.0" />
-              <mxPoint x="1702.2" y="2370.34" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge150" parent="1" edge="1" source="A1" target="A1a2" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge150" parent="1" edge="1" source="A1" target="A1a2" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1564.6" y="2605.15" />
-              <mxPoint x="1643.6" y="2600.0" />
-              <mxPoint x="1643.6" y="2600.0" />
-              <mxPoint x="1643.6" y="2600.0" />
-              <mxPoint x="1651.6" y="2568.0" />
-              <mxPoint x="1651.6" y="2568.0" />
-              <mxPoint x="1651.6" y="2568.0" />
-              <mxPoint x="1693.6" y="2526.44" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge151" parent="1" edge="1" source="A2" target="A2a0" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge151" parent="1" edge="1" source="A2" target="A2a0" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="3109.5" y="759.3000000000002" />
-              <mxPoint x="3139.7" y="743.0" />
-              <mxPoint x="3139.7" y="743.0" />
-              <mxPoint x="3139.7" y="743.0" />
-              <mxPoint x="3217.1" y="618.0" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge152" parent="1" edge="1" source="HoTen" target="HTHo" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge152" parent="1" edge="1" source="HoTen" target="HTHo" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1531.6" y="451.6999999999998" />
-              <mxPoint x="1654.7" y="435.6999999999998" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge153" parent="1" edge="1" source="HoTen" target="HTTenDem" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge153" parent="1" edge="1" source="HoTen" target="HTTenDem" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1531.7" y="471.1999999999998" />
-              <mxPoint x="1643.6" y="478.0" />
-              <mxPoint x="1643.6" y="478.0" />
-              <mxPoint x="1643.6" y="478.0" />
-              <mxPoint x="1651.6" y="518.0" />
-              <mxPoint x="1651.6" y="518.0" />
-              <mxPoint x="1651.6" y="518.0" />
-              <mxPoint x="1681.9" y="532.0999999999999" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge154" parent="1" edge="1" source="HoTen" target="HTTen" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge154" parent="1" edge="1" source="HoTen" target="HTTen" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1532.0" y="467.9000000000001" />
-              <mxPoint x="1643.6" y="471.0" />
-              <mxPoint x="1643.6" y="471.0" />
-              <mxPoint x="1643.6" y="471.0" />
-              <mxPoint x="1681.0" y="478.1999999999998" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge155" parent="1" edge="1" source="DiaChi" target="DCSoNha" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge155" parent="1" edge="1" source="DiaChi" target="DCSoNha" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2112.9" y="852.5" />
-              <mxPoint x="2214.2" y="877.0" />
-              <mxPoint x="2214.2" y="877.0" />
-              <mxPoint x="2214.2" y="877.0" />
-              <mxPoint x="2222.2" y="964.0" />
-              <mxPoint x="2222.2" y="964.0" />
-              <mxPoint x="2222.2" y="964.0" />
-              <mxPoint x="2244.7" y="972.8000000000002" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge156" parent="1" edge="1" source="DiaChi" target="DCDuong" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge156" parent="1" edge="1" source="DiaChi" target="DCDuong" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2116.3" y="840.9000000000001" />
-              <mxPoint x="2214.2" y="853.0" />
-              <mxPoint x="2214.2" y="853.0" />
-              <mxPoint x="2214.2" y="853.0" />
-              <mxPoint x="2222.2" y="906.0" />
-              <mxPoint x="2222.2" y="906.0" />
-              <mxPoint x="2222.2" y="906.0" />
-              <mxPoint x="2244.4" y="914.6999999999998" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge157" parent="1" edge="1" source="DiaChi" target="DCPhuongXa" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge157" parent="1" edge="1" source="DiaChi" target="DCPhuongXa" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2117.6" y="831.6999999999998" />
-              <mxPoint x="2214.2" y="835.0" />
-              <mxPoint x="2214.2" y="835.0" />
-              <mxPoint x="2214.2" y="835.0" />
-              <mxPoint x="2222.2" y="848.0" />
-              <mxPoint x="2222.2" y="848.0" />
-              <mxPoint x="2222.2" y="848.0" />
-              <mxPoint x="2241.3" y="855.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
-        <mxCell id="edge158" parent="1" edge="1" source="DiaChi" target="DCTinhThanh" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#000000;strokeWidth=1.2;">
+        <mxCell id="edge158" parent="1" edge="1" source="DiaChi" target="DCTinhThanh" value="" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#000000;strokeWidth=1;">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2092.6" y="824.6999999999998" />
-              <mxPoint x="2134.6" y="823.0" />
-              <mxPoint x="2134.6" y="823.0" />
-              <mxPoint x="2134.6" y="823.0" />
-              <mxPoint x="2195.8" y="821.5" />
-            </Array>
-          </mxGeometry>
+            </mxGeometry>
         </mxCell>
         <mxCell id="diagram_title" parent="1" vertex="1" value="EER toàn hệ thống · Ký hiệu Chen" style="text;html=1;align=center;fontSize=14;fontStyle=1;fontColor=#000000;fillColor=none;strokeColor=none;">
           <mxGeometry x="30" y="31.5" width="3302.9" height="25" as="geometry" />
