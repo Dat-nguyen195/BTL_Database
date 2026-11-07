@@ -56,23 +56,7 @@
 \input{sections/cover}
 \pagenumbering{roman}
 \tableofcontents\clearpage
-\chapter*{Phạm vi và cách đọc báo cáo}\addcontentsline{toc}{chapter}{Phạm vi và cách đọc báo cáo}
-Báo cáo trình bày phần hiện thực cơ sở dữ liệu của hệ thống quản lý quán Net, kế thừa mô hình 23 bảng từ BTL1. Phạm vi Phần 1–2 gồm lược đồ vật lý, dữ liệu mẫu, chỉ mục, truy vấn, thủ tục, hàm và trigger. Ứng dụng Flask được dùng để kiểm chứng các giao dịch và ba luồng vận hành liên quan.
 
-Các câu SQL trong báo cáo lấy từ bộ mã bàn giao. Ảnh minh chứng là bản xuất trực tiếp của SQL client kết nối MySQL 8.4.13; câu lệnh và đầu ra thô được lưu theo từng lần chạy. Các lưu đồ được dựng bằng TikZ, còn sơ đồ EER được nhúng ở dạng vector để phóng to không vỡ chữ. Toàn bộ chữ và câu lệnh được trình bày bằng phông chữ Times New Roman và mực đen theo đúng quy chuẩn báo cáo học thuật.
-\begin{table}[H]\small\centering\caption{Đối chiếu cấu trúc báo cáo với mẫu Phần 1–2}
-\begin{tabularx}{\linewidth}{@{}p{32mm}Yp{28mm}@{}}\toprule
-\textbf{Mục theo Mẫu BTL2} & \textbf{Sản phẩm trình bày} & \textbf{Vị trí}\\\midrule
-1.1 Các câu lệnh tạo bảng và ràng buộc & 23 bảng; khóa, miền giá trị và các ca vi phạm & Mục \ref{sec:schema}\\
-1.2 Câu lệnh tạo chỉ mục & Lý do lựa chọn; kế hoạch và số đo trước/sau & Mục \ref{sec:index}\\
-1.3 Truy vấn dữ liệu & Năm truy vấn, dữ liệu và kết quả đối chiếu & Mục \ref{sec:queries}\\
-2. THỦ TỤC – HÀM - TRIGGER & CRUD, hai yêu cầu trigger, hai thủ tục và hai hàm & Phần \ref{chap:routines}\\
-3. PHẦN THÊM & Kiểm chứng giao dịch, hồi quy và ba luồng demo & Phần \ref{chap:verification}\\
-Bảng kê nhiệm vụ & Phân công theo nội dung và người phụ trách & Phụ lục A\\
-Đánh giá của giáo viên & Bảng đánh giá theo tỷ lệ đề xuất & Phụ lục A\\
-Phụ lục ERD & Thiết kế ERD cập nhật và ghi chú thay đổi BTL1 & Phụ lục B\\
-Dữ liệu mẫu & Bảng dữ liệu mẫu và nguồn minh chứng DBMS & Phụ lục C\\\bottomrule
-\end{tabularx}\end{table}
 \clearpage\pagenumbering{arabic}
 \input{sections/01_schema}
 \input{sections/02_routines}
