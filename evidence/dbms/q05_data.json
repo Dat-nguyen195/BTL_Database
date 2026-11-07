@@ -1,0 +1,76 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "MaTaiKhoan",
+        "SoDuVi"
+      ],
+      "elapsed_ms": 2.68420199972752,
+      "error": null,
+      "rows": [
+        [
+          "TK02",
+          "100000"
+        ],
+        [
+          "TK04",
+          "100000"
+        ],
+        [
+          "TK05",
+          "100000"
+        ],
+        [
+          "TK06",
+          "100000"
+        ],
+        [
+          "TK08",
+          "100000"
+        ],
+        [
+          "TK09",
+          "250000"
+        ],
+        [
+          "TK10",
+          "50000"
+        ]
+      ],
+      "sql": "SELECT MaTaiKhoan,SoDuVi FROM NGUOI_CHOI"
+    },
+    {
+      "columns": [
+        "MaNguoiChoi",
+        "LoaiGiaoDich",
+        "SoTien",
+        "TrangThaiGD"
+      ],
+      "elapsed_ms": 3.198696000254131,
+      "error": null,
+      "rows": [
+        [
+          "TK02",
+          "NapTien",
+          "50000",
+          "ThanhCong"
+        ],
+        [
+          "TK02",
+          "TruTienMay",
+          "15000",
+          "ThanhCong"
+        ],
+        [
+          "TK09",
+          "NapTien",
+          "200000",
+          "ThanhCong"
+        ]
+      ],
+      "sql": "SELECT MaNguoiChoi,LoaiGiaoDich,SoTien,TrangThaiGD FROM GIAO_DICH_VI"
+    }
+  ],
+  "version": "8.4.13"
+}

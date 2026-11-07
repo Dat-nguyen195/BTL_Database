@@ -1,0 +1,28 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [],
+      "elapsed_ms": 8.691179000379634,
+      "error": null,
+      "rows": [],
+      "sql": "INSERT INTO DON_GOI_DICH_VU(MaDonHang,ThoiDiemDat,KenhDat,TongTien,TrangThaiPhucVu,TrangThaiThanhToan,SoTienDaHoan) VALUES('DH_EVIDENCE',NOW(),'TaiQuay',0,'MoiDat','ChuaThanhToan',0)"
+    },
+    {
+      "columns": [
+        "MaDonHang",
+        "TongTien"
+      ],
+      "elapsed_ms": 3.1556020003336016,
+      "error": null,
+      "rows": [
+        [
+          "DH_EVIDENCE",
+          "0"
+        ]
+      ],
+      "sql": "SELECT MaDonHang,TongTien FROM DON_GOI_DICH_VU WHERE MaDonHang='DH_EVIDENCE'"
+    }
+  ],
+  "version": "8.4.13"
+}

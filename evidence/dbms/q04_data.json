@@ -1,0 +1,97 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "MaNhanVien",
+        "MaCa",
+        "MaKhuVuc"
+      ],
+      "elapsed_ms": 2.162957999644277,
+      "error": null,
+      "rows": [
+        [
+          "TK01",
+          "CA02",
+          "KV01"
+        ],
+        [
+          "TK03",
+          "CA01",
+          "KV01"
+        ],
+        [
+          "TK07",
+          "CA02",
+          "KV01"
+        ],
+        [
+          "TK07",
+          "CA03",
+          "KV01"
+        ],
+        [
+          "TK03",
+          "CA01",
+          "KV02"
+        ]
+      ],
+      "sql": "SELECT MaNhanVien,MaCa,MaKhuVuc FROM PHAN_CONG_TRUC"
+    },
+    {
+      "columns": [
+        "MaCa",
+        "ThoiDiemBatDau",
+        "ThoiDiemKetThuc"
+      ],
+      "elapsed_ms": 4.634162000002107,
+      "error": null,
+      "rows": [
+        [
+          "CA01",
+          "2026-10-26 07:00:00",
+          "2026-10-26 12:00:00"
+        ],
+        [
+          "CA02",
+          "2026-10-26 12:00:00",
+          "2026-10-26 17:00:00"
+        ],
+        [
+          "CA03",
+          "2026-10-26 17:00:00",
+          "2026-10-26 22:00:00"
+        ]
+      ],
+      "sql": "SELECT MaCa,ThoiDiemBatDau,ThoiDiemKetThuc FROM CA_TRUC"
+    },
+    {
+      "columns": [
+        "MaTaiKhoan",
+        "ChucVu"
+      ],
+      "elapsed_ms": 2.2264680001171655,
+      "error": null,
+      "rows": [
+        [
+          "TK01",
+          "QuanLy"
+        ],
+        [
+          "TK03",
+          "ThuNgan"
+        ],
+        [
+          "TK06",
+          "ThuNgan"
+        ],
+        [
+          "TK07",
+          "PhaChe"
+        ]
+      ],
+      "sql": "SELECT MaTaiKhoan,ChucVu FROM NHAN_VIEN"
+    }
+  ],
+  "version": "8.4.13"
+}

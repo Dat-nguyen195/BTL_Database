@@ -1,0 +1,23 @@
+% !TeX root = ../main.tex
+\begin{tikzpicture}[flow]
+\node[start] (s) {fn\_tong\_chi\_vi\_rong};
+\node[decision,below=10mm of s] (v) {Hội viên tồn tại và\\khoảng giờ hợp lệ?};
+\node[process,below=11mm of v] (i) {Tổng chi = 0;\\mở CURSOR giao dịch};
+\node[process,below=8mm of i] (f) {FETCH loại giao dịch\\và số tiền};
+\node[decision,below=10mm of f] (c) {Đã hết dòng?};
+\node[process,below=11mm of c] (a) {Tiền máy và tiền dịch vụ:\\cộng số tiền vào tổng.\\Hoàn tiền: trừ khỏi tổng.\\Nạp tiền: bỏ qua.};
+\node[reject] (x) at ($(v.center)+(6.4,0)$) {RETURN NULL};
+\node[process,text width=3.1cm] (r) at ($(c.center)+(6.4,0)$) {Đóng CURSOR;\\RETURN tổng chi};
+\node[start,text width=3.1cm,below=12mm of r] (e) {Kết thúc};
+\coordinate (loop) at ($(f.west)+(-1.3,0)$);
+\draw[arrow] (s.south)--(v.north);
+\draw[arrow] (v.south)--node[branch,right=1.5mm]{Có}(i.north);
+\draw[arrow] (v.east)--node[branch,above=1mm]{Không}(x.west);
+\draw[arrow] (i.south)--(f.north);
+\draw[arrow] (f.south)--(c.north);
+\draw[arrow] (c.south)--node[branch,right=1.5mm]{Không}(a.north);
+\draw[arrow] (c.east)--node[branch,above=1mm]{Có}(r.west);
+\draw[arrow] (r.south)--(e.north);
+\draw[arrow] (a.west)--(a.west -| loop)|-(f.west);
+
+\end{tikzpicture}

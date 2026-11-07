@@ -1,0 +1,20 @@
+{
+  "before": {
+    "mean_ms": 267.31344704999174,
+    "rows": 949,
+    "plan": "-> Sort: d.GiaBanHienHanh DESC, d.MaDichVu  (actual time=249..250 rows=949 loops=1)\n    -> Stream results  (cost=1.15 rows=0.1) (actual time=1.97..247 rows=949 loops=1)\n        -> Nested loop inner join  (cost=1.15 rows=0.1) (actual time=1.96..246 rows=949 loops=1)\n            -> Table scan on dvt  (cost=0.45 rows=2) (actual time=0.538..0.549 rows=2 loops=1)\n            -> Filter: ((d.MaNhomDV = 'NDV01') and (d.TrangThaiKinhDoanh = 'DangKinhDoanh') and (d.GiaBanHienHanh between 10000 and 50000))  (cost=0.253 rows=0.05) (actual time=64.9..122 rows=474 loops=2)\n                -> Index lookup on d using MaDonVi (MaDonVi=dvt.MaDonVi)  (cost=0.253 rows=1) (actual time=0.141..115 rows=10000 loops=2)\n",
+    "has_sort": true
+  },
+  "after": {
+    "mean_ms": 68.82026045000202,
+    "rows": 949,
+    "plan": "-> Sort: d.GiaBanHienHanh DESC, d.MaDichVu  (actual time=19.7..19.9 rows=949 loops=1)\n    -> Stream results  (cost=618 rows=949) (actual time=17.2..17.9 rows=949 loops=1)\n        -> Inner hash join (dvt.MaDonVi = d.MaDonVi)  (cost=618 rows=949) (actual time=17.1..17.4 rows=949 loops=1)\n            -> Table scan on dvt  (cost=956e-6 rows=2) (actual time=0.016..0.0339 rows=2 loops=1)\n            -> Hash\n                -> Index range scan on d using ix_dich_vu_filter over (MaNhomDV = 'NDV01' AND TrangThaiKinhDoanh = 'DangKinhDoanh' AND 10000 <= GiaBanHienHanh <= 50000), with index condition: ((d.MaNhomDV = 'NDV01') and (d.TrangThaiKinhDoanh = 'DangKinhDoanh') and (d.GiaBanHienHanh between 10000 and 50000))  (cost=427 rows=949) (actual time=2.18..16.3 rows=949 loops=1)\n",
+    "has_sort": true
+  },
+  "dbms": "8.4.13",
+  "table_rows": 20000,
+  "iterations": 20,
+  "query": "SELECT\n    d.`MaDichVu`,\n    d.`TenDichVu`,\n    ndv.`TenNhomDV`,\n    dvt.`TenDonVi`,\n    d.`GiaBanHienHanh`,\n    d.`SoLuongTon`\nFROM `DICH_VU` d\nJOIN `NHOM_DICH_VU` ndv ON d.`MaNhomDV` = ndv.`MaNhomDV`\nJOIN `DON_VI_TINH` dvt ON d.`MaDonVi` = dvt.`MaDonVi`\nWHERE d.`TrangThaiKinhDoanh` = 'DangKinhDoanh'\n  AND d.`MaNhomDV` = 'NDV01'\n  AND d.`GiaBanHienHanh` BETWEEN 10000 AND 50000\nORDER BY d.`GiaBanHienHanh` DESC, d.`MaDichVu` ASC",
+  "index": "CREATE INDEX ix_dich_vu_filter ON DICH_VU(MaNhomDV,TrangThaiKinhDoanh,GiaBanHienHanh,MaDichVu)",
+  "speedup": 3.884226030271931
+}

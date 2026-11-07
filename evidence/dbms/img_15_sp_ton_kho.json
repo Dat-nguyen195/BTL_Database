@@ -1,0 +1,28 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [],
+      "elapsed_ms": 7.713934999628691,
+      "errno": 60001,
+      "error": "INVALID_INPUT: Nguong ton phai la so khong am",
+      "rows": [],
+      "sql": "CALL sp_bao_cao_ton_dich_vu('NDV02',-1)",
+      "sqlstate": "45000"
+    },
+    {
+      "columns": [
+        "BaoCaoTonDichVu"
+      ],
+      "elapsed_ms": 5.172985999706725,
+      "error": null,
+      "rows": [
+        [
+          "[{\"MaDichVu\": \"DV02\", \"MaNhomDV\": \"NDV02\", \"DonViTinh\": \"Chai\", \"TenDichVu\": \"Nước ngọt\", \"TenNhomDV\": \"Đồ uống\", \"SoLuongTon\": 100, \"PhanLoaiTon\": \"DuHang\", \"GiaBanHienHanh\": 12000, \"TrangThaiKinhDoanh\": \"DangKinhDoanh\"}, {\"MaDichVu\": \"DV04\", \"MaNhomDV\": \"NDV02\", \"DonViTinh\": \"Chai\", \"TenDichVu\": \"Bò húc lon\", \"TenNhomDV\": \"Đồ uống\", \"SoLuongTon\": 8, \"PhanLoaiTon\": \"SapHet\", \"GiaBanHienHanh\": 18000, \"TrangThaiKinhDoanh\": \"DangKinhDoanh\"}, {\"MaDichVu\": \"DV05\", \"MaNhomDV\": \"NDV02\", \"DonViTinh\": \"Chai\", \"TenDichVu\": \"Cà phê sữa\", \"TenNhomDV\": \"Đồ uống\", \"SoLuongTon\": 0, \"PhanLoaiTon\": \"HetHang\", \"GiaBanHienHanh\": 15000, \"TrangThaiKinhDoanh\": \"DangKinhDoanh\"}, {\"MaDichVu\": \"DV06\", \"MaNhomDV\": \"NDV02\", \"DonViTinh\": \"Chai\", \"TenDichVu\": \"Trà chanh sả\", \"TenNhomDV\": \"Đồ uống\", \"SoLuongTon\": 45, \"PhanLoaiTon\": \"DuHang\", \"GiaBanHienHanh\": 10000, \"TrangThaiKinhDoanh\": \"NgungKinhDoanh\"}]"
+        ]
+      ],
+      "sql": "CALL sp_bao_cao_ton_dich_vu('NDV02',10)"
+    }
+  ],
+  "version": "8.4.13"
+}

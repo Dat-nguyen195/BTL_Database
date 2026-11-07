@@ -1,0 +1,28 @@
+% !TeX root = ../main.tex
+\begin{tikzpicture}[flow]
+\node[start] (s) {DML trên chi tiết đơn};
+\node[process,below=8mm of s] (guard)
+  {BEFORE trigger kiểm tra đơn nháp\\và việc giữ nguyên mã đơn};
+\node[decision,below=10mm of guard] (v) {Loại sự kiện DML\\được phép thực hiện?};
+\coordinate (split) at ($(v.south)+(0,-.7)$);
+\node[process,text width=3.5cm,minimum height=18mm] (i) at ($(v.south)+(-4.5,-2.6)$)
+  {AFTER INSERT\\Cộng \mbox{\texttt{NEW.SoLuong}}\\$\times$ \mbox{\texttt{NEW.DonGiaBan}}};
+\node[process,text width=3.5cm,minimum height=18mm] (u) at ($(v.south)+(0,-2.6)$)
+  {AFTER UPDATE\\Cộng giá trị mới\\trừ giá trị cũ};
+\node[process,text width=3.5cm,minimum height=18mm] (d) at ($(v.south)+(4.5,-2.6)$)
+  {AFTER DELETE\\Trừ \mbox{\texttt{OLD.SoLuong}}\\$\times$ \mbox{\texttt{OLD.DonGiaBan}}};
+\node[process,below=19mm of u] (t) {UPDATE TongTien\\của đơn tương ứng};
+\coordinate (merge) at ($(t.north)+(0,.7)$);
+\node[start,below=8mm of t] (e) {Tổng đơn đồng bộ với chi tiết};
+\draw[arrow] (s.south)--(guard.north);
+\draw[arrow] (guard.south)--(v.north);
+\draw[connector] (v.south)--(split);
+\draw[arrow] (split)-|node[branch,pos=.25,above=1mm]{INSERT}(i.north);
+\draw[arrow] (split)--node[branch,right=1.5mm]{UPDATE}(u.north);
+\draw[arrow] (split)-|node[branch,pos=.25,above=1mm]{DELETE}(d.north);
+\draw[connector] (i.south)|-(merge);
+\draw[connector] (u.south)--(merge);
+\draw[connector] (d.south)|-(merge);
+\draw[arrow] (merge)--(t.north);
+\draw[arrow] (t.south)--(e.north);
+\end{tikzpicture}

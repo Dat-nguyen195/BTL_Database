@@ -1,0 +1,3 @@
+SELECT MaMay,MaNhomMay,MaKhuVuc,TrangThaiMay FROM MAY_TRAM;
+SELECT * FROM KHU_VUC;
+SELECT MaNhomMay,TenNhomMay,DonGiaGioMacDinh FROM NHOM_MAY;

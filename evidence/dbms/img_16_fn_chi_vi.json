@@ -1,0 +1,32 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "TongChi"
+      ],
+      "elapsed_ms": 6.958843000575143,
+      "error": null,
+      "rows": [
+        [
+          "15000"
+        ]
+      ],
+      "sql": "SELECT fn_tong_chi_vi_rong('TK02','2026-10-01','2026-11-01') AS TongChi"
+    },
+    {
+      "columns": [
+        "KhongTonTai"
+      ],
+      "elapsed_ms": 4.213620999507839,
+      "error": null,
+      "rows": [
+        [
+          null
+        ]
+      ],
+      "sql": "SELECT fn_tong_chi_vi_rong('TK_NONE','2026-10-01','2026-11-01') AS KhongTonTai"
+    }
+  ],
+  "version": "8.4.13"
+}

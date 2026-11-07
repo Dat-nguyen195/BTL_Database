@@ -1,0 +1,31 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "NgayDat",
+        "KenhDat",
+        "SoLuongDon",
+        "TongTienDonHang"
+      ],
+      "elapsed_ms": 7.168044000536611,
+      "error": null,
+      "rows": [
+        [
+          "2026-10-21",
+          "TaiQuay",
+          1,
+          "50000"
+        ],
+        [
+          "2026-10-20",
+          "TaiQuay",
+          1,
+          "52000"
+        ]
+      ],
+      "sql": "SELECT\n    DATE(d.`ThoiDiemDat`) AS `NgayDat`,\n    d.`KenhDat`,\n    COUNT(d.`MaDonHang`) AS `SoLuongDon`,\n    SUM(d.`TongTien`) AS `TongTienDonHang`\nFROM `DON_GOI_DICH_VU` d\nWHERE d.`TrangThaiThanhToan` = 'DaThanhToan'\n  AND d.`ThoiDiemDat` >= '2026-10-01 00:00:00'\n  AND d.`ThoiDiemDat` <= '2026-11-30 23:59:59'\nGROUP BY DATE(d.`ThoiDiemDat`), d.`KenhDat`\nORDER BY `NgayDat` DESC, `TongTienDonHang` DESC"
+    }
+  ],
+  "version": "8.4.13"
+}

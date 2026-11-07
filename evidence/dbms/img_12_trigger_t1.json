@@ -1,0 +1,58 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "MaBienLai",
+        "TrangThaiBienLai",
+        "TongTienGio"
+      ],
+      "elapsed_ms": 5.51299100061442,
+      "error": null,
+      "rows": [
+        [
+          "BL_P12_01",
+          "DaThanhToan",
+          "15000"
+        ]
+      ],
+      "sql": "SELECT MaBienLai,TrangThaiBienLai,TongTienGio FROM BIEN_LAI_TIEN_MAY"
+    },
+    {
+      "columns": [],
+      "elapsed_ms": 4.703645000518009,
+      "errno": 60011,
+      "error": "IMMUTABLE_DOCUMENT",
+      "rows": [],
+      "sql": "UPDATE BIEN_LAI_TIEN_MAY SET TongTienGio=99999 WHERE MaBienLai='BL_P12_01'",
+      "sqlstate": "45000"
+    },
+    {
+      "columns": [],
+      "elapsed_ms": 3.5823250000248663,
+      "errno": 60011,
+      "error": "IMMUTABLE_DOCUMENT",
+      "rows": [],
+      "sql": "DELETE FROM BIEN_LAI_TIEN_MAY WHERE MaBienLai='BL_P12_01'",
+      "sqlstate": "45000"
+    },
+    {
+      "columns": [
+        "MaBienLai",
+        "TrangThaiBienLai",
+        "TongTienGio"
+      ],
+      "elapsed_ms": 3.1323389994213358,
+      "error": null,
+      "rows": [
+        [
+          "BL_P12_01",
+          "DaThanhToan",
+          "15000"
+        ]
+      ],
+      "sql": "SELECT MaBienLai,TrangThaiBienLai,TongTienGio FROM BIEN_LAI_TIEN_MAY"
+    }
+  ],
+  "version": "8.4.13"
+}

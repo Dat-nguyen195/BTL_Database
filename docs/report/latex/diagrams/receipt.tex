@@ -1,0 +1,18 @@
+% !TeX root = ../main.tex
+\begin{tikzpicture}[flow]
+\node[start] (s) {BEFORE UPDATE hoặc DELETE};
+\node[decision,below=10mm of s] (v) {Biên lai cũ đã\\thanh toán?};
+\coordinate (split) at ($(v.south)+(0,-.7)$);
+\node[error,text width=4.4cm,minimum height=15mm] (err) at ($(v.south)+(-3.7,-2.25)$)
+  {SIGNAL 60011\\IMMUTABLE\_DOCUMENT};
+\node[process,text width=4.4cm,minimum height=15mm] (ok) at ($(v.south)+(3.7,-2.25)$)
+  {Cho phép thao tác tiếp tục;\\các ràng buộc khác vẫn áp dụng};
+\node[reject,text width=4.4cm,below=9mm of err] (x) {Từ chối thay đổi};
+\node[start,text width=4.4cm,below=9mm of ok] (e) {Hoàn tất thao tác hợp lệ};
+\draw[arrow] (s.south)--(v.north);
+\draw[connector] (v.south)--(split);
+\draw[arrow] (split)-|node[branch,pos=.25,above=1mm]{Có}(err.north);
+\draw[arrow] (split)-|node[branch,pos=.25,above=1mm]{Không}(ok.north);
+\draw[arrow] (err.south)--(x.north);
+\draw[arrow] (ok.south)--(e.north);
+\end{tikzpicture}

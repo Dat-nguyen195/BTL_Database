@@ -1,0 +1,53 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "MaMay",
+        "TenMay",
+        "TrangThaiMay",
+        "TenKhuVuc",
+        "TenNhomMay",
+        "DonGiaGioMacDinh",
+        "ViTriHang",
+        "ViTriCot"
+      ],
+      "elapsed_ms": 8.044568000514118,
+      "error": null,
+      "rows": [
+        [
+          "M01",
+          "Máy 01",
+          "AVAILABLE",
+          "Khu thường",
+          "Máy VIP",
+          "15000",
+          1,
+          1
+        ],
+        [
+          "M02",
+          "Máy 02",
+          "AVAILABLE",
+          "Khu thường",
+          "Máy VIP",
+          "15000",
+          1,
+          2
+        ],
+        [
+          "M04",
+          "Máy 04",
+          "AVAILABLE",
+          "Khu thường",
+          "Máy VIP",
+          "15000",
+          2,
+          1
+        ]
+      ],
+      "sql": "SELECT\n    m.`MaMay`,\n    m.`TenMay`,\n    m.`TrangThaiMay`,\n    k.`TenKhuVuc`,\n    nm.`TenNhomMay`,\n    nm.`DonGiaGioMacDinh`,\n    m.`ViTriHang`,\n    m.`ViTriCot`\nFROM `MAY_TRAM` m\nJOIN `KHU_VUC` k ON m.`MaKhuVuc` = k.`MaKhuVuc`\nJOIN `NHOM_MAY` nm ON m.`MaNhomMay` = nm.`MaNhomMay`\nWHERE m.`TrangThaiMay` IN ('AVAILABLE', 'ONLINE')\n  AND k.`MaKhuVuc` = 'KV01'\nORDER BY m.`ViTriHang` ASC, m.`ViTriCot` ASC"
+    }
+  ],
+  "version": "8.4.13"
+}

@@ -1,0 +1,32 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "TongTien"
+      ],
+      "elapsed_ms": 6.116915999882622,
+      "error": null,
+      "rows": [
+        [
+          "52000"
+        ]
+      ],
+      "sql": "SELECT fn_tong_tien_don('DH_P12_01') AS TongTien"
+    },
+    {
+      "columns": [
+        "KhongTonTai"
+      ],
+      "elapsed_ms": 2.8664170004049083,
+      "error": null,
+      "rows": [
+        [
+          null
+        ]
+      ],
+      "sql": "SELECT fn_tong_tien_don('DH_NONE') AS KhongTonTai"
+    }
+  ],
+  "version": "8.4.13"
+}

@@ -1,0 +1,34 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "MaDonHang",
+        "ThoiDiemDat",
+        "KenhDat",
+        "TongTien",
+        "TrangThaiThanhToan"
+      ],
+      "elapsed_ms": 3.621742000177619,
+      "error": null,
+      "rows": [
+        [
+          "DH_P12_01",
+          "2026-10-20 11:00:00",
+          "TaiQuay",
+          "52000",
+          "DaThanhToan"
+        ],
+        [
+          "DH_P12_02",
+          "2026-10-21 15:00:00",
+          "TaiQuay",
+          "50000",
+          "DaThanhToan"
+        ]
+      ],
+      "sql": "SELECT MaDonHang,ThoiDiemDat,KenhDat,TongTien,TrangThaiThanhToan FROM DON_GOI_DICH_VU"
+    }
+  ],
+  "version": "8.4.13"
+}

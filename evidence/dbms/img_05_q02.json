@@ -1,0 +1,37 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "MaDichVu",
+        "TenDichVu",
+        "TenNhomDV",
+        "TenDonVi",
+        "GiaBanHienHanh",
+        "SoLuongTon"
+      ],
+      "elapsed_ms": 9.992438000153925,
+      "error": null,
+      "rows": [
+        [
+          "DV03",
+          "Cơm chiên trứng",
+          "Đồ ăn",
+          "Phần",
+          "25000",
+          30
+        ],
+        [
+          "DV01",
+          "Mì trứng",
+          "Đồ ăn",
+          "Phần",
+          "15000",
+          50
+        ]
+      ],
+      "sql": "SELECT\n    d.`MaDichVu`,\n    d.`TenDichVu`,\n    ndv.`TenNhomDV`,\n    dvt.`TenDonVi`,\n    d.`GiaBanHienHanh`,\n    d.`SoLuongTon`\nFROM `DICH_VU` d\nJOIN `NHOM_DICH_VU` ndv ON d.`MaNhomDV` = ndv.`MaNhomDV`\nJOIN `DON_VI_TINH` dvt ON d.`MaDonVi` = dvt.`MaDonVi`\nWHERE d.`TrangThaiKinhDoanh` = 'DangKinhDoanh'\n  AND d.`MaNhomDV` = 'NDV01'\n  AND d.`GiaBanHienHanh` BETWEEN 10000 AND 50000\nORDER BY d.`GiaBanHienHanh` DESC, d.`MaDichVu` ASC"
+    }
+  ],
+  "version": "8.4.13"
+}

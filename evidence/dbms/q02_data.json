@@ -1,0 +1,100 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "MaDichVu",
+        "TenDichVu",
+        "GiaBanHienHanh",
+        "MaNhomDV",
+        "MaDonVi"
+      ],
+      "elapsed_ms": 3.129069999886269,
+      "error": null,
+      "rows": [
+        [
+          "DV01",
+          "Mì trứng",
+          "15000",
+          "NDV01",
+          "DVT01"
+        ],
+        [
+          "DV02",
+          "Nước ngọt",
+          "12000",
+          "NDV02",
+          "DVT02"
+        ],
+        [
+          "DV03",
+          "Cơm chiên trứng",
+          "25000",
+          "NDV01",
+          "DVT01"
+        ],
+        [
+          "DV04",
+          "Bò húc lon",
+          "18000",
+          "NDV02",
+          "DVT02"
+        ],
+        [
+          "DV05",
+          "Cà phê sữa",
+          "15000",
+          "NDV02",
+          "DVT02"
+        ],
+        [
+          "DV06",
+          "Trà chanh sả",
+          "10000",
+          "NDV02",
+          "DVT02"
+        ]
+      ],
+      "sql": "SELECT MaDichVu,TenDichVu,GiaBanHienHanh,MaNhomDV,MaDonVi FROM DICH_VU"
+    },
+    {
+      "columns": [
+        "MaNhomDV",
+        "TenNhomDV"
+      ],
+      "elapsed_ms": 2.3368779993688804,
+      "error": null,
+      "rows": [
+        [
+          "NDV01",
+          "Đồ ăn"
+        ],
+        [
+          "NDV02",
+          "Đồ uống"
+        ]
+      ],
+      "sql": "SELECT * FROM NHOM_DICH_VU"
+    },
+    {
+      "columns": [
+        "MaDonVi",
+        "TenDonVi"
+      ],
+      "elapsed_ms": 2.663018000021111,
+      "error": null,
+      "rows": [
+        [
+          "DVT02",
+          "Chai"
+        ],
+        [
+          "DVT01",
+          "Phần"
+        ]
+      ],
+      "sql": "SELECT * FROM DON_VI_TINH"
+    }
+  ],
+  "version": "8.4.13"
+}

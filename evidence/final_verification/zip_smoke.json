@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-05",
+  "source": "Fresh extraction of cleaned BTL2_L09_Nhom10_BanGiao.zip",
+  "tables": 23,
+  "p12_orders": 2,
+  "seed_second_run_changed": false,
+  "p12_orders_after_second_seed": 2,
+  "frontend_http": 200,
+  "frontend_modules_http": 200,
+  "login_http": 200,
+  "workstations_http": 200,
+  "runtime_account": "temporary restricted application user",
+  "environment": "Existing pinned Python libraries and MySQL 8.4.13; only extracted project code imported. No application DB reset.",
+  "result": "PASS"
+}

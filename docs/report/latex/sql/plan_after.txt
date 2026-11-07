@@ -1,0 +1,6 @@
+-> Sort: d.GiaBanHienHanh DESC, d.MaDichVu  (actual time=19.7..19.9 rows=949 loops=1)
+    -> Stream results  (cost=618 rows=949) (actual time=17.2..17.9 rows=949 loops=1)
+        -> Inner hash join (dvt.MaDonVi = d.MaDonVi)  (cost=618 rows=949) (actual time=17.1..17.4 rows=949 loops=1)
+            -> Table scan on dvt  (cost=956e-6 rows=2) (actual time=0.016..0.0339 rows=2 loops=1)
+            -> Hash
+                -> Index range scan on d using ix_dich_vu_filter over (MaNhomDV = 'NDV01' AND TrangThaiKinhDoanh = 'DangKinhDoanh' AND 10000 <= GiaBanHienHanh <= 50000), with index condition: ((d.MaNhomDV = 'NDV01') and (d.TrangThaiKinhDoanh = 'DangKinhDoanh') and (d.GiaBanHienHanh between 10000 and 50000))  (cost=427 rows=949) (actual time=2.18..16.3 rows=949 loops=1)

@@ -1,0 +1,145 @@
+{
+  "date": "2026-11-06",
+  "report_format": "XeLaTeX",
+  "pages": 66,
+  "rendered_and_visually_reviewed_pages": 66,
+  "cover_gvhd": "ThS. Trần Thị Quế Nguyệt",
+  "cover_names_verified": 5,
+  "dbms_vector_pdfs": 28,
+  "eer_vector_pdfs": 7,
+  "tikz_flowcharts": 9,
+  "tikz_architecture": 1,
+  "source_ddl_tables": 23,
+  "compiler_layout_font_reference_warnings": [],
+  "bitmap_assets_in_pdf": [
+    {
+      "name": "/Im0",
+      "width": 356,
+      "height": 257
+    }
+  ],
+  "standalone_source_zip": {
+    "files": 103,
+    "crc": "PASS",
+    "hashes": "PASS",
+    "fresh_compile": "PASS",
+    "same_page_count_and_extracted_text": true,
+    "same_page_drawing_commands": true
+  },
+  "pdf_sha256": "8f99446aabdf6eab10530d3a92d72faf110942b881a9ae731999100a847ca83d",
+  "functional_tests": "Existing 2026-11-05 suite evidence retained: 96 PASS. Backend and SQL unchanged; functional tests not rerun for this visual revision.",
+  "live_sql_evidence": "28 MySQL captures and index benchmark from 2026-11-05 retained unchanged.",
+  "visual_review": "66 page renders reviewed as contact sheets; all 10 TikZ diagrams and 7 EER pages also inspected individually. Final changed pages re-rendered and checked. No observed overlapping diagram nodes/branch labels or figure clipping. Full EER remains an overview with six domain views and vector originals for detail.",
+  "cleanup": "Removed obsolete Word/report/review/scaffold files; assignment source is team_assignments.json; EER exporter uses bundled SVGs.",
+  "eer_export_without_external_baseline": "PASS; seven PDFs, matching original extracted text",
+  "compiler_fix": {
+    "date": "2026-11-06",
+    "observed_failure": "The user log ran pdfLaTeX, which stopped at fontspec (requires XeTeX/LuaTeX).",
+    "default_engine": "XeLaTeX via .latexmkrc; main.tex magic comment runs latexmk.",
+    "default_latexmk_clean_source": "PASS",
+    "vscode_recipe_clean_source": "PASS; executed the exact configured tool argument array.",
+    "source_directory_with_spaces": "PASS",
+    "bundled_mono_fonts": [
+      "Regular",
+      "Bold",
+      "Italic",
+      "BoldItalic"
+    ],
+    "font_license": "assets/fonts/LICENSE.txt (SIL OFL 1.1)",
+    "pages": 64,
+    "same_text_and_page_drawing_commands": true,
+    "font_layout_reference_warnings": [],
+    "functional_tests": "No backend/SQL changes; existing 96 PASS evidence retained, not rerun for this compiler configuration fix.",
+    "editor_pdf_location": "main.pdf next to main.tex; matches %DIR% even in a parent workspace",
+    "scope": "Historical compiler validation before the diagram layout revision; its 64-page comparison refers to that earlier report."
+  },
+  "parent_workspace_viewer_fix": {
+    "date": "2026-11-06",
+    "workspace": "Assignment (parent of the BTL2 repository)",
+    "observed_failure": "BUILD_DONE succeeded, but the PDF viewer requested main.pdf while latexmk wrote build/main.pdf; ENOENT.",
+    "fix": "Default editor/latexmk output is now main.pdf next to main.tex. The publication script still uses build/ explicitly.",
+    "exact_extension_build_arguments": "latexmk -synctex=1 -interaction=nonstopmode -file-line-error main",
+    "extension_pdf_watcher_refreshed": true,
+    "existing_viewer_server_http": 200,
+    "viewer_response_matches_generated_pdf": true,
+    "generated_editor_pdf_sha256": "1a1a07b0e226882bc2dff53144416e9a7424eff6439b5b617e0d66f007cc662a",
+    "clean_zip_default_output": "PASS after diagram revision: main.pdf beside main.tex, 66 pages, no compiler warnings, same text and page drawing commands as publication PDF.",
+    "previous_editor_pdf_sha256": "81a43a1cb45f562e54ac6ad4c7410ca768d4e598834f16201417039cebd3d310"
+  },
+  "diagram_layout_revision": {
+    "date": "2026-11-06",
+    "previous_review_correction": "The prior visual review missed overlapping labels/arrows and crowded nodes, including Figure 2.18. A successful compilation did not establish visual correctness.",
+    "reworked_figures": [
+      "2.1",
+      "2.3",
+      "2.5",
+      "2.8",
+      "2.11",
+      "2.16",
+      "2.18",
+      "2.20",
+      "2.22",
+      "3.1"
+    ],
+    "eer_adjustment": "Figure B.6: moved two N cardinality labels off the connector lines; vector SVG and PDF updated.",
+    "geometry": "Relative node placement uses edge gaps; branches have dedicated lanes and separate label styling. Shared font is 10 pt. Complete figures stay in unbreakable figure boxes and are centered within the line width.",
+    "figure_2_18_pdf_page": 42,
+    "figure_2_18_printed_page": 38,
+    "diagram_dimensions": [
+      {
+        "file": "diagrams/crud_insert.tex",
+        "width_pt": 314.69492,
+        "height_pt": 435.00299
+      },
+      {
+        "file": "diagrams/crud_update.tex",
+        "width_pt": 330.40675,
+        "height_pt": 440.66937
+      },
+      {
+        "file": "diagrams/crud_delete.tex",
+        "width_pt": 328.07225,
+        "height_pt": 438.62936
+      },
+      {
+        "file": "diagrams/receipt.tex",
+        "width_pt": 350.2606,
+        "height_pt": 273.74686
+      },
+      {
+        "file": "diagrams/order_total.tex",
+        "width_pt": 370.17787,
+        "height_pt": 450.58812
+      },
+      {
+        "file": "diagrams/revenue.tex",
+        "width_pt": 352.83356,
+        "height_pt": 448.3184
+      },
+      {
+        "file": "diagrams/stock.tex",
+        "width_pt": 352.83356,
+        "height_pt": 425.49861
+      },
+      {
+        "file": "diagrams/wallet.tex",
+        "width_pt": 352.83356,
+        "height_pt": 435.00224
+      },
+      {
+        "file": "diagrams/order.tex",
+        "width_pt": 352.83356,
+        "height_pt": 434.50224
+      },
+      {
+        "file": "diagrams/architecture.tex",
+        "width_pt": 337.45743,
+        "height_pt": 276.49911
+      }
+    ],
+    "generator_preserves_diagrams": "PASS; generator rerun preserved all 17 report TeX files.",
+    "backend_sql_unchanged": true,
+    "zip_excludes_synctex_busy_files": true,
+    "review_method": "66 page renders at 1600-pixel long edge; contact sheets plus individual diagram pages; affected pages refreshed after final adjustments."
+  }
+}

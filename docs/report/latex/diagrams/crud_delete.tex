@@ -1,0 +1,20 @@
+% !TeX root = ../main.tex
+\begin{tikzpicture}[flow]
+\node[start] (s) {Bắt đầu DELETE};
+\node[process,below=7mm of s] (i) {Nhận tham số của thủ tục};
+\node[decision,below=9mm of i] (v) {Mã khu vực\\hợp lệ?};
+\node[decision,below=11mm of v] (c) {Khu vực tồn tại và\\không còn tham chiếu?};
+\node[process,below=11mm of c] (a) {DELETE khỏi KHU\_VUC};
+\node[process,below=7mm of a] (r) {Trả mã khu vực và số dòng xóa};
+\node[start,below=7mm of r] (e) {Kết thúc thành công};
+\node[reject] (x1) at ($(v.center)+(6.4,0)$) {SIGNAL 60001\\Mã không hợp lệ};
+\node[reject] (x2) at ($(c.center)+(6.4,0)$) {SIGNAL 60002 / 60015\\Không tồn tại hoặc\\còn dữ liệu tham chiếu};
+\draw[arrow] (s.south)--(i.north);
+\draw[arrow] (i.south)--(v.north);
+\draw[arrow] (v.south)--node[branch,right=1.5mm]{Có}(c.north);
+\draw[arrow] (c.south)--node[branch,right=1.5mm]{Có}(a.north);
+\draw[arrow] (v.east)--node[branch,above=1mm]{Không}(x1.west);
+\draw[arrow] (c.east)--node[branch,above=1mm]{Không}(x2.west);
+\draw[arrow] (a.south)--(r.north);
+\draw[arrow] (r.south)--(e.north);
+\end{tikzpicture}

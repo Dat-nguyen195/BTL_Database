@@ -1,0 +1,19 @@
+% !TeX root = ../main.tex
+\begin{tikzpicture}[flow]
+\node[process,text width=7cm,minimum height=12mm] (ui) {Giao diện trình duyệt\\HTML/CSS/JavaScript};
+\node[process,text width=7cm,minimum height=12mm,below=8mm of ui] (api)
+  {Flask Routes\\Đăng nhập, CSRF, quyền và kiểm tra đầu vào};
+\node[process,text width=7cm,minimum height=12mm,below=6mm of api] (service)
+  {Services\\Giao dịch, chống lặp, tiền giữ chỗ và retry};
+\node[process,text width=7cm,minimum height=12mm,below=6mm of service] (repo)
+  {Repositories\\SQL tham số hóa và gọi routine};
+\node[start,text width=7cm,minimum height=14mm,below=6mm of repo] (db)
+  {MySQL 8.4.13\\23 bảng, FK/CHECK, chỉ mục,\\procedure/function/trigger};
+\node[process,text width=3.1cm] (worker) at ($(service.center)+(6.3,0)$)
+  {Worker trả trước\\Đối soát hạn dùng};
+\draw[arrow] (ui.south)--node[branch,right=1.5mm]{HTTP}(api.north);
+\draw[arrow] (api.south)--(service.north);
+\draw[arrow] (service.south)--(repo.north);
+\draw[arrow] (repo.south)--(db.north);
+\draw[arrow] (worker.west)--(service.east);
+\end{tikzpicture}

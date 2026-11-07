@@ -1,0 +1,56 @@
+"""Đóng gói bản nộp, kiểm tra bí mật và hash từng tệp trước khi bàn giao."""
+from pathlib import Path
+import hashlib,os,shutil,zipfile
+from dotenv import dotenv_values
+ROOT=Path(__file__).resolve().parents[1]
+REPORT_DIR=ROOT/'docs/report/latex'
+OUTPUT_ZIP=REPORT_DIR/'BTL2_L09_Nhom09_BanGiao.zip'
+EXCLUDE_DIRS={'.git','.venv','__pycache__','.pytest_cache','.idea','.agents','.aws','.codex','tmp','node_modules'}
+def should_include(p):
+    return (
+        not any(s in EXCLUDE_DIRS or s == 'build' for s in p.parts)
+        and not ('.vscode' in p.parts and p.name != 'settings.json')
+        and not (p.name.startswith('.env') and p.name != '.env.example')
+        and p.name not in {'.DS_Store','Thumbs.db'}
+        and p not in {Path('docs/report/latex/SHA256SUMS'),Path('docs/report/latex/main.pdf'),Path('docs/report/latex/BTL2_L09_Nhom09_P1_P2.pdf')}
+        and p.suffix not in {'.pyc','.pyo','.pyd','.zip','.tmp','.aux','.log','.out','.toc','.lof','.lot','.fls','.fdb_latexmk','.xdv'}
+        and not p.name.endswith(('.synctex', '.synctex.gz', '.synctex(busy)', '.synctex.gz(busy)'))
+    )
+
+def make_archive(output, files, prefix):
+    hashes=[hashlib.sha256(data).hexdigest()+'  '+str(rel) for rel,data in files]
+    temp=output.with_suffix('.zip.tmp')
+    with zipfile.ZipFile(temp,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+        for rel,data in files:z.writestr(prefix+str(rel),data)
+        z.writestr(prefix+'MANIFEST.sha256','\n'.join(hashes)+'\n')
+    with zipfile.ZipFile(temp) as z:
+        if z.testzip():raise RuntimeError('ZIP corrupt: '+output.name)
+        for rel,data in files:
+            if z.read(prefix+str(rel))!=data:raise RuntimeError('ZIP mismatch: '+str(rel))
+    os.replace(temp,output)
+def package():
+    secret_values=[v.encode() for k,v in dotenv_values(ROOT/'.env').items() if v and len(v)>=16 and any(t in k for t in ['PASSWORD','SECRET','TOKEN'])]
+    files=[]
+    for path in sorted(ROOT.rglob('*')):
+        rel=path.relative_to(ROOT)
+        if not path.is_file() or not should_include(rel):continue
+        data=path.read_bytes();check=[data]
+        if path.suffix=='.docx':
+            with zipfile.ZipFile(path) as z:check.extend(z.read(n) for n in z.namelist() if n.endswith('.xml'))
+        if any(secret in content for secret in secret_values for content in check):raise RuntimeError('Phát hiện bí mật cấu hình trong '+str(rel))
+        files.append((rel,data))
+    OUTPUT_ZIP.parent.mkdir(exist_ok=True)
+    latex_root=Path('docs/report/latex')
+    latex_files=[(p.relative_to(latex_root),d) for p,d in files if p.is_relative_to(latex_root)]
+    if not any(p == Path('main.tex') for p,_ in latex_files):
+        raise RuntimeError('Missing main.tex')
+    pdf_path = REPORT_DIR/'BTL2_L09_Nhom09_P1_P2.pdf'
+    if not pdf_path.is_file():
+        raise RuntimeError('Build the report PDF before packaging')
+    latex_zip = REPORT_DIR/'BTL2_L09_Nhom09_LaTeX.zip'
+    make_archive(latex_zip,latex_files,'BTL2_L09_Nhom09_LaTeX/')
+    make_archive(OUTPUT_ZIP,files,'BTL2_L09_Nhom09/')
+    final=[pdf_path,latex_zip,OUTPUT_ZIP]
+    (REPORT_DIR/'SHA256SUMS').write_text('\n'.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.name for p in final)+'\n')
+    print('ZIP verified:',len(files),'files; no configured secrets; manifest included.')
+if __name__=='__main__':package()

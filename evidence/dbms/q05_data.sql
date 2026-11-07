@@ -1,0 +1,2 @@
+SELECT MaTaiKhoan,SoDuVi FROM NGUOI_CHOI;
+SELECT MaNguoiChoi,LoaiGiaoDich,SoTien,TrangThaiGD FROM GIAO_DICH_VI;

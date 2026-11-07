@@ -1,0 +1,3 @@
+SELECT MaNhanVien,MaCa,MaKhuVuc FROM PHAN_CONG_TRUC;
+SELECT MaCa,ThoiDiemBatDau,ThoiDiemKetThuc FROM CA_TRUC;
+SELECT MaTaiKhoan,ChucVu FROM NHAN_VIEN;

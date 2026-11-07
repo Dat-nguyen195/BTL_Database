@@ -1,0 +1,93 @@
+{
+  "database": "btl2_evidence_a62ff5712250",
+  "results": [
+    {
+      "columns": [
+        "ROUTINE_NAME",
+        "ROUTINE_TYPE"
+      ],
+      "elapsed_ms": 9.224876000189397,
+      "error": null,
+      "rows": [
+        [
+          "fn_co_quyen",
+          "FUNCTION"
+        ],
+        [
+          "fn_han_phien",
+          "FUNCTION"
+        ],
+        [
+          "fn_so_du_kha_dung",
+          "FUNCTION"
+        ],
+        [
+          "fn_tien_gio",
+          "FUNCTION"
+        ],
+        [
+          "fn_tong_chi_vi_rong",
+          "FUNCTION"
+        ],
+        [
+          "fn_tong_tien_don",
+          "FUNCTION"
+        ],
+        [
+          "sp_bao_cao_doanh_thu_ngay",
+          "PROCEDURE"
+        ],
+        [
+          "sp_bao_cao_ton_dich_vu",
+          "PROCEDURE"
+        ],
+        [
+          "sp_ghi_so_phieu_kho",
+          "PROCEDURE"
+        ],
+        [
+          "sp_ket_thuc_phien",
+          "PROCEDURE"
+        ],
+        [
+          "sp_khoa_dong",
+          "PROCEDURE"
+        ],
+        [
+          "sp_khoa_phien",
+          "PROCEDURE"
+        ],
+        [
+          "sp_khu_vuc_delete",
+          "PROCEDURE"
+        ],
+        [
+          "sp_khu_vuc_insert",
+          "PROCEDURE"
+        ],
+        [
+          "sp_khu_vuc_update",
+          "PROCEDURE"
+        ],
+        [
+          "sp_mo_phien",
+          "PROCEDURE"
+        ],
+        [
+          "sp_nap_vi",
+          "PROCEDURE"
+        ],
+        [
+          "sp_thanh_toan_don",
+          "PROCEDURE"
+        ],
+        [
+          "sp_tiep_nhan_don",
+          "PROCEDURE"
+        ]
+      ],
+      "sql": "SELECT ROUTINE_NAME,ROUTINE_TYPE FROM information_schema.ROUTINES WHERE ROUTINE_SCHEMA=DATABASE() ORDER BY ROUTINE_TYPE,ROUTINE_NAME"
+    }
+  ],
+  "version": "8.4.13"
+}
